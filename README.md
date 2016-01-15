@@ -1,10 +1,11 @@
-# soda-as
+# soda-ash
 
 Soda-ash is an interface between clojurescript's [reagent](https://github.com/reagent-project/reagent) and [Semantic UI](http://semantic-ui.com/).
 
 ## Todo List
 
 * add tests for soda->class
+* icon groups
 
 ## Devcards
 

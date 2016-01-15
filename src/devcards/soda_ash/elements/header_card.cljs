@@ -85,7 +85,7 @@ Notes:
 (defn icon-headers []
   [s/header {:soda {:tag :h2
                     :type :icon}}
-   [:i.settings.icon]
+   [s/icon {:soda {:icon :settings}}]
    "Account Settings"])
 
 (defcard-doc
@@ -154,7 +154,7 @@ A header may contain an image
 
 (defn icon []
   [s/header {:soda {:tag :h2}}
-   [:i.plug.icon] ;; <-- attention
+   [s/icon {:soda {:icon :plug}}] ;; <-- attention
    [:div.content
     "Uptime Guarantee"]])
 
