@@ -31,9 +31,9 @@
 (deftest with-soda
   (let [_ (reagent/render [s/header {:soda {:type :tiny
                                             :block? true
-                                            :disabled? true
                                             :dividing? true
                                             :inverted? true
+                                            :state :disabled
                                             :attached :top
                                             :floated :left
                                             :color :teal}}] c)

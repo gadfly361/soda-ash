@@ -14,6 +14,23 @@
   "
 # icon
 
+* **states** :disabled | :loading
+* **variations** :bordered? | :circular? | :color | :flipped |
+    :fitted? | :inverted? | :link? | :rotated | :size
+
+
+where
+
+* **:color**
+   :red | :orange | :yellow | :olive |
+   :green | :teal | :blue | :violet |
+   :purple | :pink | :brown | :grey |
+   :black
+* **:flipped** :horizontally | :vertically
+* **:rotated** :clockwise | :counterclockwise
+* **:size**
+    :mini | :tiny | :small | :large | :big | :huge | :massive
+
 ---
 ")
 

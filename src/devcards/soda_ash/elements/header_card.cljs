@@ -14,6 +14,26 @@
 "
 # header
 
+* **type**
+    *HEADERS* :huge | :large | :medium | :small | :tiny
+    *ICON* :icon
+    *SUB* :sub
+* **states** :disabled
+* **content** image | icon | subheader
+* **variations**
+    :aligned | :attached | :block? | :color |
+    :dividing? | :floated | inverted?
+
+where
+
+* **aligned** :right | :left | :justified | :center
+* **:color**
+   :red | :orange | :yellow | :olive |
+   :green | :teal | :blue | :violet |
+   :purple | :pink | :brown | :grey |
+   :black
+* **:floated** :right | :left
+
 ---
 ")
 
@@ -220,7 +240,7 @@ A header may contain an subheader
 
 
 (defn states []
-  [s/header {:soda {:disabled? true}}
+  [s/header {:soda {:state :disabled}}
    "Disabled Header"])
 
 (defcard-doc

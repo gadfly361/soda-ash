@@ -36,7 +36,6 @@
 
 (def bool-set
   #{:block?
-    :disabled?
     :dividing?
     :inverted?})
 
@@ -46,7 +45,9 @@
     })
 
 (def opt-set
-  #{:color})
+  #{:color
+    :state} ;; disabled
+  )
 
 (def special-map
   {:aligned {:right "right aligned"
