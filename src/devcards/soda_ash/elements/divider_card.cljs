@@ -17,7 +17,7 @@
 # divider
 
 * **default tag** :div
-* **types:**
+* **:type**
     :vertical | :horizontal
 * **variations** clearing? | fitted? | hidden? | inverted? | section?
 

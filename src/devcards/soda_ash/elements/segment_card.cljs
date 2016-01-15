@@ -17,7 +17,7 @@
 # segment
 
 * **default tag** :div
-* **types:**
+* **:type**
     *RAISED*
     :raised |
     *STACKED*

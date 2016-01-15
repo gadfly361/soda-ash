@@ -2,6 +2,7 @@
   (:require
    [doo.runner :refer-macros [doo-tests]]
    [soda-ash.elements.divider-test]
+   [soda-ash.elements.flag-test]
    [soda-ash.elements.header-test]
    [soda-ash.elements.helpers-test]
    [soda-ash.elements.icon-test]
@@ -13,6 +14,7 @@
 (doo-tests
  'soda-ash.elements.divider-test
  'soda-ash.elements.header-test
+ 'soda-ash.elements.flag-test
  'soda-ash.elements.helpers-test
  'soda-ash.elements.icon-test
  'soda-ash.elements.image-test

@@ -17,7 +17,7 @@
 # header
 
 * **default tag** :div
-* **type**
+* **:type**
     *HEADERS* :huge | :large | :medium | :small | :tiny
     *ICON* :icon
     *SUB* :sub

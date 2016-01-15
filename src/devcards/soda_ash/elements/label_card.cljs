@@ -17,7 +17,7 @@
 # label
 
 * **default tag** :div
-* **types:**
+* **:type**
     *ATTACHED*
     :top-attached |
     :bottom-attached |
