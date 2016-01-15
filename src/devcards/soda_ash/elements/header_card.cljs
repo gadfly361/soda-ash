@@ -7,7 +7,13 @@
             [soda-ash.elements.header :as header]
             [soda-ash.element :as s]))
 
+
 (defcard-doc
 "
 # header
 ")
+
+
+(defcard-rg
+  [s/header {:soda {:type :tiny}}
+   "hello world"])
