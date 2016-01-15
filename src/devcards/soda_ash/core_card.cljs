@@ -8,6 +8,7 @@
             [soda-ash.elements.image-card]
             [soda-ash.elements.label-card]
             [soda-ash.elements.loader-card]
+            [soda-ash.elements.reveal-card]
             [soda-ash.elements.segment-card]))
 
 

@@ -62,7 +62,8 @@
                    special-map]
   (when (keys soda)
     (->> (for [[k v] soda]
-           (cond (= :type k) (type->class v type-set e-name)
+           (cond (= :add-class k) (value->class v)
+                 (= :type k) (type->class v type-set e-name)
                  (bool-set k) (bool->class k v)
                  (mod-set k) (mod->class k v)
                  (opt-set k) (opt->class v)

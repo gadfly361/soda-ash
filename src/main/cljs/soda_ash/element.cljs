@@ -7,6 +7,7 @@
    [soda-ash.elements.image :as image]
    [soda-ash.elements.label :as label]
    [soda-ash.elements.loader :as loader]
+   [soda-ash.elements.reveal :as reveal]
    [soda-ash.elements.segment :as segment]))
 
 
@@ -23,5 +24,7 @@
 (def label label/element)
 
 (def loader loader/element)
+
+(def reveal reveal/element)
 
 (def segment segment/element)
