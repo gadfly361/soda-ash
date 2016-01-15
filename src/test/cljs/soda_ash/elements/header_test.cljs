@@ -26,3 +26,25 @@
         node (sel1 c [:div])
         class (h/get-class node)]
     (is (= "ui header" class))))
+
+
+(deftest with-soda
+  (let [_ (reagent/render [s/header {:soda {:type :tiny
+                                            :block? true
+                                            :disabled? true
+                                            :dividing? true
+                                            :inverted? true
+                                            :attached :top
+                                            :floated :left
+                                            :color :teal}}] c)
+        node (sel1 c [:div])
+        class (h/get-class node)]
+    (doto class
+      (h/check-class #"tiny")
+      (h/check-class #"block")
+      (h/check-class #"disabled")
+      (h/check-class #"dividing")
+      (h/check-class #"inverted")
+      (h/check-class #"top attached")
+      (h/check-class #"left floated")
+      (h/check-class #"teal"))))

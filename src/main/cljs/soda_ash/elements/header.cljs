@@ -1,5 +1,6 @@
 (ns soda-ash.elements.header
-  (:require [soda-ash.elements.template :as t]))
+  (:require [soda-ash.elements.template :as t]
+            [clojure.set :as set]))
 
 
 ;; Meta
@@ -13,15 +14,22 @@
 
 ;; Types
 
-(def type-set
-  #{:icon
-    :sub
+(def content-types
+  (sorted-set
+   :huge
+   :large
+   :medium
+   :small
+   :tiny))
 
-    :huge
-    :large
-    :medium
-    :small
-    :tiny})
+(def icon-type #{:icon})
+
+(def sub-type #{:sub})
+
+(def type-set
+  (set/union content-types
+             icon-type
+             sub-type))
 
 
 ;; Variations + States
