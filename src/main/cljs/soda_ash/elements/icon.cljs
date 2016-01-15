@@ -1,6 +1,5 @@
 (ns soda-ash.elements.icon
-  (:require [soda-ash.elements.template :as t]
-            [clojure.set :as set]))
+  (:require [soda-ash.elements.template :as t]))
 
 
 ;; Meta
