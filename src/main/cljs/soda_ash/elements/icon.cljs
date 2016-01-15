@@ -29,16 +29,11 @@
     :state ;; disabled | loading
     })
 
-(def special-map
-  {})
-
 
 (def element
   (t/element {:e-name e-name
               :default-tag default-tag
               :ui? ui?
-              :type-set type-set
               :bool-set bool-set
               :mod-set mod-set
-              :opt-set opt-set
-              :special-map special-map}))
+              :opt-set opt-set}))
