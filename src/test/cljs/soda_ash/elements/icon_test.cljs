@@ -28,33 +28,54 @@
     (is (= "icon" class))))
 
 
+(def soda
+  {:bordered? true
+   :circular? true
+   :fitted? true
+   :inverted? true
+   :link? true
+
+   :flipped :horizontally
+   :rotated :clockwise
+
+   :color :teal
+   :icon :user
+   :size :tiny
+   :state :loading})
+
+(defn check-classes [class]
+  (doto class
+    (h/check-class #"bordered")
+    (h/check-class #"circular")
+    (h/check-class #"fitted")
+    (h/check-class #"inverted")
+    (h/check-class #"link")
+
+    (h/check-class #"horizontally flipped")
+    (h/check-class #"clockwise rotated")
+
+    (h/check-class #"teal")
+    (h/check-class #"user")
+    (h/check-class #"tiny")
+    (h/check-class #"loading")))
+
+
 (deftest with-soda
-  (let [_ (reagent/render [s/icon {:soda {:bordered? true
-                                          :circular? true
-                                          :fitted? true
-                                          :inverted? true
-                                          :link? true
-
-                                          :flipped :horizontally
-                                          :rotated :clockwise
-
-                                          :color :teal
-                                          :icon :user
-                                          :size :tiny
-                                          :state :loading}}] c)
+  (let [_ (reagent/render [s/icon {:soda soda}] c)
         node (sel1 c [:i])
         class (h/get-class node)]
-    (doto class
-      (h/check-class #"bordered")
-      (h/check-class #"circular")
-      (h/check-class #"fitted")
-      (h/check-class #"inverted")
-      (h/check-class #"link")
+    (check-classes class)))
 
-      (h/check-class #"horizontally flipped")
-      (h/check-class #"clockwise rotated")
 
-      (h/check-class #"teal")
-      (h/check-class #"user")
-      (h/check-class #"tiny")
-      (h/check-class #"loading"))))
+(deftest with-soda-with-ratom
+  (let [ratom (reagent/atom {})
+        _ (reagent/render [s/icon {:soda (merge
+                                          {:ratom ratom
+                                           :path :foo}
+                                          soda)}] c)
+        node (sel1 c [:i])
+        class (h/get-class node)
+        ratom-soda (get-in @ratom [:foo :soda])]
+    (check-classes class)
+
+    (h/check-soda soda ratom-soda)))

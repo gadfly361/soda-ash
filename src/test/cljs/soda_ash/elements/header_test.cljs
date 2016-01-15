@@ -28,23 +28,44 @@
     (is (= "ui header" class))))
 
 
+(def soda
+  {:type :tiny
+   :block? true
+   :dividing? true
+   :inverted? true
+   :state :disabled
+   :attached :top
+   :floated :left
+   :color :teal})
+
+(defn check-classes [class]
+  (doto class
+    (h/check-class #"tiny")
+    (h/check-class #"block")
+    (h/check-class #"disabled")
+    (h/check-class #"dividing")
+    (h/check-class #"inverted")
+    (h/check-class #"top attached")
+    (h/check-class #"left floated")
+    (h/check-class #"teal")))
+
+
 (deftest with-soda
-  (let [_ (reagent/render [s/header {:soda {:type :tiny
-                                            :block? true
-                                            :dividing? true
-                                            :inverted? true
-                                            :state :disabled
-                                            :attached :top
-                                            :floated :left
-                                            :color :teal}}] c)
+  (let [_ (reagent/render [s/header {:soda soda}] c)
         node (sel1 c [:div])
         class (h/get-class node)]
-    (doto class
-      (h/check-class #"tiny")
-      (h/check-class #"block")
-      (h/check-class #"disabled")
-      (h/check-class #"dividing")
-      (h/check-class #"inverted")
-      (h/check-class #"top attached")
-      (h/check-class #"left floated")
-      (h/check-class #"teal"))))
+    (check-classes class)))
+
+
+(deftest with-soda-with-ratom
+  (let [ratom (reagent/atom {})
+        _ (reagent/render [s/header {:soda (merge
+                                            {:ratom ratom
+                                             :path :foo}
+                                            soda)}] c)
+        node (sel1 c [:div])
+        class (h/get-class node)
+        ratom-soda (get-in @ratom [:foo :soda])]
+    (check-classes class)
+
+    (h/check-soda soda ratom-soda)))

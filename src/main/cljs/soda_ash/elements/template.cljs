@@ -21,8 +21,13 @@
        & children]
 
     (let [tag (:tag soda)
+          ratom (:ratom soda)
+          path (:path soda)
           sanitized-soda (h/sanitize-soda soda)
           sanitized-attrs (h/sanitize-attrs attrs)]
+
+      (when (and ratom path)
+        (h/set-initial-values! ratom path sanitized-soda))
 
       (fn []
         (let [soda-class (h/soda->class e-name

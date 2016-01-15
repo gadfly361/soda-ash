@@ -21,3 +21,8 @@
   ([class regex doc-string]
    (is (not (re-find regex class))
        doc-string)))
+
+
+(defn check-soda [soda ratom-soda]
+  (doseq [[k v] soda]
+    (is (= v (k ratom-soda)))))

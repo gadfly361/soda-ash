@@ -102,3 +102,29 @@
           :baz :quux} (h/sanitize-attrs {:foo :bar
                                          :baz :quux
                                          :soda {:alpha :beta}}))))
+
+
+
+;; state
+
+
+(deftest set-initial-values!
+  (let [ratom (atom {})]
+    (h/set-initial-values! ratom :foo nil)
+    (is (nil? (get-in @ratom [:foo :soda]))))
+
+  (let [ratom (atom {})]
+    (h/set-initial-values! ratom :foo {})
+    (is (nil? (get-in @ratom [:foo :soda]))))
+
+  (let [ratom (atom {})]
+    (h/set-initial-values! ratom :foo {:bar :baz})
+    (is (= {:bar :baz} (get-in @ratom [:foo :soda]))))
+
+  (let [ratom (atom {})]
+    (h/set-initial-values! ratom [:foo] {:bar :baz})
+    (is (= {:bar :baz} (get-in @ratom [:foo :soda]))))
+
+  (let [ratom (atom {})]
+    (h/set-initial-values! ratom [:foo :quux] {:bar :baz})
+    (is (= {:bar :baz} (get-in @ratom [:foo :quux :soda])))))

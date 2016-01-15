@@ -89,3 +89,13 @@
 
 (defn sanitize-attrs [attrs]
   (dissoc attrs :soda))
+
+
+
+;; state
+
+
+(defn set-initial-values! [ratom path sanitized-soda]
+  (when ratom
+    (doseq [[k v] sanitized-soda]
+      (swap! ratom assoc-in (flatten [path :soda k]) v))))
