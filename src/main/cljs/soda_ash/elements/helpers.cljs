@@ -2,6 +2,7 @@
   (:require [clojure.string :as string]))
 
 
+
 ;; errors
 
 
@@ -18,7 +19,9 @@
   (partial throw-error :type))
 
 
+
 ;; class
+
 
 (defn value->class [v]
   (-> (name v)
@@ -77,7 +80,9 @@
        (string/join " ")))
 
 
+
 ;; sanitize
+
 
 (defn sanitize-soda [soda]
   (dissoc soda :ratom :path :tag))

@@ -15,7 +15,7 @@
 # image
 
 * **default tag** :img
-* **state** :hidden | :disabled
+* **:state** :hidden | :disabled
 * **variations**
     :aligned | :avatar? | :bordered? | :centered? |
     :circular? | :floated | :fluid? | :rounded? | :size |
@@ -265,7 +265,7 @@ An image can specify its vertical alignment
 ;; centered
 
 (defn centered []
-  [:div.ui.segment
+  [s/segment {}
    [s/image {:soda {:centered? true
                     :size :medium}
              :src "/images/wireframe/square-image.png"}]
@@ -286,7 +286,7 @@ An image can appear centered in a content block
 ;; spaced
 
 (defn spaced []
-  [:div.ui.segment
+  [s/segment {}
    [s/image {:soda {:spaced :right
                     :size :mini}
              :src "/images/wireframe/square-image.png"}]
@@ -319,7 +319,7 @@ An image can appear spaced in a content block
 ;; floated
 
 (defn floated []
-  [:div.ui.segment
+  [s/segment {}
    [s/image {:soda {:floated :left
                     :size :small}
              :src "/images/wireframe/square-image.png"}]

@@ -5,7 +5,8 @@
    [soda-ash.elements.helpers-test]
    [soda-ash.elements.icon-test]
    [soda-ash.elements.image-test]
-   [soda-ash.elements.label-test]))
+   [soda-ash.elements.label-test]
+   [soda-ash.elements.segment-test]))
 
 
 (doo-tests
@@ -13,4 +14,5 @@
  'soda-ash.elements.helpers-test
  'soda-ash.elements.icon-test
  'soda-ash.elements.image-test
- 'soda-ash.elements.label-test)
+ 'soda-ash.elements.label-test
+ 'soda-ash.elements.segment-test)

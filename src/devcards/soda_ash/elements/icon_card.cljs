@@ -15,7 +15,7 @@
 # icon
 
 * **default tag** :i
-* **states** :disabled | :loading
+* **:state** :disabled | :loading
 * **variations** :bordered? | :circular? | :color | :flipped |
     :fitted? | :inverted? | :link? | :rotated | :size
 
@@ -309,7 +309,7 @@ An icon can be formatted to appear colored
 ;; Inverted
 
 (defn inverted []
-  [:div.ui.inverted.segment
+  [s/segment {:soda {:inverted? true}}
    [s/icon {:soda {:icon :users
                    :color :red
                    :inverted? true}}]

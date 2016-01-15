@@ -228,7 +228,7 @@ A label can appear as a tag
 (defn ribbon []
   [:div.ui.two.column.grid
    [:div.column
-    [:div.ui.raise.segment
+    [s/segment {:soda {:type :raised}}
      [s/label {:soda {:type :ribbon
                       :color :red}}
       "Overview"]
@@ -237,7 +237,7 @@ A label can appear as a tag
      ]]
 
    [:div.column
-    [:div.ui.raise.segment
+    [s/segment {:soda {:type :raised}}
      [s/label {:soda {:type :right-ribbon
                       :color :orange}}
       "Specs"]
@@ -260,27 +260,27 @@ A label can appear as a ribbon attaching itself to an element.
 
 (defn attached []
   [:div
-   [:div.ui.segment
+   [s/segment {}
     [s/label {:soda {:type :top-attached}} "HTML"]
     [h/fake-content]]
 
-   [:div.ui.segment
+   [s/segment {}
     [s/label {:soda {:type :bottom-attached}} "CSS"]
     [h/fake-content]]
 
-   [:div.ui.segment
+   [s/segment {}
     [s/label {:soda {:type :top-right-attached}} "Code"]
     [h/fake-content]]
 
-   [:div.ui.segment
+   [s/segment {}
     [s/label {:soda {:type :top-left-attached}} "View"]
     [h/fake-content]]
 
-   [:div.ui.segment
+   [s/segment {}
     [s/label {:soda {:type :bottom-left-attached}} "User View"]
     [h/fake-content]]
 
-   [:div.ui.segment
+   [s/segment {}
     [s/label {:soda {:type :bottom-right-attached}} "Admin View"]
     [h/fake-content]]])
 

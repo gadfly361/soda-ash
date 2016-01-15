@@ -19,13 +19,13 @@
     :circular? :fluid? :rounded?})
 
 (def mod-set
-  #{:aligned ;; :top | :middle | :bottom
-    :spaced ;; :default | :left | :right
-    :floated ;; :left | :right
+  #{:aligned ;; top | middle | bottom
+    :spaced ;; default | left | right
+    :floated ;; left | right
     })
 
 (def opt-set
-  #{:state ;; :hidden | :disabled
+  #{:state ;; hidden | disabled
     :size
     })
 

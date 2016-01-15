@@ -19,7 +19,7 @@
     *HEADERS* :huge | :large | :medium | :small | :tiny
     *ICON* :icon
     *SUB* :sub
-* **states** :disabled
+* **:state** :disabled
 * **content** image | icon | subheader
 * **variations**
     :aligned | :attached | :block? | :color |
@@ -311,12 +311,12 @@ A header can show that it is inactive
    [s/header {:soda {:tag :h3
                      :attached :top}}
     "Top Attached"]
-   [:div.ui.attached.segment
+   [s/segment {:soda {:attached :default}}
     [h/fake-content]]
    [s/header {:soda {:tag :h3
                      :attached :default}}
     "Attached"]
-   [:div.ui.attached.segment
+   [s/segment {:soda {:attached :default}}
     [h/fake-content]]
    [s/header {:soda {:tag :h3
                      :attached :bottom}}
@@ -337,7 +337,7 @@ A header can show that it is inactive
 ;; floating
 
 (defn floating []
-  [:div.clearing.segment
+  [s/segment {:soda {:clearing? true}}
    [s/header {:soda {:floated :right}}
     "Go Forward"]
    [s/header {:soda {:floated :left}}
@@ -359,7 +359,7 @@ A header can sit to the left or right of other content
 ;; alignment
 
 (defn alignment []
-  [:div.ui.segment
+  [s/segment {}
    [s/header {:soda {:aligned :right}} "Right"]
    [s/header {:soda {:aligned :left}} "Left"]
    [s/header {:soda {:aligned :justified}}
@@ -411,7 +411,7 @@ A header can be formatted with different colors
 ;; inverted-colored
 
 (defn inverted-colored []
-  [:div.ui.segment.inverted
+  [s/segment {:soda {:inverted? true}}
    [s/header {:soda {:inverted? true
                      :color :red}} "Red"]
    [s/header {:soda {:inverted? true

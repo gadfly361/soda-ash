@@ -8,6 +8,7 @@ Soda-ash is an interface between clojurescript's [reagent](https://github.com/re
 * icon groups
 * image groups
 * label groups
+* segment groups
 
 ## Devcards
 
