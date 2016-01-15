@@ -14,6 +14,7 @@
   "
 # icon
 
+* **default tag** :i
 * **states** :disabled | :loading
 * **variations** :bordered? | :circular? | :color | :flipped |
     :fitted? | :inverted? | :link? | :rotated | :size

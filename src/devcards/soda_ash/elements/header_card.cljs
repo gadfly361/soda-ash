@@ -14,6 +14,7 @@
 "
 # header
 
+* **default tag** :div
 * **type**
     *HEADERS* :huge | :large | :medium | :small | :tiny
     *ICON* :icon
@@ -153,8 +154,7 @@ A header can be formatted to emphasize an sub
 
 (defn image []
   [s/header {:soda {:tag :h2}}
-   [:img.ui.image ;; <-- attention
-    {:src "/images/icons/school.png"}]
+   [s/image {:src "/images/icons/school.png"}]
    [:div.content
     "Learn More"]])
 
@@ -174,7 +174,7 @@ A header may contain an image
 
 (defn icon []
   [s/header {:soda {:tag :h2}}
-   [s/icon {:soda {:icon :plug}}] ;; <-- attention
+   [s/icon {:soda {:icon :plug}}]
    [:div.content
     "Uptime Guarantee"]])
 
