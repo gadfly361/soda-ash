@@ -8,8 +8,6 @@ the regex-hell of strings and puts them into hash-maps.
 
 ## Todo List
 
-* FIX: img (without class ui) vs s/image
-
 * add tests for soda->class
 * add tests for :add-class
 * add tests for :default type

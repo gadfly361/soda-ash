@@ -423,7 +423,7 @@ A label can contain a icon
     "Elliot"]
 
    [s/label {:soda {:tag :a}}
-    [s/image {:src "/images/avatar/small/stevie.jpg"}]
+    [:img {:src "/images/avatar/small/stevie.jpg"}]
     "Stevie"]])
 
 (defcard-doc
