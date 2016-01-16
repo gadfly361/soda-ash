@@ -18,7 +18,7 @@
 
 * **default tag** :i
 * **:icon** see [Semantic UI docs](http://semantic-ui.com/elements/icon.html)
-* **:state** :disabled | :loading
+* **:state** :default | :disabled | :loading
 * **variations** :bordered? | :circular? | :color | :flipped |
     :fitted? | :inverted? | :link? | :rotated | :size
 

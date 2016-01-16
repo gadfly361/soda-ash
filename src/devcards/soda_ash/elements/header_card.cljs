@@ -22,7 +22,7 @@
     *HEADERS* :huge | :large | :medium | :small | :tiny
     *ICON* :icon
     *SUB* :sub
-* **:state** :disabled
+* **:state** :default | :disabled
 * **content** image | icon | subheader
 * **variations**
     :aligned | :attached | :block? | :color |

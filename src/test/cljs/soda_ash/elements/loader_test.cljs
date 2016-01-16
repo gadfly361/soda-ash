@@ -33,7 +33,7 @@
    :centered? true
    :inline :small
    :size :medium
-   :state :active})
+   :state :default})
 
 (defn check-classes [class]
   (doto class
@@ -41,7 +41,7 @@
     (h/check-class #"centered")
     (h/check-class #"small inline")
     (h/check-class #"medium")
-    (h/check-class #"active")))
+    (h/!check-class #"active")))
 
 
 (deftest with-soda

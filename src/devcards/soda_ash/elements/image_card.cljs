@@ -29,7 +29,7 @@ where
 * **:floated** :left | :right
 * **:size** :mini | :tiny | :small | :medium | :large | :big | :huge | :massive
 * **:spaced** :default | :left | :right
-* **:state** :hidden | :disabled
+* **:state** :default | :hidden | :disabled
 
 ---
 ")

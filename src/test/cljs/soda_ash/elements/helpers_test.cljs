@@ -50,6 +50,7 @@
 
 
 (deftest opt->class
+  (is (nil? (h/opt->class :default)))
   (is (= "foo" (h/opt->class :foo)))
   (is (= "foo bar" (h/opt->class :foo-bar))))
 

@@ -22,7 +22,7 @@
     *MOVE* :move | :move-right | :move-up | :move-down |
     <s>*ROTATE* :rotate | :rotate-left</s>
 * **content** visible | hidden
-* **:state** :active | :disabled
+* **:state** :default | :active | :disabled
 * **variations** :instant?
 
 ---

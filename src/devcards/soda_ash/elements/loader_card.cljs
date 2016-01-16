@@ -24,7 +24,7 @@ where
 
 * **:inline** :default | :small | :large
 * **:size** :mini | :small | :medium | :large
-* **:state** :indeterminate | :active | :disabled
+* **:state** :default | :indeterminate | :active | :disabled
 
 ---
 ")

@@ -47,7 +47,8 @@
          (string/join " "))))
 
 (defn opt->class [v]
-  (value->class v))
+  (when-not (= :default v)
+    (value->class v)))
 
 (defn special->class [k v special-map e-name]
   (or ((special-map k) v)
