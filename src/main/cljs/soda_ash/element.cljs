@@ -1,5 +1,6 @@
 (ns soda-ash.element
   (:require
+   [soda-ash.elements.container :as container]
    [soda-ash.elements.divider :as divider]
    [soda-ash.elements.flag :as flag]
    [soda-ash.elements.header :as header]
@@ -10,6 +11,8 @@
    [soda-ash.elements.reveal :as reveal]
    [soda-ash.elements.segment :as segment]))
 
+
+(def container container/element)
 
 (def divider divider/element)
 

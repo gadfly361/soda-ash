@@ -238,14 +238,14 @@ An image may appear circular
               :src "/images/wireframe/square-image.png"}]
     "Top Aligned"
 
-   [:div.ui.divider]
+   [s/divider {}]
 
     [s/image {:soda {:aligned :middle
                      :size :tiny}
               :src "/images/wireframe/square-image.png"}]
     "Middle Aligned"
 
-   [:div.ui.divider]
+   [s/divider {}]
 
     [s/image {:soda {:aligned :bottom
                      :size :tiny}

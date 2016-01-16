@@ -1,6 +1,7 @@
 (ns soda-ash.runner
   (:require
    [doo.runner :refer-macros [doo-tests]]
+   [soda-ash.elements.container-test]
    [soda-ash.elements.divider-test]
    [soda-ash.elements.flag-test]
    [soda-ash.elements.header-test]
@@ -14,6 +15,7 @@
 
 
 (doo-tests
+ 'soda-ash.elements.container-test
  'soda-ash.elements.divider-test
  'soda-ash.elements.header-test
  'soda-ash.elements.flag-test
