@@ -2,10 +2,13 @@
 
 Soda-ash is an interface between clojurescript's [reagent](https://github.com/reagent-project/reagent) and [Semantic UI](http://semantic-ui.com/).
 
-Semantic UI is awesome. However, at its core, you are concatenating
+Semantic UI is awesome ... however, at its core, you are concatenating
 ordered classes into a string.  Soda-ash bubbles Semantic UI's classes
 out of this regex-hell and softens them into clojurescript's familiar,
-powerful, and unordered hash-map.
+powerful, and unordered hash-map.  Furthermore, soda-ash allows you to
+place this hash-map inside a reagent atom at your desired path.  This
+means you can swap! Semantic UI classes and have your component
+reactively update.
 
 ## Docs
 
@@ -47,19 +50,6 @@ lein doo phantom test once
 ```
 
 The above command assumes that you have [phantomjs](https://www.npmjs.com/package/phantomjs) installed.
-
-### Todo List
-
-* add tests for soda->class
-* add tests for :add-class
-* add tests for :default type
-* button content
-* button groups
-* icon groups
-* image groups
-* label groups
-* segment groups
-* reveal rotate
 
 # License
 

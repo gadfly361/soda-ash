@@ -47,6 +47,7 @@
     :right-ribbon
 * **content** detail | icon | image | link
 * **variations** :basic? | :circular? | :color | :size
+* **groups** :group?
 
 where
 
@@ -638,3 +639,103 @@ A label can have different colors
 
 (defcard-rg
   [size])
+
+
+
+;; ====================
+;; GROUPS
+
+(defcard-doc
+"# GROUPS")
+
+
+;; Group-Size
+
+(defn group-size []
+  [s/label {:soda {:tag :div
+                   :group? true
+                   :size :huge}}
+   [s/label {} "Fun"]
+   [s/label {} "Happy"]
+   [s/label {} "Smart"]
+   [s/label {} "Witty"]])
+
+(defcard-doc
+  "
+### Group Size
+
+Labels can share sizes together
+"
+  (mkdn-pprint-source group-size))
+
+(defcard-rg
+  [group-size])
+
+
+;; Colored-Group
+
+(defn colored-group []
+  [s/label {:soda {:tag :div
+                   :group? true
+                   :color :blue}}
+   [s/label {} "Fun"]
+   [s/label {} "Happy"]
+   [s/label {} "Smart"]
+   [s/label {} "Witty"]])
+
+(defcard-doc
+  "
+### Colored Group
+
+Labels can share colors together
+"
+  (mkdn-pprint-source colored-group))
+
+(defcard-rg
+  [colored-group])
+
+
+;; Tag-Group
+
+(defn tag-group []
+  [s/label {:soda {:tag :div
+                   :group? true
+                   :type :tag}}
+   [s/label {} "Fun"]
+   [s/label {} "Happy"]
+   [s/label {} "Smart"]
+   [s/label {} "Witty"]])
+
+(defcard-doc
+  "
+### Tag Group
+
+abels can share tag formatting
+"
+  (mkdn-pprint-source tag-group))
+
+(defcard-rg
+  [tag-group])
+
+
+;; Circular-Group
+
+(defn circular-group []
+  [s/label {:soda {:tag :div
+                   :group? true
+                   :circular? true}}
+   [s/label {} "Fun"]
+   [s/label {} "Happy"]
+   [s/label {} "Smart"]
+   [s/label {} "Witty"]])
+
+(defcard-doc
+  "
+### Circular Group
+
+Labels can share shapes
+"
+  (mkdn-pprint-source circular-group))
+
+(defcard-rg
+  [circular-group])

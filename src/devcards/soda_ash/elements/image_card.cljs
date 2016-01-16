@@ -22,6 +22,7 @@
     :aligned | :avatar? | :bordered? | :centered? |
     :circular? | :floated | :fluid? | :rounded? | :size |
     :spaced | :state
+* **groups** :group?
 
 where
 
@@ -378,3 +379,33 @@ An image can appear size in a content block
 
 (defcard-rg
   [size])
+
+
+
+;; ====================
+;; GROUPS
+
+(defcard-doc
+  "# GROUPS")
+
+
+;; Groups-Size
+
+(defn groups-size []
+  [s/image {:soda {:tag :div
+                   :group? true
+                   :size :tiny}}
+   [s/image {:src "/images/wireframe/image.png"}]
+   [s/image {:src "/images/wireframe/image.png"}]
+   [s/image {:src "/images/wireframe/image.png"}]])
+
+(defcard-doc
+  "
+### Size
+
+A group of images can be formatted to have the same size.
+"
+  (mkdn-pprint-source groups-size))
+
+(defcard-rg
+  [groups-size])

@@ -28,6 +28,7 @@
     :piled |
     *VERTICAL*
     :vertical
+* **groups** :group? | :horizontal?
 * **:state** :disabled | :loading
 * **variations**
     :aligned | :attached | :basic? |
@@ -45,7 +46,7 @@ where
    :black
 * **:emphasis** :secondary | :tertiary
 * **floated** :left | :right
-* **:padded** :default | :very
+* **:padded** :defanult | :very
 
 ---
 ")
@@ -172,6 +173,149 @@ A vertical segment formats content to be aligned as part of a vertical group
 
 (defcard-rg
   [vertical])
+
+
+
+;; ====================
+;; GROUPS
+
+(defcard-doc
+"# GROUPS")
+
+
+;; Segments
+
+(defn segments []
+  [s/segment {:soda {:group? true}}
+   [s/segment {} [:p "Top"]]
+   [s/segment {} [:p "Middle"]]
+   [s/segment {} [:p "Middle"]]
+   [s/segment {} [:p "Bottom"]]])
+
+(defcard-doc
+  "
+### Segments
+
+A group of segments can be nested in another group of segments
+"
+  (mkdn-pprint-source segments))
+
+(defcard-rg
+  [segments])
+
+
+;; Nested-Segments
+
+(defn nested-segments []
+  [s/segment {:soda {:group? true}}
+   [s/segment {} [:p "Top"]]
+   [s/segment {:soda {:group? true}}
+    [s/segment {} [:p "Nested Top"]]
+    [s/segment {} [:p "Nested Middle"]]
+    [s/segment {} [:p "Nested Bottom"]]]
+   [s/segment {} [:p "Bottom"]]])
+
+(defcard-doc
+  "
+### Nested Segments
+
+A group of segments can be nested in another group of segments
+"
+  (mkdn-pprint-source nested-segments))
+
+(defcard-rg
+  [nested-segments])
+
+
+;; Horizontal-Segments
+
+(defn horizontal-segments []
+  [s/segment {:soda {:group? true
+                     :horizontal? true}}
+   [s/segment {} [:p "Left"]]
+   [s/segment {} [:p "Middle"]]
+   [s/segment {} [:p "Middle"]]
+   [s/segment {} [:p "Right"]]])
+
+(defcard-doc
+  "
+### Horizontal Segments
+
+A segment group can appear horizontally
+"
+  (mkdn-pprint-source horizontal-segments))
+
+(defcard-rg
+  [horizontal-segments])
+
+
+;; Raised-Segments
+
+(defn raised-segments []
+  [s/segment {:soda {:group? true
+                     :type :raised}}
+   [s/segment {} [:p "Top"]]
+   [s/segment {} [:p "Middle"]]
+   [s/segment {} [:p "Middle"]]
+   [s/segment {} [:p "Bottom"]]])
+
+(defcard-doc
+  "
+### Raised Segments
+
+A group of segments can be raised
+"
+  (mkdn-pprint-source raised-segments))
+
+(defcard-rg
+  [raised-segments])
+
+
+;; Stacked-Segments
+
+(defn stacked-segments []
+  [s/segment {:soda {:group? true
+                     :type :stacked}}
+   [s/segment {} [:p "Top"]]
+   [s/segment {} [:p "Middle"]]
+   [s/segment {} [:p "Middle"]]
+   [s/segment {} [:p "Bottom"]]])
+
+(defcard-doc
+  "
+### Stacked Segments
+
+A group of segments can be stacked
+"
+  (mkdn-pprint-source stacked-segments))
+
+(defcard-rg
+  [stacked-segments])
+
+
+;; Piled-Segments
+
+(defn piled-segments []
+  [s/segment {:soda {:group? true
+                     :type :piled}}
+   [s/segment {} [:p "Top"]]
+   [s/segment {} [:p "Middle"]]
+   [s/segment {} [:p "Bottom"]]])
+
+(defcard-doc
+  "
+### Piled Segments
+
+A group of segments can be piled
+
+Notes:
+
+* **This isn't appearing as it is supposed to.**
+"
+  (mkdn-pprint-source piled-segments))
+
+(defcard-rg
+  [piled-segments])
 
 
 

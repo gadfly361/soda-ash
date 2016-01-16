@@ -46,8 +46,8 @@
 
 (def opt-set
   #{:color
-    :state} ;; disabled
-  )
+    :state ;; disabled
+    })
 
 (def special-map
   {:aligned {:right "right aligned"

@@ -14,7 +14,9 @@
 ;; Variations + States
 
 (def bool-set
-  #{:bordered? :circular? :fitted? :inverted? :link?})
+  #{:bordered? :circular? :fitted? :inverted? :link?
+    :corner? ;; for icons
+    })
 
 (def mod-set
   #{:flipped ;; horizontally | vertically

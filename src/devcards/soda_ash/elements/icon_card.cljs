@@ -21,6 +21,7 @@
 * **:state** :default | :disabled | :loading
 * **variations** :bordered? | :circular? | :color | :flipped |
     :fitted? | :inverted? | :link? | :rotated | :size
+* **groups** :group? | :corner?
 
 
 where
@@ -363,3 +364,63 @@ An icon can be formatted to appear inverted
 
 (defcard-rg
   [inverted])
+
+
+
+
+;; ====================
+;; GROUPS
+
+(defcard-doc
+  "# GROUPS")
+
+
+;; Icons
+
+(defn icons []
+  [:div
+   [s/icon {:soda {:group? true
+                   :size :huge}}
+    [s/icon {:soda {:icon :thin-circle
+                    :size :big}}]
+    [s/icon {:soda {:icon :user}}]]
+
+   [s/icon {:soda {:group? true
+                   :size :huge}}
+    [s/icon {:soda {:icon :loading-sun
+                    :color :teal
+                    :size :big}}]
+    [s/icon {:soda {:icon :user}}]]])
+
+(defcard-doc
+  "
+### Icons
+
+Several icons can be used together as a group
+"
+  (mkdn-pprint-source icons))
+
+(defcard-rg
+  [icons])
+
+
+;; Corner-Icons
+
+(defn corner-icons []
+  [:div
+   [s/icon {:soda {:group? true
+                   :size :huge}}
+    [s/icon {:soda {:icon :puzzle}}]
+    [s/icon {:soda {:icon :add
+                    :corner? true}}]]])
+
+(defcard-doc
+  "
+### Corner Icons
+
+Several corner-icons can be used together as a group
+"
+  (mkdn-pprint-source corner-icons))
+
+(defcard-rg
+  [corner-icons])

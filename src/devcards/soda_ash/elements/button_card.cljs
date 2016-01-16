@@ -25,7 +25,7 @@
     *ICON* :icon | :labeled-icon | :right-labeled-icon |
     *INVERTED* :inverted | :inverted-basc |
     *LABELED* :labeled | :left-labeled | :labeled-icon | :right-labeled-icon
-* **groups** buttons
+* **groups** :group?
 * **content** conditionals
 * **:state** :default | :active | :disabled | :loading
 * **variations**

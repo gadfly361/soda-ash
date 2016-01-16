@@ -24,7 +24,9 @@
 ;; Variations + States
 
 (def bool-set
-  #{:basic? :circular? :clearing? :compact? :inverted?})
+  #{:basic? :circular? :clearing? :compact? :inverted?
+    :horizontal? ;; for segments
+    })
 
 (def mod-set
   #{:aligned ;; left | right | center
