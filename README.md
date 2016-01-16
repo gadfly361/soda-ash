@@ -16,7 +16,7 @@ TODO: add link to live docs.
 Put the following in the `:dependencies` vector of your *project.clj*
 
 ```
-[soda-ash "0.1.0-alpha"]
+[soda-ash "0.1.0-alpha"] ;; this isn't on clojars yet
 ```
 
 Then require soda-ash in your namespace.

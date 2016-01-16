@@ -11,6 +11,8 @@
 
 Soda-ash is an interface between clojurescript's [reagent](https://github.com/reagent-project/reagent) and [Semantic UI](http://semantic-ui.com/).
 
+--- **[github repo](https://github.com/gadfly361/soda-ash)** ---
+
 ## Elements
 
 * [button](http://localhost:3449/#!/soda_ash.elements.button_card)

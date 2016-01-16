@@ -23,6 +23,7 @@
     (let [tag (:tag soda)
           ratom (:ratom soda)
           path (:path soda)
+          group? (:group? soda)
           sanitized-soda (h/sanitize-soda soda)
           sanitized-attrs (h/sanitize-attrs attrs)]
 
@@ -41,7 +42,8 @@
                                         special-map)
               class (h/class ui?
                              soda-class
-                             e-name)]
+                             e-name
+                             group?)]
 
           (into [(or tag default-tag)
                  (merge sanitized-attrs

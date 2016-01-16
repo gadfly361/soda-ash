@@ -25,6 +25,8 @@
     *ICON* :icon | :labeled-icon | :right-labeled-icon |
     *INVERTED* :inverted | :inverted-basc |
     *LABELED* :labeled | :left-labeled | :labeled-icon | :right-labeled-icon
+* **groups** buttons
+* **content** conditionals
 * **:state** :default | :active | :disabled | :loading
 * **variations**
     :attached | :circular? | :color | :compact? | :consequence |
@@ -283,7 +285,6 @@ A inverted button is less pronounced
   [inverted])
 
 
-
 ;; Inverted-Basic
 
 (defn inverted-basic []
@@ -312,11 +313,105 @@ A inverted button is less pronounced
 
 
 ;; ====================
+;; GROUPS
+
+(defcard-doc
+  "# GROUPS")
+
+
+;; Buttons
+
+(defn buttons []
+  [:div
+   [s/button {:soda {:tag :div
+                     :group? true}}
+    [s/button {} "One"]
+    [s/button {} "Two"]
+    [s/button {} "Three"]]
+
+   [s/button {:soda {:tag :div
+                     :group? true
+                     :color :red}}
+    [s/button {} "Four"]
+    [s/button {} "Five"]
+    [s/button {} "Six"]]
+   ])
+
+(defcard-doc
+  "
+### Buttons
+
+Buttons can exist together as a group
+"
+  (mkdn-pprint-source buttons))
+
+(defcard-rg
+  [buttons])
+
+
+;; Icon-Buttons
+
+(defn icon-buttons []
+  [s/button {:soda {:tag :div
+                    :type :icon
+                    :group? true}}
+   [s/button {}
+    [s/icon {:soda {:icon :align-left}}]]
+   [s/button {}
+    [s/icon {:soda {:icon :align-center}}]]
+   [s/button {}
+    [s/icon {:soda {:icon :align-right}}]]
+   [s/button {}
+    [s/icon {:soda {:icon :align-justify}}]]
+   ])
+
+(defcard-doc
+  "
+### Icon Buttons
+
+Button groups can show groups of icons
+"
+  (mkdn-pprint-source icon-buttons))
+
+(defcard-rg
+  [icon-buttons])
+
+
+
+;; ====================
+;; CONTENT
+
+(defcard-doc
+  "# CONTENT")
+
+
+;; Conditionals
+
+(defn conditionals []
+   [s/button {:soda {:tag :div
+                     :group? true}}
+    [s/button {} "Cancel"]
+    [:div.or] ;; <-- attention
+    [s/button {:soda {:consequence :positive}} "Save"]])
+
+(defcard-doc
+  "
+### Conditionals
+
+Conditionals can exist together as a group
+"
+  (mkdn-pprint-source conditionals))
+
+(defcard-rg
+  [conditionals])
+
+
+
+;; ====================
 ;; STATES
 
 (defcard-doc
   "# STATES")
-
 
 
 ;; Active

@@ -77,10 +77,15 @@
 
 (defn class [ui?
              soda-class
-             e-name]
-  (->> [(when ui? "ui") soda-class e-name]
-       (remove nil?)
-       (string/join " ")))
+             e-name
+             group?]
+  (let [ui?' (when ui? "ui")
+        e-name' (if group?
+                  (str e-name "s")
+                  e-name)]
+    (->> [ui?' soda-class e-name']
+         (remove nil?)
+         (string/join " "))))
 
 
 
@@ -88,7 +93,7 @@
 
 
 (defn sanitize-soda [soda]
-  (dissoc soda :ratom :path :tag))
+  (dissoc soda :ratom :path :tag :group?))
 
 (defn sanitize-attrs [attrs]
   (dissoc attrs :soda))
