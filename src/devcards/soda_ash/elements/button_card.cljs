@@ -18,6 +18,35 @@
 # button
 
 * **default tag** :button
+* **:type**
+    *ANIMATED* :animated | :vertical-animated | :animated-fade |
+    *BASIC* :basic | :inverted-basic |
+    *EMPHASIS* :primary | :secondary |
+    *ICON* :icon | :labeled-icon | :right-labeled-icon |
+    *INVERTED* :inverted | :inverted-basc |
+    *LABELED* :labeled | :left-labeled | :labeled-icon | :right-labeled-icon
+* **:state** :default | :active | :disabled | :loading
+* **variations**
+    :attached | :circular? | :color | :compact? | :consequence |
+    :floated | :fluid? | :size | :social | :toggle?
+
+where
+
+* **:attached** :top | :bottom | :left | :right
+* **:color**
+   :red | :orange | :yellow | :olive |
+   :green | :teal | :blue | :violet |
+   :purple | :pink | :brown | :grey |
+   :black
+* **consequence** :positive | :negative
+* **:floated** :left | :right
+* **size**
+    :mini | :tiny | :small | :medium |
+    :large | :big | :huge | :massive
+* **:social**
+    :facebook | :twitter | :google-plus |
+    :vk | :linkedin | :instagram | :youtube
+
 
 Notes:
 
@@ -518,3 +547,165 @@ A button can reduce its padding to fit into tighter spaces
 
 (defcard-rg
   [compact])
+
+
+;; Toggle
+
+(defn toggle-state [state]
+  (if (= :active state)
+    :default
+    :active))
+
+(defn toggle-text [state]
+  (if (= :active state)
+    "Voted"
+    "Vote"))
+
+(defn handle-on-click! [ratom state]
+  (swap! ratom update-in [:foo :soda :state] toggle-state))
+
+(defn toggle-component []
+  (let [ratom (reagent/atom {})]
+    (fn []
+      (let [state (get-in @ratom [:foo :soda :state])]
+        [s/button {:soda {:ratom ratom
+                          :path :foo
+                          :toggle? true
+                          :state :default}
+                   :on-click #(handle-on-click! ratom state)}
+         (toggle-text state)]))))
+
+(defcard-doc
+  "
+### Toggle
+
+A button can be formatted to toggle on and off
+"
+  (mkdn-pprint-source toggle-state)
+  (mkdn-pprint-source toggle-text)
+  (mkdn-pprint-source handle-on-click!)
+  (mkdn-pprint-source toggle-component))
+
+(defcard-rg
+  [toggle-component])
+
+
+;; Positive
+
+(defn positive []
+  [s/button {:soda {:consequence :positive}}
+   "Positive"])
+
+(defcard-doc
+  "
+### Positive
+
+A button can hint towards a positive consequence
+"
+  (mkdn-pprint-source positive))
+
+(defcard-rg
+  [positive])
+
+
+;; Negative
+
+(defn negative []
+  [s/button {:soda {:consequence :negative}}
+   "Negative"])
+
+(defcard-doc
+  "
+### Negative
+
+A button can hint towards a negative consequence
+"
+  (mkdn-pprint-source negative))
+
+(defcard-rg
+  [negative])
+
+
+;; Fluid
+
+(defn fluid []
+  [s/button {:soda {:fluid? true}}
+   "Fluid"])
+
+(defcard-doc
+  "
+### Fluid
+
+A button can hint towards a fluid consequence
+"
+  (mkdn-pprint-source fluid))
+
+(defcard-rg
+  [fluid])
+
+
+;; Circular
+
+(defn circular []
+  [s/button {:soda {:type :icon
+                    :circular? true}}
+   [s/icon {:soda {:icon :settings}}]])
+
+(defcard-doc
+  "
+### Circular
+
+A button can hint towards a circular consequence
+"
+  (mkdn-pprint-source circular))
+
+(defcard-rg
+  [circular])
+
+
+;; Vertically Attached
+
+(defn vertically-attached []
+  [:div
+   [s/button {:soda {:tag :div
+                     :attached :top}
+              :tab-index "0"}
+    "Top"]
+   [s/segment {:soda {:attached :default}}
+    [h/fake-content]]
+   [s/button {:soda {:tag :div
+                     :attached :bottom}
+              :tab-index "0"}
+    "Bottom"]])
+
+(defcard-doc
+  "
+### Vertically Attached
+
+A button can be attached to the top or bottom of other content
+"
+  (mkdn-pprint-source vertically-attached))
+
+(defcard-rg
+  [vertically-attached])
+
+
+;; Horizontally Attached
+
+(defn horizontally-attached []
+  [:div
+   [s/button {:soda {:attached :left}}
+    "Left"]
+   [s/button {:soda {:attached :right}}
+    "Right"]])
+
+(defcard-doc
+  "
+### Horizontally Attached
+
+A button can be attached to the left or right of other content
+"
+  (mkdn-pprint-source horizontally-attached))
+
+(defcard-rg
+  [horizontally-attached])

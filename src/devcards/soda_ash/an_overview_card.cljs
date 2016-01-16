@@ -27,9 +27,10 @@ Soda-ash is an interface between clojurescript's [reagent](https://github.com/re
 
 ## Why use soda-ash?
 
-Semantic UI is awesome, but at its core, you are concatenating ordered
-classes as a string.  Soda-ash bubbles the Semantic UI classes out of
-the regex-hell of strings and puts them into hash-maps.
+Semantic UI is awesome. However, at its core, you are concatenating
+ordered classes into a string.  Soda-ash bubbles Semantic UI's classes
+out of this regex-hell and softens them into clojurescript's familiar,
+powerful, and unordered hash-map.
 
 What was once this:
 

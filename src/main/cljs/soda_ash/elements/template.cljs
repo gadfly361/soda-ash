@@ -29,7 +29,7 @@
       (when (and ratom path)
         (h/set-initial-values! ratom path sanitized-soda))
 
-      (fn []
+      (fn [_ & children]
         (let [m (when ratom @ratom)
               r-soda (get-in m (flatten [path :soda]))
               soda-class (h/soda->class e-name
