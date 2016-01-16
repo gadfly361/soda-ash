@@ -7,6 +7,7 @@
    [soda-ash.elements.header :as header]
    [soda-ash.elements.icon :as icon]
    [soda-ash.elements.image :as image]
+   [soda-ash.elements.input :as input]
    [soda-ash.elements.label :as label]
    [soda-ash.elements.loader :as loader]
    [soda-ash.elements.reveal :as reveal]
@@ -26,6 +27,8 @@
 (def icon icon/element)
 
 (def image image/element)
+
+(def input input/element)
 
 (def label label/element)
 

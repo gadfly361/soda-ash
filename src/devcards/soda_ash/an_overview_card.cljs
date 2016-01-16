@@ -22,6 +22,7 @@ Soda-ash is an interface between clojurescript's [reagent](https://github.com/re
 * [header](http://localhost:3449/#!/soda_ash.elements.header_card)
 * [icon](http://localhost:3449/#!/soda_ash.elements.icon_card)
 * [image](http://localhost:3449/#!/soda_ash.elements.image_card)
+* [input](http://localhost:3449/#!/soda_ash.elements.input_card)
 * [label](http://localhost:3449/#!/soda_ash.elements.label_card)
 * [loader](http://localhost:3449/#!/soda_ash.elements.loader_card)
 * [reveal](http://localhost:3449/#!/soda_ash.elements.reveal_card)

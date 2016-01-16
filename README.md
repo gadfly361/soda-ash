@@ -14,6 +14,10 @@ reactively update.
 
 TODO: add link to live docs.
 
+If you have questions, I can usually be found hanging out in the
+[coljurians](http://clojurians.net/) #reagent slack channel (my handle
+is [@gadfly361](https://twitter.com/gadfly361)).
+
 ## Usage
 
 Put the following in the `:dependencies` vector of your *project.clj*
