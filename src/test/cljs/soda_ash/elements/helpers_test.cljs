@@ -29,6 +29,7 @@
 
 
 (deftest type->class
+  (is (nil? (h/type->class :default #{:foo} "baz")))
   (is (= "foo" (h/type->class :foo #{:foo} "baz")))
   (is (thrown-with-msg? js/Error.
                         #"Soda-ash :type :foo doesn't exist for baz element"

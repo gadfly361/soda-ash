@@ -5,6 +5,8 @@ Soda-ash is an interface between clojurescript's [reagent](https://github.com/re
 ## Todo List
 
 * add tests for soda->class
+* add tests for :add-class
+* add tests for :default type
 * icon groups
 * image groups
 * label groups

@@ -17,7 +17,7 @@
 # loader
 
 * **default tag** :i
-* **:type** :text
+* **:type** :default | :text
 * **variations** :centered? | :inline | :inverted? | :size | :state
 
 where
@@ -41,10 +41,10 @@ where
 ;; Loader
 
 (defn loader []
-  [s/segment {}
+  [s/segment {:soda {:type :default}}
    [h/fake-content]
    [:div.ui.active.dimmer
-    [s/loader {}]]])
+    [s/loader {:soda {:type :default}}]]])
 
 (defcard-doc
   "
@@ -65,7 +65,7 @@ Notes:
 ;; Text
 
 (defn text []
-  [s/segment {}
+  [s/segment {:soda {:type :default}}
    [h/fake-content]
    [:div.ui.active.inverted.dimmer
     [s/loader {:soda {:type :text}}
@@ -94,7 +94,7 @@ A loader can contain text
 ;; Indeterminate
 
 (defn indeterminate []
-  [s/segment {}
+  [s/segment {:soda {:type :default}}
    [:div.ui.active.dimmer
     [s/loader {:soda {:type :text
                       :state :indeterminate}}
@@ -116,7 +116,7 @@ A loader can show it's unsure of how long a task will take
 ;; Active
 
 (defn active []
-  [s/segment {}
+  [s/segment {:soda {:type :default}}
    [s/loader {:soda {:state :active}}]
    [h/fake-content]])
 
@@ -139,7 +139,7 @@ Notes:
 ;; Disabled
 
 (defn disabled []
-  [s/segment {}
+  [s/segment {:soda {:type :default}}
    [s/loader {:soda {:state :disabled}}]
    [h/fake-content]])
 
@@ -207,7 +207,7 @@ Loaders can appear inline with content
 
 (defn size []
   [:div
-   [s/segment {}
+   [s/segment {:soda {:type :default}}
     [:div.ui.active.dimmer
      [s/loader {:soda {:type :text
                        :size :mini}}
@@ -215,14 +215,14 @@ Loaders can appear inline with content
     [h/fake-content]]
 
 
-   [s/segment {}
+   [s/segment {:soda {:type :default}}
     [:div.ui.active.dimmer
      [s/loader {:soda {:type :text
                        :size :small}}
       "Loading"]]
     [h/fake-content]]
 
-   [s/segment {}
+   [s/segment {:soda {:type :default}}
     [:div.ui.active.dimmer
      [s/loader {:soda {:type :text
                        :size :medium}}
@@ -230,7 +230,7 @@ Loaders can appear inline with content
     [h/fake-content]]
 
 
-   [s/segment {}
+   [s/segment {:soda {:type :default}}
     [:div.ui.active.dimmer
      [s/loader {:soda {:type :text
                        :size :lage}}
@@ -259,9 +259,9 @@ Loaders can have different sizes
     [h/fake-content]]
 
    ;; with dimmer
-   [s/segment {}
+   [s/segment {:soda {:type :default}}
     [:div.ui.active.inverted.dimmer
-     [s/loader {}]]
+     [s/loader {:soda {:type :default}}]]
     [h/fake-content]]
    ])
 

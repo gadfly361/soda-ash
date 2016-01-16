@@ -18,6 +18,7 @@
 
 * **default tag** :div
 * **:type**
+    :default |
     *RAISED*
     :raised |
     *STACKED*
@@ -61,7 +62,7 @@ where
 ;; Segment
 
 (defn segment []
-  [s/segment {}
+  [s/segment {:soda {:type :default}}
    [h/fake-content]])
 
 (defcard-doc
@@ -274,7 +275,7 @@ Notes:
 
 (defn padded []
   [:div
-   [s/segment {}
+   [s/segment {:soda {:type :default}}
     [h/fake-content]]
    [s/segment {:soda {:padded :default}}
     [h/fake-content]]
@@ -412,7 +413,7 @@ These colors can be inverted
 
 (defn emphasis []
   [:div
-   [s/segment {}
+   [s/segment {:soda {:type :default}}
     [h/fake-content]]
    [s/segment {:soda {:emphasis :secondary}}
     [h/fake-content]]

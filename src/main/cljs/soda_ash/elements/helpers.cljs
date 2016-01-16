@@ -28,9 +28,10 @@
       (string/replace #"-" " ")))
 
 (defn type->class [v type-set e-name]
-  (if (type-set v)
-    (value->class v)
-    (throw-type-error v e-name)))
+  (when-not (= :default v)
+    (if (type-set v)
+      (value->class v)
+      (throw-type-error v e-name))))
 
 (defn bool->class [k v]
   (when v

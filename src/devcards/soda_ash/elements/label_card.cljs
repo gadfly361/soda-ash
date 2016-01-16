@@ -18,6 +18,7 @@
 
 * **default tag** :div
 * **:type**
+    :default |
     *ATTACHED*
     :top-attached |
     :bottom-attached |
@@ -72,7 +73,7 @@ where
 ;; Label
 
 (defn label []
-  [s/label {}
+  [s/label {:soda {:type :default}}
    [s/icon {:soda {:icon :mail}}]
    "23"])
 
@@ -262,27 +263,27 @@ A label can appear as a ribbon attaching itself to an element.
 
 (defn attached []
   [:div
-   [s/segment {}
+   [s/segment {:soda {:type :default}}
     [s/label {:soda {:type :top-attached}} "HTML"]
     [h/fake-content]]
 
-   [s/segment {}
+   [s/segment {:soda {:type :default}}
     [s/label {:soda {:type :bottom-attached}} "CSS"]
     [h/fake-content]]
 
-   [s/segment {}
+   [s/segment {:soda {:type :default}}
     [s/label {:soda {:type :top-right-attached}} "Code"]
     [h/fake-content]]
 
-   [s/segment {}
+   [s/segment {:soda {:type :default}}
     [s/label {:soda {:type :top-left-attached}} "View"]
     [h/fake-content]]
 
-   [s/segment {}
+   [s/segment {:soda {:type :default}}
     [s/label {:soda {:type :bottom-left-attached}} "User View"]
     [h/fake-content]]
 
-   [s/segment {}
+   [s/segment {:soda {:type :default}}
     [s/label {:soda {:type :bottom-right-attached}} "Admin View"]
     [h/fake-content]]])
 
@@ -371,7 +372,7 @@ A label can float above another element
 ;; Detail
 
 (defn detail []
-  [s/label {}
+  [s/label {:soda {:type :default}}
    "Dogs"
    [:div.detail "214"]])
 
@@ -615,7 +616,7 @@ A label can have different colors
     "Tiny"]
    [s/label {:soda {:size :small}}
     "Small"]
-   [s/label {}
+   [s/label {:soda {:type :default}}
     "Medium"]
    [s/label {:soda {:size :large}}
     "Large"]

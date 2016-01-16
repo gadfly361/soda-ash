@@ -18,6 +18,7 @@
 
 * **default tag** :div
 * **:type**
+    :default |
     *HEADERS* :huge | :large | :medium | :small | :tiny
     *ICON* :icon
     *SUB* :sub
@@ -361,7 +362,7 @@ A header can sit to the left or right of other content
 ;; alignment
 
 (defn alignment []
-  [s/segment {}
+  [s/segment {:soda {:type :default}}
    [s/header {:soda {:aligned :right}} "Right"]
    [s/header {:soda {:aligned :left}} "Left"]
    [s/header {:soda {:aligned :justified}}

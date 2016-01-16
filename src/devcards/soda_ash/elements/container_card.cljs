@@ -17,7 +17,7 @@
 # container
 
 * **default tag** :div
-* **:type** :text
+* **:type** :default | :text
 * **variations** :aligned | :fluid?
 
 where
@@ -43,7 +43,7 @@ The devcards have their own width, so some of the options like :fluid? aren't pr
 ;; Container
 
 (defn container []
-  [s/container {}
+  [s/container {:soda {:type :default}}
    [h/fake-content]])
 
 (defcard-doc

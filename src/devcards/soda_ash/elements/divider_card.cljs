@@ -18,7 +18,7 @@
 
 * **default tag** :div
 * **:type**
-    :vertical | :horizontal
+    :default | :vertical | :horizontal
 * **variations** clearing? | fitted? | hidden? | inverted? | section?
 
 ---
@@ -38,7 +38,7 @@
 (defn divider []
   [:div
    [h/fake-content]
-   [s/divider {}]
+   [s/divider {:soda {:type :default}}]
    [h/fake-content]])
 
 (defcard-doc
@@ -209,7 +209,7 @@ A divider can provide greater margins to divide sections of content
 ;; Clearing
 
 (defn clearing []
-  [s/segment {}
+  [s/segment {:soda {:type :default}}
    [s/header {:soda {:tag :h2
                      :floated :right}}
     "Floated Content"]

@@ -238,14 +238,14 @@ An image may appear circular
               :src "/images/wireframe/square-image.png"}]
     "Top Aligned"
 
-   [s/divider {}]
+   [s/divider {:soda {:type :default}}]
 
     [s/image {:soda {:aligned :middle
                      :size :tiny}
               :src "/images/wireframe/square-image.png"}]
     "Middle Aligned"
 
-   [s/divider {}]
+   [s/divider {:soda {:type :default}}]
 
     [s/image {:soda {:aligned :bottom
                      :size :tiny}
@@ -267,7 +267,7 @@ An image can specify its vertical alignment
 ;; centered
 
 (defn centered []
-  [s/segment {}
+  [s/segment {:soda {:type :default}}
    [s/image {:soda {:centered? true
                     :size :medium}
              :src "/images/wireframe/square-image.png"}]
@@ -288,7 +288,7 @@ An image can appear centered in a content block
 ;; spaced
 
 (defn spaced []
-  [s/segment {}
+  [s/segment {:soda {:type :default}}
    [s/image {:soda {:spaced :right
                     :size :mini}
              :src "/images/wireframe/square-image.png"}]
@@ -321,7 +321,7 @@ An image can appear spaced in a content block
 ;; floated
 
 (defn floated []
-  [s/segment {}
+  [s/segment {:soda {:type :default}}
    [s/image {:soda {:floated :left
                     :size :small}
              :src "/images/wireframe/square-image.png"}]
