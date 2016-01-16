@@ -11,6 +11,8 @@ the regex-hell of strings and puts them into hash-maps.
 * add tests for soda->class
 * add tests for :add-class
 * add tests for :default type
+* button content
+* button groups
 * icon groups
 * image groups
 * label groups
