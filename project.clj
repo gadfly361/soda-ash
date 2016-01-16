@@ -29,6 +29,14 @@
                 :output-dir "resources/public/js/compiled/devcards_out"
                 :source-map-timestamp true }}
 
+    {:id "hostedcards"
+     :source-paths ["src/devcards" "src/main/cljs"]
+     :compiler {:main "soda-ash.core-card"
+                :devcards true
+                :asset-path "js/compiled/devcards_out"
+                :output-to  "resources/public/js/compiled/devcards.js"
+                :optimizations :advanced}}
+
     {:id "test"
      :source-paths ["src/main/cljs" "src/test/cljs"]
      :compiler {:output-to "resources/public/js/compiled/test.js"

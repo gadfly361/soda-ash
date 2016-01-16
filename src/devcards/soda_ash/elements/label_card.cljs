@@ -12,7 +12,7 @@
 
 (defcard-doc
 "
-[back](http://localhost:3449/#!/soda_ash.an_overview_card)
+[back](#!/soda_ash.an_overview_card)
 
 # label
 
@@ -96,17 +96,17 @@ A label
   [:div
    [s/label {:soda {:tag :a
                     :type :image}}
-    [s/image {:src "/images/avatar/small/joe.jpg"}]
+    [s/image {:src "images/avatar/small/joe.jpg"}]
     "Joe"
     [s/icon {:soda {:icon :delete}}]]
    [s/label {:soda {:tag :a
                     :type :image}}
-    [s/image {:src "/images/avatar/small/elliot.jpg"}]
+    [s/image {:src "images/avatar/small/elliot.jpg"}]
     "Elliot"
     [s/icon {:soda {:icon :delete}}]]
    [s/label {:soda {:tag :a
                     :type :image}}
-    [s/image {:src "/images/avatar/small/stevie.jpg"}]
+    [s/image {:src "images/avatar/small/stevie.jpg"}]
     "Stevie"
     [s/icon {:soda {:icon :delete}}]]
    ])
@@ -170,7 +170,7 @@ A label can point to content next to it
     [:div.ui.fluid.image
      [s/label {:soda {:type :left-corner}}
       [s/icon {:soda {:icon :heart}}]]
-     [s/image {:src "/images/wireframe/image.png"}]
+     [s/image {:src "images/wireframe/image.png"}]
      ]]
 
    [:div.column
@@ -178,7 +178,7 @@ A label can point to content next to it
      [s/label {:soda {:type :right-corner
                       :color :red}}
       [s/icon {:soda {:icon :save}}]]
-     [s/image {:src "/images/wireframe/image.png"}]
+     [s/image {:src "images/wireframe/image.png"}]
      ]]])
 
 (defcard-doc
@@ -420,11 +420,11 @@ A label can contain a icon
    [s/label {:soda {:tag :a}}
     [s/image {:soda {:spaced :right
                      :avatar? true}
-              :src "/images/avatar/small/elliot.jpg"}]
+              :src "images/avatar/small/elliot.jpg"}]
     "Elliot"]
 
    [s/label {:soda {:tag :a}}
-    [:img {:src "/images/avatar/small/stevie.jpg"}]
+    [:img {:src "images/avatar/small/stevie.jpg"}]
     "Stevie"]])
 
 (defcard-doc
@@ -535,7 +535,7 @@ A label can be circular
 
    [s/label {:soda {:type :image
                     :basic? true}}
-    [s/image {:src "/images/avatar/small/elliot.jpg"}]
+    [s/image {:src "images/avatar/small/elliot.jpg"}]
     "Elliot"]])
 
 (defcard-doc

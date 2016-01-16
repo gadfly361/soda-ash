@@ -12,7 +12,9 @@ reactively update.
 
 ## Docs
 
-TODO: add link to live docs.
+The
+**[documentation](http://soda-ash.s3-website-us-east-1.amazonaws.com/#!/soda_ash.an_overview_card)**
+has *lots* of devcard examples.
 
 If you have questions, I can usually be found hanging out in the
 [coljurians](http://clojurians.net/) #reagent slack channel (my handle
@@ -23,15 +25,25 @@ is [@gadfly361](https://twitter.com/gadfly361)).
 Put the following in the `:dependencies` vector of your *project.clj*
 
 ```
-[soda-ash "0.1.0-alpha"] ;; this isn't on clojars yet
+[soda-ash "0.1.0-alpha"]
 ```
 
 Then require soda-ash in your namespace.
 
 ```
 (ns foo.bar
-  (:require [soda-ash.element :as s]))
+(:require [soda-ash.element :as s]))
 ```
+
+## Roadmap
+
+First priority is to finish coverage of Semantic UI's Elements. The following remain:
+
+- List
+- Rail
+- Step
+
+Not sure which section I will cover after that, but probably Collections.
 
 ## Development
 
@@ -45,6 +57,17 @@ lein figwheel devcards
 Figwheel will automatically push cljs changes to the browser.
 
 Wait a bit, then browse to [http://localhost:3449](http://localhost:3449).
+
+---
+
+To build a minified version:
+
+```
+lein clean
+lein cljsbuild once hostedcards
+```
+
+Then open *resources/public/index.html*
 
 ### Tests
 

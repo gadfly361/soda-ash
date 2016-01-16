@@ -12,7 +12,7 @@
 
 (defcard-doc
 "
-[back](http://localhost:3449/#!/soda_ash.an_overview_card)
+[back](#!/soda_ash.an_overview_card)
 
 # header
 
@@ -157,7 +157,7 @@ A header can be formatted to emphasize an sub
 
 (defn image []
   [s/header {:soda {:tag :h2}}
-   [s/image {:src "/images/icons/school.png"}]
+   [s/image {:src "images/icons/school.png"}]
    [:div.content
     "Learn More"]])
 

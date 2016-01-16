@@ -7,7 +7,7 @@
 
 (defcard-doc
   "
-# Soda-ash
+# Soda-ash (version 0.1.0-alpha)
 
 Soda-ash is an interface between clojurescript's [reagent](https://github.com/reagent-project/reagent) and [Semantic UI](http://semantic-ui.com/).
 
@@ -15,18 +15,18 @@ Soda-ash is an interface between clojurescript's [reagent](https://github.com/re
 
 ## Elements
 
-* [button](http://localhost:3449/#!/soda_ash.elements.button_card)
-* [container](http://localhost:3449/#!/soda_ash.elements.container_card)
-* [divider](http://localhost:3449/#!/soda_ash.elements.divider_card)
-* [flag](http://localhost:3449/#!/soda_ash.elements.flag_card)
-* [header](http://localhost:3449/#!/soda_ash.elements.header_card)
-* [icon](http://localhost:3449/#!/soda_ash.elements.icon_card)
-* [image](http://localhost:3449/#!/soda_ash.elements.image_card)
-* [input](http://localhost:3449/#!/soda_ash.elements.input_card)
-* [label](http://localhost:3449/#!/soda_ash.elements.label_card)
-* [loader](http://localhost:3449/#!/soda_ash.elements.loader_card)
-* [reveal](http://localhost:3449/#!/soda_ash.elements.reveal_card)
-* [segment](http://localhost:3449/#!/soda_ash.elements.segment_card)
+* [button](#!/soda_ash.elements.button_card)
+* [container](#!/soda_ash.elements.container_card)
+* [divider](#!/soda_ash.elements.divider_card)
+* [flag](#!/soda_ash.elements.flag_card)
+* [header](#!/soda_ash.elements.header_card)
+* [icon](#!/soda_ash.elements.icon_card)
+* [image](#!/soda_ash.elements.image_card)
+* [input](#!/soda_ash.elements.input_card)
+* [label](#!/soda_ash.elements.label_card)
+* [loader](#!/soda_ash.elements.loader_card)
+* [reveal](#!/soda_ash.elements.reveal_card)
+* [segment](#!/soda_ash.elements.segment_card)
 
 ## Why use soda-ash?
 
@@ -40,7 +40,7 @@ What was once this:
 ```clojure
 [:a.ui.basic.teal.label
   [:img.ui.right.spaced.avatar.image
-    {:src \"/images/avatar/small/elliot.jpg\"}
+    {:src \"images/avatar/small/elliot.jpg\"}
     \"Elliot\"]]
 ```
 
@@ -52,7 +52,7 @@ Becomes this:
                  :color :teal}}
    [s/image {:soda {:spaced :right
                     :avatar? true}
-             :src \"/images/avatar/small/elliot.jpg\"}]
+             :src \"images/avatar/small/elliot.jpg\"}]
    \"Elliot\"]
 ```")
 
@@ -62,7 +62,7 @@ Becomes this:
                    :color :teal}}
    [s/image {:soda {:spaced :right
                     :avatar? true}
-             :src "/images/avatar/small/elliot.jpg"}]
+             :src "images/avatar/small/elliot.jpg"}]
    "Elliot"])
 
 (defcard-doc

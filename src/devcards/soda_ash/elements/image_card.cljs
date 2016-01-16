@@ -12,7 +12,7 @@
 
 (defcard-doc
   "
-[back](http://localhost:3449/#!/soda_ash.an_overview_card)
+[back](#!/soda_ash.an_overview_card)
 
 # image
 
@@ -48,7 +48,7 @@ where
 
 (defn image []
   [s/image {:soda {:size :small}
-            :src "/images/wireframe/image.png"}])
+            :src "images/wireframe/image.png"}])
 
 (defcard-doc
   "
@@ -68,7 +68,7 @@ An image
   [:a {:href "http://google.com"
        :target "_blank"}
    [s/image {:soda {:size :medium}
-             :src "/images/wireframe/image.png"}]])
+             :src "images/wireframe/image.png"}]])
 
 (defcard-doc
   "
@@ -94,7 +94,7 @@ An image can be formatted to link to other content
 
 (defn hidden []
   [s/image {:soda {:state :hidden}
-            :src "/images/wireframe/image.png"}])
+            :src "images/wireframe/image.png"}])
 
 (defcard-doc
   "
@@ -113,7 +113,7 @@ An image can be hidden
 (defn disabled []
   [s/image {:soda {:state :disabled
                    :size :medium}
-            :src "/images/wireframe/image.png"}])
+            :src "images/wireframe/image.png"}])
 
 (defcard-doc
   "
@@ -140,7 +140,7 @@ An image can show that it is disabled and cannot be selected
 (defn avatar []
   [:div
   [s/image {:soda {:avatar? true}
-            :src "/images/wireframe/image.png"}]
+            :src "images/wireframe/image.png"}]
    "Username"])
 
 (defcard-doc
@@ -160,7 +160,7 @@ An image may be formatted to appear inline with text as an avatar
 (defn bordered []
   [s/image {:soda {:bordered? true
                    :size :medium}
-            :src "/images/wireframe/white-image.png"}])
+            :src "images/wireframe/white-image.png"}])
 
 (defcard-doc
   "
@@ -178,7 +178,7 @@ An image may include a border to emphasize the edges of white or transparent con
 
 (defn fluid []
   [s/image {:soda {:fluid? true}
-            :src "/images/wireframe/image.png"}])
+            :src "images/wireframe/image.png"}])
 
 (defcard-doc
   "
@@ -197,7 +197,7 @@ An image can take up the width of its container
 (defn rounded []
   [s/image {:soda {:rounded? true
                    :size :medium}
-            :src "/images/wireframe/image.png"}])
+            :src "images/wireframe/image.png"}])
 
 (defcard-doc
   "
@@ -216,7 +216,7 @@ An image may appear rounded
 (defn circular []
   [s/image {:soda {:circular? true
                    :size :medium}
-            :src "/images/wireframe/square-image.png"}])
+            :src "images/wireframe/square-image.png"}])
 
 (defcard-doc
   "
@@ -236,21 +236,21 @@ An image may appear circular
   [:div
     [s/image {:soda {:aligned :top
                      :size :tiny}
-              :src "/images/wireframe/square-image.png"}]
+              :src "images/wireframe/square-image.png"}]
     "Top Aligned"
 
    [s/divider {:soda {:type :default}}]
 
     [s/image {:soda {:aligned :middle
                      :size :tiny}
-              :src "/images/wireframe/square-image.png"}]
+              :src "images/wireframe/square-image.png"}]
     "Middle Aligned"
 
    [s/divider {:soda {:type :default}}]
 
     [s/image {:soda {:aligned :bottom
                      :size :tiny}
-              :src "/images/wireframe/square-image.png"}]
+              :src "images/wireframe/square-image.png"}]
     "Bottom Aligned"])
 
 (defcard-doc
@@ -271,7 +271,7 @@ An image can specify its vertical alignment
   [s/segment {:soda {:type :default}}
    [s/image {:soda {:centered? true
                     :size :medium}
-             :src "/images/wireframe/square-image.png"}]
+             :src "images/wireframe/square-image.png"}]
    [h/fake-content]])
 
 (defcard-doc
@@ -292,19 +292,19 @@ An image can appear centered in a content block
   [s/segment {:soda {:type :default}}
    [s/image {:soda {:spaced :right
                     :size :mini}
-             :src "/images/wireframe/square-image.png"}]
+             :src "images/wireframe/square-image.png"}]
 
    "foo bar baz"
 
    [s/image {:soda {:spaced :default
                     :size :mini}
-             :src "/images/wireframe/square-image.png"}]
+             :src "images/wireframe/square-image.png"}]
 
    "foo bar baz"
 
    [s/image {:soda {:spaced :left
                     :size :mini}
-             :src "/images/wireframe/square-image.png"}]
+             :src "images/wireframe/square-image.png"}]
    ])
 
 (defcard-doc
@@ -325,13 +325,13 @@ An image can appear spaced in a content block
   [s/segment {:soda {:type :default}}
    [s/image {:soda {:floated :left
                     :size :small}
-             :src "/images/wireframe/square-image.png"}]
+             :src "images/wireframe/square-image.png"}]
    [h/fake-content]
    [h/fake-content]
 
    [s/image {:soda {:floated :right
                     :size :small}
-             :src "/images/wireframe/square-image.png"}]
+             :src "images/wireframe/square-image.png"}]
    [h/fake-content]
    [h/fake-content]
    ])
@@ -353,21 +353,21 @@ An image can appear floated in a content block
 (defn size []
   [:div
    [s/image {:soda {:size :mini}
-             :src "/images/wireframe/square-image.png"}]
+             :src "images/wireframe/square-image.png"}]
    [s/image {:soda {:size :tiny}
-             :src "/images/wireframe/square-image.png"}]
+             :src "images/wireframe/square-image.png"}]
    [s/image {:soda {:size :small}
-             :src "/images/wireframe/square-image.png"}]
+             :src "images/wireframe/square-image.png"}]
    [s/image {:soda {:size :medium}
-             :src "/images/wireframe/square-image.png"}]
+             :src "images/wireframe/square-image.png"}]
    [s/image {:soda {:size :large}
-             :src "/images/wireframe/square-image.png"}]
+             :src "images/wireframe/square-image.png"}]
    [s/image {:soda {:size :big}
-             :src "/images/wireframe/square-image.png"}]
+             :src "images/wireframe/square-image.png"}]
    [s/image {:soda {:size :huge}
-             :src "/images/wireframe/square-image.png"}]
+             :src "images/wireframe/square-image.png"}]
    [s/image {:soda {:size :massive}
-             :src "/images/wireframe/square-image.png"}]])
+             :src "images/wireframe/square-image.png"}]])
 
 (defcard-doc
   "
@@ -395,9 +395,9 @@ An image can appear size in a content block
   [s/image {:soda {:tag :div
                    :group? true
                    :size :tiny}}
-   [s/image {:src "/images/wireframe/image.png"}]
-   [s/image {:src "/images/wireframe/image.png"}]
-   [s/image {:src "/images/wireframe/image.png"}]])
+   [s/image {:src "images/wireframe/image.png"}]
+   [s/image {:src "images/wireframe/image.png"}]
+   [s/image {:src "images/wireframe/image.png"}]])
 
 (defcard-doc
   "

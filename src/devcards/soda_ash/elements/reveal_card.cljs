@@ -12,7 +12,7 @@
 
 (defcard-doc
 "
-[back](http://localhost:3449/#!/soda_ash.an_overview_card)
+[back](#!/soda_ash.an_overview_card)
 
 # reveal
 
@@ -44,11 +44,11 @@
 
    [:div.visible.content
     [s/image {:soda {:size :small}
-              :src "/images/wireframe/square-image.png"}]]
+              :src "images/wireframe/square-image.png"}]]
 
    [:div.hidden.content
     [s/image {:soda {:size :small}
-              :src "/images/avatar/large/ade.jpg"}]]])
+              :src "images/avatar/large/ade.jpg"}]]])
 
 (defcard-doc
   "
@@ -69,11 +69,11 @@ An element can disappear to reveal content below
 
    [:div.visible.content
     [s/image {:soda {:size :small}
-              :src "/images/wireframe/square-image.png"}]]
+              :src "images/wireframe/square-image.png"}]]
 
    [:div.hidden.content
     [s/image {:soda {:size :small}
-              :src "/images/avatar/large/ade.jpg"}]]])
+              :src "images/avatar/large/ade.jpg"}]]])
 
 (defcard-doc
   "
@@ -94,11 +94,11 @@ An element can move in a direction to reveal content
 
    [:div.visible.content
     [s/image {:soda {:size :small}
-              :src "/images/wireframe/square-image.png"}]]
+              :src "images/wireframe/square-image.png"}]]
 
    [:div.hidden.content
     [s/image {:soda {:size :small}
-              :src "/images/avatar/large/ade.jpg"}]]])
+              :src "images/avatar/large/ade.jpg"}]]])
 
 (defcard-doc
   (mkdn-pprint-source move-right))
@@ -114,11 +114,11 @@ An element can move in a direction to reveal content
 
    [:div.visible.content
     [s/image {:soda {:size :small}
-              :src "/images/wireframe/square-image.png"}]]
+              :src "images/wireframe/square-image.png"}]]
 
    [:div.hidden.content
     [s/image {:soda {:size :small}
-              :src "/images/avatar/large/ade.jpg"}]]])
+              :src "images/avatar/large/ade.jpg"}]]])
 
 (defcard-doc
   (mkdn-pprint-source move-up))
@@ -134,11 +134,11 @@ An element can move in a direction to reveal content
 
    [:div.visible.content
     [s/image {:soda {:size :small}
-              :src "/images/wireframe/square-image.png"}]]
+              :src "images/wireframe/square-image.png"}]]
 
    [:div.hidden.content
     [s/image {:soda {:size :small}
-              :src "/images/avatar/large/ade.jpg"}]]])
+              :src "images/avatar/large/ade.jpg"}]]])
 
 (defcard-doc
   (mkdn-pprint-source move-down))
@@ -172,11 +172,11 @@ An element can rotate to reveal content below
 
    [:div.visible.content
     [s/image {:soda {:size :small}
-              :src "/images/avatar/large/ade.jpg"}]]
+              :src "images/avatar/large/ade.jpg"}]]
 
    [:div.hidden.content
     [s/image {:soda {:size :small}
-              :src "/images/wireframe/square-image.png"}]]])
+              :src "images/wireframe/square-image.png"}]]])
 
 (defcard-doc
   "
@@ -201,11 +201,11 @@ Notes:
 
    [:div.hidden.content
     [s/image {:soda {:size :small}
-              :src "/images/avatar/large/ade.jpg"}]]
+              :src "images/avatar/large/ade.jpg"}]]
 
    [:div.visible.content
     [s/image {:soda {:size :small}
-              :src "/images/wireframe/square-image.png"}]]])
+              :src "images/wireframe/square-image.png"}]]])
 
 (defcard-doc
   "
@@ -235,11 +235,11 @@ A reveal may contain content that is hidden before user interaction
 
    [:div.hidden.content ;; <-- active overrides this and makes visible
     [s/image {:soda {:size :small}
-              :src "/images/avatar/large/nan.jpg"}]]
+              :src "images/avatar/large/nan.jpg"}]]
 
    [:div.visible.content
     [s/image {:soda {:size :small}
-              :src "/images/wireframe/square-image.png"}]]])
+              :src "images/wireframe/square-image.png"}]]])
 
 (defcard-doc
   "
@@ -266,11 +266,11 @@ Notes:
 
    [:div.disabled.content
     [s/image {:soda {:size :small}
-              :src "/images/avatar/large/nan.jpg"}]]
+              :src "images/avatar/large/nan.jpg"}]]
 
    [:div.hidden.content
     [s/image {:soda {:size :small}
-              :src "/images/wireframe/square-image.png"}]]])
+              :src "images/wireframe/square-image.png"}]]])
 
 (defcard-doc
   "
@@ -300,11 +300,11 @@ A disabled reveal will not animate when hovered
 
    [:div.hidden.content
     [s/image {:soda {:size :small}
-              :src "/images/avatar/large/nan.jpg"}]]
+              :src "images/avatar/large/nan.jpg"}]]
 
    [:div.visible.content
     [s/image {:soda {:size :small}
-              :src "/images/wireframe/square-image.png"}]]])
+              :src "images/wireframe/square-image.png"}]]])
 
 (defcard-doc
   "
