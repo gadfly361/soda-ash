@@ -30,8 +30,10 @@
         (h/set-initial-values! ratom path sanitized-soda))
 
       (fn []
-        (let [soda-class (h/soda->class e-name
-                                        sanitized-soda
+        (let [m (when ratom @ratom)
+              r-soda (get-in m (flatten [path :soda]))
+              soda-class (h/soda->class e-name
+                                        (or r-soda sanitized-soda)
                                         type-set
                                         bool-set
                                         mod-set
