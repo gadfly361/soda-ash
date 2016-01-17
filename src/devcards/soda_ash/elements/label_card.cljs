@@ -633,7 +633,7 @@ A label can have different colors
   "
 ### Size
 
-A label can have different colors
+A label can have different sizes
 "
   (mkdn-pprint-source size))
 
@@ -710,7 +710,7 @@ Labels can share colors together
   "
 ### Tag Group
 
-abels can share tag formatting
+Labels can share tag formatting
 "
   (mkdn-pprint-source tag-group))
 

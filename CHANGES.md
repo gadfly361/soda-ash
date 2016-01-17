@@ -1,7 +1,7 @@
 ## 0.1.0-alpha2
 
 * initial release
-* targets Semantic UI version 2.1.8
+* targets Semantic UI version 2.1.8 and Reagent 0.5.1
 
 ## 0.1.0-alpha1
 

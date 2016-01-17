@@ -277,7 +277,7 @@ A basic button is less pronounced
   "
 ### Inverted
 
-A inverted button is less pronounced
+A button can be formatted to appear on dark backgrounds
 "
   (mkdn-pprint-source inverted))
 
@@ -731,7 +731,7 @@ A button can hint towards a negative consequence
   "
 ### Fluid
 
-A button can hint towards a fluid consequence
+A button can take the width of its container
 "
   (mkdn-pprint-source fluid))
 
@@ -750,7 +750,7 @@ A button can hint towards a fluid consequence
   "
 ### Circular
 
-A button can hint towards a circular consequence
+A button can be circular
 "
   (mkdn-pprint-source circular))
 

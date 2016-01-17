@@ -81,8 +81,9 @@ classes and have your component reactively update.
 (defn [icon]
  [s/icon {:soda {:ratom app-state
                  :path [:foo :bar]
-                 :icon :users
-                 :color :blue}}])
+                 :icon :sound
+                 :color :violet
+                 :size :large}}])
 ```
 ")
 

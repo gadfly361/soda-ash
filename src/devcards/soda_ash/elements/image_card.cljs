@@ -340,7 +340,7 @@ An image can appear spaced in a content block
   "
 ### Floated
 
-An image can appear floated in a content block
+An image can sit to the left or right of other content
 "
   (mkdn-pprint-source floated))
 
@@ -373,7 +373,7 @@ An image can appear floated in a content block
   "
 ### Size
 
-An image can appear size in a content block
+An image may appear at different sizes
 "
   (mkdn-pprint-source size))
 

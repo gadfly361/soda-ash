@@ -174,7 +174,7 @@ A divider can be fitted, without any space above or below it.
   "
 ### Hidden
 
-A divider can be hidden, without any space above or below it.
+A hidden divider divides content without creating a dividing line
 "
   (mkdn-pprint-source hidden))
 

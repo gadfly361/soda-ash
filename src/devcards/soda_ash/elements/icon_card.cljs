@@ -302,7 +302,7 @@ An icon can be formatted to appear bordered
   "
 ### Colored
 
-An icon can be formatted to appear colored
+An icon can be formatted with different colors
 "
   (mkdn-pprint-source colored))
 
@@ -358,7 +358,7 @@ An icon can be formatted to appear colored
   "
 ### Inverted
 
-An icon can be formatted to appear inverted
+An icon can have its colors inverted for contrast
 "
   (mkdn-pprint-source inverted))
 
@@ -418,7 +418,7 @@ Several icons can be used together as a group
   "
 ### Corner Icons
 
-Several corner-icons can be used together as a group
+A group of icons can display a smaller corner icon
 "
   (mkdn-pprint-source corner-icons))
 

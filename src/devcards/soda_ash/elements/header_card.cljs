@@ -137,7 +137,7 @@ A header can be formatted to emphasize an icon
   "
 ### Sub Headers
 
-A header can be formatted to emphasize an sub
+Headers may be formatted to label smaller or de-emphasized content.
 "
   (mkdn-pprint-source sub-headers))
 
@@ -226,7 +226,7 @@ A header may contain an icon
   "
 ### Subheader
 
-A header may contain an subheader
+Headers may contain subheaders
 "
   (mkdn-pprint-source subheader))
 
@@ -277,9 +277,9 @@ A header can show that it is inactive
 
 (defcard-doc
   "
-### Disabled
+### Dividing
 
-A header can show that it is inactive
+A header can be formatted to divide itself from the content below it
 "
   (mkdn-pprint-source dividing))
 
@@ -297,9 +297,9 @@ A header can show that it is inactive
 
 (defcard-doc
   "
-### Disabled
+### Block
 
-A header can show that it is inactive
+A header can be formatted to appear inside a content block
 "
   (mkdn-pprint-source block))
 
@@ -327,9 +327,9 @@ A header can show that it is inactive
 
 (defcard-doc
   "
-### Disabled
+### Attached
 
-A header can show that it is inactive
+A header can be attached to other content, like a segment
 "
   (mkdn-pprint-source attached))
 
