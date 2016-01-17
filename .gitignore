@@ -6,3 +6,6 @@ out
 dev-resources
 
 figwheel_server.log
+
+pom.xml
+pom.xml.asc

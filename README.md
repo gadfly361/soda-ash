@@ -17,7 +17,7 @@ The
 has *lots* of devcard examples.
 
 If you have questions, I can usually be found hanging out in the
-[coljurians](http://clojurians.net/) #reagent slack channel (my handle
+[clojurians](http://clojurians.net/) #reagent slack channel (my handle
 is [@gadfly361](https://twitter.com/gadfly361)).
 
 ## Usage
@@ -25,7 +25,7 @@ is [@gadfly361](https://twitter.com/gadfly361)).
 Put the following in the `:dependencies` vector of your *project.clj*
 
 ```
-[soda-ash "0.1.0-alpha"]
+[soda-ash "0.1.0-alpha2"]
 ```
 
 Then require soda-ash in your namespace.
@@ -33,6 +33,12 @@ Then require soda-ash in your namespace.
 ```
 (ns foo.bar
 (:require [soda-ash.element :as s]))
+```
+
+Finally, add Semantic UI to your index.html file:
+
+```
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.css">
 ```
 
 ## Roadmap

@@ -1,4 +1,10 @@
-(defproject soda-ash "0.1.0-SNAPSHOT"
+(defproject soda-ash "0.1.0-alpha2"
+  :description "Soda-ash is an interface between clojurescript's reagent
+                and Semantic UI"
+  :url "https://github.com/gadfly361/soda-ash"
+  :license {:name "MIT"}
+  :scm {:name "git"
+        :url "https://github.com/gadfly361/soda-ash"}
   :dependencies
   [[org.clojure/clojure "1.7.0"]
    [org.clojure/clojurescript "1.7.170"]
@@ -9,6 +15,8 @@
    [prismatic/dommy "1.1.0"]]
 
   :min-lein-version "2.5.3"
+
+  :source-paths ["src/main/cljs"] ;; needed for clojars
 
   :plugins
   [[lein-cljsbuild "1.1.1"]
