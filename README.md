@@ -1,5 +1,7 @@
 # soda-ash
 
+[![Build Status](https://travis-ci.org/gadfly361/soda-ash.svg?branch=master)](https://travis-ci.org/gadfly361/soda-ash)
+
 Soda-ash is an interface between clojurescript's [reagent](https://github.com/reagent-project/reagent) and [Semantic UI](http://semantic-ui.com/).
 
 Semantic UI is awesome ... however, at its core, you are concatenating
