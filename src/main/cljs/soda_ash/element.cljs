@@ -10,6 +10,7 @@
    [soda-ash.elements.input :as input]
    [soda-ash.elements.label :as label]
    [soda-ash.elements.loader :as loader]
+   [soda-ash.elements.rail :as rail]
    [soda-ash.elements.reveal :as reveal]
    [soda-ash.elements.segment :as segment]))
 
@@ -33,6 +34,8 @@
 (def label label/element)
 
 (def loader loader/element)
+
+(def rail rail/element)
 
 (def reveal reveal/element)
 

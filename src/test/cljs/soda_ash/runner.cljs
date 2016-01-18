@@ -12,6 +12,7 @@
    [soda-ash.elements.input-test]
    [soda-ash.elements.label-test]
    [soda-ash.elements.loader-test]
+   [soda-ash.elements.rail-test]
    [soda-ash.elements.reveal-test]
    [soda-ash.elements.segment-test]))
 
@@ -28,5 +29,6 @@
  'soda-ash.elements.input-test
  'soda-ash.elements.label-test
  'soda-ash.elements.loader-test
+ 'soda-ash.elements.rail-test
  'soda-ash.elements.reveal-test
  'soda-ash.elements.segment-test)

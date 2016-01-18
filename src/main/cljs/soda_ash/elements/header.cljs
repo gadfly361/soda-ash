@@ -15,12 +15,11 @@
 ;; Types
 
 (def content-types
-  (sorted-set
-   :huge
-   :large
-   :medium
-   :small
-   :tiny))
+  #{:huge
+    :large
+    :medium
+    :small
+    :tiny})
 
 (def icon-type #{:icon})
 

@@ -11,6 +11,7 @@
             [soda-ash.elements.input-card]
             [soda-ash.elements.label-card]
             [soda-ash.elements.loader-card]
+            [soda-ash.elements.rail-card]
             [soda-ash.elements.reveal-card]
             [soda-ash.elements.segment-card]))
 
