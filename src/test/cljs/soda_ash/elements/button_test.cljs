@@ -28,6 +28,14 @@
     (is (= "ui button" class))))
 
 
+(deftest soda-add-class
+  (let [_ (reagent/render [s/button {:soda {:add-class "gadfly"}}] c)
+        node (sel1 c [:button])
+        class (h/get-class node)]
+    (is (= "ui gadfly button" class)
+        ":add-class should add a class between ui and button")))
+
+
 (def soda
   {:type :animated
    :circular? true

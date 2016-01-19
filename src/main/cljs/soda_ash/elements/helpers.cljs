@@ -27,6 +27,9 @@
   (-> (name v)
       (string/replace #"-" " ")))
 
+(defn add-class->class [v]
+  (value->class v))
+
 (defn type->class [v type-set e-name]
   (when-not (= :default v)
     (if (type-set v)
@@ -64,7 +67,7 @@
                    special-map]
   (when (keys soda)
     (->> (for [[k v] soda]
-           (cond (= :add-class k) (value->class v)
+           (cond (= :add-class k) (add-class->class v)
                  (= :type k) (type->class v type-set e-name)
                  (bool-set k) (bool->class k v)
                  (mod-set k) (mod->class k v)
@@ -93,7 +96,7 @@
 
 
 (defn sanitize-soda [soda]
-  (dissoc soda :ratom :path :tag :group?))
+  (dissoc soda :ratom :path :tag :ui? :group?))
 
 (defn sanitize-attrs [attrs]
   (dissoc attrs :soda))

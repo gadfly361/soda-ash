@@ -28,6 +28,11 @@
   (is (= "foo bar" (h/value->class :foo-bar))))
 
 
+(deftest add-class->class
+  (is (= "gadfly" (h/add-class->class :gadfly))
+  (is (= "soda ash" (h/add-class->class :soda-ash)))))
+
+
 (deftest type->class
   (is (nil? (h/type->class :default #{:foo} "baz")))
   (is (= "foo" (h/type->class :foo #{:foo} "baz")))
@@ -93,6 +98,7 @@
           :baz :quux} (h/sanitize-soda {:foo :bar
                                         :baz :quux
                                         :tag :div
+                                        :ui? false
                                         :group? true
                                         :ratom :foo-ratom
                                         :path :foo-path}))))
