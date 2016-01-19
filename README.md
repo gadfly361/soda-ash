@@ -45,13 +45,7 @@ Finally, add Semantic UI to your index.html file:
 
 ## Roadmap
 
-First priority is to finish coverage of Semantic UI's Elements. The following remain:
-
-- List
-- Rail
-- Step
-
-Not sure which section I will cover after that, but probably Collections.
+Next up, Collections.
 
 ## Development
 

@@ -13,7 +13,8 @@
             [soda-ash.elements.loader-card]
             [soda-ash.elements.rail-card]
             [soda-ash.elements.reveal-card]
-            [soda-ash.elements.segment-card]))
+            [soda-ash.elements.segment-card]
+            [soda-ash.elements.step-card]))
 
 
 (dc/start-devcard-ui!)

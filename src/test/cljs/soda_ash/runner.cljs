@@ -15,6 +15,7 @@
    [soda-ash.elements.rail-test]
    [soda-ash.elements.reveal-test]
    [soda-ash.elements.segment-test]
+   [soda-ash.elements.step-test]
    [soda-ash.elements.template-test]))
 
 
@@ -33,4 +34,5 @@
  'soda-ash.elements.rail-test
  'soda-ash.elements.reveal-test
  'soda-ash.elements.segment-test
+ 'soda-ash.elements.step-test
  'soda-ash.elements.template-test)
