@@ -92,7 +92,7 @@
     (check-classes class)))
 
 
-(deftest buttons-with-soda-with-ratom
+(deftest group-with-soda-with-ratom
   (let [ratom (reagent/atom {})
         _ (reagent/render [s/buttons {:soda (merge
                                              {:ratom ratom

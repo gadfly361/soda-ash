@@ -27,14 +27,14 @@ is [@gadfly361](https://twitter.com/gadfly361)).
 Put the following in the `:dependencies` vector of your *project.clj*
 
 ```
-[soda-ash "0.1.0-alpha2"]
+[soda-ash "0.1.0-beta"]
 ```
 
 Then require soda-ash in your namespace.
 
 ```
 (ns foo.bar
-(:require [soda-ash.element :as s]))
+  (:require [soda-ash.element :as s]))
 ```
 
 Finally, add Semantic UI to your index.html file:

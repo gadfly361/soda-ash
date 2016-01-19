@@ -63,3 +63,17 @@
     (check-classes class)
 
     (h/check-soda soda ratom-soda)))
+
+
+(deftest group-with-soda-with-ratom
+  (let [ratom (reagent/atom {})
+        _ (reagent/render [s/labels {:soda (merge
+                                            {:ratom ratom
+                                             :path :foo}
+                                            soda)}] c)
+        node (sel1 c [:div])
+        class (h/get-class node)
+        ratom-soda (get-in @ratom [:foo :soda])]
+    (check-classes class)
+
+    (h/check-soda soda ratom-soda)))

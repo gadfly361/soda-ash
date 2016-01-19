@@ -76,7 +76,7 @@
 
 (defcard-doc
   "
-# Soda-ash (version 0.1.0-alpha2)
+# Soda-ash (version 0.1.0-beta)
 
 Soda-ash is an interface between clojurescript's [reagent](https://github.com/reagent-project/reagent) and [Semantic UI](http://semantic-ui.com/).
 
@@ -166,7 +166,7 @@ classes and have your component reactively update.
 Put the following in the `:dependencies` vector of your *project.clj*
 
 ```
-[soda-ash \"0.1.0-alpha2\"]
+[soda-ash \"0.1.0-beta\"]
 ```
 
 Then require soda-ash in your namespace.
