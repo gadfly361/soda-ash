@@ -78,12 +78,12 @@
 
 
 (deftest class
-  (is (= "foo" (h/class false nil "foo" false)))
-  (is (= "ui foo" (h/class true nil "foo" false)))
-  (is (= "ui bar foo" (h/class true "bar" "foo" false)))
-  (is (= "bar foo" (h/class false "bar" "foo" false)))
-  (is (= "ui bar baz foo" (h/class true "bar baz" "foo" false)))
-  (is (= "ui foos" (h/class true nil "foo" true))))
+  (is (= "foo" (h/class false nil "foo")))
+  (is (= "ui foo" (h/class true nil "foo")))
+  (is (= "ui bar foo" (h/class true "bar" "foo")))
+  (is (= "bar foo" (h/class false "bar" "foo")))
+  (is (= "ui bar baz foo" (h/class true "bar baz" "foo")))
+  (is (= "ui foos" (h/class true nil "foos"))))
 
 
 
@@ -99,7 +99,6 @@
                                         :baz :quux
                                         :tag :div
                                         :ui? false
-                                        :group? true
                                         :ratom :foo-ratom
                                         :path :foo-path}))))
 

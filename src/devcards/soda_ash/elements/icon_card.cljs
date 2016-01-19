@@ -19,10 +19,9 @@
 * **default tag** :i
 * **:icon** see [Semantic UI docs](http://semantic-ui.com/elements/icon.html)
 * **:state** :default | :disabled | :loading
-* **variations** :bordered? | :circular? | :color | :flipped |
-    :fitted? | :inverted? | :link? | :rotated | :size
-* **groups** :group? | :corner?
-
+* **variations**
+    :bordered? | :circular? | :color | :corner? (inside icons) |
+    :flipped | :fitted? | :inverted? | :link? | :rotated | :size
 
 where
 
@@ -35,6 +34,10 @@ where
 * **:rotated** :clockwise | :counterclockwise
 * **:size**
     :mini | :tiny | :small | :large | :big | :huge | :massive
+
+# icons
+
+* **default tag** :i
 
 ---
 ")
@@ -379,14 +382,12 @@ An icon can have its colors inverted for contrast
 
 (defn icons []
   [:div
-   [s/icon {:soda {:group? true
-                   :size :huge}}
+   [s/icons {:soda {:size :huge}}
     [s/icon {:soda {:icon :thin-circle
                     :size :big}}]
     [s/icon {:soda {:icon :user}}]]
 
-   [s/icon {:soda {:group? true
-                   :size :huge}}
+   [s/icons {:soda {:size :huge}}
     [s/icon {:soda {:icon :loading-sun
                     :color :teal
                     :size :big}}]
@@ -408,8 +409,7 @@ Several icons can be used together as a group
 
 (defn corner-icons []
   [:div
-   [s/icon {:soda {:group? true
-                   :size :huge}}
+   [s/icons {:soda {:size :huge}}
     [s/icon {:soda {:icon :puzzle}}]
     [s/icon {:soda {:icon :add
                     :corner? true}}]]])

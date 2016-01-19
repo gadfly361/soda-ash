@@ -28,12 +28,11 @@
     :piled |
     *VERTICAL*
     :vertical
-* **groups** :group? | :horizontal?
 * **:state** :disabled | :loading
 * **variations**
     :aligned | :attached | :basic? |
      :circular? | :clearing? | :color | :compact? |
-    :empasis | :floated | :inverted? | padded
+    :horizontal? (inside segments) | :empasis | :floated | :inverted? | padded
 
 where
 
@@ -47,6 +46,10 @@ where
 * **:emphasis** :secondary | :tertiary
 * **floated** :left | :right
 * **:padded** :defanult | :very
+
+# segments
+
+* **default tag** :div
 
 ---
 ")
@@ -186,7 +189,7 @@ A vertical segment formats content to be aligned as part of a vertical group
 ;; Segments
 
 (defn segments []
-  [s/segment {:soda {:group? true}}
+  [s/segments {}
    [s/segment {} [:p "Top"]]
    [s/segment {} [:p "Middle"]]
    [s/segment {} [:p "Middle"]]
@@ -207,9 +210,9 @@ A group of segments can be nested in another group of segments
 ;; Nested-Segments
 
 (defn nested-segments []
-  [s/segment {:soda {:group? true}}
+  [s/segments {}
    [s/segment {} [:p "Top"]]
-   [s/segment {:soda {:group? true}}
+   [s/segments {}
     [s/segment {} [:p "Nested Top"]]
     [s/segment {} [:p "Nested Middle"]]
     [s/segment {} [:p "Nested Bottom"]]]
@@ -230,8 +233,7 @@ A group of segments can be nested in another group of segments
 ;; Horizontal-Segments
 
 (defn horizontal-segments []
-  [s/segment {:soda {:group? true
-                     :horizontal? true}}
+  [s/segments {:soda {:horizontal? true}}
    [s/segment {} [:p "Left"]]
    [s/segment {} [:p "Middle"]]
    [s/segment {} [:p "Middle"]]
@@ -252,8 +254,7 @@ A segment group can appear horizontally
 ;; Raised-Segments
 
 (defn raised-segments []
-  [s/segment {:soda {:group? true
-                     :type :raised}}
+  [s/segments {:soda {:type :raised}}
    [s/segment {} [:p "Top"]]
    [s/segment {} [:p "Middle"]]
    [s/segment {} [:p "Middle"]]
@@ -274,8 +275,7 @@ A group of segments can be raised
 ;; Stacked-Segments
 
 (defn stacked-segments []
-  [s/segment {:soda {:group? true
-                     :type :stacked}}
+  [s/segments {:soda {:type :stacked}}
    [s/segment {} [:p "Top"]]
    [s/segment {} [:p "Middle"]]
    [s/segment {} [:p "Middle"]]
@@ -296,8 +296,7 @@ A group of segments can be stacked
 ;; Piled-Segments
 
 (defn piled-segments []
-  [s/segment {:soda {:group? true
-                     :type :piled}}
+  [s/segments {:soda {:type :piled}}
    [s/segment {} [:p "Top"]]
    [s/segment {} [:p "Middle"]]
    [s/segment {} [:p "Bottom"]]])

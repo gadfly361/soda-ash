@@ -26,19 +26,10 @@
     (let [_ (reagent/render [(t/element
                               {:e-name "foo"
                                :default-tag :div})
-                             {:soda {}}] c)
+                             {}] c)
           node (sel1 c [:div])
           class (h/get-class node)]
       (is (= "ui foo" class))))
-
-  (testing "group?"
-    (let [_ (reagent/render [(t/element
-                              {:e-name "foo"
-                               :default-tag :div})
-                             {:soda {:group? true}}] c)
-          node (sel1 c [:div])
-          class (h/get-class node)]
-      (is (= "ui foos" class))))
 
   (testing "ui?"
     (testing "create element with ui? false"
@@ -46,27 +37,7 @@
                                 {:e-name "foo"
                                  :default-tag :div
                                  :ui? false})
-                               {:soda {}}] c)
-            node (sel1 c [:div])
-            class (h/get-class node)]
-        (is (= "foo" class))))
-
-    (testing "create element with ui? false, but soda with ui? true"
-      (let [_ (reagent/render [(t/element
-                                {:e-name "foo"
-                                 :default-tag :div
-                                 :ui? false})
-                               {:soda {:ui? true}}] c)
-            node (sel1 c [:div])
-            class (h/get-class node)]
-        (is (= "ui foo" class))))
-
-    (testing "create element with ui? true, but soda with ui? false"
-      (let [_ (reagent/render [(t/element
-                                {:e-name "foo"
-                                 :default-tag :div
-                                 :ui? true})
-                               {:soda {:ui? false}}] c)
+                             {}] c)
             node (sel1 c [:div])
             class (h/get-class node)]
         (is (= "foo" class))))))

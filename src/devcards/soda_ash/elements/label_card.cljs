@@ -47,7 +47,6 @@
     :right-ribbon
 * **content** detail | icon | image | link
 * **variations** :basic? | :circular? | :color | :size
-* **groups** :group?
 
 where
 
@@ -58,6 +57,10 @@ where
    :black
 * **:size**
     :mini | :tiny | :small | :large | :big | :huge | :massive
+
+# labels
+
+* **default tag** :div
 
 ---
 ")
@@ -652,9 +655,7 @@ A label can have different sizes
 ;; Group-Size
 
 (defn group-size []
-  [s/label {:soda {:tag :div
-                   :group? true
-                   :size :huge}}
+  [s/labels {:soda {:size :huge}}
    [s/label {} "Fun"]
    [s/label {} "Happy"]
    [s/label {} "Smart"]
@@ -675,9 +676,7 @@ Labels can share sizes together
 ;; Colored-Group
 
 (defn colored-group []
-  [s/label {:soda {:tag :div
-                   :group? true
-                   :color :blue}}
+  [s/labels {:soda {:color :blue}}
    [s/label {} "Fun"]
    [s/label {} "Happy"]
    [s/label {} "Smart"]
@@ -698,9 +697,7 @@ Labels can share colors together
 ;; Tag-Group
 
 (defn tag-group []
-  [s/label {:soda {:tag :div
-                   :group? true
-                   :type :tag}}
+  [s/labels {:soda {:type :tag}}
    [s/label {} "Fun"]
    [s/label {} "Happy"]
    [s/label {} "Smart"]
@@ -721,9 +718,7 @@ Labels can share tag formatting
 ;; Circular-Group
 
 (defn circular-group []
-  [s/label {:soda {:tag :div
-                   :group? true
-                   :circular? true}}
+  [s/labels {:soda {:circular? true}}
    [s/label {} "Fun"]
    [s/label {} "Happy"]
    [s/label {} "Smart"]

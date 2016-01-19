@@ -1,9 +1,78 @@
 (ns soda-ash.an-overview-card
-  (:require-macros [devcards.core :refer [defcard-doc defcard-rg]])
+  (:require-macros [devcards.core :refer [defcard-doc
+                                          defcard-rg
+                                          mkdn-pprint-source]])
   (:require [devcards.core]
             [devcards.util.edn-renderer :as edn]
             [reagent.core :as reagent]
             [soda-ash.element :as s]))
+
+
+
+;; avatar example
+
+
+(defn avatar-no-soda []
+  [:a.ui.basic.teal.label
+   [:img.ui.right.spaced.avatar.image
+    {:src "images/avatar/small/elliot.jpg"}
+    "Elliot"]])
+
+(defn avatar-with-soda []
+  [s/label {:soda {:tag :a
+                   :basic? true
+                   :color :teal}}
+   [s/image {:soda {:spaced :right
+                    :avatar? true}
+             :src "images/avatar/small/elliot.jpg"}]
+   "Elliot"])
+
+
+
+;; dynamic example
+
+
+(defn wrap-element [ratom element]
+  [:div
+   (if (vector? element) element [element])
+   [:div [:strong "Element State"]]
+   (edn/html-edn @ratom)])
+
+(def app-state (reagent/atom {}))
+
+(defn option-btn [k v]
+  (let [current-v (get-in @app-state [:foo :bar :soda k])]
+    [:button {:on-click #(swap! app-state assoc-in [:foo :bar :soda k] v)
+              :style {:background-color (when (= current-v v)
+                                          "grey")}}
+     (name v)]))
+
+(def colors
+  [:red :orange :yellow :olive
+   :green :teal :blue :violet
+   :purple :pink :brown :grey
+   :black])
+
+(def sizes
+  [:mini :tiny :small :large
+   :big :huge :massive])
+
+(def icons
+  [:area-chart :bar-chart :camera-retro
+   :newspaper :film :line-chart
+   :photo :pie-chart :sound])
+
+(defn icon []
+  [s/icon {:soda {:ratom app-state
+                  :path [:foo :bar]
+                  :icon :sound
+                  :color :violet
+                  :size :large}}])
+
+
+
+;; docs
+
 
 (defcard-doc
   "
@@ -37,25 +106,13 @@ out of this regex-hell and softens them into clojurescript's familiar,
 powerful, and unordered hash-map.
 
 What was once this:
+"
 
-```clojure
-[:a.ui.basic.teal.label
-  [:img.ui.right.spaced.avatar.image
-    {:src \"images/avatar/small/elliot.jpg\"}
-    \"Elliot\"]]
-```
+(mkdn-pprint-source avatar-no-soda)
 
-Becomes this:
+"Becomes this:"
 
-```clojure
-[s/label {:soda {:tag :a
-                 :basic? true
-                 :color :teal}}
-   [s/image {:soda {:spaced :right
-                    :avatar? true}
-             :src \"images/avatar/small/elliot.jpg\"}]
-   \"Elliot\"]
-```")
+  (mkdn-pprint-source avatar-with-soda))
 
 (defcard-rg
   [s/label {:soda {:tag :a
@@ -66,6 +123,8 @@ Becomes this:
              :src "images/avatar/small/elliot.jpg"}]
    "Elliot"])
 
+
+
 (defcard-doc
 "`:soda` is a new attribute that is *added* to the normal attibute map.
 `:soda` takes a hash-map of unordered key-value pairs.  Now you
@@ -75,57 +134,15 @@ are able to take full advantage of the hash-map data structure
 Finally, soda-ash allows you to place your `:soda` inside a reagent
 atom at your desired path.  This means you can swap! Semantic UI
 classes and have your component reactively update.
+"
+  (mkdn-pprint-source app-state)
 
-```
-(def app-state (reagent/atom {}))
-
-(defn [icon]
- [s/icon {:soda {:ratom app-state
-                 :path [:foo :bar]
-                 :icon :sound
-                 :color :violet
-                 :size :large}}])
-```
-")
-
-(defn wrap-element [ratom element]
-  [:div
-   (if (vector? element) element [element])
-   [:div [:strong "Element State"]]
-   (edn/html-edn @ratom)])
-
-(def app-state (reagent/atom {}))
-
-(defn option-btn [k v]
-  (let [current-v (get-in @app-state [:foo :bar :soda k])]
-    [:button {:on-click #(swap! app-state assoc-in [:foo :bar :soda k] v)
-              :style {:background-color (when (= current-v v)
-                                          "grey")}}
-     (name v)]))
-
-(def colors
-  [:red :orange :yellow :olive
-   :green :teal :blue :violet
-   :purple :pink :brown :grey
-   :black])
-
-(def sizes
-  [:mini :tiny :small :large
-   :big :huge :massive])
-
-(def icons
-  [:area-chart :bar-chart :camera-retro
-   :newspaper :film :line-chart
-   :photo :pie-chart :sound])
+  (mkdn-pprint-source icon))
 
 (defcard-rg
   [:div
    [wrap-element app-state
-    [s/icon {:soda {:ratom app-state
-                    :path [:foo :bar]
-                    :icon :sound
-                    :color :violet
-                    :size :large}}]]
+    [icon]]
    [:div "Color: "
     (for [color colors]
       ^{:key color}
@@ -139,6 +156,7 @@ classes and have your component reactively update.
     (for [icon icons]
       ^{:key icon}
       [option-btn :icon icon])]])
+
 
 
 (defcard-doc

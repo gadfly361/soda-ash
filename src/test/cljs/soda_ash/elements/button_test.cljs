@@ -74,10 +74,31 @@
 (deftest with-soda-with-ratom
   (let [ratom (reagent/atom {})
         _ (reagent/render [s/button {:soda (merge
-                                          {:ratom ratom
-                                           :path :foo}
-                                          soda)}] c)
+                                            {:ratom ratom
+                                             :path :foo}
+                                            soda)}] c)
         node (sel1 c [:button])
+        class (h/get-class node)
+        ratom-soda (get-in @ratom [:foo :soda])]
+    (check-classes class)
+
+    (h/check-soda soda ratom-soda)))
+
+
+(deftest buttons-with-soda
+  (let [_ (reagent/render [s/buttons {:soda soda}] c)
+        node (sel1 c [:div])
+        class (h/get-class node)]
+    (check-classes class)))
+
+
+(deftest buttons-with-soda-with-ratom
+  (let [ratom (reagent/atom {})
+        _ (reagent/render [s/buttons {:soda (merge
+                                             {:ratom ratom
+                                              :path :foo}
+                                             soda)}] c)
+        node (sel1 c [:div])
         class (h/get-class node)
         ratom-soda (get-in @ratom [:foo :soda])]
     (check-classes class)

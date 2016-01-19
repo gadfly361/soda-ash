@@ -12,7 +12,7 @@
 
 
 (defcard-doc
-"
+  "
 [back](#!/soda_ash.an_overview_card)
 
 # button
@@ -25,7 +25,6 @@
     *ICON* :icon | :labeled-icon | :right-labeled-icon |
     *INVERTED* :inverted | :inverted-basc |
     *LABELED* :labeled | :left-labeled | :labeled-icon | :right-labeled-icon
-* **groups** :group?
 * **content** conditionals
 * **:state** :default | :active | :disabled | :loading
 * **variations**
@@ -49,10 +48,13 @@ where
     :facebook | :twitter | :google-plus |
     :vk | :linkedin | :instagram | :youtube
 
-
 Notes:
 
 * Although any tag can be used for a button, it will only be keyboard focusable if you use a `:button` tag or you add the property `:tab-index \"0\"`. Keyboard accessible buttons will preserve focus styles after click, which may be visually jarring.
+
+# Buttons
+
+* **default tag** :div
 
 ---
 ")
@@ -63,7 +65,7 @@ Notes:
 ;; TYPES
 
 (defcard-doc
-"# TYPES")
+  "# TYPES")
 
 
 ;; Button
@@ -323,15 +325,12 @@ A button can be formatted to appear on dark backgrounds
 
 (defn buttons []
   [:div
-   [s/button {:soda {:tag :div
-                     :group? true}}
+   [s/buttons {}
     [s/button {} "One"]
     [s/button {} "Two"]
     [s/button {} "Three"]]
 
-   [s/button {:soda {:tag :div
-                     :group? true
-                     :color :red}}
+   [s/buttons {:soda {:color :red}}
     [s/button {} "Four"]
     [s/button {} "Five"]
     [s/button {} "Six"]]
@@ -352,9 +351,7 @@ Buttons can exist together as a group
 ;; Icon-Buttons
 
 (defn icon-buttons []
-  [s/button {:soda {:tag :div
-                    :type :icon
-                    :group? true}}
+  [s/buttons {:soda {:type :icon}}
    [s/button {}
     [s/icon {:soda {:icon :align-left}}]]
    [s/button {}
@@ -388,11 +385,10 @@ Button groups can show groups of icons
 ;; Conditionals
 
 (defn conditionals []
-   [s/button {:soda {:tag :div
-                     :group? true}}
-    [s/button {} "Cancel"]
-    [:div.or] ;; <-- attention
-    [s/button {:soda {:consequence :positive}} "Save"]])
+  [s/buttons {}
+   [s/button {} "Cancel"]
+   [:div.or] ;; <-- attention
+   [s/button {:soda {:consequence :positive}} "Save"]])
 
 (defcard-doc
   "
@@ -483,9 +479,9 @@ A button can show a loading indicator
 
 (defn social []
   [:div
-  [s/button {:soda {:social :facebook}}
-   [s/icon {:soda {:icon :facebook}}]
-   "Facebook"]
+   [s/button {:soda {:social :facebook}}
+    [s/icon {:soda {:icon :facebook}}]
+    "Facebook"]
 
    [s/button {:soda {:social :twitter}}
     [s/icon {:soda {:icon :twitter}}]

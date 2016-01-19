@@ -22,7 +22,6 @@
     :aligned | :avatar? | :bordered? | :centered? |
     :circular? | :floated | :fluid? | :rounded? | :size |
     :spaced | :state
-* **groups** :group?
 
 where
 
@@ -31,6 +30,10 @@ where
 * **:size** :mini | :tiny | :small | :medium | :large | :big | :huge | :massive
 * **:spaced** :default | :left | :right
 * **:state** :default | :hidden | :disabled
+
+# images
+
+* **default tag** :div
 
 ---
 ")
@@ -392,9 +395,7 @@ An image may appear at different sizes
 ;; Groups-Size
 
 (defn groups-size []
-  [s/image {:soda {:tag :div
-                   :group? true
-                   :size :tiny}}
+  [s/images {:soda {:size :tiny}}
    [s/image {:src "images/wireframe/image.png"}]
    [s/image {:src "images/wireframe/image.png"}]
    [s/image {:src "images/wireframe/image.png"}]])
