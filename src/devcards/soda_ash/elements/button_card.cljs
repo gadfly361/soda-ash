@@ -16,6 +16,7 @@
 
 # button
 
+* **base class** ui button
 * **default tag** :button
 * **:type**
     *ANIMATED* :animated | :vertical-animated | :animated-fade |
@@ -53,6 +54,7 @@ Notes:
 
 # Buttons
 
+* **base class* ui buttons
 * **default tag** :div
 
 ---

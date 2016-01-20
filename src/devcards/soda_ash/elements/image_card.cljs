@@ -15,6 +15,7 @@
 
 # image
 
+* **base class** ui image
 * **default tag** :img
 * **:state** :hidden | :disabled
 * **variations**
@@ -32,6 +33,7 @@ where
 
 # images
 
+* **base class** ui images
 * **default tag** :div
 
 ---

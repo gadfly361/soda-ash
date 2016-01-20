@@ -15,6 +15,7 @@
 
 # input
 
+* **base class** ui input
 * **default tag** :div
 * **:state** :focus | :loading | :disabled | :error
 * **variations**

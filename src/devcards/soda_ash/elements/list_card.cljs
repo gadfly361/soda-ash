@@ -15,6 +15,7 @@
 
 # list
 
+* **base class** ui list
 * **default tag** :div
 * **:type** :bulleted | :bulleted-link | :link | :ordered | :ordered-link
 * **variations**

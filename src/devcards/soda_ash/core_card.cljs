@@ -1,6 +1,7 @@
 (ns soda-ash.core-card
   (:require-macros [devcards.core :as dc])
-  (:require [soda-ash.an-overview-card]
+  (:require [soda-ash.a-faq-card]
+            [soda-ash.an-overview-card]
             [soda-ash.elements.button-card]
             [soda-ash.elements.container-card]
             [soda-ash.elements.divider-card]

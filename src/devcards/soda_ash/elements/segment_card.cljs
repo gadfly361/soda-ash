@@ -15,6 +15,7 @@
 
 # segment
 
+* **base class** ui segment
 * **default tag** :div
 * **:type**
     :default |
@@ -48,6 +49,7 @@ where
 
 # segments
 
+* **base class** ui segments
 * **default tag** :div
 
 ---

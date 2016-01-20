@@ -15,6 +15,7 @@
 
 # reveal
 
+* **base class** ui reveal
 * **default tag** :div
 * **:type**
     *FADE* :fade |

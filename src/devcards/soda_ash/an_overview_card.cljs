@@ -38,7 +38,7 @@
    [:div [:strong "Element State"]]
    (edn/html-edn @ratom)])
 
-(def app-state (reagent/atom {}))
+(defonce app-state (reagent/atom {}))
 
 (defn option-btn [k v]
   (let [current-v (get-in @app-state [:foo :bar :soda k])]
@@ -81,6 +81,9 @@
 Soda-ash is an interface between clojurescript's [reagent](https://github.com/reagent-project/reagent) and [Semantic UI](http://semantic-ui.com/).
 
 --- **[github repo](https://github.com/gadfly361/soda-ash)** ---
+
+
+## [FAQs](#!/soda_ash.a_faq_card)
 
 ## Elements
 
@@ -128,10 +131,10 @@ What was once this:
 
 
 (defcard-doc
-"`:soda` is a new attribute that is *added* to the normal attibute map.
-`:soda` takes a hash-map of unordered key-value pairs.  Now you
-are able to take full advantage of the hash-map data structure
-... assoc, dissoc, merge etc.
+"`:soda` is a new attribute that is *added* to the normal attibute
+map, and **replaces the `:class` attribute.  `:soda` takes a hash-map
+of unordered key-value pairs.  Now you are able to take full advantage
+of the hash-map data structure ... assoc, dissoc, merge etc.
 
 Finally, soda-ash allows you to place your `:soda` inside a reagent
 atom at your desired path.  This means you can swap! Semantic UI

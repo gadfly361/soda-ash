@@ -15,6 +15,7 @@
 
 # loader
 
+* **base class** ui loader
 * **default tag** :i
 * **:type** :default | :text
 * **variations** :centered? | :inline | :inverted? | :size | :state

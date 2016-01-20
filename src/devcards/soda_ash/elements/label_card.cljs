@@ -15,6 +15,7 @@
 
 # label
 
+* **base class** ui label
 * **default tag** :div
 * **:type**
     :default |
@@ -59,6 +60,7 @@ where
 
 # labels
 
+* **base class** ui labels
 * **default tag** :div
 
 ---

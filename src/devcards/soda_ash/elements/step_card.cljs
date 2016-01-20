@@ -15,12 +15,14 @@
 
 # step
 
+* **base class** step
 * **default tag** :div
 * **:type** :default | :link
 * **:state** :default | :active | :completed | :disabled
 * **content** description
 
 # steps
+* **base class** ui steps
 * **default tag** :div
 * **:type** :default :ordered | :vertical | :tablet-stackable
 * **variations** :attached | :divided | :fluid? | :size

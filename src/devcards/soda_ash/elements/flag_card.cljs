@@ -15,6 +15,7 @@
 
 # flag
 
+* **base class* flag
 * **default tag** :i
 * **:flag** see [Semantic UI docs](http://semantic-ui.com/elements/flag.html)
 

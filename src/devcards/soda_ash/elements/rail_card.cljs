@@ -15,6 +15,7 @@
 
 # rail
 
+* **base class** ui rail
 * **default tag** :div
 * **:type** :left | :right | *INTERNAL* :left-internal | :right-internal | *DIVIDING* :left-dividing | :right-dividing
 * **variations** :attached? | :close

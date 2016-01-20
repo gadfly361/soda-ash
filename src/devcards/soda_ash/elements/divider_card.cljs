@@ -15,6 +15,7 @@
 
 # divider
 
+* **base class** ui divider
 * **default tag** :div
 * **:type**
     :default | :vertical | :horizontal

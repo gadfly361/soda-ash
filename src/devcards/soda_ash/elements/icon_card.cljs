@@ -15,6 +15,7 @@
 
 # icon
 
+* **base class** icon
 * **default tag** :i
 * **:icon** see [Semantic UI docs](http://semantic-ui.com/elements/icon.html)
 * **:state** :default | :disabled | :loading
@@ -36,6 +37,7 @@ where
 
 # icons
 
+* **base class** icons
 * **default tag** :i
 
 ---

@@ -15,6 +15,7 @@
 
 # header
 
+* **base class** ui header
 * **default tag** :div
 * **:type**
     :default |

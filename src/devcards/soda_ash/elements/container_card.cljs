@@ -15,6 +15,7 @@
 
 # container
 
+* **base class** ui container
 * **default tag** :div
 * **:type** :default | :text
 * **variations** :aligned | :fluid?
