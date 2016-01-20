@@ -18,6 +18,7 @@
    [soda-ash.elements.reveal :as reveal]
    [soda-ash.elements.segment :as segment]
    [soda-ash.elements.segments :as segments]
+   [soda-ash.elements.s-list :as s-list]
    [soda-ash.elements.step :as step]
    [soda-ash.elements.steps :as steps]))
 
@@ -52,6 +53,8 @@
 
 (def segment segment/element)
 (def segments segments/element)
+
+(def s-list s-list/element)
 
 (def step step/element)
 (def steps steps/element)
