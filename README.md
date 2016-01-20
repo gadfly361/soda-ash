@@ -75,7 +75,7 @@ Then open *resources/public/index.html*
 
 ```
 lein clean
-lein doo phantom test once
+lein with-profile test doo phantom unit once
 ```
 
 The above command assumes that you have [phantomjs](https://www.npmjs.com/package/phantomjs) installed.
