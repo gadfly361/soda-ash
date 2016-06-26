@@ -5,6 +5,7 @@
    [soda-ash.elements.container :as container]
    [soda-ash.elements.divider :as divider]
    [soda-ash.elements.flag :as flag]
+   [soda-ash.elements.header :as header]
    ))
 
 
@@ -808,3 +809,44 @@
 
 (def flag-zm' flag/class-zm)
 (def flag-zm flag/component-zm)
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; header
+
+(def header-h1' header/class-h1)
+(def header-h1 header/component-h1)
+
+(def header-h2' header/class-h2)
+(def header-h2 header/component-h2)
+
+(def header-h3' header/class-h3)
+(def header-h3 header/component-h3)
+
+(def header-h4' header/class-h4)
+(def header-h4 header/component-h4)
+
+(def header-h5' header/class-h5)
+(def header-h5 header/component-h5)
+
+(def header-huge' header/class-huge)
+(def header-huge header/component-huge)
+
+(def header-large' header/class-large)
+(def header-large header/component-large)
+
+(def header-medium' header/class-medium)
+(def header-medium header/component-medium)
+
+(def header-small' header/class-small)
+(def header-small header/component-small)
+
+(def header-tiny' header/class-tiny)
+(def header-tiny header/component-tiny)
+
+(def header-icon' header/class-icon)
+(def header-icon header/component-icon)
+
+(def header-sub' header/class-sub)
+(def header-sub header/component-sub)
