@@ -7,6 +7,7 @@
    [soda-ash.elements.divider-card]
    [soda-ash.elements.flag-card]
    [soda-ash.elements.header-card]
+   [soda-ash.elements.icon-card]
    ))
 
 
