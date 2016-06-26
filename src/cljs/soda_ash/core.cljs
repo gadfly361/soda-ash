@@ -2,6 +2,7 @@
   (:require
    [soda-ash.helpers :as h]
    [soda-ash.elements.button :as button]
+   [soda-ash.elements.container :as container]
    ))
 
 
@@ -49,3 +50,14 @@
 
 (def button-inverted-basic' button/class-inverted-basic)
 (def button-inverted-basic button/component-inverted-basic)
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; container
+
+(def container' container/class)
+(def container container/component)
+
+(def container-text' container/class-text)
+(def container-text container/component-text)

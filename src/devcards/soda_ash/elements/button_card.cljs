@@ -4,7 +4,6 @@
                           defcard-rg
                           mkdn-pprint-source]])
   (:require
-   [devcards.core :refer-macros [deftest]]
    [reagent.core :as reagent]
    [soda-ash.core :as sa]
    [soda-ash.elements.button :as button]
@@ -22,10 +21,13 @@
 
 (defcard-doc
   "# SUMMARY
+
    ## Types"
   (list-keys "types")
+
   "## States (*soda*)"
   (list-keys "states")
+
   "## Variations (*ash*)"
   "### Social"
   (list-keys "social")
@@ -51,16 +53,15 @@
   (list-keys "horizontally attached"))
 
 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Types
+
 (defcard-doc
   "
 ---
 # Types"
   (list-keys "types"))
-
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Types
 
 (defn type-default []
   [sa/button "default"])
