@@ -3,6 +3,7 @@
    [soda-ash.helpers :as h]
    [soda-ash.elements.button :as button]
    [soda-ash.elements.container :as container]
+   [soda-ash.elements.divider :as divider]
    ))
 
 
@@ -61,3 +62,20 @@
 
 (def container-text' container/class-text)
 (def container-text container/component-text)
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; divider
+
+(def divider' divider/class)
+(def divider divider/component)
+
+(def divider-vertical' divider/class-vertical)
+(def divider-vertical divider/component-vertical)
+
+(def divider-horizontal' divider/class-horizontal)
+(def divider-horizontal divider/component-horizontal)
+
+(def divider-horizontal-header' divider/class-horizontal-header)
+(def divider-horizontal-header divider/component-horizontal-header)
