@@ -1,803 +1,562 @@
 (ns soda-ash.elements.button-card
-  (:require-macros [devcards.core
-                    :as dc
-                    :refer [defcard-rg defcard-doc mkdn-pprint-source]])
-  (:require [reagent.core :as reagent]
-            [devcards.core]
-            [reagent.core :as reagent]
-            [soda-ash.elements.card-helpers :as h]
-            [soda-ash.element :as s]))
+  (:require-macros
+   [devcards.core :refer [defcard-doc
+                          defcard-rg
+                          mkdn-pprint-source]])
+  (:require
+   [devcards.core :refer-macros [deftest]]
+   [reagent.core :as reagent]
+   [soda-ash.core :as sa]
+   [soda-ash.elements.button :as button]
+   [clojure.string :as string]))
 
+
+(defn list-keys [group-name]
+  (->> button/groups
+       (filter #(= group-name
+                   (:group-name %)))
+       first
+       :group-set
+       (string/join ", ")))
+
+
+(defcard-doc
+  "# SUMMARY
+   ## Types"
+  (list-keys "types")
+  "## States (*soda*)"
+  (list-keys "states")
+  "## Variations (*ash*)"
+  "### Social"
+  (list-keys "social")
+  "### Size"
+  (list-keys "size")
+  "### Floated"
+  (list-keys "floated")
+  "### Colored"
+  (list-keys "colored")
+  "### Compact"
+  (list-keys "compact")
+  "### Toggle"
+  (list-keys "toggle")
+  "### Consequence"
+  (list-keys "consequence")
+  "### Fluid"
+  (list-keys "fluid")
+  "### Circular"
+  (list-keys "circular")
+  "### Vertically Attached"
+  (list-keys "vertically attached")
+  "### Horizontally Attached"
+  (list-keys "horizontally attached"))
 
 
 (defcard-doc
   "
-[back](#!/soda_ash.an_overview_card)
-
-# button
-
-* **base class** ui button
-* **default tag** :button
-* **:type**
-    *ANIMATED* :animated | :vertical-animated | :animated-fade |
-    *BASIC* :basic | :inverted-basic |
-    *EMPHASIS* :primary | :secondary |
-    *ICON* :icon | :labeled-icon | :right-labeled-icon |
-    *INVERTED* :inverted | :inverted-basc |
-    *LABELED* :labeled | :left-labeled | :labeled-icon | :right-labeled-icon
-* **content** conditionals
-* **:state** :default | :active | :disabled | :loading
-* **variations**
-    :attached | :circular? | :color | :compact? | :consequence |
-    :floated | :fluid? | :size | :social | :toggle?
-
-where
-
-* **:attached** :top | :bottom | :left | :right
-* **:color**
-   :red | :orange | :yellow | :olive |
-   :green | :teal | :blue | :violet |
-   :purple | :pink | :brown | :grey |
-   :black
-* **consequence** :positive | :negative
-* **:floated** :left | :right
-* **size**
-    :mini | :tiny | :small | :medium |
-    :large | :big | :huge | :massive
-* **:social**
-    :facebook | :twitter | :google-plus |
-    :vk | :linkedin | :instagram | :youtube
-
-Notes:
-
-* Although any tag can be used for a button, it will only be keyboard focusable if you use a `:button` tag or you add the property `:tab-index \"0\"`. Keyboard accessible buttons will preserve focus styles after click, which may be visually jarring.
-
-# Buttons
-
-* **base class* ui buttons
-* **default tag** :div
-
 ---
-")
+# Types"
+  (list-keys "types"))
 
 
 
-;; ====================
-;; TYPES
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Types
+
+(defn type-default []
+  [sa/button "default"])
 
 (defcard-doc
-  "# TYPES")
+  (mkdn-pprint-source type-default))
+
+(defcard-rg
+  [type-default])
 
 
-;; Button
+(defn type-primary []
+  [sa/button-primary "primary"])
 
-(defn button []
-  [:div
-   ;; :button
-   [s/button {:soda {:type :default}}
-    "button"]
+(defcard-doc
+  (mkdn-pprint-source type-primary))
 
-   ;; :div
-   [s/button {:soda {:tag :div
-                     :type :default}
-              :tab-index "0"}
-    "div"]])
+(defcard-rg
+  [type-primary])
+
+
+(defn type-secondary []
+  [sa/button-secondary "secondary"])
+
+(defcard-doc
+  (mkdn-pprint-source type-secondary))
+
+(defcard-rg
+  [type-secondary])
+
+
+;; TODO: FIX
+(defn type-animated []
+  [sa/button-animated "animated"])
+
+(defcard-doc
+  (mkdn-pprint-source type-animated))
+
+(defcard-rg
+  [type-animated])
+
+
+;; TODO: FIX
+(defn type-vertical-animated []
+  [sa/button-vertical-animated "vertical-animated"])
+
+(defcard-doc
+  (mkdn-pprint-source type-vertical-animated))
+
+(defcard-rg
+  [type-vertical-animated])
+
+
+;; TODO: FIX
+(defn type-animated-fade []
+  [sa/button-animated-fade "animated-fade"])
+
+(defcard-doc
+  (mkdn-pprint-source type-animated-fade))
+
+(defcard-rg
+  [type-animated-fade])
+
+
+;; TODO: FIX
+(defn type-labeled []
+  [sa/button-labeled "labeled"])
+
+(defcard-doc
+  (mkdn-pprint-source type-labeled))
+
+(defcard-rg
+  [type-labeled])
+
+
+;; TODO: FIX
+(defn type-left-labeled []
+  [sa/button-left-labeled "left-labeled"])
+
+(defcard-doc
+  (mkdn-pprint-source type-left-labeled))
+
+(defcard-rg
+  [type-left-labeled])
+
+
+;; TODO: FIX
+(defn type-icon []
+  [sa/button-icon "icon"])
+
+(defcard-doc
+  (mkdn-pprint-source type-icon))
+
+(defcard-rg
+  [type-icon])
+
+
+;; TODO: FIX
+(defn type-labeled-icon []
+  [sa/button-labeled-icon "labeled-icon"])
+
+(defcard-doc
+  (mkdn-pprint-source type-labeled-icon))
+
+(defcard-rg
+  [type-labeled-icon])
+
+
+;; TODO: FIX
+(defn type-right-labeled-icon []
+  [sa/button-right-labeled-icon "right-labeled-icon"])
+
+(defcard-doc
+  (mkdn-pprint-source type-right-labeled-icon))
+
+(defcard-rg
+  [type-right-labeled-icon])
+
+
+;; TODO: FIX
+(defn type-basic []
+  [sa/button-basic "basic"])
+
+(defcard-doc
+  (mkdn-pprint-source type-basic))
+
+(defcard-rg
+  [type-basic])
+
+
+;; TODO: FIX
+(defn type-inverted []
+  [sa/button-inverted "inverted"])
+
+(defcard-doc
+  (mkdn-pprint-source type-inverted))
+
+(defcard-rg
+  [type-inverted])
+
+
+;; TODO: FIX
+(defn type-inverted-basic []
+  [sa/button-inverted-basic "inverted-basic"])
+
+(defcard-doc
+  (mkdn-pprint-source type-inverted-basic))
+
+(defcard-rg
+  [type-inverted-basic])
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; States
 
 (defcard-doc
   "
-### Button
+---
+# States"
+  (list-keys "states"))
 
-A standard button
-"
-  (mkdn-pprint-source button))
+
+(defn state-active []
+  [sa/button {:soda :active
+              :ash [:blue]}
+   "active"])
+
+(defcard-doc
+  (mkdn-pprint-source state-active))
 
 (defcard-rg
-  [button])
+  [state-active])
 
 
-;; Emphasis
+(defn state-disabled []
+  [sa/button {:soda :disabled
+              :ash [:blue]}
+   "disabled"])
 
-(defn emphasis []
-  [:div
-   [s/button {:soda {:type :primary}}
-    "primary"]
+(defcard-doc
+  (mkdn-pprint-source state-disabled))
 
-   [s/button {:soda {:tag :div
-                     :type :secondary}
-              :tab-index "0"}
-    "secondary"]])
+(defcard-rg
+  [state-disabled])
+
+
+(defn state-loading []
+  [sa/button {:soda :loading
+              :ash [:blue]}
+   "loading"])
+
+(defcard-doc
+  (mkdn-pprint-source state-loading))
+
+(defcard-rg
+  [state-loading])
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Variations
 
 (defcard-doc
   "
-### Emphasis
+---
+# Variations")
 
-A button can be formatted to show different levels of emphasis
 
-Notes:
-
-* Setting your brand colors to primary and secondary color variables in site.variables will allow you to use your color theming for UI elements
-"
-  (mkdn-pprint-source emphasis))
-
-(defcard-rg
-  [emphasis])
-
-
-;; Animated
-
-(defn animated []
-  [:div
-   [s/button {:soda {:type :animated}}
-    [:div.visible.content
-     "Next"]
-    [:div.hidden.content
-     [s/icon {:soda {:icon :right-arrow}}]]]
-
-   [s/button {:soda {:type :vertical-animated}}
-    [:div.visible.content
-     [s/icon {:soda {:icon :shop}}]]
-    [:div.hidden.content
-     "Shop"]]
-
-   [s/button {:soda {:type :animated-fade}}
-    [:div.visible.content
-     "Sign-up for a Pro account"]
-    [:div.hidden.content
-     "$12.99 a mont"]]])
-
-(defcard-doc
-  "
-### Animated
-
-A button can animate to show hidden content
-
-Notes:
-
-* The button will be automatically sized according to the visible content size. Make sure there is enough room for the hidden content to show
-"
-  (mkdn-pprint-source animated))
-
-(defcard-rg
-  [animated])
-
-
-;; Labeled
-
-(defn labeled []
-  [:div
-   [s/button {:soda {:tag :div
-                     :type :labeled}
-              :tab-index "0"}
-    [s/button {}
-     [s/icon {:soda {:icon :heart}}]
-     "Like"]
-    [s/label {:soda {:tag :a
-                     :basic? true}}
-     "2,048"]]
-
-   [s/button {:soda {:tag :div
-                     :type :left-labeled}
-              :tab-index "0"}
-    [s/label {:soda {:tag :a
-                     :type :right-pointing
-                     :basic? true}}
-     "2,048"]
-    [s/button {}
-     [s/icon {:soda {:icon :heart}}]
-     "Like"]]])
-
-(defcard-doc
-  "
-### Labeled
-
-A button can appear alongside a label
-"
-  (mkdn-pprint-source labeled))
-
-(defcard-rg
-  [labeled])
-
-
-;; Icon
-
-(defn icon []
-  [s/button {:soda {:type :icon}}
-   [s/icon {:soda {:icon :cloud}}]])
-
-(defcard-doc
-  "
-### Icon
-
-A button can have only an icon
-"
-  (mkdn-pprint-source icon))
-
-(defcard-rg
-  [icon])
-
-
-
-;; Labeled-Icon
-
-(defn labeled-icon []
-  [:div
-   [s/button {:soda {:type :labeled-icon}}
-    [s/icon {:soda {:icon :pause}}]
-    "Pause"]
-
-   [s/button {:soda {:type :right-labeled-icon}}
-    [s/icon {:soda {:icon :right-arrow}}]
-    "Next"]])
-
-(defcard-doc
-  "
-### Labeled Icon
-
-A button can use an icon as a label
-"
-  (mkdn-pprint-source labeled-icon))
-
-(defcard-rg
-  [labeled-icon])
-
-
-;; Basic
-
-(defn basic []
-  [s/button {:soda {:type :basic}}
-   [s/icon {:soda {:icon :user}}]
-   "Add Friend"])
-
-(defcard-doc
-  "
-### Basic
-
-A basic button is less pronounced
-"
-  (mkdn-pprint-source basic))
-
-(defcard-rg
-  [basic])
-
-
-;; Inverted
-
-(defn inverted []
-  [s/segment {:soda {:inverted? true}}
-   [s/button {:soda {:type :inverted
-                     :color :red}}
-    "Red"]
-
-   [s/button {:soda {:type :inverted
-                     :color :orange}}
-    "Orange"]
-
-   [s/button {:soda {:type :inverted
-                     :color :yellow}}
-    "Yellow"]])
-
-(defcard-doc
-  "
-### Inverted
-
-A button can be formatted to appear on dark backgrounds
-"
-  (mkdn-pprint-source inverted))
-
-(defcard-rg
-  [inverted])
-
-
-;; Inverted-Basic
-
-(defn inverted-basic []
-  [s/segment {:soda {:inverted? true}}
-   [s/button {:soda {:type :inverted-basic
-                     :color :red}}
-    "Red"]
-
-   [s/button {:soda {:type :inverted-basic
-                     :color :orange}}
-    "Orange"]
-
-   [s/button {:soda {:type :inverted-basic
-                     :color :yellow}}
-    "Yellow"]])
-
-(defcard-doc
-  "
-### Inverted Basic
-"
-  (mkdn-pprint-source inverted-basic))
-
-(defcard-rg
-  [inverted-basic])
-
-
-
-;; ====================
-;; GROUPS
-
-(defcard-doc
-  "# GROUPS")
-
-
-;; Buttons
-
-(defn buttons []
-  [:div
-   [s/buttons {}
-    [s/button {} "One"]
-    [s/button {} "Two"]
-    [s/button {} "Three"]]
-
-   [s/buttons {:soda {:color :red}}
-    [s/button {} "Four"]
-    [s/button {} "Five"]
-    [s/button {} "Six"]]
-   ])
-
-(defcard-doc
-  "
-### Buttons
-
-Buttons can exist together as a group
-"
-  (mkdn-pprint-source buttons))
-
-(defcard-rg
-  [buttons])
-
-
-;; Icon-Buttons
-
-(defn icon-buttons []
-  [s/buttons {:soda {:type :icon}}
-   [s/button {}
-    [s/icon {:soda {:icon :align-left}}]]
-   [s/button {}
-    [s/icon {:soda {:icon :align-center}}]]
-   [s/button {}
-    [s/icon {:soda {:icon :align-right}}]]
-   [s/button {}
-    [s/icon {:soda {:icon :align-justify}}]]
-   ])
-
-(defcard-doc
-  "
-### Icon Buttons
-
-Button groups can show groups of icons
-"
-  (mkdn-pprint-source icon-buttons))
-
-(defcard-rg
-  [icon-buttons])
-
-
-
-;; ====================
-;; CONTENT
-
-(defcard-doc
-  "# CONTENT")
-
-
-;; Conditionals
-
-(defn conditionals []
-  [s/buttons {}
-   [s/button {} "Cancel"]
-   [:div.or] ;; <-- attention
-   [s/button {:soda {:consequence :positive}} "Save"]])
-
-(defcard-doc
-  "
-### Conditionals
-
-Conditionals can exist together as a group
-"
-  (mkdn-pprint-source conditionals))
-
-(defcard-rg
-  [conditionals])
-
-
-
-;; ====================
-;; STATES
-
-(defcard-doc
-  "# STATES")
-
-
-;; Active
-
-(defn active []
-  [s/button {:soda {:state :active}}
-   [s/icon {:soda {:icon :user}}]
-   "Follow"])
-
-(defcard-doc
-  "
-### Active
-
-A button can show it is currently the active user selection
-"
-  (mkdn-pprint-source active))
-
-(defcard-rg
-  [active])
-
-
-;; Disabled
-
-(defn disabled []
-  [s/button {:soda {:state :disabled}}
-   [s/icon {:soda {:icon :user}}]
-   "Followed"])
-
-(defcard-doc
-  "
-### Disabled
-
-A button can show it is currently unable to be interacted with
-"
-  (mkdn-pprint-source disabled))
-
-(defcard-rg
-  [disabled])
-
-
-;; Loading
-
-(defn loading []
-  [s/button {:soda {:state :loading}}
-   [s/icon {:soda {:icon :user}}]
-   "Follow"])
-
-(defcard-doc
-  "
-### Loading
-
-A button can show a loading indicator
-"
-  (mkdn-pprint-source loading))
-
-(defcard-rg
-  [loading])
-
-
-
-;; ====================
-;; VARIATIONS
-
-(defcard-doc
-  "# VARIATIONS")
-
-
+;; ---------------------------
 ;; Social
 
-(defn social []
-  [:div
-   [s/button {:soda {:social :facebook}}
-    [s/icon {:soda {:icon :facebook}}]
-    "Facebook"]
+(defcard-doc
+  "## Social"
+  (list-keys "social"))
 
-   [s/button {:soda {:social :twitter}}
-    [s/icon {:soda {:icon :twitter}}]
-    "Twitter"]
 
-   [s/button {:soda {:social :google-plus}}
-    [s/icon {:soda {:icon :google-plus}}]
-    "Google Plus"]
-
-   [s/button {:soda {:social :vk}}
-    [s/icon {:soda {:icon :vk}}]
-    "VK"]
-
-   [s/button {:soda {:social :linkedin}}
-    [s/icon {:soda {:icon :linkedin}}]
-    "LinkedIn"]
-
-   [s/button {:soda {:social :youtube}}
-    [s/icon {:soda {:icon :youtube}}]
-    "YouTube"]])
+(defn social-facebook []
+  [sa/button {:ash [:facebook]}
+   "facebook"])
 
 (defcard-doc
-  "
-### Social
-
-A button can be formatted to link to a social website
-"
-  (mkdn-pprint-source social))
+  (mkdn-pprint-source social-facebook))
 
 (defcard-rg
-  [social])
-
-
-;; Size
-
-(defn size []
   [:div
-   [s/button {:soda {:size :mini}}
-    "Mini"]
-   [s/button {:soda {:size :tiny}}
-    "Tiny"]
-   [s/button {:soda {:size :small}}
-    "Small"]
-   [s/button {:soda {:size :medium}}
-    "Medium"]
-   [s/button {:soda {:size :large}}
-    "Large"]
-   [s/button {:soda {:size :big}}
-    "Big"]
-   [s/button {:soda {:size :huge}}
-    "Huge"]
-   [s/button {:soda {:size :massive}}
-    "Massive"]])
-
-(defcard-doc
-  "
-### Size
-
-A button can have different sizes
-"
-  (mkdn-pprint-source size))
-
-(defcard-rg
-  [size])
-
-
-;; Floated
-
-(defn floated []
-  [:div
-   [s/button {:soda {:floated :left}}
-    "Left Floated"]
-
-   [s/button {:soda {:floated :right}}
-    "Right Floated"]
-
-   [h/fake-content]
+   [social-facebook]
+   [sa/button {:ash [:twitter]}
+    "twitter"]
+   [sa/button {:ash [:google-plus]}
+    "google-plus"]
+   [sa/button {:ash [:vk]}
+    "vk"]
+   [sa/button {:ash [:linkedin]}
+    "linkedin"]
+   [sa/button {:ash [:instagram]}
+    "instagram"]
+   [sa/button {:ash [:youtube]}
+    "youtube"]
    ])
 
-(defcard-doc
-  "
-### Floated
 
-A button can be aligned to the left or right of its container
-"
-  (mkdn-pprint-source floated))
+
+
+;; ---------------------------
+;; Size
+
+(defcard-doc
+  "## size"
+  (list-keys "size"))
+
+(defn size-mini []
+  [sa/button {:ash [:mini]}
+   "mini"])
+
+(defcard-doc
+  (mkdn-pprint-source size-mini))
 
 (defcard-rg
-  [floated])
+  [:div
+   [size-mini]
+   [sa/button {:ash [:tiny]} "tiny"]
+   [sa/button {:ash [:small]} "small"]
+   [sa/button {:ash [:medium]} "medium"]
+   [sa/button {:ash [:large]} "large"]
+   [sa/button {:ash [:big]} "big"]
+   [sa/button {:ash [:huge]} "huge"]
+   [sa/button {:ash [:massive]} "massive"]
+   ])
 
 
+;; ---------------------------
+;; Floated
+
+(defcard-doc
+  "## floated"
+  (list-keys "floated"))
+
+
+(defn right-floated []
+  [sa/button {:ash [:right-floated]}
+   "right-floated"])
+
+(defcard-doc
+  (mkdn-pprint-source right-floated))
+
+(defcard-rg
+  [right-floated])
+
+
+(defn left-floated []
+  [sa/button {:ash [:left-floated]}
+   "left-floated"])
+
+(defcard-doc
+  (mkdn-pprint-source left-floated))
+
+(defcard-rg
+  [left-floated])
+
+
+;; ---------------------------
 ;; Colored
 
-(defn colored []
-  [:div
-   [s/button {:soda {:color :red}}
-    "Red"]
-   [s/button {:soda {:color :orange}}
-    "Orange"]
-   [s/button {:soda {:color :yellow}}
-    "Yellow"]
-   [s/button {:soda {:color :olive}}
-    "Olive"]
-   [s/button {:soda {:color :green}}
-    "Green"]
-   [s/button {:soda {:color :teal}}
-    "Teal"]
-   [s/button {:soda {:color :blue}}
-    "Blue"]
-   [s/button {:soda {:color :violet}}
-    "Violet"]
-   [s/button {:soda {:color :purple}}
-    "Purple"]
-   [s/button {:soda {:color :pink}}
-    "Pink"]
-   [s/button {:soda {:color :brown}}
-    "Brown"]
-   [s/button {:soda {:color :grey}}
-    "Grey"]
-   [s/button {:soda {:color :black}}
-    "Black"]])
+(defcard-doc
+  "## colored"
+  (list-keys "colored"))
+
+(defn colored-red []
+  [sa/button {:ash [:red]}
+   "red"])
 
 (defcard-doc
-  "
-### Colored
-
-A button can have different colors
-"
-  (mkdn-pprint-source colored))
+  (mkdn-pprint-source colored-red))
 
 (defcard-rg
-  [colored])
+  [:div
+   [colored-red]
+   [sa/button {:ash [:orange]} "orange"]
+   [sa/button {:ash [:yellow]} "yellow"]
+   [sa/button {:ash [:olive]} "olive"]
+   [sa/button {:ash [:green]} "green"]
+   [sa/button {:ash [:teal]} "teal"]
+   [sa/button {:ash [:blue]} "blue"]
+   [sa/button {:ash [:violet]} "violet"]
+   [sa/button {:ash [:purple]} "purple"]
+   [sa/button {:ash [:pink]} "pink"]
+   [sa/button {:ash [:brown]} "brown"]
+   [sa/button {:ash [:grey]} "grey"]
+   [sa/button {:ash [:black]} "black"]
+   ])
 
 
+;; ---------------------------
 ;; Compact
 
-(defn compact []
-  [:div
-   [s/button {:soda {:compact? true}}
-    "Hold"]
+(defcard-doc
+  "## compact"
+  (list-keys "compact"))
 
-   [s/button {:soda {:type :labeled-icon
-                     :compact? true}}
-    [s/icon {:soda {:icon :pause}}]
-    "Pause"]])
+(defn compact []
+  [sa/button {:ash [:compact]}
+   "compact"])
 
 (defcard-doc
-  "
-### Compact
-
-A button can reduce its padding to fit into tighter spaces
-"
   (mkdn-pprint-source compact))
 
 (defcard-rg
-  [compact])
+  [:div
+   [compact]
+   [sa/button "normal"]])
 
 
+;; ---------------------------
 ;; Toggle
 
-(defn toggle-state [state]
-  (if (= :active state)
-    :default
-    :active))
+(defcard-doc
+  "## toggle"
+  (list-keys "toggle"))
 
-(defn toggle-text [state]
-  (if (= :active state)
-    "Voted"
-    "Vote"))
-
-(defn handle-on-click! [ratom state]
-  (swap! ratom update-in [:foo :soda :state] toggle-state))
-
-(defn toggle-component []
-  (let [ratom (reagent/atom {})]
+(defn toggle []
+  (let [local-state      (reagent/atom {:soda nil})
+        on-click-handler (fn []
+                           (swap! local-state update :soda
+                                  #(if (= :active %) nil :active)))
+        text             (fn [soda]
+                           (if (= :active soda)
+                             "toggled on" "toggled off"))]
     (fn []
-      (let [state (get-in @ratom [:foo :soda :state])]
-        [s/button {:soda {:ratom ratom
-                          :path :foo
-                          :toggle? true
-                          :state :default}
-                   :on-click #(handle-on-click! ratom state)}
-         (toggle-text state)]))))
+      (let [soda (:soda @local-state)]
+        [sa/button {:soda     soda
+                    :ash      [:toggle]
+                    :on-click on-click-handler}
+         (text soda)]))))
 
 (defcard-doc
-  "
-### Toggle
-
-A button can be formatted to toggle on and off
-"
-  (mkdn-pprint-source toggle-state)
-  (mkdn-pprint-source toggle-text)
-  (mkdn-pprint-source handle-on-click!)
-  (mkdn-pprint-source toggle-component))
+  (mkdn-pprint-source toggle))
 
 (defcard-rg
-  [toggle-component])
+  [toggle])
 
 
-;; Positive
-
-(defn positive []
-  [s/button {:soda {:consequence :positive}}
-   "Positive"])
+;; ---------------------------
+;; Consequence
 
 (defcard-doc
-  "
-### Positive
+  "## consequence"
+  (list-keys "consequence"))
 
-A button can hint towards a positive consequence
-"
-  (mkdn-pprint-source positive))
-
-(defcard-rg
-  [positive])
-
-
-;; Negative
-
-(defn negative []
-  [s/button {:soda {:consequence :negative}}
-   "Negative"])
+(defn consequence-negative []
+  [sa/button {:ash [:negative]}
+   "negative"])
 
 (defcard-doc
-  "
-### Negative
-
-A button can hint towards a negative consequence
-"
-  (mkdn-pprint-source negative))
+  (mkdn-pprint-source consequence-negative))
 
 (defcard-rg
-  [negative])
+  [:div
+   [consequence-negative]
+   [sa/button {:ash [:positive]} "positive"]])
 
 
+
+;; ---------------------------
 ;; Fluid
 
+(defcard-doc
+  "## fluid"
+  (list-keys "fluid"))
+
 (defn fluid []
-  [s/button {:soda {:fluid? true}}
-   "Fluid"])
+  [sa/button {:ash [:fluid]}
+   "fluid"])
 
 (defcard-doc
-  "
-### Fluid
-
-A button can take the width of its container
-"
   (mkdn-pprint-source fluid))
 
 (defcard-rg
   [fluid])
 
 
+;; ---------------------------
 ;; Circular
 
+(defcard-doc
+  "## circular"
+  (list-keys "circular"))
+
 (defn circular []
-  [s/button {:soda {:type :icon
-                    :circular? true}}
-   [s/icon {:soda {:icon :settings}}]])
+  [sa/button {:ash [:circular]}
+   "circular"])
 
 (defcard-doc
-  "
-### Circular
-
-A button can be circular
-"
   (mkdn-pprint-source circular))
 
 (defcard-rg
   [circular])
 
 
-;; Vertically Attached
-
-(defn vertically-attached []
-  [:div
-   [s/button {:soda {:tag :div
-                     :attached :top}
-              :tab-index "0"}
-    "Top"]
-   [s/segment {:soda {:attached :default}}
-    [h/fake-content]]
-   [s/button {:soda {:tag :div
-                     :attached :bottom}
-              :tab-index "0"}
-    "Bottom"]])
+;; ---------------------------
+;; Vertically-Attached
 
 (defcard-doc
-  "
-### Vertically Attached
+  "## vertically-attached"
+  (list-keys "vertically-attached"))
 
-A button can be attached to the top or bottom of other content
-"
-  (mkdn-pprint-source vertically-attached))
-
-(defcard-rg
-  [vertically-attached])
-
-
-;; Horizontally Attached
-
-(defn horizontally-attached []
-  [:div
-   [s/button {:soda {:attached :left}}
-    "Left"]
-   [s/button {:soda {:attached :right}}
-    "Right"]])
+;; TODO: fix
+(defn vertically-attached-top []
+  [sa/button {:ash [:top-attached]}
+   "top-attached"])
 
 (defcard-doc
-  "
-### Horizontally Attached
-
-A button can be attached to the left or right of other content
-"
-  (mkdn-pprint-source horizontally-attached))
+  (mkdn-pprint-source vertically-attached-top))
 
 (defcard-rg
-  [horizontally-attached])
+  [vertically-attached-top])
+
+
+;; TODO: fix
+(defn vertically-attached-bottom []
+  [sa/button {:ash [:bottom-attached]}
+   "bottom-attached"])
+
+(defcard-doc
+  (mkdn-pprint-source vertically-attached-bottom))
+
+(defcard-rg
+  [vertically-attached-bottom])
+
+
+;; ---------------------------
+;; Horizontally-Attached
+
+(defcard-doc
+  "## horizontally-attached"
+  (list-keys "horizontally-attached"))
+
+;; TODO: fix
+(defn horizontally-attached-top []
+  [sa/button {:ash [:left-attached]}
+   "left-attached"])
+
+(defcard-doc
+  (mkdn-pprint-source horizontally-attached-top))
+
+(defcard-rg
+  [horizontally-attached-top])
+
+
+;; TODO: fix
+(defn horizontally-attached-bottom []
+  [sa/button {:ash [:right-attached]}
+   "right-attached"])
+
+(defcard-doc
+  (mkdn-pprint-source horizontally-attached-bottom))
+
+(defcard-rg
+  [horizontally-attached-bottom])

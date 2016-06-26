@@ -7,5 +7,10 @@ dev-resources
 
 figwheel_server.log
 
+.lein-failures
+.nrepl-port
+
+/resources/public/js/compiled
+
 pom.xml
 pom.xml.asc

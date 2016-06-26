@@ -1,20 +1,11 @@
 # soda-ash
 
-[![Build Status](https://travis-ci.org/gadfly361/soda-ash.svg?branch=master)](https://travis-ci.org/gadfly361/soda-ash)
-
-**DISCLAIMER 1** Currently, soda-ash only covers Semantic UI's Elements.
-
-**DISCLAIMER 2** Development is currently on hold. While I am really excited about this project, I don't forsee being able to work on it again until ~May 2016. At which point, I fully anticipate implementing breaking changes, sorry in advance.
-
 Soda-ash is an interface between clojurescript's [reagent](https://github.com/reagent-project/reagent) and [Semantic UI](http://semantic-ui.com/).
 
 Semantic UI is awesome ... however, at its core, you are concatenating
 ordered classes into a string.  Soda-ash bubbles Semantic UI's classes
-out of this regex-hell and softens them into clojurescript's familiar,
-powerful, and unordered hash-map.  Furthermore, soda-ash allows you to
-place this hash-map inside a reagent atom at your desired path.  This
-means you can swap! Semantic UI classes and have your component
-reactively update.
+out of this regex-hell and softens them into clojurescript's familiar
+and powerful collection abstraction.
 
 ## Docs
 
@@ -26,34 +17,28 @@ If you have questions, I can usually be found hanging out in the
 [clojurians](http://clojurians.net/) #reagent slack channel (my handle
 is [@gadfly361](https://twitter.com/gadfly361)).
 
-## Usage
+## Development Mode
 
-Put the following in the `:dependencies` vector of your *project.clj*
+### cljs-devtools
 
-```
-[soda-ash "0.1.0-beta"]
-```
+To enable:
 
-Then require soda-ash in your namespace.
+1. Open Chrome's DevTools,`Ctrl-Shift-i`
+2. Open "Settings", `F1`
+3. Check "Enable custom formatters" under the "Console" section
+4. close and re-open DevTools
 
-```
-(ns foo.bar
-  (:require [soda-ash.element :as s]))
-```
+### Start Cider from Emacs:
 
-Finally, add Semantic UI to your index.html file:
+Put this in your Emacs config file:
 
 ```
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.css">
+(setq cider-cljs-lein-repl "(do (use 'figwheel-sidecar.repl-api) (start-figwheel!) (cljs-repl))")
 ```
 
-## Roadmap
+Navigate to a clojurescript file and start a figwheel REPL with `cider-jack-in-clojurescript` or (`C-c M-J`)
 
-Next up, Collections.
-
-## Development
-
-### Devcards
+### Run application:
 
 ```
 lein clean
@@ -64,28 +49,21 @@ Figwheel will automatically push cljs changes to the browser.
 
 Wait a bit, then browse to [http://localhost:3449](http://localhost:3449).
 
----
+### Run tests:
 
-To build a minified version:
+```
+lein test
+```
+
+Or
+
+```
+lein auto test
+```
+
+## Production Build
 
 ```
 lein clean
 lein cljsbuild once hostedcards
 ```
-
-Then open *resources/public/index.html*
-
-### Tests
-
-```
-lein clean
-lein with-profile test doo phantom unit once
-```
-
-The above command assumes that you have [phantomjs](https://www.npmjs.com/package/phantomjs) installed.
-
-# License
-
-Copyright © 2016 Matthew Jaoudi
-
-Distributed under the The MIT License (MIT).
