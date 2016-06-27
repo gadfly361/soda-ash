@@ -68,7 +68,7 @@
 
   (is (thrown-with-msg?
        IllegalArgumentException
-       #"\[Soda-ash\] `foo bar` cannot contain spaces"
+       #"\*\*\[Soda-ash\] `foo bar` cannot contain whitespace\*\*"
        (target/ash->set ["foo bar"])))
 
   (is (= (target/ash->set [:foo :bar :baz])
@@ -80,7 +80,7 @@
 (deftest ash-set->intersection
   (is (thrown-with-msg?
        IllegalArgumentException
-       #"\[Soda ash\] When using `button`, the `size` group can only use one of these --> :medium, :small"
+       #"\*\*\[Soda ash\] When using `button`, the `size` group can only use one of these --> :medium, :small\*\*"
        (target/ash-set->intersection {:ui-name "button"
                                  :group-name "size"
                                  :group-set #{:small :medium :large}

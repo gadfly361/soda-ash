@@ -1,7 +1,30 @@
 (ns soda-ash.helpers
   (:require
    [clojure.string :as string]
-   [clojure.set :as set]))
+   [clojure.set :as set]
+   [soda-ash.config :as config]))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Devcards
+
+(defn list-types [groups ui-name]
+  (->> groups
+       (filter #(= "types"
+                   (:group-name %)))
+       first
+       :group-set
+       (map #(str ui-name "-" (name %)))
+       (string/join ", ")))
+
+(defn list-keys [groups]
+  (fn [group-name]
+    (->> groups
+         (filter #(= group-name
+                     (:group-name %)))
+         first
+         :group-set
+         (string/join ", "))))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -16,7 +39,7 @@
 
 
 (defn- ->keyword-error-msg [k]
-  (str "[Soda-ash] `" k "` cannot contain spaces"))
+  (str "**[Soda-ash] `" k "` cannot contain whitespace**"))
 
 
 (defn ->keyword [k]
@@ -29,8 +52,12 @@
         (throw (IllegalArgumentException.
                 (->keyword-error-msg k)))
         :cljs
-        (js/console.warn
-         (->keyword-error-msg k)))
+        (condp = (:issues-as @config/options)
+            :warnings (js/console.warn
+                       (->keyword-error-msg k))
+            :errors (js/Error.
+                     (->keyword-error-msg k))
+            nil))
 
     :else
     (keyword (name k))))
@@ -53,12 +80,13 @@
                                           only-one?]
                                    :as   group}
                                   overlap]
-  (str "[Soda ash] When using `"
+  (str "**[Soda ash] When using `"
        ui-name
        "`, the `"
        group-name
        "` group can only use one of these --> "
-       (string/join ", " (sort overlap))))
+       (string/join ", " (sort overlap))
+       "**"))
 
 
 (defn ash-set->intersection [{:keys [ui-name
@@ -78,8 +106,12 @@
           (throw (IllegalArgumentException.
                   (ash-intersection-error-msg group overlap)))
           :cljs
-          (js/console.warn
-           (ash-intersection-error-msg group overlap)))
+          (condp = (:issues-as @config/options)
+            :warnings (js/console.warn
+                       (ash-intersection-error-msg group overlap))
+            :errors   (js/Error.
+                       (ash-intersection-error-msg group overlap))
+            nil))
 
       :else overlap)))
 

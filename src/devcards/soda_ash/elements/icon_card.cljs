@@ -4,19 +4,15 @@
                           defcard-rg
                           mkdn-pprint-source]])
   (:require
-   [reagent.core :as reagent]
+   [devcards.core]
+   [reagent.core]
    [soda-ash.core :as sa]
-   [soda-ash.elements.icon :as icon]
-   [clojure.string :as string]))
+   [soda-ash.helpers :as h]
+   [soda-ash.elements.icon :as icon]))
 
 
-(defn list-keys [group-name]
-  (->> icon/groups
-       (filter #(= group-name
-                   (:group-name %)))
-       first
-       :group-set
-       (string/join ", ")))
+(def list-keys
+  (h/list-keys icon/groups))
 
 
 (defcard-doc
@@ -58,7 +54,7 @@
   "
 ---
 # Types"
-  (list-keys "types"))
+  (h/list-types icon/groups "types"))
 
 
 (defn type-alarm []

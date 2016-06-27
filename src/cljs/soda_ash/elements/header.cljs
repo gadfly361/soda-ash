@@ -37,10 +37,17 @@
    ;; States
    (create-group
     {:group-name "states"
-     :group-set (sorted-set
-                 :disabled)})
+     :group-set  (sorted-set
+                  :disabled)})
 
    ;; Variations
+
+   ;; Note: this is a type, but makes more sense to implement as :ash
+   (create-group
+    {:group-name "icon"
+     :group-set  (sorted-set
+                  :icon)})
+
    (create-group
     {:group-name "dividing"
      :group-set  (sorted-set
@@ -114,5 +121,4 @@
 (defcomp "small" (assoc opts :type :small))
 (defcomp "tiny" (assoc opts :type :tiny))
 
-(defcomp "icon" (assoc opts :type :icon))
 (defcomp "sub" (assoc opts :type :sub))

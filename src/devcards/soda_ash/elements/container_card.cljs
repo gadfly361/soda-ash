@@ -4,26 +4,22 @@
                           defcard-rg
                           mkdn-pprint-source]])
   (:require
-   [reagent.core :as reagent]
+   [devcards.core]
+   [reagent.core]
    [soda-ash.core :as sa]
-   [soda-ash.elements.container :as container]
-   [clojure.string :as string]))
+   [soda-ash.helpers :as h]
+   [soda-ash.elements.container :as container]))
 
 
-(defn list-keys [group-name]
-  (->> container/groups
-       (filter #(= group-name
-                   (:group-name %)))
-       first
-       :group-set
-       (string/join ", ")))
+(def list-keys
+  (h/list-keys container/groups))
 
 
 (defcard-doc
   "# SUMMARY
 
   ## Types"
-  (list-keys "types")
+  (h/list-types container/groups "types")
 
   "## Variations (*ash*)"
   "### Text Alignment"

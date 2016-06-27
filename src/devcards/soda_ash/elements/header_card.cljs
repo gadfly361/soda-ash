@@ -4,31 +4,29 @@
                           defcard-rg
                           mkdn-pprint-source]])
   (:require
-   [reagent.core :as reagent]
+   [devcards.core]
+   [reagent.core]
    [soda-ash.core :as sa]
-   [soda-ash.elements.header :as header]
-   [clojure.string :as string]))
+   [soda-ash.helpers :as h]
+   [soda-ash.elements.header :as header]))
 
 
-(defn list-keys [group-name]
-  (->> header/groups
-       (filter #(= group-name
-                   (:group-name %)))
-       first
-       :group-set
-       (string/join ", ")))
+(def list-keys
+  (h/list-keys header/groups))
 
 
 (defcard-doc
   "# SUMMARY
 
   ## Types"
-  (list-keys "types")
+  (h/list-types header/groups "header")
 
   "## States (*soda*)"
   (list-keys "states")
 
   "## Variations (*ash*)"
+  "### Icon"
+  (list-keys "icon")
   "### dividing"
   (list-keys "dividing")
   "### block"
@@ -89,17 +87,6 @@
    ])
 
 
-;; TODO: fix this
-(defn type-icon []
-  [sa/header-icon "icon header"])
-
-(defcard-doc
-  (mkdn-pprint-source type-icon))
-
-(defcard-rg
-   [type-icon])
-
-
 (defn type-sub []
   [sa/header-sub "sub header"])
 
@@ -140,6 +127,21 @@
   "
 ---
 # Variations")
+
+;; ---------------------------
+;; icon
+
+(defn type-icon []
+   [sa/header-h2 {:ash [:icon]}
+   [sa/icon-settings]
+   [:div.content
+    "Account Settings"]])
+
+(defcard-doc
+  (mkdn-pprint-source type-icon))
+
+(defcard-rg
+   [type-icon])
 
 
 ;; ---------------------------

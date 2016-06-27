@@ -4,26 +4,22 @@
                           defcard-rg
                           mkdn-pprint-source]])
   (:require
+   [devcards.core]
    [reagent.core :as reagent]
    [soda-ash.core :as sa]
-   [soda-ash.elements.button :as button]
-   [clojure.string :as string]))
+   [soda-ash.helpers :as h]
+   [soda-ash.elements.button :as button]))
 
 
-(defn list-keys [group-name]
-  (->> button/groups
-       (filter #(= group-name
-                   (:group-name %)))
-       first
-       :group-set
-       (string/join ", ")))
+(def list-keys
+  (h/list-keys button/groups))
 
 
 (defcard-doc
   "# SUMMARY
 
    ## Types"
-  (list-keys "types")
+  (h/list-types button/groups "types")
 
   "## States (*soda*)"
   (list-keys "states")
@@ -93,9 +89,11 @@
   [type-secondary])
 
 
-;; TODO: FIX
 (defn type-animated []
-  [sa/button-animated "animated"])
+  [sa/button-animated
+   [:div.visible.content "Next"]
+   [:div.hidden.content
+    [sa/icon-arrow-right]]])
 
 (defcard-doc
   (mkdn-pprint-source type-animated))
@@ -104,9 +102,11 @@
   [type-animated])
 
 
-;; TODO: FIX
 (defn type-vertical-animated []
-  [sa/button-vertical-animated "vertical-animated"])
+  [sa/button-vertical-animated
+   [:div.hidden.content "Shop"]
+   [:div.visible.content
+    [sa/icon-shop]]])
 
 (defcard-doc
   (mkdn-pprint-source type-vertical-animated))
@@ -115,9 +115,12 @@
   [type-vertical-animated])
 
 
-;; TODO: FIX
 (defn type-animated-fade []
-  [sa/button-animated-fade "animated-fade"])
+  [sa/button-animated-fade
+   [:div.visible.content
+    "Sign up for a Pro account"]
+   [:div.hidden.content
+    "12.99 a month"]])
 
 (defcard-doc
   (mkdn-pprint-source type-animated-fade))
@@ -148,9 +151,9 @@
   [type-left-labeled])
 
 
-;; TODO: FIX
 (defn type-icon []
-  [sa/button-icon "icon"])
+  [sa/button-icon
+   [sa/icon-cloud]])
 
 (defcard-doc
   (mkdn-pprint-source type-icon))

@@ -846,8 +846,7 @@
 (def header-tiny' header/class-tiny)
 (def header-tiny header/component-tiny)
 
-(def header-icon' header/class-icon)
-(def header-icon header/component-icon)
+;; header-icon is implemented using :ash
 
 (def header-sub' header/class-sub)
 (def header-sub header/component-sub)
