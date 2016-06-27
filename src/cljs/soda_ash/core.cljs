@@ -8,6 +8,7 @@
    [soda-ash.elements.header :as header]
    [soda-ash.elements.icon :as icon]
    [soda-ash.elements.image :as image]
+   [soda-ash.elements.input :as input]
    ))
 
 
@@ -1907,3 +1908,11 @@
 
 (def image' image/class)
 (def image image/component)
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; input
+
+(def input' input/class)
+(def input input/component)
