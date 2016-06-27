@@ -7,6 +7,7 @@
    [soda-ash.elements.flag :as flag]
    [soda-ash.elements.header :as header]
    [soda-ash.elements.icon :as icon]
+   [soda-ash.elements.image :as image]
    ))
 
 
@@ -1898,3 +1899,11 @@
 (def icon-youtube-play icon/component-youtube-play)
 (def icon-youtube-square' icon/class-youtube-square)
 (def icon-youtube-square icon/component-youtube-square)
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; image
+
+(def image' image/class)
+(def image image/component)
