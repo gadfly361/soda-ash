@@ -4,9 +4,9 @@
    [soda-ash.helpers :as h]))
 
 
-(defn create-ashes [soda ash type]
-  (when (or soda ash type)
-    (some->> [soda ash type]
+(defn create-ashes [soda ash]
+  (when (or soda ash)
+    (some->> [soda ash]
              flatten
              (remove nil?))))
 
@@ -28,10 +28,11 @@
     soda
     ash]
 
-   (let [ashes (create-ashes soda ash type)]
+   (let [ashes (create-ashes soda ash)]
      (string/join " "
                   (->> [(when ui? "ui")
                         (when ashes (h/ash->class groups ashes))
+                        (when type (h/ash->class groups [type]))
                         (when ui-name (h/keyword->class ui-name))]
                        flatten
                        (remove nil?))))))
