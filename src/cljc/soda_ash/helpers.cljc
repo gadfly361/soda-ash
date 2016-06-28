@@ -8,14 +8,24 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Devcards
 
-(defn list-types [groups ui-name]
-  (->> groups
-       (filter #(= "types"
-                   (:group-name %)))
-       first
-       :group-vector
-       (map #(str ui-name "-" (name %)))
-       (string/join ", ")))
+(defn list-types
+  ([groups ui-name]
+   (list-types groups ui-name true))
+  ([groups ui-name show-default?]
+   (let [types (->> groups
+                    (filter #(= "types"
+                                (:group-name %)))
+                    first
+                    :group-vector
+                    (map #(str ui-name "-" (name %)))
+                    (string/join ", "))]
+     (cond (and show-default?
+                (not (empty? types)))
+           (str ui-name ", " types)
+
+           show-default? ui-name
+
+           :else        types))))
 
 (defn list-keys [groups]
   (fn [group-name]

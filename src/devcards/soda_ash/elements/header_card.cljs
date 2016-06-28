@@ -19,7 +19,7 @@
   "# SUMMARY
 
   ## Types"
-  (h/list-types header/groups "header")
+  (h/list-types header/groups "header" false)
 
   "## States (*soda*)"
   (list-keys "states")
@@ -52,7 +52,7 @@
   "
 ---
 # Types"
-  (list-keys "types"))
+  (h/list-types header/groups "header" false))
 
 
 (defn type-h1 []

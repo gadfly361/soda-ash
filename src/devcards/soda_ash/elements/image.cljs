@@ -18,6 +18,9 @@
 (defcard-doc
   "# SUMMARY"
 
+  "## Types"
+  (h/list-types image/groups "image" true)
+
   "## States (*soda*)"
   (list-keys "states")
 
@@ -52,7 +55,9 @@
 (defcard-doc
   "
 ---
-# Types")
+# Types"
+  (h/list-types image/groups "image" true)
+  )
 
 (defn type-default []
   [sa/image {:ash [:small]

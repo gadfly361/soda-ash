@@ -54,7 +54,7 @@
   "
 ---
 # Types"
-  (h/list-types icon/groups "types"))
+  (h/list-types icon/groups "icon" false))
 
 
 (defn type-alarm []

@@ -19,7 +19,7 @@
   "# SUMMARY
 
    ## Types"
-  (h/list-types button/groups "types")
+  (h/list-types button/groups "button")
 
   "## States (*soda*)"
   (list-keys "states")
@@ -57,7 +57,7 @@
   "
 ---
 # Types"
-  (list-keys "types"))
+  (h/list-types button/groups "button"))
 
 (defn type-default []
   [sa/button "default"])

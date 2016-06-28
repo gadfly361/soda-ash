@@ -19,7 +19,7 @@
   "# SUMMARY
 
   ## Types"
-  (h/list-types divider/groups "types")
+  (h/list-types divider/groups "divider")
 
   "## Variations (*ash*)"
   "### Inverted"
@@ -43,7 +43,7 @@
   "
 ---
 # Types"
-  (list-keys "types"))
+  (h/list-types divider/groups "divider"))
 
 (defn type-default []
   [:div

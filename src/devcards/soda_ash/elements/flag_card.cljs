@@ -15,7 +15,7 @@
   "# SUMMARY
 
   ## Types"
-  (h/list-types flag/groups "types")
+  (h/list-types flag/groups "flag" false)
   )
 
 

@@ -9,6 +9,7 @@
    [soda-ash.elements.icon :as icon]
    [soda-ash.elements.image :as image]
    [soda-ash.elements.input :as input]
+   [soda-ash.elements.label :as label]
    ))
 
 
@@ -1916,3 +1917,65 @@
 
 (def input' input/class)
 (def input input/component)
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; label
+
+(def label' label/class)
+(def label label/component)
+
+(def label-image' label/class-image)
+(def label-image label/component-image)
+
+(def label-pointing' label/class-pointing)
+(def label-pointing label/component-pointing)
+
+(def label-pointing-below' label/class-pointing-below)
+(def label-pointing-below label/component-pointing-below)
+
+(def label-left-pointing' label/class-left-pointing)
+(def label-left-pointing label/component-left-pointing)
+
+(def label-right-pointing' label/class-right-pointing)
+(def label-right-pointing label/component-right-pointing)
+
+(def label-left-corner' label/class-left-corner)
+(def label-left-corner label/component-left-corner)
+
+(def label-right-corner' label/class-right-corner)
+(def label-right-corner label/component-right-corner)
+
+(def label-tag' label/class-tag)
+(def label-tag label/component-tag)
+
+(def label-ribbon' label/class-ribbon)
+(def label-ribbon label/component-ribbon)
+
+(def label-right-ribbon' label/class-right-ribbon)
+(def label-right-ribbon label/component-right-ribbon)
+
+(def label-top-attached' label/class-top-attached)
+(def label-top-attached label/component-top-attached)
+
+(def label-bottom-attached' label/class-bottom-attached)
+(def label-bottom-attached label/component-bottom-attached)
+
+(def label-top-right-attached' label/class-top-right-attached)
+(def label-top-right-attached label/component-top-right-attached)
+
+(def label-top-left-attached' label/class-top-left-attached)
+(def label-top-left-attached label/component-top-left-attached)
+
+(def label-bottom-right-attached' label/class-bottom-right-attached)
+(def label-bottom-right-attached label/component-bottom-right-attached)
+
+(def label-bottom-left-attached' label/class-bottom-left-attached)
+(def label-bottom-left-attached label/component-bottom-left-attached)
+
+(def label-horizontal' label/class-horizontal)
+(def label-horizontal label/component-horizontal)
+
+(def label-floating' label/class-floating)
+(def label-floating label/component-floating)

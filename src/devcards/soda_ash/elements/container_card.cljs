@@ -19,7 +19,7 @@
   "# SUMMARY
 
   ## Types"
-  (h/list-types container/groups "types")
+  (h/list-types container/groups "container")
 
   "## Variations (*ash*)"
   "### Text Alignment"
@@ -36,7 +36,7 @@
   "
 ---
 # Types"
-  (list-keys "types"))
+  (h/list-types container/groups "container"))
 
 (defn type-default []
   [sa/container

@@ -18,6 +18,9 @@
 (defcard-doc
   "# SUMMARY"
 
+  "## Types"
+  (h/list-types input/groups "input" true)
+
   "## States (*soda*)"
   (list-keys "states")
 
