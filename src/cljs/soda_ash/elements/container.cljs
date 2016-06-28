@@ -14,23 +14,23 @@
 (def groups
   [;; Types
    (create-group
-    {:group-name "types"
-     :group-set  (sorted-set
-                  :text)})
+    {:group-name   "types"
+     :group-vector (vector
+                    :text)})
 
    ;; Variations
    (create-group
-    {:group-name "text alignment"
-     :group-set  (sorted-set
-                  :left-aligned
-                  :center-aligned
-                  :right-aligned
-                  :justified)})
+    {:group-name   "text alignment"
+     :group-vector (vector
+                    :left-aligned
+                    :center-aligned
+                    :right-aligned
+                    :justified)})
 
    (create-group
-    {:group-name "fluid"
-     :group-set  (sorted-set
-                  :fluid)})
+    {:group-name   "fluid"
+     :group-vector (vector
+                    :fluid)})
    ])
 
 

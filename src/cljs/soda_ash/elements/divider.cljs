@@ -14,38 +14,38 @@
 (def groups
   [;; Types
    (create-group
-    {:group-name "types"
-     :group-set  (sorted-set
-                  :vertical
-                  :horizontal
-                  ;; :horizontal-header
-                  )})
+    {:group-name   "types"
+     :group-vector (vector
+                    :vertical
+                    :horizontal
+                    ;; :horizontal-header
+                    )})
 
    ;; Variations
    (create-group
-    {:group-name "inverted"
-     :group-set  (sorted-set
-                  :inverted)})
+    {:group-name   "inverted"
+     :group-vector (vector
+                    :inverted)})
 
    (create-group
-    {:group-name "fitted"
-     :group-set  (sorted-set
-                  :fitted)})
+    {:group-name   "fitted"
+     :group-vector (vector
+                    :fitted)})
 
    (create-group
-    {:group-name "hidden"
-     :group-set  (sorted-set
-                  :hidden)})
+    {:group-name   "hidden"
+     :group-vector (vector
+                    :hidden)})
 
    (create-group
-    {:group-name "section"
-     :group-set  (sorted-set
-                  :section)})
+    {:group-name   "section"
+     :group-vector (vector
+                    :section)})
 
    (create-group
-    {:group-name "clearing"
-     :group-set  (sorted-set
-                  :clearing)})
+    {:group-name   "clearing"
+     :group-vector (vector
+                    :clearing)})
    ])
 
 

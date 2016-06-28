@@ -13,7 +13,7 @@
        (filter #(= "types"
                    (:group-name %)))
        first
-       :group-set
+       :group-vector
        (map #(str ui-name "-" (name %)))
        (string/join ", ")))
 
@@ -23,7 +23,7 @@
          (filter #(= group-name
                      (:group-name %)))
          first
-         :group-set
+         :group-vector
          (string/join ", "))))
 
 
@@ -76,7 +76,7 @@
 
 (defn ash-intersection-error-msg [{:keys [ui-name
                                           group-name
-                                          group-set
+                                          group-vector
                                           only-one?]
                                    :as   group}
                                   overlap]
@@ -91,11 +91,12 @@
 
 (defn ash-set->intersection [{:keys [ui-name
                                 group-name
-                                group-set
+                                group-vector
                                 only-one?]
                          :as   group}
                         ash-set]
-  (let [overlap       (set/intersection group-set ash-set)
+  (let [group-set (into #{} group-vector)
+        overlap       (set/intersection group-set ash-set)
         overlap-count (count overlap)]
 
     (cond

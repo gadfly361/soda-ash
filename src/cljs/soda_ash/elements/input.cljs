@@ -14,59 +14,59 @@
 (def groups
   [;; States
    (create-group
-    {:group-name "states"
-     :group-set  (sorted-set
-                  :focus
-                  :loading
-                  :disabled
-                  :error)})
+    {:group-name   "states"
+     :group-vector (vector
+                    :focus
+                    :loading
+                    :disabled
+                    :error)})
 
    ;; Variations
    (create-group
-    {:group-name "icon"
-     :group-set  (sorted-set
-                  :icon
-                  :left-icon)})
+    {:group-name   "icon"
+     :group-vector (vector
+                    :icon
+                    :left-icon)})
 
    (create-group
-    {:group-name "labeled"
-     :group-set  (sorted-set
-                  :labeled
-                  :right-labeled
-                  :left-corner-labeled
-                  :corner-labeled)})
+    {:group-name   "labeled"
+     :group-vector (vector
+                    :labeled
+                    :right-labeled
+                    :left-corner-labeled
+                    :corner-labeled)})
 
    (create-group
-    {:group-name "action"
-     :group-set  (sorted-set
-                  :action
-                  :left-action)})
+    {:group-name   "action"
+     :group-vector (vector
+                    :action
+                    :left-action)})
 
    (create-group
-    {:group-name "transparent"
-     :group-set  (sorted-set
-                  :transparent)})
+    {:group-name   "transparent"
+     :group-vector (vector
+                    :transparent)})
 
    (create-group
-    {:group-name "inverted"
-     :group-set  (sorted-set
-                  :inverted)})
+    {:group-name   "inverted"
+     :group-vector (vector
+                    :inverted)})
 
    (create-group
-    {:group-name "fluid"
-     :group-set  (sorted-set
-                  :fluid)})
+    {:group-name   "fluid"
+     :group-vector (vector
+                    :fluid)})
 
    (create-group
-    {:group-name "size"
-     :group-set  (sorted-set
-                  :mini
-                  :small
-                  ;;
-                  :large
-                  :big
-                  :huge
-                  :massive)})
+    {:group-name   "size"
+     :group-vector (vector
+                    :mini
+                    :small
+                    ;;
+                    :large
+                    :big
+                    :huge
+                    :massive)})
    ])
 
 

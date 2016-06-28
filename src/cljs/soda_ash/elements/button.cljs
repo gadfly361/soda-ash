@@ -14,117 +14,117 @@
 (def groups
   [;; Types
    (create-group
-    {:group-name "types"
-     :group-set  (sorted-set
-                  :primary
-                  :secondary
+    {:group-name   "types"
+     :group-vector (vector
+                    :primary
+                    :secondary
 
-                  :animated
-                  :vertical-animated
-                  :animated-fade
+                    :animated
+                    :vertical-animated
+                    :animated-fade
 
-                  :labeled
-                  :left-labeled
-                  :icon
-                  :labeled-icon
-                  :right-labeled-icon
+                    :labeled
+                    :left-labeled
+                    :icon
+                    :labeled-icon
+                    :right-labeled-icon
 
-                  :basic
-                  :inverted
-                  :inverted-basic)})
+                    :basic
+                    :inverted
+                    :inverted-basic)})
 
    ;; States
    (create-group
-    {:group-name "states"
-     :group-set  (sorted-set
-                  :active
-                  :disabled
-                  :loading)})
+    {:group-name   "states"
+     :group-vector (vector
+                    :active
+                    :disabled
+                    :loading)})
 
    ;; Variations
    (create-group
-    {:group-name "social"
-     :group-set  (sorted-set
-                  :facebook
-                  :twitter
-                  :google-plus
-                  :vk
-                  :linkedin
-                  :instagram
-                  :youtube)})
+    {:group-name   "social"
+     :group-vector (vector
+                    :facebook
+                    :twitter
+                    :google-plus
+                    :vk
+                    :linkedin
+                    :instagram
+                    :youtube)})
 
    (create-group
-    {:group-name "size"
-     :group-set  (sorted-set
-                  :mini
-                  :tiny
-                  :small
-                  :medium
-                  :large
-                  :big
-                  :huge
-                  :massive)})
+    {:group-name   "size"
+     :group-vector (vector
+                    :mini
+                    :tiny
+                    :small
+                    :medium
+                    :large
+                    :big
+                    :huge
+                    :massive)})
 
    (create-group
-    {:group-name "floated"
-     :group-set  (sorted-set
-                  :left-floated
-                  :right-floated)})
+    {:group-name   "floated"
+     :group-vector (vector
+                    :left-floated
+                    :right-floated)})
 
    (create-group
-    {:group-name "colored"
-     :group-set  (sorted-set
-                  :red
-                  :orange
-                  :yellow
-                  :olive
-                  :green
-                  :teal
-                  :blue
-                  :violet
-                  :purple
-                  :pink
-                  :brown
-                  :grey
-                  :black)})
+    {:group-name   "colored"
+     :group-vector (vector
+                    :red
+                    :orange
+                    :yellow
+                    :olive
+                    :green
+                    :teal
+                    :blue
+                    :violet
+                    :purple
+                    :pink
+                    :brown
+                    :grey
+                    :black)})
 
    (create-group
-    {:group-name "compact"
-     :group-set  (sorted-set
-                  :compact)})
+    {:group-name   "compact"
+     :group-vector (vector
+                    :compact)})
 
    (create-group
-    {:group-name "toggle"
-     :group-set  (sorted-set
-                  :toggle)})
+    {:group-name   "toggle"
+     :group-vector (vector
+                    :toggle)})
 
    (create-group
-    {:group-name "consequence"
-     :group-set  (sorted-set
-                  :positive
-                  :negative)})
+    {:group-name   "consequence"
+     :group-vector (vector
+                    :positive
+                    :negative)})
 
    (create-group
-    {:group-name "fluid"
-     :group-set  (sorted-set
-                  :fluid)})
+    {:group-name   "fluid"
+     :group-vector (vector
+                    :fluid)})
 
    (create-group
-    {:group-name "circular"
-     :group-set  (sorted-set
-                  :circular)})
+    {:group-name   "circular"
+     :group-vector (vector
+                    :circular)})
 
    (create-group
-    {:group-name "vertically attached"
-     :group-set  (sorted-set
-                  :top-attached
-                  :bottom-attached)})
+    {:group-name   "vertically attached"
+     :group-vector (vector
+                    :top-attached
+                    :bottom-attached)})
 
    (create-group
-    {:group-name "horizontally attached"
-     :group-set  (sorted-set
-                  :left-attached
-                  :right-attached)})
+    {:group-name   "horizontally attached"
+     :group-vector (vector
+                    :left-attached
+                    :right-attached)})
    ])
 
 

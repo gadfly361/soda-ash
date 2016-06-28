@@ -14,91 +14,91 @@
 (def groups
   [;; Types
    (create-group
-    {:group-name "types"
-     :group-set  (sorted-set
-                  ;; based on rem
-                  :h1
-                  :h2
-                  :h3
-                  :h4
-                  :h5
+    {:group-name   "types"
+     :group-vector (vector
+                    ;; based on rem
+                    :h1
+                    :h2
+                    :h3
+                    :h4
+                    :h5
 
-                  ;; based on em
-                  :huge
-                  :large
-                  :medium
-                  :small
-                  :tiny
+                    ;; based on em
+                    :huge
+                    :large
+                    :medium
+                    :small
+                    :tiny
 
-                  :icon
-                  :sub
-                  )})
+                    :icon
+                    :sub
+                    )})
 
    ;; States
    (create-group
-    {:group-name "states"
-     :group-set  (sorted-set
-                  :disabled)})
+    {:group-name   "states"
+     :group-vector (vector
+                    :disabled)})
 
    ;; Variations
 
    ;; Note: this is a type, but makes more sense to implement as :ash
    (create-group
-    {:group-name "icon"
-     :group-set  (sorted-set
-                  :icon)})
+    {:group-name   "icon"
+     :group-vector (vector
+                    :icon)})
 
    (create-group
-    {:group-name "dividing"
-     :group-set  (sorted-set
-                  :dividing)})
+    {:group-name   "dividing"
+     :group-vector (vector
+                    :dividing)})
 
    (create-group
-    {:group-name "block"
-     :group-set  (sorted-set
-                  :block)})
+    {:group-name   "block"
+     :group-vector (vector
+                    :block)})
 
    (create-group
-    {:group-name "attached"
-     :group-set  (sorted-set
-                  :top-attached
-                  :attached
-                  :bottom-attached)})
+    {:group-name   "attached"
+     :group-vector (vector
+                    :top-attached
+                    :attached
+                    :bottom-attached)})
 
    (create-group
-    {:group-name "floating"
-     :group-set  (sorted-set
-                  :right-floated
-                  :left-floated)})
+    {:group-name   "floating"
+     :group-vector (vector
+                    :right-floated
+                    :left-floated)})
 
    (create-group
-    {:group-name "text alignment"
-     :group-set  (sorted-set
-                  :right-aligned
-                  :center-aligned
-                  :left-aligned
-                  :justified)})
+    {:group-name   "text alignment"
+     :group-vector (vector
+                    :right-aligned
+                    :center-aligned
+                    :left-aligned
+                    :justified)})
 
    (create-group
-    {:group-name "colored"
-     :group-set  (sorted-set
-                  :red
-                  :orange
-                  :yellow
-                  :olive
-                  :green
-                  :teal
-                  :blue
-                  :violet
-                  :purple
-                  :pink
-                  :brown
-                  :grey)})
+    {:group-name   "colored"
+     :group-vector (vector
+                    :red
+                    :orange
+                    :yellow
+                    :olive
+                    :green
+                    :teal
+                    :blue
+                    :violet
+                    :purple
+                    :pink
+                    :brown
+                    :grey)})
 
    (create-group
-    {:group-name "inverted"
-     :group-set  (sorted-set
-                  :inverted)})
+    {:group-name   "inverted"
+     :group-vector (vector
+                    :inverted)})
    ])
 
 

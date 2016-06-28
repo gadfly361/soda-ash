@@ -14,71 +14,71 @@
 (def groups
   [;; States
    (create-group
-    {:group-name "states"
-     :group-set (sorted-set
-                 :hidden
-                 :disabled)})
+    {:group-name   "states"
+     :group-vector (vector
+                    :hidden
+                    :disabled)})
 
    ;; Variations
    (create-group
-    {:group-name "avatar"
-     :group-set  (sorted-set
-                  :avatar)})
+    {:group-name   "avatar"
+     :group-vector (vector
+                    :avatar)})
 
    (create-group
-    {:group-name "bordered"
-     :group-set  (sorted-set
-                  :bordered)})
+    {:group-name   "bordered"
+     :group-vector (vector
+                    :bordered)})
 
    (create-group
-    {:group-name "fluid"
-     :group-set  (sorted-set
-                  :fluid)})
+    {:group-name   "fluid"
+     :group-vector (vector
+                    :fluid)})
 
    (create-group
-    {:group-name "rounded"
-     :group-set  (sorted-set
-                  :rounded)})
+    {:group-name   "rounded"
+     :group-vector (vector
+                    :rounded)})
 
    (create-group
-    {:group-name "circular"
-     :group-set  (sorted-set
-                  :circular)})
+    {:group-name   "circular"
+     :group-vector (vector
+                    :circular)})
 
    (create-group
-    {:group-name "aligned"
-     :group-set  (sorted-set
-                  :top-aligned
-                  :middle-aligned
-                  :bottom-aligned)})
+    {:group-name   "aligned"
+     :group-vector (vector
+                    :top-aligned
+                    :middle-aligned
+                    :bottom-aligned)})
 
    (create-group
-    {:group-name "centered"
-     :group-set  (sorted-set
-                  :centered)})
+    {:group-name   "centered"
+     :group-vector (vector
+                    :centered)})
 
    (create-group
-    {:group-name "spaced"
-     :group-set  (sorted-set
-                  :spaced)})
+    {:group-name   "spaced"
+     :group-vector (vector
+                    :spaced)})
 
    (create-group
-    {:group-name "floated"
-     :group-set  (sorted-set
-                  :left-floated
-                  :right-floated)})
+    {:group-name   "floated"
+     :group-vector (vector
+                    :left-floated
+                    :right-floated)})
 
    (create-group
-    {:group-name "size"
-     :group-set  (sorted-set
-                  :mini
-                  :tiny
-                  :small
-                  :medium
-                  :large
-                  :big
-                  :huge
-                  :massive)})
+    {:group-name   "size"
+     :group-vector (vector
+                    :mini
+                    :tiny
+                    :small
+                    :medium
+                    :large
+                    :big
+                    :huge
+                    :massive)})
    ])
 
 
