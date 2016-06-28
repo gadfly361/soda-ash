@@ -11,6 +11,7 @@
    [soda-ash.elements.image-card]
    [soda-ash.elements.input-card]
    [soda-ash.elements.label-card]
+   [soda-ash.elements.s-list-card]
    ))
 
 

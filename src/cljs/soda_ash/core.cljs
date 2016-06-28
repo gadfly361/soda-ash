@@ -10,6 +10,7 @@
    [soda-ash.elements.image :as image]
    [soda-ash.elements.input :as input]
    [soda-ash.elements.label :as label]
+   [soda-ash.elements.s-list :as s-list]
    ))
 
 
@@ -1979,3 +1980,26 @@
 
 (def label-floating' label/class-floating)
 (def label-floating label/component-floating)
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; s-list
+
+(def s-list' s-list/class)
+(def s-list s-list/component)
+
+(def s-list-bulleted' s-list/class-bulleted)
+(def s-list-bulleted s-list/component-bulleted)
+
+(def s-list-ordered' s-list/class-ordered)
+(def s-list-ordered s-list/component-ordered)
+
+(def s-list-custom' s-list/class-custom)
+(def s-list-custom s-list/component-custom)
+
+(def s-list-link' s-list/class-link)
+(def s-list-link s-list/component-link)
+
+(def s-list-bulleted-link' s-list/class-bulleted-link)
+(def s-list-bulleted-link s-list/component-bulleted-link)
