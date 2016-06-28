@@ -129,9 +129,12 @@
   [type-animated-fade])
 
 
-;; TODO: FIX
 (defn type-labeled []
-  [sa/button-labeled "labeled"])
+  [sa/button-labeled
+   [sa/button
+    [sa/icon-heart]
+    "button"]
+   [sa/label "label"]])
 
 (defcard-doc
   (mkdn-pprint-source type-labeled))
@@ -140,9 +143,13 @@
   [type-labeled])
 
 
-;; TODO: FIX
 (defn type-left-labeled []
-  [sa/button-left-labeled "left-labeled"])
+  [sa/button-left-labeled
+   [sa/label-right-pointing
+    "label"]
+   [sa/button
+    [sa/icon-heart]
+    "button"]])
 
 (defcard-doc
   (mkdn-pprint-source type-left-labeled))
@@ -162,9 +169,10 @@
   [type-icon])
 
 
-;; TODO: FIX
 (defn type-labeled-icon []
-  [sa/button-labeled-icon "labeled-icon"])
+  [sa/button-labeled-icon
+   [sa/icon-heart]
+   "button"])
 
 (defcard-doc
   (mkdn-pprint-source type-labeled-icon))
@@ -173,9 +181,10 @@
   [type-labeled-icon])
 
 
-;; TODO: FIX
 (defn type-right-labeled-icon []
-  [sa/button-right-labeled-icon "right-labeled-icon"])
+  [sa/button-right-labeled-icon
+   [sa/icon-heart]
+   "button"])
 
 (defcard-doc
   (mkdn-pprint-source type-right-labeled-icon))

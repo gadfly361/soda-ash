@@ -46,9 +46,12 @@
         soda-ash        (create-class opts soda ash)
         full-class      (if class
                           (str soda-ash " " class)
-                          soda-ash)]
+                          soda-ash)
+        tab-index?      (:tab-index? opts)]
 
-    (assoc attrs :class full-class)))
+    (cond-> attrs
+      full-class (assoc :class full-class)
+      tab-index? (assoc :tab-index "0"))))
 
 
 (defn create-component [opts]
