@@ -81,32 +81,32 @@
   (is (thrown-with-msg?
        IllegalArgumentException
        #"\*\*\[Soda ash\] When using `button`, the `size` group can only use one of these --> :medium, :small\*\*"
-       (target/ash-set->intersection {:ui-name "button"
-                                 :group-name "size"
-                                 :group-set #{:small :medium :large}
-                                 :only-one? true}
-                                #{:small :medium})))
+       (target/ash-set->intersection {:ui-name      "button"
+                                      :group-name   "size"
+                                      :group-vector [:small :medium :large]
+                                      :only-one?    true}
+                                     #{:small :medium})))
 
 
-  (is (= (target/ash-set->intersection {:ui-name    "button"
-                                 :group-name "size"
-                                 :group-set  #{:small :medium :large}
-                                   :only-one?  true}
-                                  #{:small})
+  (is (= (target/ash-set->intersection {:ui-name      "button"
+                                        :group-name   "size"
+                                        :group-vector [:small :medium :large]
+                                        :only-one?    true}
+                                       #{:small})
          #{:small}))
 
-  (is (= (target/ash-set->intersection {:ui-name    "button"
-                                   :group-name "size"
-                                   :group-set  #{:small :medium :large}
-                                   :only-one?  true}
-                                  #{:small :foobar})
+  (is (= (target/ash-set->intersection {:ui-name      "button"
+                                        :group-name   "size"
+                                        :group-vector [:small :medium :large]
+                                        :only-one?    true}
+                                       #{:small :foobar})
          #{:small}))
 
-  (is (= (target/ash-set->intersection {:ui-name    "button"
-                                   :group-name "size"
-                                   :group-set  #{:small :medium :large}
-                                   :only-one?  true}
-                                  #{})
+  (is (= (target/ash-set->intersection {:ui-name      "button"
+                                        :group-name   "size"
+                                        :group-vector [:small :medium :large]
+                                        :only-one?    true}
+                                       #{})
          #{}))
   )
 
@@ -114,10 +114,10 @@
 
 (deftest ash->intersections
   (is (= (target/ash->intersections
-          [{:ui-name    "button"
-            :group-name "size"
-            :group-set  #{:small :medium :large}
-            :only-one?  true}]
+          [{:ui-name      "button"
+            :group-name   "size"
+            :group-vector [:small :medium :large]
+            :only-one?    true}]
 
           nil)
 
@@ -125,10 +125,10 @@
 
 
   (is (= (target/ash->intersections
-          [{:ui-name    "button"
-            :group-name "size"
-            :group-set  #{:small :medium :large}
-            :only-one?  true}]
+          [{:ui-name      "button"
+            :group-name   "size"
+            :group-vector [:small :medium :large]
+            :only-one?    true}]
 
           [])
 
@@ -136,10 +136,10 @@
 
 
   (is (= (target/ash->intersections
-          [{:ui-name    "button"
-            :group-name "size"
-            :group-set  #{:small :medium :large}
-            :only-one?  true}]
+          [{:ui-name      "button"
+            :group-name   "size"
+            :group-vector [:small :medium :large]
+            :only-one?    true}]
 
           [:foo])
 
@@ -147,15 +147,15 @@
 
 
   (is (= (target/ash->intersections
-          [{:ui-name    "button"
-            :group-name "size"
-            :group-set  #{:small :medium :large}
-            :only-one?  true}
+          [{:ui-name      "button"
+            :group-name   "size"
+            :group-vector [:small :medium :large]
+            :only-one?    true}
 
-           {:ui-name    "button"
-            :group-name "color"
-            :group-set  #{:red :blue :green}
-            :only-one?  true}]
+           {:ui-name      "button"
+            :group-name   "color"
+            :group-vector [:red :blue :green]
+            :only-one?    true}]
 
           [:small :red])
 
@@ -166,10 +166,10 @@
        IllegalArgumentException
        #"\[Soda ash\] When using `button`, the `size` group can only use one of these --> :medium, :small"
        (target/ash->intersections
-        [{:ui-name    "button"
-          :group-name "size"
-          :group-set  #{:small :medium :large}
-          :only-one?  true}]
+        [{:ui-name      "button"
+          :group-name   "size"
+          :group-vector [:small :medium :large]
+          :only-one?    true}]
         [:small :medium])))
   )
 
@@ -183,20 +183,20 @@
 (deftest ash->class
 
   (is (nil? (target/ash->class
-             [{:ui-name    "button"
-               :group-name "size"
-               :group-set  #{:small :medium :large}
-               :only-one?  true}]
+             [{:ui-name      "button"
+               :group-name   "size"
+               :group-vector [:small :medium :large]
+               :only-one?    true}]
 
              []))
       "Should return nil if no class")
 
 
   (is (nil? (target/ash->class
-             [{:ui-name    "button"
-               :group-name "size"
-               :group-set  #{:small :medium :large}
-               :only-one?  true}]
+             [{:ui-name      "button"
+               :group-name   "size"
+               :group-vector [:small :medium :large]
+               :only-one?    true}]
 
              [:foo]))
       ;; TODO: Maybe should throw warning if this happens
@@ -204,15 +204,15 @@
 
 
   (is (= (target/ash->class
-          [{:ui-name    "button"
-            :group-name "size"
-            :group-set  #{:small :medium :large}
-            :only-one?  true}
+          [{:ui-name      "button"
+            :group-name   "size"
+            :group-vector [:small :medium :large]
+            :only-one?    true}
 
-           {:ui-name    "button"
-            :group-name "color"
-            :group-set  #{:red :blue :green}
-            :only-one?  true}]
+           {:ui-name      "button"
+            :group-name   "color"
+            :group-vector [:red :blue :green]
+            :only-one?    true}]
 
           [:small :red])
 
