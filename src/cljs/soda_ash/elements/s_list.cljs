@@ -11,18 +11,16 @@
          m))
 
 
-(def groups
-  [;; Types
-   (create-group
-    {:group-name   "types"
-     :group-vector (vector
-                    :bulleted
-                    :ordered
-                    :custom
-                    :link
-                    :bulleted-link)})
+(def types
+  [:bulleted
+   :ordered
+   :custom
+   :link
+   :bulleted-link])
 
-   ;; Variations
+
+(def groups
+  [;; Variations
    (create-group
     {:group-name   "horizontal"
      :group-vector (vector

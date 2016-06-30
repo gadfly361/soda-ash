@@ -11,17 +11,15 @@
          m))
 
 
-(def groups
-  [;; Types
-   (create-group
-    {:group-name   "types"
-     :group-vector (vector
-                    :vertical
-                    :horizontal
-                    ;; :horizontal-header
-                    )})
+(def types
+  [:vertical
+   :horizontal
+   ;; :horizontal-header
+   ])
 
-   ;; Variations
+
+(def groups
+  [;; Variations
    (create-group
     {:group-name   "inverted"
      :group-vector (vector

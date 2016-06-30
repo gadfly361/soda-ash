@@ -18,7 +18,7 @@
 (defcard-doc
   "# SUMMARY"
   "## Types"
-  (h/list-types s-list/groups "s-list")
+  (h/list-types s-list/types "s-list")
 
   "## Variations (*ash*)"
   "### Horizontal"
@@ -48,7 +48,7 @@
   "
 ---
 # Types"
-  (h/list-types s-list/groups "s-list" true)
+  (h/list-types s-list/types "s-list" true)
   )
 
 (defn type-default []

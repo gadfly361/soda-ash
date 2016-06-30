@@ -19,7 +19,7 @@
   "# SUMMARY"
 
   "## Types"
-  (h/list-types input/groups "input" true)
+  (h/list-types nil "input" true)
 
   "## States (*soda*)"
   (list-keys "states")

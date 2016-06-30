@@ -11,30 +11,27 @@
          m))
 
 
+(def types
+  [;; based on rem
+   :h1
+   :h2
+   :h3
+   :h4
+   :h5
+
+   ;; based on em
+   :huge
+   :large
+   :medium
+   :small
+   :tiny
+
+   :icon
+   :sub])
+
+
 (def groups
-  [;; Types
-   (create-group
-    {:group-name   "types"
-     :group-vector (vector
-                    ;; based on rem
-                    :h1
-                    :h2
-                    :h3
-                    :h4
-                    :h5
-
-                    ;; based on em
-                    :huge
-                    :large
-                    :medium
-                    :small
-                    :tiny
-
-                    :icon
-                    :sub
-                    )})
-
-   ;; States
+  [;; States
    (create-group
     {:group-name   "states"
      :group-vector (vector

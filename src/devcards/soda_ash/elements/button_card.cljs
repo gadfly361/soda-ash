@@ -19,7 +19,7 @@
   "# SUMMARY
 
    ## Types"
-  (h/list-types button/groups "button")
+  (h/list-types button/types "button")
 
   "## States (*soda*)"
   (list-keys "states")
@@ -57,7 +57,7 @@
   "
 ---
 # Types"
-  (h/list-types button/groups "button"))
+  (h/list-types button/types "button"))
 
 (defn type-default []
   [sa/button "default"])
@@ -292,8 +292,10 @@
 
 
 (defn social-facebook []
-  [sa/button {:ash [:facebook]}
-   "facebook"])
+  [sa/button {:ash [
+                    :facebook]}
+   [sa/icon-facebook]
+   "Facebook"])
 
 (defcard-doc
   (mkdn-pprint-source social-facebook))
@@ -302,20 +304,24 @@
   [:div
    [social-facebook]
    [sa/button {:ash [:twitter]}
-    "twitter"]
+    [sa/icon-twitter]
+    "Twitter"]
    [sa/button {:ash [:google-plus]}
-    "google-plus"]
+    [sa/icon-google-plus]
+    "Google Plus"]
    [sa/button {:ash [:vk]}
-    "vk"]
+    [sa/icon-vk]
+    "VK"]
    [sa/button {:ash [:linkedin]}
-    "linkedin"]
+    [sa/icon-linkedin]
+    "LinkedIn"]
    [sa/button {:ash [:instagram]}
-    "instagram"]
+    [sa/icon-instagram]
+    "Instagram"]
    [sa/button {:ash [:youtube]}
-    "youtube"]
+    [sa/icon-youtube]
+    "YouTube"]
    ])
-
-
 
 
 ;; ---------------------------
@@ -514,11 +520,11 @@
 
 
 ;; ---------------------------
-;; Vertically-Attached
+;; Vertically Attached
 
 (defcard-doc
-  "## vertically-attached"
-  (list-keys "vertically-attached"))
+  "## vertically attached"
+  (list-keys "vertically attached"))
 
 ;; TODO: fix
 (defn vertically-attached-top []
@@ -545,11 +551,11 @@
 
 
 ;; ---------------------------
-;; Horizontally-Attached
+;; Horizontally Attached
 
 (defcard-doc
-  "## horizontally-attached"
-  (list-keys "horizontally-attached"))
+  "## horizontally attached"
+  (list-keys "horizontally attached"))
 
 ;; TODO: fix
 (defn horizontally-attached-top []

@@ -10,30 +10,26 @@
           :only-one? true}
          m))
 
+(def types
+  [:primary
+   :secondary
+
+   :animated
+   :vertical-animated
+   :animated-fade
+
+   :labeled
+   :left-labeled
+   :icon
+   :labeled-icon
+   :right-labeled-icon
+
+   :basic
+   :inverted
+   :inverted-basic])
 
 (def groups
-  [;; Types
-   (create-group
-    {:group-name   "types"
-     :group-vector (vector
-                    :primary
-                    :secondary
-
-                    :animated
-                    :vertical-animated
-                    :animated-fade
-
-                    :labeled
-                    :left-labeled
-                    :icon
-                    :labeled-icon
-                    :right-labeled-icon
-
-                    :basic
-                    :inverted
-                    :inverted-basic)})
-
-   ;; States
+  [;; States
    (create-group
     {:group-name   "states"
      :group-vector (vector

@@ -19,7 +19,7 @@
   "# SUMMARY"
 
   "## Types"
-  (h/list-types image/groups "image" true)
+  (h/list-types nil "image" true)
 
   "## States (*soda*)"
   (list-keys "states")
@@ -56,7 +56,7 @@
   "
 ---
 # Types"
-  (h/list-types image/groups "image" true)
+  (h/list-types nil "image" true)
   )
 
 (defn type-default []

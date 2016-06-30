@@ -32,7 +32,7 @@
      (string/join " "
                   (->> [(when ui? "ui")
                         (when ashes (h/ash->class groups ashes))
-                        (when type (h/ash->class groups [type]))
+                        (when type (h/keyword->class type))
                         (when ui-name (h/keyword->class ui-name))]
                        flatten
                        (remove nil?))))))

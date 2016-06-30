@@ -18,7 +18,7 @@
 (defcard-doc
   "# SUMMARY"
   "## Types"
-  (h/list-types label/groups "label")
+  (h/list-types label/types "label")
 
   "## Variations (*ash*)"
   "### Circular"
@@ -40,7 +40,7 @@
   "
 ---
 # Types"
-  (h/list-types label/groups "label" true)
+  (h/list-types label/types "label" true)
   )
 
 (defn type-default []

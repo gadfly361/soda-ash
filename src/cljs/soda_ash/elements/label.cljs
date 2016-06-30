@@ -11,31 +11,29 @@
          m))
 
 
-(def groups
-  [;; Types
-   (create-group
-    {:group-name   "types"
-     :group-vector (vector
-                    :image
-                    :pointing
-                    :pointing-below
-                    :left-pointing
-                    :right-pointing
-                    :left-corner
-                    :right-corner
-                    :tag
-                    :ribbon
-                    :right-ribbon
-                    :top-attached
-                    :bottom-attached
-                    :top-right-attached
-                    :top-left-attached
-                    :bottom-right-attached
-                    :bottom-left-attached
-                    :horizontal
-                    :floating)})
+(def types
+  [:image
+   :pointing
+   :pointing-below
+   :left-pointing
+   :right-pointing
+   :left-corner
+   :right-corner
+   :tag
+   :ribbon
+   :right-ribbon
+   :top-attached
+   :bottom-attached
+   :top-right-attached
+   :top-left-attached
+   :bottom-right-attached
+   :bottom-left-attached
+   :horizontal
+   :floating])
 
-   ;; Variations
+
+(def groups
+  [;; Variations
    (create-group
     {:group-name   "circular"
      :group-vector (vector

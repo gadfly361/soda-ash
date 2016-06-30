@@ -11,14 +11,12 @@
          m))
 
 
-(def groups
-  [;; Types
-   (create-group
-    {:group-name   "types"
-     :group-vector (vector
-                    :text)})
+(def types
+  [:text])
 
-   ;; Variations
+
+(def groups
+  [;; Variations
    (create-group
     {:group-name   "text alignment"
      :group-vector (vector
