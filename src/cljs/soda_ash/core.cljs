@@ -12,6 +12,7 @@
    [soda-ash.elements.image :as image]
    [soda-ash.elements.input :as input]
    [soda-ash.elements.label :as label]
+   [soda-ash.elements.loader :as loader]
    [soda-ash.elements.s-list :as s-list]
    ))
 
@@ -877,6 +878,12 @@
 (defc "label" "bottom-left-attached")
 (defc "label" "horizontal")
 (defc "label" "floating")
+
+
+;; loader
+
+(defc "loader" nil)
+(defc "loader" "text")
 
 
 ;; s-list
