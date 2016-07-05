@@ -144,8 +144,12 @@
 (defcard-doc
   "
 ---
-# Variations"
-  (list-keys "variations"))
+# Variations")
+
+(defcard-doc
+  "
+## Inline"
+  (list-keys "inline"))
 
 ;; TODO: update when segment / dimmer are available
 (defn variation-inline []
@@ -167,6 +171,11 @@
 (defcard-rg
   [variation-inline])
 
+
+(defcard-doc
+  "
+## Size"
+  (list-keys "size"))
 
 ;; TODO: update when segment / dimmer are available
 (defn variation-size []
@@ -226,6 +235,11 @@
       "large"]]]
    ])
 
+
+(defcard-doc
+  "
+## Inverted"
+  (list-keys "inverted"))
 
 ;; TODO: update when segment / dimmer are available
 (defn variation-inverted []

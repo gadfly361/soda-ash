@@ -13,6 +13,7 @@
    [soda-ash.elements.label-card]
    [soda-ash.elements.loader-card]
    [soda-ash.elements.s-list-card]
+   [soda-ash.elements.rail-card]
    ))
 
 

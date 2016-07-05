@@ -14,6 +14,7 @@
    [soda-ash.elements.label :as label]
    [soda-ash.elements.loader :as loader]
    [soda-ash.elements.s-list :as s-list]
+   [soda-ash.elements.rail :as rail]
    ))
 
 
@@ -894,3 +895,14 @@
 (defc "s-list" "custom")
 (defc "s-list" "link")
 (defc "s-list" "bulleted-link")
+
+
+;; rail
+
+(defc "rail" nil)
+(defc "rail" "left")
+(defc "rail" "right")
+(defc "rail" "left-internal")
+(defc "rail" "right-internal")
+(defc "rail" "left-dividing")
+(defc "rail" "right-dividing")
