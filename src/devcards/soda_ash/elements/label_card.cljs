@@ -166,9 +166,9 @@
   [type-tag])
 
 
-;; TODO: update when segment is available
+
 (defn type-ribbon []
-  [:div.ui.segment
+  [sa/segment
    [sa/label-ribbon {:ash [:blue]}
     "label-ribbon"]
    [:p "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -187,9 +187,8 @@
   [type-ribbon])
 
 
-;; TODO: update when segment is available
 (defn type-right-ribbon []
-  [:div.ui.segment
+  [sa/segment
    [sa/label-right-ribbon {:ash [:blue]}
     "label-right-ribbon"]
    [:p "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -209,7 +208,7 @@
 
 
 (defn type-top-attached []
-  [:div.ui.segment
+  [sa/segment
    [sa/label-top-attached {:ash [:blue]}
     "label-top-attached"]
    [:p "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -229,7 +228,7 @@
 
 
 (defn type-bottom-attached []
-  [:div.ui.segment
+  [sa/segment
    [sa/label-bottom-attached {:ash [:blue]}
     "label-bottom-attached"]
    [:p "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -249,7 +248,7 @@
 
 
 (defn type-top-right-attached []
-  [:div.ui.segment
+  [sa/segment
    [sa/label-top-right-attached {:ash [:blue]}
     "label-top-right-attached"]
    [:p "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -269,7 +268,7 @@
 
 
 (defn type-top-left-attached []
-  [:div.ui.segment
+  [sa/segment
    [sa/label-top-left-attached {:ash [:blue]}
     "label-top-left-attached"]
    [:p "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -289,7 +288,7 @@
 
 
 (defn type-bottom-right-attached []
-  [:div.ui.segment
+  [sa/segment
    [sa/label-bottom-right-attached {:ash [:blue]}
     "label-bottom-right-attached"]
    [:p "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -309,7 +308,7 @@
 
 
 (defn type-bottom-left-attached []
-  [:div.ui.segment
+  [sa/segment
    [sa/label-bottom-left-attached {:ash [:blue]}
     "label-bottom-left-attached"]
    [:p "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

@@ -816,9 +816,8 @@
   "## Inverted"
   (list-keys "inverted"))
 
-;; TODO: update this when segment is ready
 (defn inverted []
-  [:div.ui.inverted.segment
+  [sa/segment {:ash [:inverted]}
    [sa/icon-in-cart {:ash [:inverted]}]])
 
 (defcard-doc

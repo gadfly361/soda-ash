@@ -39,9 +39,8 @@
   (h/list-types rail/types "rail" false)
   )
 
-;; TODO: update when segment is available
 (defn type-left []
-  [:div.ui.segment
+  [sa/segment
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -51,7 +50,7 @@
    culpa qui officia deserunt mollit anim id est laborum."
 
    [sa/rail-left
-    [:div.ui.segment
+    [sa/segment
      "left"]]
    ])
 
@@ -62,9 +61,8 @@
   [type-left])
 
 
-;; TODO: update when segment is available
 (defn type-right []
-  [:div.ui.segment
+  [sa/segment
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -74,7 +72,7 @@
    culpa qui officia deserunt mollit anim id est laborum."
 
    [sa/rail-right
-    [:div.ui.segment
+    [sa/segment
      "right"]]
    ])
 
@@ -85,9 +83,8 @@
   [type-right])
 
 
-;; TODO: update when segment is available
 (defn type-left-internal []
-  [:div.ui.segment
+  [sa/segment
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -97,7 +94,7 @@
    culpa qui officia deserunt mollit anim id est laborum."
 
    [sa/rail-left-internal
-    [:div.ui.segment
+    [sa/segment
      "left-internal"]]
    ])
 
@@ -108,9 +105,8 @@
   [type-left-internal])
 
 
-;; TODO: update when segment is available
 (defn type-right-internal []
-  [:div.ui.segment
+  [sa/segment
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -120,7 +116,7 @@
    culpa qui officia deserunt mollit anim id est laborum."
 
    [sa/rail-right-internal
-    [:div.ui.segment
+    [sa/segment
      "right-internal"]]
    ])
 
@@ -131,7 +127,6 @@
   [type-right-internal])
 
 
-;; TODO: update when segment is available
 (defn type-left-dividing []
   [:div
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -143,7 +138,7 @@
    culpa qui officia deserunt mollit anim id est laborum."
 
    [sa/rail-left-dividing
-    [:div.ui.segment
+    [sa/segment
      "left-dividing"]]
    ])
 
@@ -154,7 +149,6 @@
   [type-left-dividing])
 
 
-;; TODO: update when segment is available
 (defn type-right-dividing []
   [:div
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -166,7 +160,7 @@
    culpa qui officia deserunt mollit anim id est laborum."
 
    [sa/rail-right-dividing
-    [:div.ui.segment
+    [sa/segment
      "right-dividing"]]
    ])
 
@@ -192,9 +186,8 @@
 ## Attached"
   (list-keys "attached"))
 
-;; TODO: update when segment is available
 (defn variation-attached []
-  [:div.ui.segment
+  [sa/segment
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -204,7 +197,7 @@
    culpa qui officia deserunt mollit anim id est laborum."
 
    [sa/rail-left {:ash [:attached]}
-    [:div.ui.segment
+    [sa/segment
      "attached"]]
    ])
 
@@ -220,9 +213,8 @@
 ## Close"
   (list-keys "close"))
 
-;; TODO: update when segment is available
 (defn variation-close []
-  [:div.ui.segment
+  [sa/segment
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -232,7 +224,7 @@
    culpa qui officia deserunt mollit anim id est laborum."
 
    [sa/rail-left {:ash [:close]}
-    [:div.ui.segment
+    [sa/segment
      "close"]]
    ])
 
@@ -243,9 +235,8 @@
   [variation-close])
 
 
-;; TODO: update when segment is available
 (defn variation-very-close []
-  [:div.ui.segment
+  [sa/segment
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -255,7 +246,7 @@
    culpa qui officia deserunt mollit anim id est laborum."
 
    [sa/rail-left {:ash [:very-close]}
-    [:div.ui.segment
+    [sa/segment
      "very-close"]]
    ])
 

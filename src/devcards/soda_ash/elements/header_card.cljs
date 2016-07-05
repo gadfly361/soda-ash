@@ -205,13 +205,12 @@
   "## attached"
   (list-keys "attached"))
 
-;; TODO: update segments when ready
 (defn attached []
   [:div
    [sa/header-large {:ash [:top-attached]}
     "top attached header"]
 
-   [:div.ui.attached.segment
+   [sa/segment {:ash [:attached]}
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -223,7 +222,7 @@
    [sa/header-large {:ash [:attached]}
     "attached header"]
 
-   [:div.ui.attached.segment
+   [sa/segment {:ash [:attached]}
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -416,9 +415,8 @@
   "## inverted"
   (list-keys "inverted"))
 
-;; TODO: update segment when ready
 (defn inverted []
-  [:div.ui.inverted.segment
+  [sa/segment {:ash [:inverted]}
    [sa/header-medium {:ash [:inverted]}
     "inverted header"]])
 

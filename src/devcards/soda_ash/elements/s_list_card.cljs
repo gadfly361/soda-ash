@@ -188,9 +188,8 @@
   "## inverted"
   (list-keys "inverted"))
 
-;; TODO: update when segment is ready
 (defn inverted []
-  [:div.ui.inverted.segment
+  [sa/segment {:ash [:inverted]}
    [sa/s-list {:ash [:inverted]}
     [:div.item "foo"]
     [:div.item "bar"]

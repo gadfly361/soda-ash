@@ -220,8 +220,7 @@
   (list-keys "inverted"))
 
 (defn inverted []
-  ;; TODO: update when segments are made
-  [:div.ui.inverted.segment
+  [sa/segment {:ash [:inverted]}
    [sa/input {:ash [:inverted]}
     [:input {:type        "text"
              :placeholder "Inverted..."}]]

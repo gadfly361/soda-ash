@@ -15,6 +15,7 @@
    [soda-ash.elements.loader :as loader]
    [soda-ash.elements.rail :as rail]
    [soda-ash.elements.reveal :as reveal]
+   [soda-ash.elements.segment :as segment]
    [soda-ash.elements.s-list :as s-list]
    ))
 
@@ -907,6 +908,16 @@
 (defc "reveal" "move-down")
 (defc "reveal" "rotate")
 (defc "reveal" "rotate-left")
+
+
+;; segment
+
+(defc "segment" nil)
+(defc "segment" "raised")
+(defc "segment" "stacked")
+(defc "segment" "tall-stacked")
+(defc "segment" "piled")
+(defc "segment" "vertical")
 
 
 ;; s-list

@@ -157,8 +157,7 @@
   (list-keys "inverted"))
 
 (defn inverted []
-  ;; TODO: update when segments are made
-  [:div.ui.inverted.segment
+  [sa/segment {:ash [:inverted]}
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -190,7 +189,6 @@
   (list-keys "fitted"))
 
 (defn fitted []
-  ;; TODO: update when segments are made
   [:div
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -223,7 +221,6 @@
   (list-keys "hidden"))
 
 (defn hidden []
-  ;; TODO: update when segments are made
   [:div
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -256,7 +253,6 @@
   (list-keys "section"))
 
 (defn section []
-  ;; TODO: update when segments are made
   [:div
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -289,10 +285,9 @@
   (list-keys "clearing"))
 
 (defn clearing []
-  ;; TODO: update when segments are made
   [:div
-   ;; TODO: update when header is made
-   [:div.ui.right.floated.header "Floated Content"]
+   [sa/header-h3 {:ash [:right-floated]}
+    "Floated Content"]
    [sa/divider {:ash [:clearing]}]
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim

@@ -44,9 +44,9 @@
   (h/list-types loader/types "loader" true)
   )
 
-;; TODO: update when segment / dimmer are available
+;; TODO: update when dimmer is available
 (defn type-default []
-  [:div.ui.segment
+  [sa/segment
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -65,9 +65,8 @@
   [type-default])
 
 
-;; TODO: update when segment / dimmer are available
 (defn type-text []
-  [:div.ui.segment
+  [sa/segment
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -96,9 +95,9 @@
 # States"
   (list-keys "states"))
 
-;; TODO: update when segment / dimmer are available
+;; TODO: update when dimmer is available
 (defn state-indeterminate []
-  [:div.ui.segment
+  [sa/segment
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -151,9 +150,9 @@
 ## Inline"
   (list-keys "inline"))
 
-;; TODO: update when segment / dimmer are available
+;; TODO: update when dimmer is available
 (defn variation-inline []
-  [:div.ui.segment
+  [sa/segment
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -177,9 +176,9 @@
 ## Size"
   (list-keys "size"))
 
-;; TODO: update when segment / dimmer are available
+;; TODO: update when dimmer is available
 (defn variation-size []
-  [:div.ui.segment
+  [sa/segment
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -198,7 +197,7 @@
 (defcard-rg
   [:div
    [variation-size]
-   [:div.ui.segment
+   [sa/segment
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad smallm veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -210,7 +209,7 @@
      [sa/loader-text {:ash [:small]}
       "small"]]]
 
-   [:div.ui.segment
+   [sa/segment
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad mediumm veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -222,7 +221,7 @@
      [sa/loader-text {:ash [:medium]}
       "medium"]]]
 
-   [:div.ui.segment
+   [sa/segment
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad largem veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -241,9 +240,9 @@
 ## Inverted"
   (list-keys "inverted"))
 
-;; TODO: update when segment / dimmer are available
+;; TODO: update when dimmer is available
 (defn variation-inverted []
-  [:div.ui.inverted.segment
+  [sa/segment {:ash [:inverted]}
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad largem veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -261,7 +260,7 @@
 (defcard-rg
   [:div
    [variation-inverted]
-   [:div.ui.segment
+   [sa/segment
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad largem veniam, quis nostrud exercitation ullamco laboris nisi ut
