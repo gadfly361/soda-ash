@@ -18,7 +18,7 @@
 (defcard-doc
   "# SUMMARY"
   "## Types"
-  (h/list-types rail/types "rail")
+  (h/list-types rail/types "rail" false)
 
   "## Variations (*ash*)"
   "### Attached"
@@ -36,7 +36,7 @@
   "
 ---
 # Types"
-  (h/list-types rail/types "rail" true)
+  (h/list-types rail/types "rail" false)
   )
 
 ;; TODO: update when segment is available

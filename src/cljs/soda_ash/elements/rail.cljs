@@ -42,7 +42,6 @@
    :groups  groups})
 
 
-(defcomp "default" opts)
 (defcomp "left" (assoc opts :type :left))
 (defcomp "right" (assoc opts :type :right))
 (defcomp "left-internal" (assoc opts :type :left-internal))

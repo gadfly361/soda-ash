@@ -13,8 +13,9 @@
    [soda-ash.elements.input :as input]
    [soda-ash.elements.label :as label]
    [soda-ash.elements.loader :as loader]
-   [soda-ash.elements.s-list :as s-list]
    [soda-ash.elements.rail :as rail]
+   [soda-ash.elements.reveal :as reveal]
+   [soda-ash.elements.s-list :as s-list]
    ))
 
 
@@ -887,6 +888,27 @@
 (defc "loader" "text")
 
 
+;; rail
+
+(defc "rail" "left")
+(defc "rail" "right")
+(defc "rail" "left-internal")
+(defc "rail" "right-internal")
+(defc "rail" "left-dividing")
+(defc "rail" "right-dividing")
+
+
+;; reveal
+
+(defc "reveal" "fade")
+(defc "reveal" "move")
+(defc "reveal" "move-up")
+(defc "reveal" "move-right")
+(defc "reveal" "move-down")
+(defc "reveal" "rotate")
+(defc "reveal" "rotate-left")
+
+
 ;; s-list
 
 (defc "s-list" nil)
@@ -895,14 +917,3 @@
 (defc "s-list" "custom")
 (defc "s-list" "link")
 (defc "s-list" "bulleted-link")
-
-
-;; rail
-
-(defc "rail" nil)
-(defc "rail" "left")
-(defc "rail" "right")
-(defc "rail" "left-internal")
-(defc "rail" "right-internal")
-(defc "rail" "left-dividing")
-(defc "rail" "right-dividing")
