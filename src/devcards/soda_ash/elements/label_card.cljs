@@ -8,15 +8,20 @@
    [reagent.core]
    [soda-ash.core :as sa]
    [soda-ash.helpers :as h]
-   [soda-ash.elements.label :as label]))
+   [soda-ash.elements.label :as label]
+   [soda-ash.elements.labels :as labels]
+   ))
 
 
 (def list-keys
   (h/list-keys label/groups))
 
+(def list-labels-keys
+  (h/list-keys labels/groups))
+
 
 (defcard-doc
-  "# SUMMARY"
+  "# SUMMARY FOR LABEL"
   "## Types"
   (h/list-types label/types "label")
 
@@ -31,15 +36,31 @@
   (list-keys "size")
   )
 
+(defcard-doc
+  "# SUMMARY FOR LABELS"
+  "## Types"
+  (h/list-types labels/types "labels")
+
+  "## Variations (*ash*)"
+  "### Colored"
+  (list-labels-keys "colored")
+  "### Size"
+  (list-labels-keys "size")
+  )
+
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Types
+;; Label
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Label Types
 
 (defcard-doc
   "
 ---
-# Types"
+# Label Types"
   (h/list-types label/types "label" true)
   )
 
@@ -362,12 +383,12 @@
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Variations
+;; Label Variations
 
 (defcard-doc
   "
 ---
-# Variations")
+# Label Variations")
 
 ;; --------------------------
 ;; circular
@@ -473,3 +494,140 @@
    [sa/label {:ash [:big]} "big"]
    [sa/label {:ash [:huge]} "huge"]
    [sa/label {:ash [:massive]} "massive"]])
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Labels
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Labels Types
+
+(defcard-doc
+  "
+---
+# Labels Types"
+  (h/list-types labels/types "labels" true)
+  )
+
+(defn labels-type-default []
+  [sa/labels
+   [sa/label "foo"]
+   [sa/label "bar"]
+   [sa/label "baz"]])
+
+(defcard-doc
+  (mkdn-pprint-source labels-type-default))
+
+(defcard-rg
+  [labels-type-default])
+
+
+(defn labels-type-tag []
+  [sa/labels-tag
+   [sa/label "foo"]
+   [sa/label "bar"]
+   [sa/label "baz"]])
+
+(defcard-doc
+  (mkdn-pprint-source labels-type-tag))
+
+(defcard-rg
+  [labels-type-tag])
+
+
+(defn labels-type-circular []
+  [sa/labels-circular
+   [sa/label "foo"]
+   [sa/label "bar"]
+   [sa/label "baz"]])
+
+(defcard-doc
+  (mkdn-pprint-source labels-type-circular))
+
+(defcard-rg
+  [labels-type-circular])
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Label Variations
+
+(defcard-doc
+  "
+---
+# Labels Variations")
+
+;; --------------------------
+;; size
+
+(defcard-doc
+  "## size"
+  (list-labels-keys "size"))
+
+(defn labels-mini []
+  [sa/labels-circular {:ash [:mini]}
+   [sa/label "mini"]
+   [sa/label "foo"]
+   [sa/label "bar"]])
+
+(defn labels-size [size]
+  [sa/labels-circular {:ash [size]}
+   [sa/label (name size)]
+   [sa/label "foo"]
+   [sa/label "bar"]])
+
+(defcard-doc
+  (mkdn-pprint-source labels-mini))
+
+(defcard-rg
+  [:div
+   [labels-mini]
+   [labels-size :tiny]
+   [labels-size :small]
+   [labels-size :medium]
+   [labels-size :large]
+   [labels-size :big]
+   [labels-size :huge]
+   [labels-size :massive]])
+
+
+
+;; --------------------------
+;; colored
+
+(defcard-doc
+  "## colored"
+  (list-labels-keys "colored"))
+
+(defn labels-red []
+  [sa/labels-circular {:ash [:red]}
+   [sa/label "red"]
+   [sa/label "foo"]
+   [sa/label "bar"]])
+
+(defn labels-colored [colored]
+  [sa/labels-circular {:ash [colored]}
+   [sa/label (name colored)]
+   [sa/label "foo"]
+   [sa/label "bar"]])
+
+(defcard-doc
+  (mkdn-pprint-source labels-red))
+
+(defcard-rg
+  [:div
+   [labels-red]
+   [labels-colored :orange]
+   [labels-colored :yellow]
+   [labels-colored :olive]
+   [labels-colored :green]
+   [labels-colored :teal]
+   [labels-colored :blue]
+   [labels-colored :violet]
+   [labels-colored :purple]
+   [labels-colored :pink]
+   [labels-colored :brown]
+   [labels-colored :grey]
+   [labels-colored :black]
+   ])

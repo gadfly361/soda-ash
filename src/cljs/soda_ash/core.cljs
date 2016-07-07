@@ -15,6 +15,7 @@
    [soda-ash.elements.images :as images]
    [soda-ash.elements.input :as input]
    [soda-ash.elements.label :as label]
+   [soda-ash.elements.labels :as labels]
    [soda-ash.elements.loader :as loader]
    [soda-ash.elements.rail :as rail]
    [soda-ash.elements.reveal :as reveal]
@@ -899,6 +900,13 @@
 (defc "label" "bottom-left-attached")
 (defc "label" "horizontal")
 (defc "label" "floating")
+
+
+;; labels
+
+(defc "labels" nil)
+(defc "labels" "tag")
+(defc "labels" "circular")
 
 
 ;; loader
