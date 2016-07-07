@@ -4,6 +4,7 @@
   (:require
    [soda-ash.helpers :as h]
    [soda-ash.elements.button :as button]
+   [soda-ash.elements.buttons :as buttons]
    [soda-ash.elements.container :as container]
    [soda-ash.elements.divider :as divider]
    [soda-ash.elements.flag :as flag]
@@ -39,6 +40,11 @@
 (defc "button" "basic")
 (defc "button" "inverted")
 (defc "button" "inverted-basic")
+
+
+;; buttons
+
+(defc "buttons" nil)
 
 
 ;; container
