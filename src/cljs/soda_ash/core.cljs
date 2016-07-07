@@ -12,6 +12,7 @@
    [soda-ash.elements.icon :as icon]
    [soda-ash.elements.icons :as icons]
    [soda-ash.elements.image :as image]
+   [soda-ash.elements.images :as images]
    [soda-ash.elements.input :as input]
    [soda-ash.elements.label :as label]
    [soda-ash.elements.loader :as loader]
@@ -865,6 +866,11 @@
 ;; image
 
 (defc "image" nil)
+
+
+;; images
+
+(defc "images" nil)
 
 
 ;; input

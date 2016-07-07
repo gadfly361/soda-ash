@@ -8,15 +8,19 @@
    [reagent.core]
    [soda-ash.core :as sa]
    [soda-ash.helpers :as h]
-   [soda-ash.elements.image :as image]))
+   [soda-ash.elements.image :as image]
+   [soda-ash.elements.images :as images]))
 
 
 (def list-keys
   (h/list-keys image/groups))
 
+(def list-images-keys
+  (h/list-keys images/groups))
+
 
 (defcard-doc
-  "# SUMMARY"
+  "# SUMMARY OF IMAGE"
 
   "## Types"
   (h/list-types nil "image" true)
@@ -48,6 +52,21 @@
   )
 
 
+(defcard-doc
+  "# SUMMARY OF IMAGES"
+
+  "## Types"
+  "images"
+
+  "## Variations (*ash*)"
+  "### size"
+  (list-images-keys "size"))
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Image
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Types
@@ -55,7 +74,7 @@
 (defcard-doc
   "
 ---
-# Types"
+# Image Types"
   (h/list-types nil "image" true)
   )
 
@@ -90,7 +109,7 @@
 (defcard-doc
   "
 ---
-# States"
+# Image States"
   (list-keys "states"))
 
 (defn state-hidden []
@@ -124,7 +143,7 @@
 (defcard-doc
   "
 ---
-# Variations")
+# Image Variations")
 
 ;; --------------------------
 ;; avatar
@@ -398,4 +417,74 @@
    "massive"
    [sa/image {:ash [:massive]
               :src "/images/ubuntu.png"}]
+   ])
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Images
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defcard-doc
+  "
+---
+# Images Types"
+  "images"
+  )
+
+(defn type-images []
+  [sa/images
+   [sa/image {:ash [:small]
+              :src "/images/ubuntu.png"}]
+   [sa/image {:ash [:small]
+              :src "/images/ubuntu.png"}]])
+
+(defcard-doc
+  (mkdn-pprint-source type-images))
+
+(defcard-rg
+  [type-images])
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Variations
+
+(defcard-doc
+  "
+---
+# Images Variations")
+
+;; --------------------------
+;; size
+
+(defcard-doc
+  "## size"
+  (list-keys "size"))
+
+(defn images-mini []
+  [:div "mini"
+   [sa/images {:ash [:mini]}
+    [sa/image {:src "/images/ubuntu.png"}]
+    [sa/image {:src "/images/ubuntu.png"}]]])
+
+(defn images-size [size]
+  [:div (name size)
+   [sa/images {:ash [size]}
+    [sa/image {:src "/images/ubuntu.png"}]
+    [sa/image {:src "/images/ubuntu.png"}]]])
+
+(defcard-doc
+  (mkdn-pprint-source images-mini))
+
+(defcard-rg
+  [:div
+   [images-mini]
+   [images-size :tiny]
+   [images-size :small]
+   [images-size :medium]
+   [images-size :large]
+   [images-size :big]
+   [images-size :huge]
+   [images-size :massive]
    ])
