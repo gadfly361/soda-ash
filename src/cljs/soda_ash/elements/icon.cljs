@@ -619,6 +619,11 @@
     {:group-name   "inverted"
      :group-vector (vector
                     :inverted)})
+
+   (create-group
+    {:group-name   "corner"
+     :group-vector (vector
+                    :corner)})
    ])
 
 

@@ -10,6 +10,7 @@
    [soda-ash.elements.flag :as flag]
    [soda-ash.elements.header :as header]
    [soda-ash.elements.icon :as icon]
+   [soda-ash.elements.icons :as icons]
    [soda-ash.elements.image :as image]
    [soda-ash.elements.input :as input]
    [soda-ash.elements.label :as label]
@@ -854,6 +855,11 @@
 (defc "icon" "youtube")
 (defc "icon" "youtube-play")
 (defc "icon" "youtube-square")
+
+
+;; icons
+
+(defc "icons" nil)
 
 
 ;; image

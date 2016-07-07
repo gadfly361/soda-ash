@@ -8,15 +8,19 @@
    [reagent.core]
    [soda-ash.core :as sa]
    [soda-ash.helpers :as h]
-   [soda-ash.elements.icon :as icon]))
+   [soda-ash.elements.icon :as icon]
+   [soda-ash.elements.icons :as icons]))
 
 
 (def list-keys
   (h/list-keys icon/groups))
 
+(def list-icons-keys
+  (h/list-keys icons/groups))
+
 
 (defcard-doc
-  "# SUMMARY
+  "# SUMMARY FOR ICON
 
   ## Types"
   "Go to `Types` section for the list"
@@ -43,9 +47,24 @@
   (list-keys "colored")
   "### inverted"
   (list-keys "inverted")
+  "### corner"
+  (list-keys "corner")
   )
 
+(defcard-doc
+  "# SUMMARY FOR ICONS
 
+  ## Types"
+  "icons"
+
+  "## Variations"
+  "### size"
+  (list-keys "size"))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ICON
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Types
@@ -53,7 +72,7 @@
 (defcard-doc
   "
 ---
-# Types"
+# Icon Types"
   (h/list-types icon/types "icon" false))
 
 
@@ -637,7 +656,7 @@
 (defcard-doc
   "
 ---
-# Variations")
+# Icon Variations")
 
 
 ;; ---------------------------
@@ -825,3 +844,94 @@
 
 (defcard-rg
   [inverted])
+
+
+;; ---------------------------
+;; Corner
+
+(defcard-doc
+  "## Corner"
+  (list-keys "corner"))
+
+(defn corner []
+  [sa/header-h2
+   [sa/icons {:ash [:large]}
+    [sa/icon-twitter]
+    [sa/icon-plus {:ash [:inverted
+                         :corner]}]]
+   "Add on Twitter"])
+
+(defcard-doc
+  (mkdn-pprint-source corner))
+
+(defcard-rg
+  [corner])
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ICONS
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Types
+
+
+(defcard-doc
+  "
+---
+# Icon Types"
+  "icons")
+
+
+(defn type-icons []
+  [sa/icons {:ash [:huge]}
+   [sa/icon-sun {:soda :loading
+                 :ash [:big]}]
+   [sa/icon-user]])
+
+(defcard-doc
+  (mkdn-pprint-source type-icons))
+
+(defcard-rg
+  [:div
+   [type-icons]])
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Variations
+
+(defcard-doc
+  "
+---
+# Icon Variations"
+  "## Size"
+  (list-icons-keys "size"))
+
+(defn icons-size-mini []
+  [sa/icons {:ash [:mini]}
+   [sa/icon-twitter]
+   [sa/icon-plus {:ash [:inverted
+                        :corner]}]])
+
+(defn icons-size [size]
+  [sa/icons {:ash [size]}
+   [sa/icon-twitter]
+   [sa/icon-plus {:ash [:inverted
+                        :corner]}]])
+
+(defcard-doc
+  (mkdn-pprint-source icons-size-mini))
+
+(defcard-rg
+  [:div
+   [icons-size-mini]
+   [icons-size :tiny]
+   [icons-size :small]
+   [icons-size nil]
+   [icons-size :large]
+   [icons-size :big]
+   [icons-size :huge]
+   [icons-size :massive]])
