@@ -8,7 +8,8 @@
    [reagent.core]
    [soda-ash.core :as sa]
    [soda-ash.helpers :as h]
-   [soda-ash.elements.segment :as segment]))
+   [soda-ash.elements.segment :as segment]
+   [soda-ash.elements.segments :as segments]))
 
 
 (def list-keys
@@ -16,7 +17,7 @@
 
 
 (defcard-doc
-  "# SUMMARY"
+  "# SUMMARY FOR SEGMENT"
   "## Types"
   (h/list-types segment/types "segment")
 
@@ -49,6 +50,16 @@
   )
 
 
+(defcard-doc
+  "# SUMMARY FOR SEGMENTS"
+  "## Types"
+  (h/list-types segments/types "segments"))
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Segment
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Types
@@ -536,3 +547,160 @@
 
 (defcard-rg
   [variation-basic])
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Segments
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Types
+
+(defcard-doc
+  "
+---
+# Types"
+  (h/list-types segments/types "segments" true)
+  )
+
+
+(defn segments-default []
+  [sa/segments
+   [sa/segment
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+   eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+   ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+   aliquip ex ea commodo consequat. Duis aute irure dolor in
+   reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+   pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+   culpa qui officia deserunt mollit anim id est laborum."]
+
+   [sa/segment
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+   eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+   ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+   aliquip ex ea commodo consequat. Duis aute irure dolor in
+   reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+   pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+   culpa qui officia deserunt mollit anim id est laborum."]
+   ])
+
+(defcard-doc
+  (mkdn-pprint-source segments-default))
+
+(defcard-rg
+  [segments-default])
+
+
+(defn segments-horizontal []
+  [sa/segments-horizontal
+   [sa/segment
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+   eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+   ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+   aliquip ex ea commodo consequat. Duis aute irure dolor in
+   reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+   pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+   culpa qui officia deserunt mollit anim id est laborum."]
+
+   [sa/segment
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+   eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+   ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+   aliquip ex ea commodo consequat. Duis aute irure dolor in
+   reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+   pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+   culpa qui officia deserunt mollit anim id est laborum."]
+   ])
+
+(defcard-doc
+  (mkdn-pprint-source segments-horizontal))
+
+(defcard-rg
+  [segments-horizontal])
+
+
+
+(defn segments-raised []
+  [sa/segments-raised
+   [sa/segment
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+   eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+   ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+   aliquip ex ea commodo consequat. Duis aute irure dolor in
+   reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+   pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+   culpa qui officia deserunt mollit anim id est laborum."]
+
+   [sa/segment
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+   eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+   ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+   aliquip ex ea commodo consequat. Duis aute irure dolor in
+   reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+   pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+   culpa qui officia deserunt mollit anim id est laborum."]
+   ])
+
+(defcard-doc
+  (mkdn-pprint-source segments-raised))
+
+(defcard-rg
+  [segments-raised])
+
+
+(defn segments-stacked []
+  [sa/segments-stacked
+   [sa/segment
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+   eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+   ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+   aliquip ex ea commodo consequat. Duis aute irure dolor in
+   reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+   pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+   culpa qui officia deserunt mollit anim id est laborum."]
+
+   [sa/segment
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+   eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+   ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+   aliquip ex ea commodo consequat. Duis aute irure dolor in
+   reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+   pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+   culpa qui officia deserunt mollit anim id est laborum."]
+   ])
+
+(defcard-doc
+  (mkdn-pprint-source segments-stacked))
+
+(defcard-rg
+  [segments-stacked])
+
+
+(defn segments-piled []
+  [sa/segments-piled {:style {:z-index 1}}
+   [sa/segment
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+   eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+   ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+   aliquip ex ea commodo consequat. Duis aute irure dolor in
+   reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+   pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+   culpa qui officia deserunt mollit anim id est laborum."]
+
+   [sa/segment
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+   eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+   ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+   aliquip ex ea commodo consequat. Duis aute irure dolor in
+   reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+   pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+   culpa qui officia deserunt mollit anim id est laborum."]
+   ])
+
+(defcard-doc
+  (mkdn-pprint-source segments-piled))
+
+(defcard-rg
+  [segments-piled])

@@ -20,6 +20,7 @@
    [soda-ash.elements.rail :as rail]
    [soda-ash.elements.reveal :as reveal]
    [soda-ash.elements.segment :as segment]
+   [soda-ash.elements.segments :as segments]
    [soda-ash.elements.s-list :as s-list]
    ))
 
@@ -944,6 +945,15 @@
 (defc "segment" "tall-stacked")
 (defc "segment" "piled")
 (defc "segment" "vertical")
+
+
+;; segment
+
+(defc "segments" nil)
+(defc "segments" "horizontal")
+(defc "segments" "raised")
+(defc "segments" "stacked")
+(defc "segments" "piled")
 
 
 ;; s-list
