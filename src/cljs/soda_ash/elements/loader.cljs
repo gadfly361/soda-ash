@@ -34,9 +34,13 @@
     {:group-name   "size"
      :group-vector (vector
                     :mini
+                    :tiny
                     :small
-                    :medium
-                    :large)})
+                    ;;
+                    :large
+                    :big
+                    :huge
+                    :massive)})
 
    (create-group
     {:group-name   "inverted"
