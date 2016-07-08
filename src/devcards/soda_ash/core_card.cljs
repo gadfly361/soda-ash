@@ -2,6 +2,7 @@
   (:require-macros
    [devcards.core :as dc])
   (:require
+   ;; elements
    [soda-ash.elements.button-card]
    [soda-ash.elements.container-card]
    [soda-ash.elements.divider-card]
@@ -17,6 +18,9 @@
    [soda-ash.elements.segment-card]
    [soda-ash.elements.s-list-card]
    [soda-ash.elements.step-card]
+
+   ;; collections
+   [soda-ash.collections.breadcrumb-card]
    ))
 
 

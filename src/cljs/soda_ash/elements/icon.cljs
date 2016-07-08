@@ -624,6 +624,12 @@
     {:group-name   "corner"
      :group-vector (vector
                     :corner)})
+
+   ;; for use w/ breadcrumb
+   (create-group
+    {:group-name   "divider"
+     :group-vector (vector
+                    :divider)})
    ])
 
 
