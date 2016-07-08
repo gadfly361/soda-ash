@@ -22,6 +22,8 @@
    [soda-ash.elements.segment :as segment]
    [soda-ash.elements.segments :as segments]
    [soda-ash.elements.s-list :as s-list]
+   [soda-ash.elements.step :as step]
+   [soda-ash.elements.steps :as steps]
    ))
 
 
@@ -966,3 +968,16 @@
 (defc "s-list" "custom")
 (defc "s-list" "link")
 (defc "s-list" "bulleted-link")
+
+
+;; step
+
+(defc "step" nil)
+(defc "step" "link")
+
+
+;; steps
+
+(defc "steps" nil)
+(defc "steps" "ordered")
+(defc "steps" "vertical")

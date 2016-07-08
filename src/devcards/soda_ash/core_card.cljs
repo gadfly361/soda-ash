@@ -16,6 +16,7 @@
    [soda-ash.elements.reveal-card]
    [soda-ash.elements.segment-card]
    [soda-ash.elements.s-list-card]
+   [soda-ash.elements.step-card]
    ))
 
 
