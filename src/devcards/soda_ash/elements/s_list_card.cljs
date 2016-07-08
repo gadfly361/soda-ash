@@ -37,6 +37,18 @@
   (list-keys "celled")
   "### Size"
   (list-keys "size")
+
+  "## Content"
+  "### item"
+  "Use .item class"
+  "### icon"
+  "Use sa/icon"
+  "### image"
+  "Use sa/image"
+  "### link"
+  "Use .item on an a tag"
+  "### description"
+  "Use .description class"
   )
 
 
@@ -386,3 +398,148 @@
     [:div.item "bar"]
     [:div.item "baz"]]
    ])
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Content
+
+(defcard-doc
+  "
+---
+# Content")
+
+
+;; ---------------------------
+;; item
+
+(defcard-doc
+  "## item"
+  "Use .item class")
+
+(defn content-item []
+  [sa/s-list
+   [:div.item "foo"] ;; <-- .item
+   [:div.item "bar"]
+   [:div.item "baz"]
+   ])
+
+(defcard-doc
+  (mkdn-pprint-source content-item))
+
+(defcard-rg
+  [content-item])
+
+
+;; ---------------------------
+;; icon
+
+(defcard-doc
+  "## icon"
+  "Use sa/icon class")
+
+(defn content-icon []
+  [sa/s-list
+   [:div.item
+    [sa/icon-star]
+    [:div.content "This is a star"]]
+
+   [:div.item
+    [sa/icon-plus]
+    [:div.content "This is a plus"]]])
+
+(defcard-doc
+  (mkdn-pprint-source content-icon))
+
+(defcard-rg
+  [content-icon])
+
+
+;; ---------------------------
+;; image
+
+(defcard-doc
+  "## image"
+  "Use sa/image class")
+
+(defn content-image []
+  [sa/s-list
+   [:div.item
+    [sa/image {:ash [:avatar] ;; <-- image
+               :src "/images/gadfly.png"}]
+    [:div.content
+     [:div.header
+      "Gadfly361"]
+     [:div.description
+      "I know that I know nothing."]]]
+
+
+   [:div.item
+    [sa/image {:ash [:avatar]
+               :src "/images/rachel.png"}]
+    [:div.content
+     [:div.header
+      "Rachel"]
+     [:div.description
+      "Some awesome description."]]]])
+
+(defcard-doc
+  (mkdn-pprint-source content-image))
+
+(defcard-rg
+  [content-image])
+
+
+;; ---------------------------
+;; link
+
+(defcard-doc
+  "## link"
+  "Use .item on an a tag")
+
+(defn content-link []
+  [sa/s-list
+   [:a.item "What is a FAQ?"]
+   [:a.item "Who is our user?"]
+   [:a.item "Where is our office located?"]])
+
+(defcard-doc
+  (mkdn-pprint-source content-link))
+
+(defcard-rg
+  [content-link])
+
+
+;; ---------------------------
+;; description
+
+(defcard-doc
+  "## description"
+  "Use .description class")
+
+(defn content-description []
+  [sa/s-list
+   [:div.item
+    [sa/image {:ash [:avatar]
+               :src "/images/gadfly.png"}]
+    [:div.content
+     [:div.header
+      "Gadfly361"]
+     [:div.description  ;; <-- .description
+      "I know that I know nothing."]]]
+
+
+   [:div.item
+    [sa/image {:ash [:avatar]
+               :src "/images/rachel.png"}]
+    [:div.content
+     [:div.header
+      "Rachel"]
+     [:div.description
+      "Some awesome description."]]]])
+
+(defcard-doc
+  (mkdn-pprint-source content-description))
+
+(defcard-rg
+  [content-description])
