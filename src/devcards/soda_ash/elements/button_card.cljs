@@ -54,7 +54,7 @@
 
   "## Content"
   "### Conditionals"
-  ".or"
+  "Use .or class"
   )
 
 (defcard-doc
@@ -643,7 +643,8 @@
   "
 ---
 # Button Content"
-  ".or")
+  "## Conditionals"
+  "Use .or class")
 
 (defn content-or []
   [sa/buttons

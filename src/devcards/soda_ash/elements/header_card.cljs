@@ -41,6 +41,14 @@
   (list-keys "colored")
   "### inverted"
   (list-keys "inverted")
+
+  "## Content"
+  "### image"
+  "Use sa/image"
+  "### icon"
+  "Use sa/icon"
+  "### sub"
+  "Use .sub.header class ... **not** sa/header-sub"
   )
 
 
@@ -131,17 +139,17 @@
 ;; ---------------------------
 ;; icon
 
-(defn type-icon []
+(defn variation-icon []
    [sa/header-h2 {:ash [:icon]}
    [sa/icon-settings]
    [:div.content
     "Account Settings"]])
 
 (defcard-doc
-  (mkdn-pprint-source type-icon))
+  (mkdn-pprint-source variation-icon))
 
 (defcard-rg
-   [type-icon])
+   [variation-icon])
 
 
 ;; ---------------------------
@@ -407,7 +415,6 @@
    ])
 
 
-
 ;; ---------------------------
 ;; Inverted
 
@@ -425,3 +432,72 @@
 
 (defcard-rg
   [inverted])
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Contents
+
+(defcard-doc
+  "
+---
+# Contents")
+
+;; ---------------------------
+;; image
+
+(defcard-doc
+  "## image"
+  "Use sa/image")
+
+(defn content-image []
+  [sa/header-h2 {:ash [:image]}
+   [sa/image {:src "/images/gadfly.png"}]
+   [:div.content
+    "Gadfly361"]])
+
+(defcard-doc
+  (mkdn-pprint-source content-image))
+
+(defcard-rg
+   [content-image])
+
+
+;; ---------------------------
+;; icon
+
+(defcard-doc
+  "## icon"
+  "Use sa/icon")
+
+(defn content-icon []
+  [sa/header-h2
+   [sa/icon-star]
+   [:div.content
+    "Star"]])
+
+(defcard-doc
+  (mkdn-pprint-source content-icon))
+
+(defcard-rg
+   [content-icon])
+
+
+;; ---------------------------
+;; subheader
+
+(defcard-doc
+  "## subheader"
+  "Use .sub.header class ... **not** sa/header-sub")
+
+(defn content-subheader []
+  [sa/header-h2
+   "Account Settings"
+   [:div.sub.header
+    "Manage your account settings and set e-mail preferences"]])
+
+(defcard-doc
+  (mkdn-pprint-source content-subheader))
+
+(defcard-rg
+   [content-subheader])
