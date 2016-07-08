@@ -41,8 +41,10 @@
 (defc "button" "icon")
 (defc "button" "labeled-icon")
 (defc "button" "right-labeled-icon")
-(defc "button" "basic")
 (defc "button" "inverted")
+(defc "button" "basic")
+(defc "button" "primary-basic")
+(defc "button" "secondary-basic")
 (defc "button" "inverted-basic")
 
 

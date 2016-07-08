@@ -50,7 +50,12 @@
   "### Vertically Attached"
   (list-keys "vertically attached")
   "### Horizontally Attached"
-  (list-keys "horizontally attached"))
+  (list-keys "horizontally attached")
+
+  "## Content"
+  "### Conditionals"
+  ".or"
+  )
 
 (defcard-doc
   "# SUMMARY FOR BUTTONS
@@ -218,20 +223,10 @@
   [type-right-labeled-icon])
 
 
-;; TODO: FIX
-(defn type-basic []
-  [sa/button-basic "basic"])
-
-(defcard-doc
-  (mkdn-pprint-source type-basic))
-
-(defcard-rg
-  [type-basic])
-
-
-;; TODO: FIX
 (defn type-inverted []
-  [sa/button-inverted "inverted"])
+  [sa/segment {:ash [:inverted]}
+   [sa/button-inverted {:ash [:red]}
+    "inverted"]])
 
 (defcard-doc
   (mkdn-pprint-source type-inverted))
@@ -240,9 +235,43 @@
   [type-inverted])
 
 
-;; TODO: FIX
+(defn type-basic []
+  [sa/button-basic {:ash [:red]}
+   "basic"])
+
+(defcard-doc
+  (mkdn-pprint-source type-basic))
+
+(defcard-rg
+  [type-basic])
+
+
+(defn type-primary-basic []
+  [sa/button-primary-basic {:ash [:red]}
+   "primary-basic"])
+
+(defcard-doc
+  (mkdn-pprint-source type-primary-basic))
+
+(defcard-rg
+  [type-primary-basic])
+
+
+(defn type-secondary-basic []
+  [sa/button-secondary-basic {:ash [:red]}
+   "secondary-basic"])
+
+(defcard-doc
+  (mkdn-pprint-source type-secondary-basic))
+
+(defcard-rg
+  [type-secondary-basic])
+
+
 (defn type-inverted-basic []
-  [sa/button-inverted-basic "inverted-basic"])
+  [sa/segment {:ash [:inverted]}
+   [sa/button-inverted-basic {:ash [:red]}
+    "inverted-basic"]])
 
 (defcard-doc
   (mkdn-pprint-source type-inverted-basic))
@@ -607,6 +636,30 @@
 
 
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Content
+
+(defcard-doc
+  "
+---
+# Button Content"
+  ".or")
+
+(defn content-or []
+  [sa/buttons
+   [sa/button "Cancel"]
+   [:div.or] ;; <-- content
+   [sa/button {:ash [:positive]}
+    "Save"]])
+
+(defcard-doc
+  (mkdn-pprint-source content-or))
+
+(defcard-rg
+  [content-or])
+
+
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; BUTTONS
@@ -658,9 +711,7 @@
   (mkdn-pprint-source buttons-vertical))
 
 (defcard-rg
-  [:div
-   [buttons-vertical]
-   ])
+   [buttons-vertical])
 
 
 ;; ---------------------------

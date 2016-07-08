@@ -24,8 +24,11 @@
    :labeled-icon
    :right-labeled-icon
 
-   :basic
    :inverted
+
+   :basic
+   :primary-basic
+   :secondary-basic
    :inverted-basic])
 
 (def groups
@@ -142,6 +145,9 @@
 (defcomp "icon" (assoc opts :type :icon))
 (defcomp "labeled-icon" (assoc opts :type :labeled-icon))
 (defcomp "right-labeled-icon" (assoc opts :type :right-labeled-icon))
-(defcomp "basic" (assoc opts :type :basic))
 (defcomp "inverted" (assoc opts :type :inverted))
+
+(defcomp "basic" (assoc opts :type :basic))
+(defcomp "primary-basic" (assoc opts :type :primary-basic))
+(defcomp "secondary-basic" (assoc opts :type :secondary-basic))
 (defcomp "inverted-basic" (assoc opts :type :inverted-basic))
