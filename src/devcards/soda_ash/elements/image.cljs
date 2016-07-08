@@ -311,20 +311,32 @@
 
 (defn spaced []
   [:div
-   [sa/image {:ash [:tiny
+   [sa/image {:ash [:mini
+                    :right-spaced]
+              :src "/images/ubuntu.png"}]
+
+   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+   eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+   ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+   aliquip ex ea commodo consequat. Duis aute irure dolor in
+   reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+   pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+   culpa qui officia deserunt mollit anim id est laborum."
+
+   [sa/image {:ash [:mini
                     :spaced]
               :src "/images/ubuntu.png"}]
 
-   "foo bar baz"
+   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+   eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+   ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+   aliquip ex ea commodo consequat. Duis aute irure dolor in
+   reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+   pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+   culpa qui officia deserunt mollit anim id est laborum."
 
-   [sa/image {:ash [:tiny
-                    :spaced]
-              :src "/images/ubuntu.png"}]
-
-   "foo bar baz"
-
-   [sa/image {:ash [:tiny
-                    :spaced]
+   [sa/image {:ash [:mini
+                    :left-spaced]
               :src "/images/ubuntu.png"}]
 
    ])

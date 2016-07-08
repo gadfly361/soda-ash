@@ -60,7 +60,9 @@
    (create-group
     {:group-name   "spaced"
      :group-vector (vector
-                    :spaced)})
+                    :left-spaced
+                    :spaced
+                    :right-spaced)})
 
    (create-group
     {:group-name   "floated"

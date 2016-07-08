@@ -34,6 +34,16 @@
   (list-keys "colored")
   "### Size"
   (list-keys "size")
+
+  "## Content"
+  "### detail"
+  "use .detail class"
+  "### icon"
+  "use sa/icon"
+  "### image"
+  "use sa/image"
+  "### link"
+  "use .detail class on an a tag"
   )
 
 (defcard-doc
@@ -496,6 +506,97 @@
    [sa/label {:ash [:massive]} "massive"]])
 
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Label Contant
+
+(defcard-doc
+  "
+---
+# Label Content")
+
+
+;; ---------------------------
+;; detail
+
+(defcard-doc
+  "## detail"
+  "use .detail class")
+
+(defn content-detail []
+  [sa/label
+   "Dogs"
+   [:div.detail ;; <-- .detail
+    "214"]])
+
+(defcard-doc
+  (mkdn-pprint-source content-detail))
+
+(defcard-rg
+  [content-detail])
+
+
+;; ---------------------------
+;; icon
+
+(defcard-doc
+  "## icon"
+  "use sa/icon")
+
+(defn content-icon []
+  [sa/label
+   [sa/icon-star]
+   "star"])
+
+(defcard-doc
+  (mkdn-pprint-source content-icon))
+
+(defcard-rg
+  [content-icon])
+
+
+;; ---------------------------
+;; image
+
+(defcard-doc
+  "## image"
+  "use sa/image")
+
+(defn content-image []
+  [sa/label
+   [sa/image {:ash [:avatar
+                    :right-spaced]
+              :src "/images/gadfly.png"}]
+   "Gadfly361"])
+
+(defcard-doc
+  (mkdn-pprint-source content-image))
+
+(defcard-rg
+  [content-image])
+
+
+;; ---------------------------
+;; link
+
+(defcard-doc
+  "## link"
+  "use .detail class on an a tag")
+
+(defn content-link []
+  [sa/label
+   [sa/icon-mail]
+   [:a.detail "View Mail"] ;; <-- .detail
+   ])
+
+(defcard-doc
+  (mkdn-pprint-source content-link))
+
+(defcard-rg
+  [content-link])
+
+;; Note: Currently not supporting label with an a tag
+
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Labels
@@ -551,7 +652,7 @@
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Label Variations
+;; Labels Variations
 
 (defcard-doc
   "
