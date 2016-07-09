@@ -31,6 +31,9 @@
    [soda-ash.collections.breadcrumb :as breadcrumb]
    [soda-ash.collections.breadcrumb-section :as breadcrumb-section]
    [soda-ash.collections.message :as message]
+
+   ;; views
+   [soda-ash.views.ad :as ad]
    ))
 
 
@@ -1011,3 +1014,32 @@
 
 (defc "message" nil)
 (defc "message" "icon")
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; COLLECTIONS
+
+;; ad
+
+(defc "ad" "mobile-leaderboard")
+(defc "ad" "mobile-banner")
+(defc "ad" "small-rectangle")
+(defc "ad" "medium-rectangle")
+(defc "ad" "large-rectangle")
+(defc "ad" "vertical-rectangle")
+(defc "ad" "button")
+(defc "ad" "square-button")
+(defc "ad" "small-button")
+(defc "ad" "skyscraper")
+(defc "ad" "wide-skyscraper")
+(defc "ad" "banner")
+(defc "ad" "vertical-banner")
+(defc "ad" "top-banner")
+(defc "ad" "half-banner")
+(defc "ad" "leaderboard")
+(defc "ad" "large-leaderboard")
+(defc "ad" "billboard")
+(defc "ad" "panorama")
+(defc "ad" "netboard")
+(defc "ad" "half-page")
