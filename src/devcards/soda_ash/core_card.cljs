@@ -21,6 +21,7 @@
 
    ;; collections
    [soda-ash.collections.breadcrumb-card]
+   [soda-ash.collections.message-card]
    ))
 
 

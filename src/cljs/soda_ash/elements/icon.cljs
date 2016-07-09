@@ -542,7 +542,11 @@
    :yelp
    :youtube
    :youtube-play
-   :youtube-square])
+   :youtube-square
+
+   ;; for message
+   :close
+   ])
 
 
 (def groups
@@ -1171,3 +1175,5 @@
 (defcomp "youtube" (assoc opts :type :youtube))
 (defcomp "youtube-play" (assoc opts :type :youtube-play))
 (defcomp "youtube-square" (assoc opts :type :youtube-square))
+;; For message
+(defcomp "close" (assoc opts :type :close))

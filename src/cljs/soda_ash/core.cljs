@@ -30,6 +30,7 @@
    ;; collections
    [soda-ash.collections.breadcrumb :as breadcrumb]
    [soda-ash.collections.breadcrumb-section :as breadcrumb-section]
+   [soda-ash.collections.message :as message]
    ))
 
 
@@ -868,6 +869,8 @@
 (defc "icon" "youtube")
 (defc "icon" "youtube-play")
 (defc "icon" "youtube-square")
+;; for message
+(defc "icon" "close")
 
 
 ;; icons
@@ -1002,3 +1005,9 @@
 
 (defc "breadcrumb-section" nil)
 (defc "breadcrumb-section" "link")
+
+
+;; message
+
+(defc "message" nil)
+(defc "message" "icon")
