@@ -6,50 +6,18 @@
   (:require
    [devcards.core]
    [reagent.core]
-   [soda-ash.core :as sa]
+   [soda-ash.element :as se]
+   [soda-ash.content :as sco]
    [soda-ash.helpers :as h]
    [soda-ash.elements.header :as header]))
 
 
 (def list-keys
-  (h/list-keys header/groups))
+  (h/list-keys header/variations))
 
 
 (defcard-doc
-  "# SUMMARY
-
-  ## Types"
-  (h/list-types header/types "header" false)
-
-  "## States (*soda*)"
-  (list-keys "states")
-
-  "## Variations (*ash*)"
-  "### Icon"
-  (list-keys "icon")
-  "### dividing"
-  (list-keys "dividing")
-  "### block"
-  (list-keys "block")
-  "### attached"
-  (list-keys "attached")
-  "### floating"
-  (list-keys "floating")
-  "### text alignment"
-  (list-keys "text alignment")
-  "### colored"
-  (list-keys "colored")
-  "### inverted"
-  (list-keys "inverted")
-
-  "## Content"
-  "### image"
-  "Use sa/image"
-  "### icon"
-  "Use sa/icon"
-  "### sub"
-  "Use .sub.header class ... **not** sa/header-sub"
-  )
+  (h/devcard-docs header/opts))
 
 
 
@@ -60,11 +28,11 @@
   "
 ---
 # Types"
-  (h/list-types header/types "header" false))
+  (h/list-types header/opts))
 
 
 (defn type-h1 []
-  [sa/header-h1 "h1 header"])
+  [se/header-h1 "h1 header"])
 
 (defcard-doc
   (mkdn-pprint-source type-h1))
@@ -72,15 +40,15 @@
 (defcard-rg
   [:div
    [type-h1]
-   [sa/header-h2 "h2 header"]
-   [sa/header-h3 "h3 header"]
-   [sa/header-h4 "h4 header"]
-   [sa/header-h5 "h5 header"]
+   [se/header-h2 "h2 header"]
+   [se/header-h3 "h3 header"]
+   [se/header-h4 "h4 header"]
+   [se/header-h5 "h5 header"]
    ])
 
 
 (defn type-huge []
-  [sa/header-huge "huge header"])
+  [se/header-huge "huge header"])
 
 (defcard-doc
   (mkdn-pprint-source type-huge))
@@ -88,15 +56,15 @@
 (defcard-rg
   [:div
    [type-huge]
-   [sa/header-large "large header"]
-   [sa/header-medium "medium header"]
-   [sa/header-small "small header"]
-   [sa/header-tiny "tiny header"]
+   [se/header-large "large header"]
+   [se/header-medium "medium header"]
+   [se/header-small "small header"]
+   [se/header-tiny "tiny header"]
    ])
 
 
 (defn type-sub []
-  [sa/header-sub "sub header"])
+  [se/header-sub "sub header"])
 
 (defcard-doc
   (mkdn-pprint-source type-sub))
@@ -117,7 +85,7 @@
 
 
 (defn state-disabled []
-  [sa/header-large {:soda :disabled}
+  [se/header-large {:soda :disabled}
    "disabled header"])
 
 (defcard-doc
@@ -140,9 +108,9 @@
 ;; icon
 
 (defn variation-icon []
-   [sa/header-h2 {:ash [:icon]}
-   [sa/icon-settings]
-   [:div.content
+   [se/header-h2 {:ash [:icon]}
+   [se/icon-settings]
+   [sco/content
     "Account Settings"]])
 
 (defcard-doc
@@ -161,7 +129,7 @@
 
 (defn dividing []
   [:div
-   [sa/header-large {:ash [:dividing]}
+   [se/header-large {:ash [:dividing]}
     "dividing header"]
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -188,7 +156,7 @@
 
 (defn block []
   [:div
-   [sa/header-large {:ash [:block]}
+   [se/header-large {:ash [:block]}
     "block header"]
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -215,10 +183,10 @@
 
 (defn attached []
   [:div
-   [sa/header-large {:ash [:top-attached]}
+   [se/header-large {:ash [:top-attached]}
     "top attached header"]
 
-   [sa/segment {:ash [:attached]}
+   [se/segment {:ash [:attached]}
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -227,10 +195,10 @@
    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
    culpa qui officia deserunt mollit anim id est laborum."]
 
-   [sa/header-large {:ash [:attached]}
+   [se/header-large {:ash [:attached]}
     "attached header"]
 
-   [sa/segment {:ash [:attached]}
+   [se/segment {:ash [:attached]}
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -239,7 +207,7 @@
    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
    culpa qui officia deserunt mollit anim id est laborum."]
 
-   [sa/header-large {:ash [:bottom-attached]}
+   [se/header-large {:ash [:bottom-attached]}
     "bottom attached header"]
    ])
 
@@ -259,7 +227,7 @@
 
 (defn left-floated []
   [:div
-   [sa/header-large {:ash [:left-floated]}
+   [se/header-large {:ash [:left-floated]}
     "left floating header"]
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -279,7 +247,7 @@
 
 (defn right-floated []
   [:div
-   [sa/header-large {:ash [:right-floated]}
+   [se/header-large {:ash [:right-floated]}
     "right floating header"]
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -306,7 +274,7 @@
 
 (defn left-aligned []
   [:div
-   [sa/header-large {:ash [:left-aligned]}
+   [se/header-large {:ash [:left-aligned]}
     "left aligned"]
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -326,7 +294,7 @@
 
 (defn center-aligned []
   [:div
-   [sa/header-large {:ash [:center-aligned]}
+   [se/header-large {:ash [:center-aligned]}
     "center aligned"]
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -346,7 +314,7 @@
 
 (defn right-aligned []
   [:div
-   [sa/header-large {:ash [:right-aligned]}
+   [se/header-large {:ash [:right-aligned]}
     "right aligned"]
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -366,7 +334,7 @@
 
 (defn justified []
   [:div
-   [sa/header-large {:ash [:justified]}
+   [se/header-large {:ash [:justified]}
     "justified header"]
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -392,7 +360,7 @@
   (list-keys "colored"))
 
 (defn colored-red []
-  [sa/header-medium {:ash [:red]}
+  [se/header-medium {:ash [:red]}
    "red"])
 
 (defcard-doc
@@ -401,17 +369,17 @@
 (defcard-rg
   [:div
    [colored-red]
-   [sa/header-medium {:ash [:orange]} "orange"]
-   [sa/header-medium {:ash [:yellow]} "yellow"]
-   [sa/header-medium {:ash [:olive]} "olive"]
-   [sa/header-medium {:ash [:green]} "green"]
-   [sa/header-medium {:ash [:teal]} "teal"]
-   [sa/header-medium {:ash [:blue]} "blue"]
-   [sa/header-medium {:ash [:violet]} "violet"]
-   [sa/header-medium {:ash [:purple]} "purple"]
-   [sa/header-medium {:ash [:pink]} "pink"]
-   [sa/header-medium {:ash [:brown]} "brown"]
-   [sa/header-medium {:ash [:grey]} "grey"]
+   [se/header-medium {:ash [:orange]} "orange"]
+   [se/header-medium {:ash [:yellow]} "yellow"]
+   [se/header-medium {:ash [:olive]} "olive"]
+   [se/header-medium {:ash [:green]} "green"]
+   [se/header-medium {:ash [:teal]} "teal"]
+   [se/header-medium {:ash [:blue]} "blue"]
+   [se/header-medium {:ash [:violet]} "violet"]
+   [se/header-medium {:ash [:purple]} "purple"]
+   [se/header-medium {:ash [:pink]} "pink"]
+   [se/header-medium {:ash [:brown]} "brown"]
+   [se/header-medium {:ash [:grey]} "grey"]
    ])
 
 
@@ -423,8 +391,8 @@
   (list-keys "inverted"))
 
 (defn inverted []
-  [sa/segment {:ash [:inverted]}
-   [sa/header-medium {:ash [:inverted]}
+  [se/segment {:ash [:inverted]}
+   [se/header-medium {:ash [:inverted]}
     "inverted header"]])
 
 (defcard-doc
@@ -447,13 +415,12 @@
 ;; image
 
 (defcard-doc
-  "## image"
-  "Use sa/image")
+  "## image")
 
 (defn content-image []
-  [sa/header-h2 {:ash [:image]}
-   [sa/image {:src "/images/gadfly.png"}]
-   [:div.content
+  [se/header-h2 {:ash [:image]}
+   [se/image {:src "/images/gadfly.png"}]
+   [sco/content
     "Gadfly361"]])
 
 (defcard-doc
@@ -467,13 +434,12 @@
 ;; icon
 
 (defcard-doc
-  "## icon"
-  "Use sa/icon")
+  "## icon")
 
 (defn content-icon []
-  [sa/header-h2
-   [sa/icon-star]
-   [:div.content
+  [se/header-h2
+   [se/icon-star]
+   [sco/content
     "Star"]])
 
 (defcard-doc
@@ -488,12 +454,12 @@
 
 (defcard-doc
   "## subheader"
-  "Use .sub.header class ... **not** sa/header-sub")
+  "Use sco/sub-header ... **not** se/header-sub")
 
 (defn content-subheader []
-  [sa/header-h2
+  [se/header-h2
    "Account Settings"
-   [:div.sub.header
+   [sco/sub-header
     "Manage your account settings and set e-mail preferences"]])
 
 (defcard-doc

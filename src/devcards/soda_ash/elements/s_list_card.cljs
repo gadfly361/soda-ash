@@ -5,51 +5,20 @@
                           mkdn-pprint-source]])
   (:require
    [devcards.core]
-   [reagent.core]
-   [soda-ash.core :as sa]
+   [reagent.core :as reagent]
+   [clojure.string :as string]
+   [soda-ash.element :as se]
+   [soda-ash.content :as sco]
    [soda-ash.helpers :as h]
    [soda-ash.elements.s-list :as s-list]))
 
 
 (def list-keys
-  (h/list-keys s-list/groups))
+  (h/list-keys s-list/variations))
 
 
 (defcard-doc
-  "# SUMMARY"
-  "## Types"
-  (h/list-types s-list/types "s-list")
-
-  "## Variations (*ash*)"
-  "### Horizontal"
-  (list-keys "horizontal")
-  "### Inverted"
-  (list-keys "inverted")
-  "### Selection"
-  (list-keys "selection")
-  "### Animated"
-  (list-keys "animated")
-  "### Relaxed"
-  (list-keys "relaxed")
-  "### Divided"
-  (list-keys "divided")
-  "### Celled"
-  (list-keys "celled")
-  "### Size"
-  (list-keys "size")
-
-  "## Content"
-  "### item"
-  "Use .item class"
-  "### icon"
-  "Use sa/icon"
-  "### image"
-  "Use sa/image"
-  "### link"
-  "Use .item on an a tag"
-  "### description"
-  "Use .description class"
-  )
+  (h/devcard-docs s-list/opts))
 
 
 
@@ -60,14 +29,13 @@
   "
 ---
 # Types"
-  (h/list-types s-list/types "s-list" true)
-  )
+  (h/list-types s-list/opts))
 
 (defn type-default []
-  [sa/s-list
-   [:div.item "foo"]
-   [:div.item "bar"]
-   [:div.item "baz"]
+  [se/s-list
+   [sco/item "foo"]
+   [sco/item "bar"]
+   [sco/item "baz"]
    ])
 
 (defcard-doc
@@ -78,16 +46,16 @@
 
 
 (defn type-bulleted []
-  [sa/s-list-bulleted
-   [:div.item "Gaining Access"]
-   [:div.item "Inviting Friends"]
-   [:div.item
+  [se/s-list-bulleted
+   [sco/item "Gaining Access"]
+   [sco/item "Inviting Friends"]
+   [sco/item
     [:div "Benefits"]
-    [sa/s-list
-     [:div.item "Use Anywhere"]
-     [:div.item "Rebates"]
-     [:div.item "Discounts"]]]
-   [:div.item "Warranty"]])
+    [se/s-list
+     [sco/item "Use Anywhere"]
+     [sco/item "Rebates"]
+     [sco/item "Discounts"]]]
+   [sco/item "Warranty"]])
 
 (defcard-doc
   (mkdn-pprint-source type-bulleted))
@@ -97,16 +65,16 @@
 
 
 (defn type-ordered []
-  [sa/s-list-ordered
-   [:div.item "Gaining Access"]
-   [:div.item "Inviting Friends"]
-   [:div.item
+  [se/s-list-ordered
+   [sco/item "Gaining Access"]
+   [sco/item "Inviting Friends"]
+   [sco/item
     [:div "Benefits"]
-    [sa/s-list
-     [:div.item "Use Anywhere"]
-     [:div.item "Rebates"]
-     [:div.item "Discounts"]]]
-   [:div.item "Warranty"]])
+    [se/s-list
+     [sco/item "Use Anywhere"]
+     [sco/item "Rebates"]
+     [sco/item "Discounts"]]]
+   [sco/item "Warranty"]])
 
 (defcard-doc
   (mkdn-pprint-source type-ordered))
@@ -116,7 +84,7 @@
 
 
 (defn type-custom []
-  [sa/s-list-custom
+  [se/s-list-custom
    [:li {:value "*"} "Gaining Access"]
    [:li {:value "*"} "Inviting Friends"]
    [:li {:value "*"} "Benefits"
@@ -133,30 +101,47 @@
   [type-custom])
 
 
-;; TODO: make active clickable
+
+(defn type-link-item [local-ratom k]
+  (let [active? (= k (:active @local-ratom))
+        soda    (when active? :active)
+        text    (-> k name string/capitalize)]
+
+    [sco/item-link {:soda     soda
+                   :on-click #(swap! local-ratom assoc :active k)}
+     text]))
+
 (defn type-link []
-  [sa/s-list-link
-   [:a.active.item "Home"]
-   [:a.item "About"]
-   [:a.item "Jobs"]
-   [:a.item "Team"]])
+  (let [local-ratom (reagent/atom {:active :home})]
+    (fn []
+      (let [active (:active @local-ratom)]
+        [se/s-list-link
+         [type-link-item local-ratom :home]
+         [type-link-item local-ratom :about]
+         [type-link-item local-ratom :jobs]
+         [type-link-item local-ratom :team]]))))
 
 (defcard-doc
+  (mkdn-pprint-source type-link-item)
   (mkdn-pprint-source type-link))
 
 (defcard-rg
   [type-link])
 
 
-;; TODO: make active clickable
+
 (defn type-bulleted-link []
-  [sa/s-list-bulleted-link
-   [:a.active.item "Home"]
-   [:a.item "About"]
-   [:a.item "Jobs"]
-   [:a.item "Team"]])
+  (let [local-ratom (reagent/atom {:active :home})]
+    (fn []
+      (let [active (:active @local-ratom)]
+        [se/s-list-bulleted-link
+         [type-link-item local-ratom :home]
+         [type-link-item local-ratom :about]
+         [type-link-item local-ratom :jobs]
+         [type-link-item local-ratom :team]]))))
 
 (defcard-doc
+  (mkdn-pprint-source type-link-item)
   (mkdn-pprint-source type-bulleted-link))
 
 (defcard-rg
@@ -180,10 +165,10 @@
   (list-keys "horizontal"))
 
 (defn horizontal []
-  [sa/s-list {:ash [:horizontal]}
-   [:div.item "foo"]
-   [:div.item "bar"]
-   [:div.item "baz"]
+  [se/s-list {:ash [:horizontal]}
+   [sco/item "foo"]
+   [sco/item "bar"]
+   [sco/item "baz"]
    ])
 
 (defcard-doc
@@ -201,11 +186,11 @@
   (list-keys "inverted"))
 
 (defn inverted []
-  [sa/segment {:ash [:inverted]}
-   [sa/s-list {:ash [:inverted]}
-    [:div.item "foo"]
-    [:div.item "bar"]
-    [:div.item "baz"]
+  [se/segment {:ash [:inverted]}
+   [se/s-list {:ash [:inverted]}
+    [sco/item "foo"]
+    [sco/item "bar"]
+    [sco/item "baz"]
     ]])
 
 (defcard-doc
@@ -223,10 +208,10 @@
   (list-keys "selection"))
 
 (defn selection []
-  [sa/s-list {:ash [:selection]}
-   [:div.item "foo"]
-   [:div.item "bar"]
-   [:div.item "baz"]
+  [se/s-list {:ash [:selection]}
+   [sco/item "foo"]
+   [sco/item "bar"]
+   [sco/item "baz"]
    ])
 
 (defcard-doc
@@ -244,10 +229,10 @@
   (list-keys "animated"))
 
 (defn animated []
-  [sa/s-list {:ash [:animated]}
-   [:div.item "foo"]
-   [:div.item "bar"]
-   [:div.item "baz"]
+  [se/s-list {:ash [:animated]}
+   [sco/item "foo"]
+   [sco/item "bar"]
+   [sco/item "baz"]
    ])
 
 (defcard-doc
@@ -265,10 +250,10 @@
   (list-keys "relaxed"))
 
 (defn relaxed []
-  [sa/s-list {:ash [:relaxed]}
-   [:div.item "foo"]
-   [:div.item "bar"]
-   [:div.item "baz"]
+  [se/s-list {:ash [:relaxed]}
+   [sco/item "foo"]
+   [sco/item "bar"]
+   [sco/item "baz"]
    ])
 
 (defcard-doc
@@ -279,10 +264,10 @@
 
 
 (defn very-relaxed []
-  [sa/s-list {:ash [:very-relaxed]}
-   [:div.item "foo"]
-   [:div.item "bar"]
-   [:div.item "baz"]
+  [se/s-list {:ash [:very-relaxed]}
+   [sco/item "foo"]
+   [sco/item "bar"]
+   [sco/item "baz"]
    ])
 
 (defcard-doc
@@ -300,10 +285,10 @@
   (list-keys "divided"))
 
 (defn divided []
-  [sa/s-list {:ash [:divided]}
-   [:div.item "foo"]
-   [:div.item "bar"]
-   [:div.item "baz"]
+  [se/s-list {:ash [:divided]}
+   [sco/item "foo"]
+   [sco/item "bar"]
+   [sco/item "baz"]
    ])
 
 (defcard-doc
@@ -321,10 +306,10 @@
   (list-keys "celled"))
 
 (defn celled []
-  [sa/s-list {:ash [:celled]}
-   [:div.item "foo"]
-   [:div.item "bar"]
-   [:div.item "baz"]
+  [se/s-list {:ash [:celled]}
+   [sco/item "foo"]
+   [sco/item "bar"]
+   [sco/item "baz"]
    ])
 
 (defcard-doc
@@ -342,10 +327,10 @@
   (list-keys "size"))
 
 (defn size []
-  [sa/s-list {:ash [:mini]}
-   [:div.item "foo"]
-   [:div.item "bar"]
-   [:div.item "baz"]
+  [se/s-list {:ash [:mini]}
+   [sco/item "foo"]
+   [sco/item "bar"]
+   [sco/item "baz"]
    ])
 
 (defcard-doc
@@ -353,50 +338,50 @@
 
 (defcard-rg
   [:div
-   [sa/header-small "Mini"]
+   [se/header-small "Mini"]
    [size]
 
-   [sa/header-small "Tiny"]
-   [sa/s-list {:ash [:tiny]}
-    [:div.item "foo"]
-    [:div.item "bar"]
-    [:div.item "baz"]]
+   [se/header-small "Tiny"]
+   [se/s-list {:ash [:tiny]}
+    [sco/item "foo"]
+    [sco/item "bar"]
+    [sco/item "baz"]]
 
-   [sa/header-small "Small"]
-   [sa/s-list {:ash [:small]}
-    [:div.item "foo"]
-    [:div.item "bar"]
-    [:div.item "baz"]]
+   [se/header-small "Small"]
+   [se/s-list {:ash [:small]}
+    [sco/item "foo"]
+    [sco/item "bar"]
+    [sco/item "baz"]]
 
-   [sa/header-small "Default"]
-   [sa/s-list
-    [:div.item "foo"]
-    [:div.item "bar"]
-    [:div.item "baz"]]
+   [se/header-small "Default"]
+   [se/s-list
+    [sco/item "foo"]
+    [sco/item "bar"]
+    [sco/item "baz"]]
 
-   [sa/header-small "Large"]
-   [sa/s-list {:ash [:large]}
-    [:div.item "foo"]
-    [:div.item "bar"]
-    [:div.item "baz"]]
+   [se/header-small "Large"]
+   [se/s-list {:ash [:large]}
+    [sco/item "foo"]
+    [sco/item "bar"]
+    [sco/item "baz"]]
 
-   [sa/header-small "Big"]
-   [sa/s-list {:ash [:big]}
-    [:div.item "foo"]
-    [:div.item "bar"]
-    [:div.item "baz"]]
+   [se/header-small "Big"]
+   [se/s-list {:ash [:big]}
+    [sco/item "foo"]
+    [sco/item "bar"]
+    [sco/item "baz"]]
 
-   [sa/header-small "Huge"]
-   [sa/s-list {:ash [:huge]}
-    [:div.item "foo"]
-    [:div.item "bar"]
-    [:div.item "baz"]]
+   [se/header-small "Huge"]
+   [se/s-list {:ash [:huge]}
+    [sco/item "foo"]
+    [sco/item "bar"]
+    [sco/item "baz"]]
 
-   [sa/header-small "Massive"]
-   [sa/s-list {:ash [:massive]}
-    [:div.item "foo"]
-    [:div.item "bar"]
-    [:div.item "baz"]]
+   [se/header-small "Massive"]
+   [se/s-list {:ash [:massive]}
+    [sco/item "foo"]
+    [sco/item "bar"]
+    [sco/item "baz"]]
    ])
 
 
@@ -414,14 +399,13 @@
 ;; item
 
 (defcard-doc
-  "## item"
-  "Use .item class")
+  "## item")
 
 (defn content-item []
-  [sa/s-list
-   [:div.item "foo"] ;; <-- .item
-   [:div.item "bar"]
-   [:div.item "baz"]
+  [se/s-list
+   [sco/item "foo"]
+   [sco/item "bar"]
+   [sco/item "baz"]
    ])
 
 (defcard-doc
@@ -435,18 +419,17 @@
 ;; icon
 
 (defcard-doc
-  "## icon"
-  "Use sa/icon class")
+  "## icon")
 
 (defn content-icon []
-  [sa/s-list
-   [:div.item
-    [sa/icon-star]
-    [:div.content "This is a star"]]
+  [se/s-list
+   [sco/item
+    [se/icon-star]
+    [sco/content "This is a star"]]
 
-   [:div.item
-    [sa/icon-plus]
-    [:div.content "This is a plus"]]])
+   [sco/item
+    [se/icon-plus]
+    [sco/content "This is a plus"]]])
 
 (defcard-doc
   (mkdn-pprint-source content-icon))
@@ -459,28 +442,27 @@
 ;; image
 
 (defcard-doc
-  "## image"
-  "Use sa/image class")
+  "## image")
 
 (defn content-image []
-  [sa/s-list
-   [:div.item
-    [sa/image {:ash [:avatar] ;; <-- image
+  [se/s-list
+   [sco/item
+    [se/image {:ash [:avatar]
                :src "/images/gadfly.png"}]
-    [:div.content
-     [:div.header
+    [sco/content
+     [sco/header
       "Gadfly361"]
-     [:div.description
+     [sco/description
       "I know that I know nothing."]]]
 
 
-   [:div.item
-    [sa/image {:ash [:avatar]
+   [sco/item
+    [se/image {:ash [:avatar]
                :src "/images/rachel.png"}]
-    [:div.content
-     [:div.header
+    [sco/content
+     [sco/header
       "Rachel"]
-     [:div.description
+     [sco/description
       "Some awesome description."]]]])
 
 (defcard-doc
@@ -494,14 +476,13 @@
 ;; link
 
 (defcard-doc
-  "## link"
-  "Use .item on an a tag")
+  "## link")
 
 (defn content-link []
-  [sa/s-list
-   [:a.item "What is a FAQ?"]
-   [:a.item "Who is our user?"]
-   [:a.item "Where is our office located?"]])
+  [se/s-list
+   [sco/item-link "What is a FAQ?"]
+   [sco/item-link "Who is our user?"]
+   [sco/item-link "Where is our office located?"]])
 
 (defcard-doc
   (mkdn-pprint-source content-link))
@@ -514,28 +495,27 @@
 ;; description
 
 (defcard-doc
-  "## description"
-  "Use .description class")
+  "## description")
 
 (defn content-description []
-  [sa/s-list
-   [:div.item
-    [sa/image {:ash [:avatar]
+  [se/s-list
+   [sco/item
+    [se/image {:ash [:avatar]
                :src "/images/gadfly.png"}]
-    [:div.content
-     [:div.header
+    [sco/content
+     [sco/header
       "Gadfly361"]
-     [:div.description  ;; <-- .description
+     [sco/description
       "I know that I know nothing."]]]
 
 
-   [:div.item
-    [sa/image {:ash [:avatar]
+   [sco/item
+    [se/image {:ash [:avatar]
                :src "/images/rachel.png"}]
-    [:div.content
-     [:div.header
+    [sco/content
+     [sco/header
       "Rachel"]
-     [:div.description
+     [sco/description
       "Some awesome description."]]]])
 
 (defcard-doc

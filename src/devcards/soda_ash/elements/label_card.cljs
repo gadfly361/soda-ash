@@ -6,7 +6,8 @@
   (:require
    [devcards.core]
    [reagent.core]
-   [soda-ash.core :as sa]
+   [soda-ash.element :as se]
+   [soda-ash.content :as sco]
    [soda-ash.helpers :as h]
    [soda-ash.elements.label :as label]
    [soda-ash.elements.labels :as labels]
@@ -14,49 +15,17 @@
 
 
 (def list-keys
-  (h/list-keys label/groups))
+  (h/list-keys label/variations))
 
 (def list-labels-keys
-  (h/list-keys labels/groups))
+  (h/list-keys labels/variations))
 
 
 (defcard-doc
-  "# SUMMARY FOR LABEL"
-  "## Types"
-  (h/list-types label/types "label")
-
-  "## Variations (*ash*)"
-  "### Circular"
-  (list-keys "circular")
-  "### Basic"
-  (list-keys "basic")
-  "### Colored"
-  (list-keys "colored")
-  "### Size"
-  (list-keys "size")
-
-  "## Content"
-  "### detail"
-  "use .detail class"
-  "### icon"
-  "use sa/icon"
-  "### image"
-  "use sa/image"
-  "### link"
-  "use .detail class on an a tag"
-  )
+  (h/devcard-docs label/opts))
 
 (defcard-doc
-  "# SUMMARY FOR LABELS"
-  "## Types"
-  (h/list-types labels/types "labels")
-
-  "## Variations (*ash*)"
-  "### Colored"
-  (list-labels-keys "colored")
-  "### Size"
-  (list-labels-keys "size")
-  )
+  (h/devcard-docs labels/opts))
 
 
 
@@ -71,12 +40,11 @@
   "
 ---
 # Label Types"
-  (h/list-types label/types "label" true)
-  )
+  (h/list-types label/opts))
 
 (defn type-default []
-  [sa/label
-   [sa/icon-mail]
+  [se/label
+   [se/icon-mail]
    "label"])
 
 (defcard-doc
@@ -87,8 +55,8 @@
 
 
 (defn type-image []
-  [sa/label-image
-   [sa/image {:src "/images/ubuntu.png"}]
+  [se/label-image
+   [se/image {:src "/images/ubuntu.png"}]
    "label-image"])
 
 (defcard-doc
@@ -100,9 +68,9 @@
 
 (defn type-pointing []
   [:div
-   [sa/input {:ash [:fluid]}
+   [se/input {:ash [:fluid]}
     [:input {:type "text"}]]
-   [sa/label-pointing
+   [se/label-pointing
     "label-pointing"]])
 
 (defcard-doc
@@ -114,9 +82,9 @@
 
 (defn type-pointing-below []
   [:div
-   [sa/label-pointing-below
+   [se/label-pointing-below
     "label-pointing-below"]
-   [sa/input {:ash [:fluid]}
+   [se/input {:ash [:fluid]}
     [:input {:type "text"}]]])
 
 (defcard-doc
@@ -128,9 +96,9 @@
 
 (defn type-left-pointing []
   [:div
-   [sa/input
+   [se/input
     [:input {:type "text"}]]
-   [sa/label-left-pointing
+   [se/label-left-pointing
     "label-left-pointing"]])
 
 (defcard-doc
@@ -142,9 +110,9 @@
 
 (defn type-right-pointing []
   [:div
-   [sa/label-right-pointing
+   [se/label-right-pointing
     "label-right-pointing"]
-   [sa/input
+   [se/input
     [:input {:type "text"}]]])
 
 (defcard-doc
@@ -156,9 +124,9 @@
 
 (defn type-left-corner []
   [:div {:style {:position "relative"}}
-   [sa/label-left-corner
-    [sa/icon-star]]
-   [sa/image {:ash [:medium]
+   [se/label-left-corner
+    [se/icon-star]]
+   [se/image {:ash [:medium]
               :src "/images/ubuntu.png"}]])
 
 (defcard-doc
@@ -171,10 +139,10 @@
 (defn type-right-corner []
   [:div {:style {:position "relative"
                  :display  "inline-block"}}
-   [sa/image {:ash [:medium]
+   [se/image {:ash [:medium]
               :src "/images/ubuntu.png"}]
-   [sa/label-right-corner
-    [sa/icon-star]]])
+   [se/label-right-corner
+    [se/icon-star]]])
 
 (defcard-doc
   (mkdn-pprint-source type-right-corner))
@@ -185,9 +153,9 @@
 
 (defn type-tag []
   [:div
-   [sa/input
+   [se/input
     [:input {:type "text"}]]
-   [sa/label-tag
+   [se/label-tag
     "label-tag"]])
 
 (defcard-doc
@@ -199,8 +167,8 @@
 
 
 (defn type-ribbon []
-  [sa/segment
-   [sa/label-ribbon {:ash [:blue]}
+  [se/segment
+   [se/label-ribbon {:ash [:blue]}
     "label-ribbon"]
    [:p "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -219,8 +187,8 @@
 
 
 (defn type-right-ribbon []
-  [sa/segment
-   [sa/label-right-ribbon {:ash [:blue]}
+  [se/segment
+   [se/label-right-ribbon {:ash [:blue]}
     "label-right-ribbon"]
    [:p "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -239,8 +207,8 @@
 
 
 (defn type-top-attached []
-  [sa/segment
-   [sa/label-top-attached {:ash [:blue]}
+  [se/segment
+   [se/label-top-attached {:ash [:blue]}
     "label-top-attached"]
    [:p "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -259,8 +227,8 @@
 
 
 (defn type-bottom-attached []
-  [sa/segment
-   [sa/label-bottom-attached {:ash [:blue]}
+  [se/segment
+   [se/label-bottom-attached {:ash [:blue]}
     "label-bottom-attached"]
    [:p "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -279,8 +247,8 @@
 
 
 (defn type-top-right-attached []
-  [sa/segment
-   [sa/label-top-right-attached {:ash [:blue]}
+  [se/segment
+   [se/label-top-right-attached {:ash [:blue]}
     "label-top-right-attached"]
    [:p "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -299,8 +267,8 @@
 
 
 (defn type-top-left-attached []
-  [sa/segment
-   [sa/label-top-left-attached {:ash [:blue]}
+  [se/segment
+   [se/label-top-left-attached {:ash [:blue]}
     "label-top-left-attached"]
    [:p "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -319,8 +287,8 @@
 
 
 (defn type-bottom-right-attached []
-  [sa/segment
-   [sa/label-bottom-right-attached {:ash [:blue]}
+  [se/segment
+   [se/label-bottom-right-attached {:ash [:blue]}
     "label-bottom-right-attached"]
    [:p "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -339,8 +307,8 @@
 
 
 (defn type-bottom-left-attached []
-  [sa/segment
-   [sa/label-bottom-left-attached {:ash [:blue]}
+  [se/segment
+   [se/label-bottom-left-attached {:ash [:blue]}
     "label-bottom-left-attached"]
    [:p "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -360,7 +328,7 @@
 
 (defn type-horizontal []
   [:div
-   [sa/label-horizontal {:ash [:blue]}
+   [se/label-horizontal {:ash [:blue]}
     "label-horizontal"]
    "foo bar"
    ])
@@ -375,13 +343,13 @@
 ;; TODO: update when menu is ready
 (defn type-floating []
   [:div.ui.compact.menu
-   [:a.item
-    [sa/icon-mail]
-    [sa/label-floating {:ash [:red]}
+   [sco/item-link
+    [se/icon-mail]
+    [se/label-floating {:ash [:red]}
      "22"]]
-   [:a.item
-    [sa/icon-users]
-    [sa/label-floating {:ash [:teal]}
+   [sco/item-link
+    [se/icon-users]
+    [se/label-floating {:ash [:teal]}
      "12"]]])
 
 (defcard-doc
@@ -408,7 +376,7 @@
   (list-keys "circular"))
 
 (defn circular []
-  [sa/label {:ash [:circular
+  [se/label {:ash [:circular
                    :green]}
    "1"])
 
@@ -420,7 +388,7 @@
 
 
 (defn empty-circular []
-  [sa/label {:ash [:empty-circular
+  [se/label {:ash [:empty-circular
                    :green]}])
 
 (defcard-doc
@@ -438,7 +406,7 @@
   (list-keys "basic"))
 
 (defn basic []
-  [sa/label {:ash [:basic
+  [se/label {:ash [:basic
                    :green]}
    "basic"])
 
@@ -457,7 +425,7 @@
   (list-keys "colored"))
 
 (defn colored []
-  [sa/label {:ash [:red]}
+  [se/label {:ash [:red]}
    "red"])
 
 (defcard-doc
@@ -466,18 +434,18 @@
 (defcard-rg
   [:div
    [colored]
-   [sa/label {:ash [:orange]} "orange"]
-   [sa/label {:ash [:yellow]} "yellow"]
-   [sa/label {:ash [:olive]} "olive"]
-   [sa/label {:ash [:green]} "green"]
-   [sa/label {:ash [:teal]} "teal"]
-   [sa/label {:ash [:blue]} "blue"]
-   [sa/label {:ash [:violet]} "violet"]
-   [sa/label {:ash [:purple]} "purple"]
-   [sa/label {:ash [:pink]} "pink"]
-   [sa/label {:ash [:brown]} "brown"]
-   [sa/label {:ash [:grey]} "grey"]
-   [sa/label {:ash [:black]} "black"]])
+   [se/label {:ash [:orange]} "orange"]
+   [se/label {:ash [:yellow]} "yellow"]
+   [se/label {:ash [:olive]} "olive"]
+   [se/label {:ash [:green]} "green"]
+   [se/label {:ash [:teal]} "teal"]
+   [se/label {:ash [:blue]} "blue"]
+   [se/label {:ash [:violet]} "violet"]
+   [se/label {:ash [:purple]} "purple"]
+   [se/label {:ash [:pink]} "pink"]
+   [se/label {:ash [:brown]} "brown"]
+   [se/label {:ash [:grey]} "grey"]
+   [se/label {:ash [:black]} "black"]])
 
 
 ;; --------------------------
@@ -488,7 +456,7 @@
   (list-keys "size"))
 
 (defn size []
-  [sa/label {:ash [:mini]}
+  [se/label {:ash [:mini]}
    "mini"])
 
 (defcard-doc
@@ -497,13 +465,13 @@
 (defcard-rg
   [:div
    [size]
-   [sa/label {:ash [:tiny]} "tiny"]
-   [sa/label {:ash [:small]} "small"]
-   [sa/label {:ash [:medium]} "medium"]
-   [sa/label {:ash [:large]} "large"]
-   [sa/label {:ash [:big]} "big"]
-   [sa/label {:ash [:huge]} "huge"]
-   [sa/label {:ash [:massive]} "massive"]])
+   [se/label {:ash [:tiny]} "tiny"]
+   [se/label {:ash [:small]} "small"]
+   [se/label {:ash [:medium]} "medium"]
+   [se/label {:ash [:large]} "large"]
+   [se/label {:ash [:big]} "big"]
+   [se/label {:ash [:huge]} "huge"]
+   [se/label {:ash [:massive]} "massive"]])
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -519,13 +487,12 @@
 ;; detail
 
 (defcard-doc
-  "## detail"
-  "use .detail class")
+  "## detail")
 
 (defn content-detail []
-  [sa/label
+  [se/label
    "Dogs"
-   [:div.detail ;; <-- .detail
+   [sco/detail
     "214"]])
 
 (defcard-doc
@@ -539,12 +506,11 @@
 ;; icon
 
 (defcard-doc
-  "## icon"
-  "use sa/icon")
+  "## icon")
 
 (defn content-icon []
-  [sa/label
-   [sa/icon-star]
+  [se/label
+   [se/icon-star]
    "star"])
 
 (defcard-doc
@@ -558,12 +524,11 @@
 ;; image
 
 (defcard-doc
-  "## image"
-  "use sa/image")
+  "## image")
 
 (defn content-image []
-  [sa/label
-   [sa/image {:ash [:avatar
+  [se/label
+   [se/image {:ash [:avatar
                     :right-spaced]
               :src "/images/gadfly.png"}]
    "Gadfly361"])
@@ -579,13 +544,12 @@
 ;; link
 
 (defcard-doc
-  "## link"
-  "use .detail class on an a tag")
+  "## link")
 
 (defn content-link []
-  [sa/label
-   [sa/icon-mail]
-   [:a.detail "View Mail"] ;; <-- .detail
+  [se/label
+   [se/icon-mail]
+   [sco/detail-link "View Mail"]
    ])
 
 (defcard-doc
@@ -609,14 +573,13 @@
   "
 ---
 # Labels Types"
-  (h/list-types labels/types "labels" true)
-  )
+  (h/list-types labels/opts))
 
 (defn labels-type-default []
-  [sa/labels
-   [sa/label "foo"]
-   [sa/label "bar"]
-   [sa/label "baz"]])
+  [se/labels
+   [se/label "foo"]
+   [se/label "bar"]
+   [se/label "baz"]])
 
 (defcard-doc
   (mkdn-pprint-source labels-type-default))
@@ -626,10 +589,10 @@
 
 
 (defn labels-type-tag []
-  [sa/labels-tag
-   [sa/label "foo"]
-   [sa/label "bar"]
-   [sa/label "baz"]])
+  [se/labels-tag
+   [se/label "foo"]
+   [se/label "bar"]
+   [se/label "baz"]])
 
 (defcard-doc
   (mkdn-pprint-source labels-type-tag))
@@ -639,10 +602,10 @@
 
 
 (defn labels-type-circular []
-  [sa/labels-circular
-   [sa/label "foo"]
-   [sa/label "bar"]
-   [sa/label "baz"]])
+  [se/labels-circular
+   [se/label "foo"]
+   [se/label "bar"]
+   [se/label "baz"]])
 
 (defcard-doc
   (mkdn-pprint-source labels-type-circular))
@@ -667,16 +630,16 @@
   (list-labels-keys "size"))
 
 (defn labels-mini []
-  [sa/labels-circular {:ash [:mini]}
-   [sa/label "mini"]
-   [sa/label "foo"]
-   [sa/label "bar"]])
+  [se/labels-circular {:ash [:mini]}
+   [se/label "mini"]
+   [se/label "foo"]
+   [se/label "bar"]])
 
 (defn labels-size [size]
-  [sa/labels-circular {:ash [size]}
-   [sa/label (name size)]
-   [sa/label "foo"]
-   [sa/label "bar"]])
+  [se/labels-circular {:ash [size]}
+   [se/label (name size)]
+   [se/label "foo"]
+   [se/label "bar"]])
 
 (defcard-doc
   (mkdn-pprint-source labels-mini))
@@ -702,16 +665,16 @@
   (list-labels-keys "colored"))
 
 (defn labels-red []
-  [sa/labels-circular {:ash [:red]}
-   [sa/label "red"]
-   [sa/label "foo"]
-   [sa/label "bar"]])
+  [se/labels-circular {:ash [:red]}
+   [se/label "red"]
+   [se/label "foo"]
+   [se/label "bar"]])
 
 (defn labels-colored [colored]
-  [sa/labels-circular {:ash [colored]}
-   [sa/label (name colored)]
-   [sa/label "foo"]
-   [sa/label "bar"]])
+  [se/labels-circular {:ash [colored]}
+   [se/label (name colored)]
+   [se/label "foo"]
+   [se/label "bar"]])
 
 (defcard-doc
   (mkdn-pprint-source labels-red))

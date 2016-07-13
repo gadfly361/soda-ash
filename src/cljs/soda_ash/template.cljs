@@ -4,13 +4,6 @@
    [soda-ash.helpers :as h]))
 
 
-(defn create-ashes [soda ash]
-  (when (or soda ash)
-    (some->> [soda ash]
-             flatten
-             (remove nil?))))
-
-
 (defn create-class
   ([opts]
    (create-class opts nil nil))
@@ -23,19 +16,20 @@
   ([{:keys [ui?
             ui-name
             type
-            groups]
+            states
+            variations]
      :or   {ui? true}}
     soda
     ash]
 
-   (let [ashes (create-ashes soda ash)]
-     (string/join " "
-                  (->> [(when ui? "ui")
-                        (when ashes (h/ash->class groups ashes))
-                        (when type (h/keyword->class type))
-                        (when ui-name (h/keyword->class ui-name))]
-                       flatten
-                       (remove nil?))))))
+   (string/join " "
+                (->> [(when ui? "ui")
+                      (when soda (h/ash->class states [soda]))
+                      (when ash (h/ash->class variations ash))
+                      (when type (h/keyword->class type))
+                      (when ui-name (h/keyword->class ui-name))]
+                     flatten
+                     (remove nil?)))))
 
 
 

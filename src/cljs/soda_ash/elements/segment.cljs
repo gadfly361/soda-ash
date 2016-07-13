@@ -12,23 +12,24 @@
 
 
 (def types
-  [:raised
+  [:default
+   :raised
    :stacked
    :tall-stacked
    :piled
    :vertical])
 
 
-(def groups
-  [;; States
-   (create-group
+(def states
+  [(create-group
     {:group-name   "states"
      :group-vector (vector
                     :disabled
-                    :loading)})
+                    :loading)})])
 
-   ;; Variations
-   (create-group
+
+(def variations
+  [(create-group
     {:group-name   "attached"
      :group-vector (vector
                     :top-attached
@@ -113,7 +114,9 @@
   {:tag     :div
    :ui?     true
    :ui-name "segment"
-   :groups  groups})
+   :types types
+   :states states
+   :variations  variations})
 
 
 (defcomp "default" opts)

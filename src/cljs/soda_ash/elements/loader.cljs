@@ -12,20 +12,20 @@
 
 
 (def types
-  [:text])
+  [:default
+   :text])
 
-
-(def groups
-  [;; States
-   (create-group
+(def states
+  [(create-group
     {:group-name   "states"
      :group-vector (vector
                     :indeterminate
                     :active
-                    :disabled)})
+                    :disabled)})])
 
-   ;; Variations
-   (create-group
+
+(def variations
+  [(create-group
     {:group-name   "inline"
      :group-vector (vector
                     :inline)})
@@ -50,10 +50,12 @@
 
 
 (def opts
-  {:tag     :div
-   :ui?     true
-   :ui-name "loader"
-   :groups  groups})
+  {:tag        :div
+   :ui?        true
+   :ui-name    "loader"
+   :types      types
+   :states     states
+   :variations variations})
 
 
 (defcomp "default" opts)

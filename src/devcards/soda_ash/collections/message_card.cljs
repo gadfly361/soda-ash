@@ -7,34 +7,19 @@
    [devcards.core]
    [cljsjs.semantic-ui]
    [reagent.core :as reagent]
-   [soda-ash.core :as sa]
+   [soda-ash.element :as se]
+   [soda-ash.collection :as sc]
+   [soda-ash.content :as sco]
    [soda-ash.helpers :as h]
    [soda-ash.collections.message :as message]))
 
 
 (def list-keys
-  (h/list-keys message/groups))
+  (h/list-keys message/variations))
 
 
 (defcard-doc
-  "# SUMMARY"
-  "## Types"
-  "message, message-icon, *with a list inside*"
-
-  "## Variations (*ash*)"
-  "### Floating"
-  (list-keys "floating")
-  "### Compact"
-  (list-keys "compact")
-  "### Attached"
-  (list-keys "attached")
-  "### Context"
-  (list-keys "context")
-  "### Colored"
-  (list-keys "colored")
-  "### Size"
-  (list-keys "size")
-  )
+  (h/devcard-docs message/opts))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -44,10 +29,10 @@
   "
 ---
 # Types"
-  "message")
+  (h/list-types message/opts))
 
 (defn type-default []
-  [sa/message
+  [sc/message
    "message"])
 
 (defcard-doc
@@ -58,10 +43,10 @@
 
 
 (defn type-icon []
-  [sa/message-icon
-   [sa/icon-inbox]
-   [:div.content
-    [:div.header "Have you heard about our mailing list?"]
+  [sc/message-icon
+   [se/icon-inbox]
+   [sco/content
+    [sco/header "Have you heard about our mailing list?"]
     [:p "Get the best new in your e-mail every day."]]])
 
 (defcard-doc
@@ -72,11 +57,11 @@
 
 
 (defn type-list []
-  [sa/message
-   [:div.header "A message can include a list"]
-   [sa/s-list
-    [:div.item "item 1"]
-    [:div.item "item 2"]]])
+  [sc/message
+   [sco/header "A message can include a list"]
+   [se/s-list
+    [sco/item "item 1"]
+    [sco/item "item 2"]]])
 
 (defcard-doc
   (mkdn-pprint-source type-list))
@@ -86,7 +71,7 @@
 
 
 (defn close-render []
-  [sa/icon-close])
+  [se/icon-close])
 
 (defn close-did-mount [this]
   (-> (js/$ (reagent/dom-node this))
@@ -101,9 +86,9 @@
     :component-did-mount close-did-mount}))
 
 (defn type-dismissable []
-  [sa/message
+  [sc/message
    [close]
-   [:div.header "A message can be dismissable"]
+   [sco/header "A message can be dismissable"]
    [:p "Try it out!"]])
 
 (defcard-doc
@@ -128,7 +113,7 @@
 
 
 (defn state-hidden []
-  [sa/message {:soda :hidden}
+  [sc/message {:soda :hidden}
    [:p "You can't see me"]])
 
 (defcard-doc
@@ -139,7 +124,7 @@
 
 
 (defn state-visible []
-  [sa/message {:soda :visible}
+  [sc/message {:soda :visible}
    [:p "You can always see me"]])
 
 (defcard-doc
@@ -165,7 +150,7 @@
   (list-keys "floating"))
 
 (defn variation-floating []
-  [sa/message {:ash [:floating]}
+  [sc/message {:ash [:floating]}
    [:p "A message can float above the content that it is related to"]])
 
 (defcard-doc
@@ -183,7 +168,7 @@
   (list-keys "compact"))
 
 (defn variation-compact []
-  [sa/message {:ash [:compact]}
+  [sc/message {:ash [:compact]}
    [:p "A message can only take up the width of its content."]])
 
 (defcard-doc
@@ -202,10 +187,10 @@
 
 (defn variation-attached []
   [:div
-  [sa/message {:ash [:attached]}
+  [sc/message {:ash [:attached]}
    [:p "A message can be attached on the top"]]
 
-   [sa/segment {:ash [:attached]}
+   [se/segment {:ash [:attached]}
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -214,7 +199,7 @@
    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
    culpa qui officia deserunt mollit anim id est laborum."]
 
-   [sa/message {:ash [:bottom-attached]}
+   [sc/message {:ash [:bottom-attached]}
     [:p "A message can be attached on the bottom"]]
    ])
 
@@ -233,7 +218,7 @@
   (list-keys "context"))
 
 (defn variation-warning []
-  [sa/message {:ash [:warning]}
+  [sc/message {:ash [:warning]}
    "This is the warning context"])
 
 (defcard-doc
@@ -244,7 +229,7 @@
 
 
 (defn variation-info []
-  [sa/message {:ash [:info]}
+  [sc/message {:ash [:info]}
    "This is the info context"])
 
 (defcard-doc
@@ -255,7 +240,7 @@
 
 
 (defn variation-positive []
-  [sa/message {:ash [:positive]}
+  [sc/message {:ash [:positive]}
    "This is the positive context"])
 
 (defcard-doc
@@ -266,7 +251,7 @@
 
 
 (defn variation-success []
-  [sa/message {:ash [:success]}
+  [sc/message {:ash [:success]}
    "This is the success context"])
 
 (defcard-doc
@@ -277,7 +262,7 @@
 
 
 (defn variation-negative []
-  [sa/message {:ash [:negative]}
+  [sc/message {:ash [:negative]}
    "This is the negative context"])
 
 (defcard-doc
@@ -288,7 +273,7 @@
 
 
 (defn variation-error []
-  [sa/message {:ash [:error]}
+  [sc/message {:ash [:error]}
    "This is the error context"])
 
 (defcard-doc
@@ -306,11 +291,11 @@
   (list-keys "colored"))
 
 (defn variation-colored-red []
-  [sa/message {:ash [:red]}
+  [sc/message {:ash [:red]}
    "red"])
 
 (defn variation-colored [color]
-  [sa/message {:ash [color]}
+  [sc/message {:ash [color]}
    (name color)])
 
 (defcard-doc
@@ -341,11 +326,11 @@
   (list-keys "size"))
 
 (defn variation-size-mini []
-  [sa/message {:ash [:mini]}
+  [sc/message {:ash [:mini]}
    "mini"])
 
 (defn variation-size [size]
-  [sa/message {:ash [size]}
+  [sc/message {:ash [size]}
    (name size)])
 
 (defcard-doc
@@ -356,7 +341,7 @@
    [variation-size-mini]
    [variation-size :tiny]
    [variation-size :small]
-   [sa/message "default"]
+   [sc/message "default"]
    [variation-size :large]
    [variation-size :big]
    [variation-size :huge]

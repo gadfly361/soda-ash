@@ -6,33 +6,16 @@
   (:require
    [devcards.core]
    [reagent.core]
-   [soda-ash.core :as sa]
+   [soda-ash.element :as se]
    [soda-ash.helpers :as h]
    [soda-ash.elements.divider :as divider]))
 
 
 (def list-keys
-  (h/list-keys divider/groups))
-
+  (h/list-keys divider/variations))
 
 (defcard-doc
-  "# SUMMARY
-
-  ## Types"
-  (h/list-types divider/types "divider")
-
-  "## Variations (*ash*)"
-  "### Inverted"
-  (list-keys "inverted")
-  "### Fitted"
-  (list-keys "fitted")
-  "### Hidden"
-  (list-keys "hidden")
-  "### Section"
-  (list-keys "section")
-  "### Clearing"
-  (list-keys "clearing")
-  )
+  (h/devcard-docs divider/opts))
 
 
 
@@ -43,7 +26,7 @@
   "
 ---
 # Types"
-  (h/list-types divider/types "divider"))
+  (h/list-types divider/opts))
 
 (defn type-default []
   [:div
@@ -55,7 +38,7 @@
    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
    culpa qui officia deserunt mollit anim id est laborum."
 
-   [sa/divider]
+   [se/divider]
 
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -87,7 +70,7 @@
    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
    culpa qui officia deserunt mollit anim id est laborum."]
 
-   [sa/divider-vertical
+   [se/divider-vertical
     "AND"]
 
    [:div.column
@@ -118,7 +101,7 @@
    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
    culpa qui officia deserunt mollit anim id est laborum."
 
-   [sa/divider]
+   [se/divider]
 
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -157,7 +140,7 @@
   (list-keys "inverted"))
 
 (defn inverted []
-  [sa/segment {:ash [:inverted]}
+  [se/segment {:ash [:inverted]}
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -165,7 +148,7 @@
    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
    culpa qui officia deserunt mollit anim id est laborum."
-   [sa/divider {:ash [:inverted]}]
+   [se/divider {:ash [:inverted]}]
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -197,7 +180,7 @@
    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
    culpa qui officia deserunt mollit anim id est laborum."
-   [sa/divider {:ash [:fitted]}]
+   [se/divider {:ash [:fitted]}]
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -229,7 +212,7 @@
    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
    culpa qui officia deserunt mollit anim id est laborum."
-   [sa/divider {:ash [:hidden]}]
+   [se/divider {:ash [:hidden]}]
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -261,7 +244,7 @@
    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
    culpa qui officia deserunt mollit anim id est laborum."
-   [sa/divider {:ash [:section]}]
+   [se/divider {:ash [:section]}]
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -286,9 +269,9 @@
 
 (defn clearing []
   [:div
-   [sa/header-h3 {:ash [:right-floated]}
+   [se/header-h3 {:ash [:right-floated]}
     "Floated Content"]
-   [sa/divider {:ash [:clearing]}]
+   [se/divider {:ash [:clearing]}]
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut

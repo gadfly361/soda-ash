@@ -251,7 +251,8 @@
 (def opts
   {:tag     :i
    :ui?     false
-   :ui-name "flag"})
+   :ui-name "flag"
+   :types types})
 
 
 (defcomp "ae" (assoc opts :type :ae))

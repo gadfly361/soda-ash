@@ -549,16 +549,15 @@
    ])
 
 
-(def groups
-  [;; States
-   (create-group
+(def states
+  [(create-group
     {:group-name   "states"
      :group-vector (vector
                     :disabled
-                    :loading)})
+                    :loading)})])
 
-   ;; Variations
-   (create-group
+(def variations
+  [(create-group
     {:group-name   "fitted"
      :group-vector (vector
                     :fitted)})
@@ -638,10 +637,12 @@
 
 
 (def opts
-  {:tag     :i
-   :ui?     false
-   :ui-name "icon"
-   :groups  groups})
+  {:tag        :i
+   :ui?        false
+   :ui-name    "icon"
+   :types      types
+   :states     states
+   :variations variations})
 
 
 (defcomp "alarm" (assoc opts :type :alarm))

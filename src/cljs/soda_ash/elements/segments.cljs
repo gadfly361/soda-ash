@@ -12,21 +12,23 @@
 
 
 (def types
-  [:horizontal
+  [:default
+   :horizontal
    :raised
    :stacked
    :piled])
 
 
-(def groups
+(def variations
   [])
 
 
 (def opts
-  {:tag     :div
-   :ui?     true
-   :ui-name "segments"
-   :groups  groups})
+  {:tag        :div
+   :ui?        true
+   :ui-name    "segments"
+   :types      types
+   :variations variations})
 
 
 (defcomp "default" opts)

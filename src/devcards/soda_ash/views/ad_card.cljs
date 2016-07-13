@@ -6,26 +6,17 @@
   (:require
    [devcards.core]
    [reagent.core]
-   [soda-ash.core :as sa]
+   [soda-ash.view :as sv]
    [soda-ash.helpers :as h]
    [soda-ash.views.ad :as ad]))
 
 
 (def list-keys
-  (h/list-keys ad/groups))
+  (h/list-keys ad/variations))
 
 
 (defcard-doc
-  "# SUMMARY"
-  "## Types"
-  (h/list-types ad/types "ad" false)
-
-  "## Variations (*ash*)"
-  "### Centered"
-  (list-keys "centered")
-  "### Test"
-  (list-keys "test")
-  )
+  (h/devcard-docs ad/opts))
 
 
 
@@ -36,11 +27,10 @@
   "
 ---
 # Types"
-  (h/list-types ad/types "ad" false)
-  )
+  (h/list-types ad/opts))
 
 (defn type-mobile-leaderboard []
-  [sa/ad-mobile-leaderboard {:ash [:test]}
+  [sv/ad-mobile-leaderboard {:ash [:test]}
    [:p "mobile-leaderboard"]])
 
 (defcard-doc
@@ -51,7 +41,7 @@
 
 
 (defn type-mobile-banner []
-  [sa/ad-mobile-banner {:ash [:test]}
+  [sv/ad-mobile-banner {:ash [:test]}
    [:p "mobile-banner"]])
 
 (defcard-doc
@@ -62,7 +52,7 @@
 
 
 (defn type-small-rectangle []
-  [sa/ad-small-rectangle {:ash [:test]}
+  [sv/ad-small-rectangle {:ash [:test]}
    [:p "small-rectangle"]])
 
 (defcard-doc
@@ -73,7 +63,7 @@
 
 
 (defn type-medium-rectangle []
-  [sa/ad-medium-rectangle {:ash [:test]}
+  [sv/ad-medium-rectangle {:ash [:test]}
    [:p "medium-rectangle"]])
 
 (defcard-doc
@@ -84,7 +74,7 @@
 
 
 (defn type-large-rectangle []
-  [sa/ad-large-rectangle {:ash [:test]}
+  [sv/ad-large-rectangle {:ash [:test]}
    [:p "large-rectangle"]])
 
 (defcard-doc
@@ -95,7 +85,7 @@
 
 
 (defn type-vertical-rectangle []
-  [sa/ad-vertical-rectangle {:ash [:test]}
+  [sv/ad-vertical-rectangle {:ash [:test]}
    [:p "vertical-rectangle"]])
 
 (defcard-doc
@@ -106,7 +96,7 @@
 
 
 (defn type-button []
-  [sa/ad-button {:ash [:test]}
+  [sv/ad-button {:ash [:test]}
    [:p "button"]])
 
 (defcard-doc
@@ -117,7 +107,7 @@
 
 
 (defn type-square-button []
-  [sa/ad-square-button {:ash [:test]}
+  [sv/ad-square-button {:ash [:test]}
    [:p "square-button"]])
 
 (defcard-doc
@@ -128,7 +118,7 @@
 
 
 (defn type-small-button []
-  [sa/ad-small-button {:ash [:test]}
+  [sv/ad-small-button {:ash [:test]}
    [:p "small-button"]])
 
 (defcard-doc
@@ -139,7 +129,7 @@
 
 
 (defn type-skyscraper []
-  [sa/ad-skyscraper {:ash [:test]}
+  [sv/ad-skyscraper {:ash [:test]}
    [:p "skyscraper"]])
 
 (defcard-doc
@@ -150,7 +140,7 @@
 
 
 (defn type-wide-skyscraper []
-  [sa/ad-wide-skyscraper {:ash [:test]}
+  [sv/ad-wide-skyscraper {:ash [:test]}
    [:p "wide-skyscraper"]])
 
 (defcard-doc
@@ -161,7 +151,7 @@
 
 
 (defn type-banner []
-  [sa/ad-banner {:ash [:test]}
+  [sv/ad-banner {:ash [:test]}
    [:p "banner"]])
 
 (defcard-doc
@@ -172,7 +162,7 @@
 
 
 (defn type-vertical-banner []
-  [sa/ad-vertical-banner {:ash [:test]}
+  [sv/ad-vertical-banner {:ash [:test]}
    [:p "vertical-banner"]])
 
 (defcard-doc
@@ -183,7 +173,7 @@
 
 
 (defn type-top-banner []
-  [sa/ad-top-banner {:ash [:test]}
+  [sv/ad-top-banner {:ash [:test]}
    [:p "top-banner"]])
 
 (defcard-doc
@@ -194,7 +184,7 @@
 
 
 (defn type-half-banner []
-  [sa/ad-half-banner {:ash [:test]}
+  [sv/ad-half-banner {:ash [:test]}
    [:p "half-banner"]])
 
 (defcard-doc
@@ -205,7 +195,7 @@
 
 
 (defn type-leaderboard []
-  [sa/ad-leaderboard {:ash [:test]}
+  [sv/ad-leaderboard {:ash [:test]}
    [:p "leaderboard"]])
 
 (defcard-doc
@@ -216,7 +206,7 @@
 
 
 (defn type-large-leaderboard []
-  [sa/ad-large-leaderboard {:ash [:test]}
+  [sv/ad-large-leaderboard {:ash [:test]}
    [:p "large-leaderboard"]])
 
 (defcard-doc
@@ -227,7 +217,7 @@
 
 
 (defn type-billboard []
-  [sa/ad-billboard {:ash [:test]}
+  [sv/ad-billboard {:ash [:test]}
    [:p "billboard"]])
 
 (defcard-doc
@@ -238,7 +228,7 @@
 
 
 (defn type-panorama []
-  [sa/ad-panorama {:ash [:test]}
+  [sv/ad-panorama {:ash [:test]}
    [:p "panorama"]])
 
 (defcard-doc
@@ -249,7 +239,7 @@
 
 
 (defn type-netboard []
-  [sa/ad-netboard {:ash [:test]}
+  [sv/ad-netboard {:ash [:test]}
    [:p "netboard"]])
 
 (defcard-doc
@@ -260,7 +250,7 @@
 
 
 (defn type-half-page []
-  [sa/ad-half-page {:ash [:test]}
+  [sv/ad-half-page {:ash [:test]}
    [:p "half-page"]])
 
 (defcard-doc
@@ -287,7 +277,7 @@
   (list-keys "centered"))
 
 (defn variation-centered []
-  [sa/ad-button {:ash [:centered
+  [sv/ad-button {:ash [:centered
                        :test]}
    [:p "centered"]])
 
@@ -306,7 +296,7 @@
   (list-keys "test"))
 
 (defn variation-test []
-  [sa/ad-button {:ash [:test]} ;; <-- :test
+  [sv/ad-button {:ash [:test]} ;; <-- :test
    [:p "test"]])
 
 (defcard-doc

@@ -1,4 +1,4 @@
-(ns soda-ash.elements.step
+(ns soda-ash.contents.item
   (:require-macros
    [soda-ash.macros :refer [defcomp]])
   (:require
@@ -6,7 +6,7 @@
 
 
 (defn create-group [m]
-  (merge {:ui-name   "step"
+  (merge {:ui-name   "item"
           :only-one? true}
          m))
 
@@ -20,19 +20,17 @@
   [(create-group
     {:group-name   "states"
      :group-vector (vector
-                    :active
-                    :completed
-                    :disabled)})
+                    :active)})
    ])
 
 
 (def opts
   {:tag     :div
    :ui?     false
-   :ui-name "step"
+   :ui-name "item"
    :types types
    :states states})
 
 
 (defcomp "default" opts)
-(defcomp "link" (assoc opts :type :link :tag :a))
+(defcomp "link" (assoc opts :tag :a))

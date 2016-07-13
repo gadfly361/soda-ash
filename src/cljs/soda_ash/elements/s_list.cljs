@@ -12,16 +12,16 @@
 
 
 (def types
-  [:bulleted
+  [:default
+   :bulleted
    :ordered
    :custom
    :link
    :bulleted-link])
 
 
-(def groups
-  [;; Variations
-   (create-group
+(def variations
+  [(create-group
     {:group-name   "horizontal"
      :group-vector (vector
                     :horizontal)})
@@ -75,7 +75,8 @@
   {:tag     :div
    :ui?     true
    :ui-name "s-list"
-   :groups  groups})
+   :types types
+   :variations  variations})
 
 
 (defcomp "default" opts)

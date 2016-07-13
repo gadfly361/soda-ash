@@ -6,31 +6,17 @@
   (:require
    [devcards.core]
    [reagent.core]
-   [soda-ash.core :as sa]
+   [soda-ash.element :as se]
    [soda-ash.helpers :as h]
    [soda-ash.elements.loader :as loader]))
 
 
 (def list-keys
-  (h/list-keys loader/groups))
+  (h/list-keys loader/variations))
 
 
 (defcard-doc
-  "# SUMMARY"
-  "## Types"
-  (h/list-types loader/types "loader")
-
-  "## States (*soda*)"
-  (list-keys "states")
-
-  "## Variations (*ash*)"
-  "### Inline"
-  (list-keys "inline")
-  "### Size"
-  (list-keys "size")
-  "### Inverted"
-  (list-keys "inverted")
-  )
+  (h/devcard-docs loader/opts))
 
 
 
@@ -41,12 +27,11 @@
   "
 ---
 # Types"
-  (h/list-types loader/types "loader" true)
-  )
+  (h/list-types loader/opts))
 
 ;; TODO: update when dimmer is available
 (defn type-default []
-  [sa/segment
+  [se/segment
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -55,7 +40,7 @@
    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
    culpa qui officia deserunt mollit anim id est laborum."
    [:div.ui.dimmer.active
-    [sa/loader]]
+    [se/loader]]
    ])
 
 (defcard-doc
@@ -64,9 +49,9 @@
 (defcard-rg
   [type-default])
 
-
+;; TODO: update when dimmer is available
 (defn type-text []
-  [sa/segment
+  [se/segment
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -75,7 +60,7 @@
    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
    culpa qui officia deserunt mollit anim id est laborum."
    [:div.ui.dimmer.active
-    [sa/loader-text
+    [se/loader-text
      "Foo bar"]]])
 
 (defcard-doc
@@ -97,7 +82,7 @@
 
 ;; TODO: update when dimmer is available
 (defn state-indeterminate []
-  [sa/segment
+  [se/segment
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -106,7 +91,7 @@
    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
    culpa qui officia deserunt mollit anim id est laborum."
    [:div.ui.dimmer.active
-    [sa/loader {:soda :indeterminate}]]
+    [se/loader {:soda :indeterminate}]]
    ])
 
 (defcard-doc
@@ -117,7 +102,7 @@
 
 
 (defn state-active []
-  [sa/loader {:soda :active}])
+  [se/loader {:soda :active}])
 
 (defcard-doc
   (mkdn-pprint-source state-active))
@@ -127,7 +112,7 @@
 
 
 (defn state-disabled []
-  [sa/loader {:soda :disabled}])
+  [se/loader {:soda :disabled}])
 
 (defcard-doc
   (mkdn-pprint-source state-disabled))
@@ -152,7 +137,7 @@
 
 ;; TODO: update when dimmer is available
 (defn variation-inline []
-  [sa/segment
+  [se/segment
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -161,7 +146,7 @@
    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
    culpa qui officia deserunt mollit anim id est laborum."
    [:div.ui.dimmer.active
-    [sa/loader {:ash [:inline]}]]
+    [se/loader {:ash [:inline]}]]
    ])
 
 (defcard-doc
@@ -178,7 +163,7 @@
 
 ;; TODO: update when dimmer is available
 (defn variation-size-mini []
-  [sa/segment
+  [se/segment
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -187,12 +172,12 @@
    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
    culpa qui officia deserunt mollit anim id est laborum."
    [:div.ui.dimmer.active
-    [sa/loader-text {:ash [:mini]}
+    [se/loader-text {:ash [:mini]}
      "mini"]]
    ])
 
 (defn variation-size [size]
-  [sa/segment
+  [se/segment
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad smallm veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -201,7 +186,7 @@
    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
    culpa qui officia deserunt mollit anim id est laborum."
    [:div.ui.dimmer.active
-    [sa/loader-text {:ash [size]}
+    [se/loader-text {:ash [size]}
      (name size)]]])
 
 (defcard-doc
@@ -212,7 +197,7 @@
    [variation-size-mini]
    [variation-size :tiny]
    [variation-size :small]
-   [sa/segment
+   [se/segment
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad mediumm veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -221,7 +206,7 @@
    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
    culpa qui officia deserunt mollit anim id est laborum."
     [:div.ui.dimmer.active
-     [sa/loader-text
+     [se/loader-text
       "default"]]]
    [variation-size :large]
    [variation-size :big]
@@ -237,7 +222,7 @@
 
 ;; TODO: update when dimmer is available
 (defn variation-inverted []
-  [sa/segment {:ash [:inverted]}
+  [se/segment {:ash [:inverted]}
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad largem veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -245,7 +230,7 @@
    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
    culpa qui officia deserunt mollit anim id est laborum."
-   [sa/loader-text {:soda :active
+   [se/loader-text {:soda :active
                     :ash  [:inverted]}
     "inverted"]])
 
@@ -255,7 +240,7 @@
 (defcard-rg
   [:div
    [variation-inverted]
-   [sa/segment
+   [se/segment
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad largem veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -263,7 +248,7 @@
    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
    culpa qui officia deserunt mollit anim id est laborum."
-    [sa/loader-text {:soda :active}
+    [se/loader-text {:soda :active}
      "normal"]]
    ])
 

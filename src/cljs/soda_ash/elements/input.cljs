@@ -11,18 +11,22 @@
          m))
 
 
-(def groups
-  [;; States
-   (create-group
+(def types
+  [:default])
+
+
+(def states
+  [(create-group
     {:group-name   "states"
      :group-vector (vector
                     :focus
                     :loading
                     :disabled
-                    :error)})
+                    :error)})])
 
-   ;; Variations
-   (create-group
+
+(def variations
+  [(create-group
     {:group-name   "icon"
      :group-vector (vector
                     :icon
@@ -71,10 +75,12 @@
 
 
 (def opts
-  {:tag     :div
-   :ui?     true
-   :ui-name "input"
-   :groups  groups})
+  {:tag        :div
+   :ui?        true
+   :ui-name    "input"
+   :types      types
+   :states     states
+   :variations variations})
 
 
 (defcomp "default" opts)

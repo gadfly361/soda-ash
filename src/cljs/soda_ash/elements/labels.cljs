@@ -12,13 +12,13 @@
 
 
 (def types
-  [:tag
+  [:default
+   :tag
    :circular])
 
 
-(def groups
-  [;; Variations
-   (create-group
+(def variations
+  [(create-group
     {:group-name   "colored"
      :group-vector (vector
                     :red
@@ -50,10 +50,11 @@
 
 
 (def opts
-  {:tag     :div
-   :ui?     true
-   :ui-name "labels"
-   :groups  groups})
+  {:tag        :div
+   :ui?        true
+   :ui-name    "labels"
+   :types      types
+   :variations variations})
 
 
 (defcomp "default" opts)

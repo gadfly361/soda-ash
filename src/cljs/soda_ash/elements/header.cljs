@@ -30,7 +30,7 @@
    :sub])
 
 
-(def groups
+(def variations
   [;; States
    (create-group
     {:group-name   "states"
@@ -100,10 +100,11 @@
 
 
 (def opts
-  {:tag     :div
-   :ui?     true
-   :ui-name "header"
-   :groups  groups})
+  {:tag        :div
+   :ui?        true
+   :ui-name    "header"
+   :types      types
+   :variations variations})
 
 
 (defcomp "h1" (assoc opts :type :h1 :tag :h1))

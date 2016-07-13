@@ -11,9 +11,12 @@
          m))
 
 
-(def groups
-  [;; Variations
-   (create-group
+(def types
+  [:default])
+
+
+(def variations
+  [(create-group
     {:group-name   "size"
      :group-vector (vector
                     :mini
@@ -28,10 +31,11 @@
 
 
 (def opts
-  {:tag     :div
-   :ui?     true
-   :ui-name "images"
-   :groups  groups})
+  {:tag        :div
+   :ui?        true
+   :ui-name    "images"
+   :types      types
+   :variations variations})
 
 
 (defcomp "default" opts)

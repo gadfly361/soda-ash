@@ -8,21 +8,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Devcards
 
-(defn list-types
-  ([types ui-name]
-   (list-types types ui-name true))
-  ([types ui-name show-default?]
-   (let [types (some->> types
-                        (map #(str ui-name "-" (name %)))
-                        (string/join ", "))]
-     (cond (and show-default?
-                (not (empty? types)))
-           (str ui-name ", " types)
-
-           show-default? ui-name
-
-           :else types))))
-
 (defn list-keys [groups]
   (fn [group-name]
     (->> groups
@@ -31,6 +16,59 @@
          first
          :group-vector
          (string/join ", "))))
+
+
+(defn list-types
+  "Assumes if :default exists, it is in first position"
+  [opts]
+  (let [{:keys [types
+                ui-name]} opts
+        default? (= :default (first types))]
+    (if default?
+      ;; w/ default
+      (str ui-name
+           (when (> (count types) 1) ", ")
+           (some->> types
+                    (drop 1)
+                    (map #(str ui-name "-" (name %)))
+                    (string/join ", ")))
+
+      (some->> types
+               (map #(str ui-name "-" (name %)))
+               (string/join ", ")))))
+
+
+(defn list-groups [groups]
+  (->> (for [group groups]
+         (let [{:keys [group-name
+                       group-vector]} group
+               ks                     (string/join ", " group-vector)]
+           (str "## " group-name "\n" ks "\n")))
+       sort
+       (apply str)))
+
+
+(defn devcard-docs [opts]
+  (let [{:keys [ui-name
+                states
+                variations]} opts
+        types-docs           (list-types opts)
+        states-docs          (list-groups states)
+        variations-docs      (list-groups variations)]
+    (apply str
+
+           "# SUMMARY FOR " (string/upper-case ui-name) "\n"
+
+           (str "# **types**\n"
+                types-docs "\n")
+
+           (when-not (empty? states-docs)
+             (str "# **:soda**\n"
+                  states-docs))
+
+           (when-not (empty? variations-docs)
+             (str "# **:ash**\n"
+                  variations-docs)))))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

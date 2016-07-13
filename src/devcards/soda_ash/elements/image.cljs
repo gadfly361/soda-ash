@@ -6,61 +6,24 @@
   (:require
    [devcards.core]
    [reagent.core]
-   [soda-ash.core :as sa]
+   [soda-ash.element :as se]
    [soda-ash.helpers :as h]
    [soda-ash.elements.image :as image]
    [soda-ash.elements.images :as images]))
 
 
 (def list-keys
-  (h/list-keys image/groups))
+  (h/list-keys image/variations))
 
 (def list-images-keys
-  (h/list-keys images/groups))
+  (h/list-keys images/variations))
 
 
 (defcard-doc
-  "# SUMMARY OF IMAGE"
-
-  "## Types"
-  (h/list-types nil "image" true)
-
-  "## States (*soda*)"
-  (list-keys "states")
-
-  "## Variations (*ash*)"
-  "### avatar"
-  (list-keys "avatar")
-  "### bordered"
-  (list-keys "bordered")
-  "### fluid"
-  (list-keys "fluid")
-  "### rounded"
-  (list-keys "rounded")
-  "### circular"
-  (list-keys "circular")
-  "### aligned"
-  (list-keys "aligned")
-  "### centered"
-  (list-keys "centered")
-  "### spaced"
-  (list-keys "spaced")
-  "### floated"
-  (list-keys "floated")
-  "### size"
-  (list-keys "size")
-  )
-
+  (h/devcard-docs image/opts))
 
 (defcard-doc
-  "# SUMMARY OF IMAGES"
-
-  "## Types"
-  "images"
-
-  "## Variations (*ash*)"
-  "### size"
-  (list-images-keys "size"))
+  (h/devcard-docs images/opts))
 
 
 
@@ -75,11 +38,10 @@
   "
 ---
 # Image Types"
-  (h/list-types nil "image" true)
-  )
+  (h/list-types image/opts))
 
 (defn type-default []
-  [sa/image {:ash [:small]
+  [se/image {:ash [:small]
              :src "/images/gadfly.png"}])
 
 (defcard-doc
@@ -92,7 +54,7 @@
 (defn type-link []
   [:a {:href   "https://twitter.com/gadfly361"
        :target "_blank"}
-   [sa/image {:ash [:small]
+   [se/image {:ash [:small]
               :src "/images/gadfly.png"}]])
 
 (defcard-doc
@@ -113,7 +75,7 @@
   (list-keys "states"))
 
 (defn state-hidden []
-  [sa/image {:soda :hidden
+  [se/image {:soda :hidden
              :ash  [:small]
              :src  "/images/gadfly.png"}])
 
@@ -125,7 +87,7 @@
 
 
 (defn state-disabled []
-  [sa/image {:soda :disabled
+  [se/image {:soda :disabled
              :ash  [:small]
              :src  "/images/gadfly.png"}])
 
@@ -153,7 +115,7 @@
   (list-keys "avatar"))
 
 (defn avatar []
-  [sa/image {:ash [:avatar]
+  [se/image {:ash [:avatar]
              :src "/images/gadfly.png"}])
 
 (defcard-doc
@@ -171,7 +133,7 @@
   (list-keys "bordered"))
 
 (defn bordered []
-  [sa/image {:ash [:small
+  [se/image {:ash [:small
                    :bordered]
              :src "/images/gadfly.png"}])
 
@@ -192,12 +154,12 @@
 (defn fluid []
   [:div
    ;; NORMAL
-   [sa/image {:src "/images/ubuntu.png"}]
+   [se/image {:src "/images/ubuntu.png"}]
 
    [:div {:style {:margin-top "20px"}}]
 
    ;; FLUID (can take up the width of its container)
-   [sa/image {:ash [:fluid]
+   [se/image {:ash [:fluid]
           :src "/images/ubuntu.png"}]
    ])
 
@@ -216,7 +178,7 @@
   (list-keys "rounded"))
 
 (defn rounded []
-  [sa/image {:ash [:small
+  [se/image {:ash [:small
                    :rounded]
              :src "/images/ubuntu.png"}])
 
@@ -235,7 +197,7 @@
   (list-keys "circular"))
 
 (defn circular []
-  [sa/image {:ash [:small
+  [se/image {:ash [:small
                    :circular]
              :src "/images/ubuntu.png"}])
 
@@ -255,21 +217,21 @@
 
 (defn aligned []
   [:div
-    [sa/image {:ash [:small
+    [se/image {:ash [:small
                     :top-aligned]
            :src "/images/ubuntu.png"}]
    "Top Aligned"
 
-   [sa/divider]
+   [se/divider]
 
-    [sa/image {:ash [:small
+    [se/image {:ash [:small
                     :middle-aligned]
            :src "/images/ubuntu.png"}]
    "Middle Aligned"
 
-   [sa/divider]
+   [se/divider]
 
-    [sa/image {:ash [:small
+    [se/image {:ash [:small
                     :bottom-aligned]
            :src "/images/ubuntu.png"}]
    "Bottom Aligned"
@@ -291,7 +253,7 @@
 
 (defn centered []
   [:div
-   [sa/image {:ash [:small
+   [se/image {:ash [:small
                     :centered]
               :src "/images/ubuntu.png"}]])
 
@@ -311,7 +273,7 @@
 
 (defn spaced []
   [:div
-   [sa/image {:ash [:mini
+   [se/image {:ash [:mini
                     :right-spaced]
               :src "/images/ubuntu.png"}]
 
@@ -323,7 +285,7 @@
    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
    culpa qui officia deserunt mollit anim id est laborum."
 
-   [sa/image {:ash [:mini
+   [se/image {:ash [:mini
                     :spaced]
               :src "/images/ubuntu.png"}]
 
@@ -335,7 +297,7 @@
    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
    culpa qui officia deserunt mollit anim id est laborum."
 
-   [sa/image {:ash [:mini
+   [se/image {:ash [:mini
                     :left-spaced]
               :src "/images/ubuntu.png"}]
 
@@ -357,7 +319,7 @@
 
 (defn floated []
   [:div
-   [sa/image {:ash [:small
+   [se/image {:ash [:small
                     :left-floated]
               :src "/images/ubuntu.png"}]
 
@@ -369,7 +331,7 @@
    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
    culpa qui officia deserunt mollit anim id est laborum."
 
-   [sa/image {:ash [:small
+   [se/image {:ash [:small
                     :right-floated]
               :src "/images/ubuntu.png"}]
 
@@ -398,7 +360,7 @@
 
 (defn size []
   [:div
-   [sa/image {:ash [:mini]
+   [se/image {:ash [:mini]
               :src "/images/ubuntu.png"}]])
 
 (defcard-doc
@@ -409,25 +371,25 @@
    "mini"
    [size]
    "tiny"
-   [sa/image {:ash [:tiny]
+   [se/image {:ash [:tiny]
               :src "/images/ubuntu.png"}]
    "small"
-   [sa/image {:ash [:small]
+   [se/image {:ash [:small]
               :src "/images/ubuntu.png"}]
    "medium"
-   [sa/image {:ash [:medium]
+   [se/image {:ash [:medium]
               :src "/images/ubuntu.png"}]
    "large"
-   [sa/image {:ash [:large]
+   [se/image {:ash [:large]
               :src "/images/ubuntu.png"}]
    "big"
-   [sa/image {:ash [:big]
+   [se/image {:ash [:big]
               :src "/images/ubuntu.png"}]
    "huge"
-   [sa/image {:ash [:huge]
+   [se/image {:ash [:huge]
               :src "/images/ubuntu.png"}]
    "massive"
-   [sa/image {:ash [:massive]
+   [se/image {:ash [:massive]
               :src "/images/ubuntu.png"}]
    ])
 
@@ -442,14 +404,13 @@
   "
 ---
 # Images Types"
-  "images"
-  )
+  (h/list-types images/opts))
 
 (defn type-images []
-  [sa/images
-   [sa/image {:ash [:small]
+  [se/images
+   [se/image {:ash [:small]
               :src "/images/ubuntu.png"}]
-   [sa/image {:ash [:small]
+   [se/image {:ash [:small]
               :src "/images/ubuntu.png"}]])
 
 (defcard-doc
@@ -476,15 +437,15 @@
 
 (defn images-mini []
   [:div "mini"
-   [sa/images {:ash [:mini]}
-    [sa/image {:src "/images/ubuntu.png"}]
-    [sa/image {:src "/images/ubuntu.png"}]]])
+   [se/images {:ash [:mini]}
+    [se/image {:src "/images/ubuntu.png"}]
+    [se/image {:src "/images/ubuntu.png"}]]])
 
 (defn images-size [size]
   [:div (name size)
-   [sa/images {:ash [size]}
-    [sa/image {:src "/images/ubuntu.png"}]
-    [sa/image {:src "/images/ubuntu.png"}]]])
+   [se/images {:ash [size]}
+    [se/image {:src "/images/ubuntu.png"}]
+    [se/image {:src "/images/ubuntu.png"}]]])
 
 (defcard-doc
   (mkdn-pprint-source images-mini))

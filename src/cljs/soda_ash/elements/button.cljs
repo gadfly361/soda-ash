@@ -11,7 +11,8 @@
          m))
 
 (def types
-  [:primary
+  [:default
+   :primary
    :secondary
 
    :animated
@@ -31,17 +32,17 @@
    :secondary-basic
    :inverted-basic])
 
-(def groups
-  [;; States
-   (create-group
+
+(def states
+  [(create-group
     {:group-name   "states"
      :group-vector (vector
                     :active
                     :disabled
-                    :loading)})
+                    :loading)})])
 
-   ;; Variations
-   (create-group
+(def variations
+  [(create-group
     {:group-name   "social"
      :group-vector (vector
                     :facebook
@@ -128,10 +129,12 @@
 
 
 (def opts
-  {:tag     :button
-   :ui?     true
-   :ui-name "button"
-   :groups  groups})
+  {:tag        :button
+   :ui?        true
+   :ui-name    "button"
+   :types      types
+   :states     states
+   :variations variations})
 
 
 (defcomp "default" opts)

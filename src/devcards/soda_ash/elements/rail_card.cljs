@@ -6,26 +6,17 @@
   (:require
    [devcards.core]
    [reagent.core]
-   [soda-ash.core :as sa]
+   [soda-ash.element :as se]
    [soda-ash.helpers :as h]
    [soda-ash.elements.rail :as rail]))
 
 
 (def list-keys
-  (h/list-keys rail/groups))
+  (h/list-keys rail/variations))
 
 
 (defcard-doc
-  "# SUMMARY"
-  "## Types"
-  (h/list-types rail/types "rail" false)
-
-  "## Variations (*ash*)"
-  "### Attached"
-  (list-keys "attached")
-  "### Close"
-  (list-keys "close")
-  )
+  (h/devcard-docs rail/opts))
 
 
 
@@ -36,11 +27,10 @@
   "
 ---
 # Types"
-  (h/list-types rail/types "rail" false)
-  )
+  (h/list-types rail/opts))
 
 (defn type-left []
-  [sa/segment
+  [se/segment
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -49,8 +39,8 @@
    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
    culpa qui officia deserunt mollit anim id est laborum."
 
-   [sa/rail-left
-    [sa/segment
+   [se/rail-left
+    [se/segment
      "left"]]
    ])
 
@@ -62,7 +52,7 @@
 
 
 (defn type-right []
-  [sa/segment
+  [se/segment
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -71,8 +61,8 @@
    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
    culpa qui officia deserunt mollit anim id est laborum."
 
-   [sa/rail-right
-    [sa/segment
+   [se/rail-right
+    [se/segment
      "right"]]
    ])
 
@@ -84,7 +74,7 @@
 
 
 (defn type-left-internal []
-  [sa/segment
+  [se/segment
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -93,8 +83,8 @@
    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
    culpa qui officia deserunt mollit anim id est laborum."
 
-   [sa/rail-left-internal
-    [sa/segment
+   [se/rail-left-internal
+    [se/segment
      "left-internal"]]
    ])
 
@@ -106,7 +96,7 @@
 
 
 (defn type-right-internal []
-  [sa/segment
+  [se/segment
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -115,8 +105,8 @@
    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
    culpa qui officia deserunt mollit anim id est laborum."
 
-   [sa/rail-right-internal
-    [sa/segment
+   [se/rail-right-internal
+    [se/segment
      "right-internal"]]
    ])
 
@@ -137,8 +127,8 @@
    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
    culpa qui officia deserunt mollit anim id est laborum."
 
-   [sa/rail-left-dividing
-    [sa/segment
+   [se/rail-left-dividing
+    [se/segment
      "left-dividing"]]
    ])
 
@@ -159,8 +149,8 @@
    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
    culpa qui officia deserunt mollit anim id est laborum."
 
-   [sa/rail-right-dividing
-    [sa/segment
+   [se/rail-right-dividing
+    [se/segment
      "right-dividing"]]
    ])
 
@@ -187,7 +177,7 @@
   (list-keys "attached"))
 
 (defn variation-attached []
-  [sa/segment
+  [se/segment
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -196,8 +186,8 @@
    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
    culpa qui officia deserunt mollit anim id est laborum."
 
-   [sa/rail-left {:ash [:attached]}
-    [sa/segment
+   [se/rail-left {:ash [:attached]}
+    [se/segment
      "attached"]]
    ])
 
@@ -214,7 +204,7 @@
   (list-keys "close"))
 
 (defn variation-close []
-  [sa/segment
+  [se/segment
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -223,8 +213,8 @@
    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
    culpa qui officia deserunt mollit anim id est laborum."
 
-   [sa/rail-left {:ash [:close]}
-    [sa/segment
+   [se/rail-left {:ash [:close]}
+    [se/segment
      "close"]]
    ])
 
@@ -236,7 +226,7 @@
 
 
 (defn variation-very-close []
-  [sa/segment
+  [se/segment
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -245,8 +235,8 @@
    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
    culpa qui officia deserunt mollit anim id est laborum."
 
-   [sa/rail-left {:ash [:very-close]}
-    [sa/segment
+   [se/rail-left {:ash [:very-close]}
+    [se/segment
      "very-close"]]
    ])
 

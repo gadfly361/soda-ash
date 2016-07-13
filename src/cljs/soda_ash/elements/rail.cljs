@@ -20,9 +20,8 @@
    :right-dividing])
 
 
-(def groups
-  [;; Variations
-   (create-group
+(def variations
+  [(create-group
     {:group-name   "attached"
      :group-vector (vector
                     :attached)})
@@ -39,7 +38,8 @@
   {:tag     :div
    :ui?     true
    :ui-name "rail"
-   :groups  groups})
+   :types types
+   :variations  variations})
 
 
 (defcomp "left" (assoc opts :type :left))

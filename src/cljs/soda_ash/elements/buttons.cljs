@@ -10,10 +10,12 @@
           :only-one? true}
          m))
 
+(def types
+  [:default])
 
-(def groups
-  [;; Variations
-   (create-group
+
+(def variations
+  [(create-group
     {:group-name   "vertical"
      :group-vector (vector
                     :vertical)})
@@ -77,10 +79,11 @@
 
 
 (def opts
-  {:tag     :div
-   :ui?     true
-   :ui-name "buttons"
-   :groups  groups})
+  {:tag        :div
+   :ui?        true
+   :ui-name    "buttons"
+   :types      types
+   :variations variations})
 
 
 (defcomp "default" opts)

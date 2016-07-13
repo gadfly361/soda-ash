@@ -12,15 +12,15 @@
 
 
 (def types
-  [:vertical
+  [:default
+   :vertical
    :horizontal
-   ;; :horizontal-header
+   :horizontal-header ;; TODO: check this
    ])
 
 
-(def groups
-  [;; Variations
-   (create-group
+(def variations
+  [(create-group
     {:group-name   "inverted"
      :group-vector (vector
                     :inverted)})
@@ -48,10 +48,11 @@
 
 
 (def opts
-  {:tag     :div
-   :ui?     true
-   :ui-name "divider"
-   :groups  groups})
+  {:tag        :div
+   :ui?        true
+   :ui-name    "divider"
+   :types      types
+   :variations variations})
 
 
 (defcomp "default" opts)

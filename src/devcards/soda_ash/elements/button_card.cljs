@@ -6,75 +6,25 @@
   (:require
    [devcards.core]
    [reagent.core :as reagent]
-   [soda-ash.core :as sa]
+   [soda-ash.element :as se]
+   [soda-ash.content :as sco]
    [soda-ash.helpers :as h]
    [soda-ash.elements.button :as button]
    [soda-ash.elements.buttons :as buttons]))
 
 
 (def list-keys
-  (h/list-keys button/groups))
+  (h/list-keys button/variations))
 
 (def list-buttons-keys
-  (h/list-keys buttons/groups))
+  (h/list-keys buttons/variations))
 
 
 (defcard-doc
-  "# SUMMARY FOR BUTTON
-
-   ## Types"
-  (h/list-types button/types "button")
-
-  "## States (*soda*)"
-  (list-keys "states")
-
-  "## Variations (*ash*)"
-  "### Social"
-  (list-keys "social")
-  "### Size"
-  (list-keys "size")
-  "### Floated"
-  (list-keys "floated")
-  "### Colored"
-  (list-keys "colored")
-  "### Compact"
-  (list-keys "compact")
-  "### Toggle"
-  (list-keys "toggle")
-  "### Consequence"
-  (list-keys "consequence")
-  "### Fluid"
-  (list-keys "fluid")
-  "### Circular"
-  (list-keys "circular")
-  "### Vertically Attached"
-  (list-keys "vertically attached")
-  "### Horizontally Attached"
-  (list-keys "horizontally attached")
-
-  "## Content"
-  "### Conditionals"
-  "Use .or class"
-  )
+  (h/devcard-docs button/opts))
 
 (defcard-doc
-  "# SUMMARY FOR BUTTONS
-
-   ## Types"
-  "buttons"
-
-  "## Variations (*ash*)"
-  "### Vertical"
-  (list-buttons-keys "vertical")
-  "### Icon"
-  (list-buttons-keys "icon")
-  "### Width"
-  (list-buttons-keys "width")
-  "### Size"
-  (list-buttons-keys "size")
-  "### Basic"
-  (list-buttons-keys "basic"))
-
+  (h/devcard-docs buttons/opts))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; BUTTON
@@ -87,10 +37,10 @@
   "
 ---
 # Button Types"
-  (h/list-types button/types "button"))
+  (h/list-types button/opts))
 
 (defn type-default []
-  [sa/button "default"])
+  [se/button "default"])
 
 (defcard-doc
   (mkdn-pprint-source type-default))
@@ -100,7 +50,7 @@
 
 
 (defn type-primary []
-  [sa/button-primary "primary"])
+  [se/button-primary "primary"])
 
 (defcard-doc
   (mkdn-pprint-source type-primary))
@@ -110,7 +60,7 @@
 
 
 (defn type-secondary []
-  [sa/button-secondary "secondary"])
+  [se/button-secondary "secondary"])
 
 (defcard-doc
   (mkdn-pprint-source type-secondary))
@@ -120,10 +70,10 @@
 
 
 (defn type-animated []
-  [sa/button-animated
-   [:div.visible.content "Next"]
-   [:div.hidden.content
-    [sa/icon-arrow-right]]])
+  [se/button-animated
+   [sco/content-visible "Next"]
+   [sco/content-hidden
+    [se/icon-arrow-right]]])
 
 (defcard-doc
   (mkdn-pprint-source type-animated))
@@ -133,10 +83,10 @@
 
 
 (defn type-vertical-animated []
-  [sa/button-vertical-animated
-   [:div.hidden.content "Shop"]
-   [:div.visible.content
-    [sa/icon-shop]]])
+  [se/button-vertical-animated
+   [sco/content-hidden "Shop"]
+   [sco/content-visible
+    [se/icon-shop]]])
 
 (defcard-doc
   (mkdn-pprint-source type-vertical-animated))
@@ -146,10 +96,10 @@
 
 
 (defn type-animated-fade []
-  [sa/button-animated-fade
-   [:div.visible.content
+  [se/button-animated-fade
+   [sco/content-visible
     "Sign up for a Pro account"]
-   [:div.hidden.content
+   [sco/content-hidden
     "12.99 a month"]])
 
 (defcard-doc
@@ -160,11 +110,11 @@
 
 
 (defn type-labeled []
-  [sa/button-labeled
-   [sa/button
-    [sa/icon-heart]
+  [se/button-labeled
+   [se/button
+    [se/icon-heart]
     "button"]
-   [sa/label "label"]])
+   [se/label "label"]])
 
 (defcard-doc
   (mkdn-pprint-source type-labeled))
@@ -174,11 +124,11 @@
 
 
 (defn type-left-labeled []
-  [sa/button-left-labeled
-   [sa/label-right-pointing
+  [se/button-left-labeled
+   [se/label-right-pointing
     "label"]
-   [sa/button
-    [sa/icon-heart]
+   [se/button
+    [se/icon-heart]
     "button"]])
 
 (defcard-doc
@@ -189,8 +139,8 @@
 
 
 (defn type-icon []
-  [sa/button-icon
-   [sa/icon-cloud]])
+  [se/button-icon
+   [se/icon-cloud]])
 
 (defcard-doc
   (mkdn-pprint-source type-icon))
@@ -200,8 +150,8 @@
 
 
 (defn type-labeled-icon []
-  [sa/button-labeled-icon
-   [sa/icon-heart]
+  [se/button-labeled-icon
+   [se/icon-heart]
    "button"])
 
 (defcard-doc
@@ -212,8 +162,8 @@
 
 
 (defn type-right-labeled-icon []
-  [sa/button-right-labeled-icon
-   [sa/icon-heart]
+  [se/button-right-labeled-icon
+   [se/icon-heart]
    "button"])
 
 (defcard-doc
@@ -224,8 +174,8 @@
 
 
 (defn type-inverted []
-  [sa/segment {:ash [:inverted]}
-   [sa/button-inverted {:ash [:red]}
+  [se/segment {:ash [:inverted]}
+   [se/button-inverted {:ash [:red]}
     "inverted"]])
 
 (defcard-doc
@@ -236,7 +186,7 @@
 
 
 (defn type-basic []
-  [sa/button-basic {:ash [:red]}
+  [se/button-basic {:ash [:red]}
    "basic"])
 
 (defcard-doc
@@ -247,7 +197,7 @@
 
 
 (defn type-primary-basic []
-  [sa/button-primary-basic {:ash [:red]}
+  [se/button-primary-basic {:ash [:red]}
    "primary-basic"])
 
 (defcard-doc
@@ -258,7 +208,7 @@
 
 
 (defn type-secondary-basic []
-  [sa/button-secondary-basic {:ash [:red]}
+  [se/button-secondary-basic {:ash [:red]}
    "secondary-basic"])
 
 (defcard-doc
@@ -269,8 +219,8 @@
 
 
 (defn type-inverted-basic []
-  [sa/segment {:ash [:inverted]}
-   [sa/button-inverted-basic {:ash [:red]}
+  [se/segment {:ash [:inverted]}
+   [se/button-inverted-basic {:ash [:red]}
     "inverted-basic"]])
 
 (defcard-doc
@@ -292,7 +242,7 @@
 
 
 (defn state-active []
-  [sa/button {:soda :active
+  [se/button {:soda :active
               :ash  [:blue]}
    "active"])
 
@@ -304,7 +254,7 @@
 
 
 (defn state-disabled []
-  [sa/button {:soda :disabled
+  [se/button {:soda :disabled
               :ash  [:blue]}
    "disabled"])
 
@@ -316,7 +266,7 @@
 
 
 (defn state-loading []
-  [sa/button {:soda :loading
+  [se/button {:soda :loading
               :ash  [:blue]}
    "loading"])
 
@@ -346,9 +296,8 @@
 
 
 (defn social-facebook []
-  [sa/button {:ash [
-                    :facebook]}
-   [sa/icon-facebook]
+  [se/button {:ash [:facebook]}
+   [se/icon-facebook]
    "Facebook"])
 
 (defcard-doc
@@ -357,23 +306,23 @@
 (defcard-rg
   [:div
    [social-facebook]
-   [sa/button {:ash [:twitter]}
-    [sa/icon-twitter]
+   [se/button {:ash [:twitter]}
+    [se/icon-twitter]
     "Twitter"]
-   [sa/button {:ash [:google-plus]}
-    [sa/icon-google-plus]
+   [se/button {:ash [:google-plus]}
+    [se/icon-google-plus]
     "Google Plus"]
-   [sa/button {:ash [:vk]}
-    [sa/icon-vk]
+   [se/button {:ash [:vk]}
+    [se/icon-vk]
     "VK"]
-   [sa/button {:ash [:linkedin]}
-    [sa/icon-linkedin]
+   [se/button {:ash [:linkedin]}
+    [se/icon-linkedin]
     "LinkedIn"]
-   [sa/button {:ash [:instagram]}
-    [sa/icon-instagram]
+   [se/button {:ash [:instagram]}
+    [se/icon-instagram]
     "Instagram"]
-   [sa/button {:ash [:youtube]}
-    [sa/icon-youtube]
+   [se/button {:ash [:youtube]}
+    [se/icon-youtube]
     "YouTube"]
    ])
 
@@ -386,7 +335,7 @@
   (list-keys "size"))
 
 (defn size-mini []
-  [sa/button {:ash [:mini]}
+  [se/button {:ash [:mini]}
    "mini"])
 
 (defcard-doc
@@ -395,13 +344,13 @@
 (defcard-rg
   [:div
    [size-mini]
-   [sa/button {:ash [:tiny]} "tiny"]
-   [sa/button {:ash [:small]} "small"]
-   [sa/button {:ash [:medium]} "medium"]
-   [sa/button {:ash [:large]} "large"]
-   [sa/button {:ash [:big]} "big"]
-   [sa/button {:ash [:huge]} "huge"]
-   [sa/button {:ash [:massive]} "massive"]
+   [se/button {:ash [:tiny]} "tiny"]
+   [se/button {:ash [:small]} "small"]
+   [se/button {:ash [:medium]} "medium"]
+   [se/button {:ash [:large]} "large"]
+   [se/button {:ash [:big]} "big"]
+   [se/button {:ash [:huge]} "huge"]
+   [se/button {:ash [:massive]} "massive"]
    ])
 
 
@@ -414,7 +363,7 @@
 
 
 (defn right-floated []
-  [sa/button {:ash [:right-floated]}
+  [se/button {:ash [:right-floated]}
    "right-floated"])
 
 (defcard-doc
@@ -425,7 +374,7 @@
 
 
 (defn left-floated []
-  [sa/button {:ash [:left-floated]}
+  [se/button {:ash [:left-floated]}
    "left-floated"])
 
 (defcard-doc
@@ -443,7 +392,7 @@
   (list-keys "colored"))
 
 (defn colored-red []
-  [sa/button {:ash [:red]}
+  [se/button {:ash [:red]}
    "red"])
 
 (defcard-doc
@@ -452,18 +401,18 @@
 (defcard-rg
   [:div
    [colored-red]
-   [sa/button {:ash [:orange]} "orange"]
-   [sa/button {:ash [:yellow]} "yellow"]
-   [sa/button {:ash [:olive]} "olive"]
-   [sa/button {:ash [:green]} "green"]
-   [sa/button {:ash [:teal]} "teal"]
-   [sa/button {:ash [:blue]} "blue"]
-   [sa/button {:ash [:violet]} "violet"]
-   [sa/button {:ash [:purple]} "purple"]
-   [sa/button {:ash [:pink]} "pink"]
-   [sa/button {:ash [:brown]} "brown"]
-   [sa/button {:ash [:grey]} "grey"]
-   [sa/button {:ash [:black]} "black"]
+   [se/button {:ash [:orange]} "orange"]
+   [se/button {:ash [:yellow]} "yellow"]
+   [se/button {:ash [:olive]} "olive"]
+   [se/button {:ash [:green]} "green"]
+   [se/button {:ash [:teal]} "teal"]
+   [se/button {:ash [:blue]} "blue"]
+   [se/button {:ash [:violet]} "violet"]
+   [se/button {:ash [:purple]} "purple"]
+   [se/button {:ash [:pink]} "pink"]
+   [se/button {:ash [:brown]} "brown"]
+   [se/button {:ash [:grey]} "grey"]
+   [se/button {:ash [:black]} "black"]
    ])
 
 
@@ -475,7 +424,7 @@
   (list-keys "compact"))
 
 (defn compact []
-  [sa/button {:ash [:compact]}
+  [se/button {:ash [:compact]}
    "compact"])
 
 (defcard-doc
@@ -484,7 +433,7 @@
 (defcard-rg
   [:div
    [compact]
-   [sa/button "normal"]])
+   [se/button "normal"]])
 
 
 ;; ---------------------------
@@ -504,7 +453,7 @@
                              "toggled on" "toggled off"))]
     (fn []
       (let [soda (:soda @local-state)]
-        [sa/button {:soda     soda
+        [se/button {:soda     soda
                     :ash      [:toggle]
                     :on-click on-click-handler}
          (text soda)]))))
@@ -524,7 +473,7 @@
   (list-keys "consequence"))
 
 (defn consequence-negative []
-  [sa/button {:ash [:negative]}
+  [se/button {:ash [:negative]}
    "negative"])
 
 (defcard-doc
@@ -533,7 +482,7 @@
 (defcard-rg
   [:div
    [consequence-negative]
-   [sa/button {:ash [:positive]} "positive"]])
+   [se/button {:ash [:positive]} "positive"]])
 
 
 
@@ -545,7 +494,7 @@
   (list-keys "fluid"))
 
 (defn fluid []
-  [sa/button {:ash [:fluid]}
+  [se/button {:ash [:fluid]}
    "fluid"])
 
 (defcard-doc
@@ -563,7 +512,7 @@
   (list-keys "circular"))
 
 (defn circular []
-  [sa/button {:ash [:circular]}
+  [se/button {:ash [:circular]}
    "circular"])
 
 (defcard-doc
@@ -582,7 +531,7 @@
 
 ;; TODO: fix
 (defn vertically-attached-top []
-  [sa/button {:ash [:top-attached]}
+  [se/button {:ash [:top-attached]}
    "top-attached"])
 
 (defcard-doc
@@ -594,7 +543,7 @@
 
 ;; TODO: fix
 (defn vertically-attached-bottom []
-  [sa/button {:ash [:bottom-attached]}
+  [se/button {:ash [:bottom-attached]}
    "bottom-attached"])
 
 (defcard-doc
@@ -613,7 +562,7 @@
 
 ;; TODO: fix
 (defn horizontally-attached-top []
-  [sa/button {:ash [:left-attached]}
+  [se/button {:ash [:left-attached]}
    "left-attached"])
 
 (defcard-doc
@@ -625,7 +574,7 @@
 
 ;; TODO: fix
 (defn horizontally-attached-bottom []
-  [sa/button {:ash [:right-attached]}
+  [se/button {:ash [:right-attached]}
    "right-attached"])
 
 (defcard-doc
@@ -643,14 +592,13 @@
   "
 ---
 # Button Content"
-  "## Conditionals"
-  "Use .or class")
+  "## Conditionals")
 
 (defn content-or []
-  [sa/buttons
-   [sa/button "Cancel"]
-   [:div.or] ;; <-- content
-   [sa/button {:ash [:positive]}
+  [se/buttons
+   [se/button "Cancel"]
+   [sco/s-or] ;; <-- s-or
+   [se/button {:ash [:positive]}
     "Save"]])
 
 (defcard-doc
@@ -676,7 +624,7 @@
   "buttons")
 
 (defn type-buttons []
-  [sa/button "buttons"])
+  [se/button "buttons"])
 
 (defcard-doc
   (mkdn-pprint-source type-buttons))
@@ -703,10 +651,10 @@
 
 (defn buttons-vertical []
   [:div
-   [sa/buttons {:ash [:vertical]}
-    [sa/button "Foo"]
-    [sa/button "Bar"]
-    [sa/button "Baz"]]])
+   [se/buttons {:ash [:vertical]}
+    [se/button "Foo"]
+    [se/button "Bar"]
+    [se/button "Baz"]]])
 
 (defcard-doc
   (mkdn-pprint-source buttons-vertical))
@@ -723,13 +671,13 @@
   (list-buttons-keys "icon"))
 
 (defn buttons-icon []
-  [sa/buttons {:ash [:icon]}
-   [sa/button
-    [sa/icon-star]]
-   [sa/button
-    [sa/icon-alarm]]
-   [sa/button
-    [sa/icon-arrow-up]]])
+  [se/buttons {:ash [:icon]}
+   [se/button
+    [se/icon-star]]
+   [se/button
+    [se/icon-alarm]]
+   [se/button
+    [se/icon-arrow-up]]])
 
 (defcard-doc
   (mkdn-pprint-source buttons-icon))
@@ -739,15 +687,15 @@
 
 
 (defn buttons-labeled-icon []
-  [sa/buttons {:ash [:labeled-icon]}
-   [sa/button
-    [sa/icon-star]
+  [se/buttons {:ash [:labeled-icon]}
+   [se/button
+    [se/icon-star]
     "Star"]
-   [sa/button
-    [sa/icon-alarm]
+   [se/button
+    [se/icon-alarm]
     "Alarm"]
-   [sa/button
-    [sa/icon-arrow-up]
+   [se/button
+    [se/icon-arrow-up]
     "Arrow up"]])
 
 (defcard-doc
@@ -765,10 +713,10 @@
   (list-buttons-keys "width"))
 
 (defn buttons-width-two []
-  [sa/buttons {:ash [:two]}
-   [sa/button {:ash [:red]}
+  [se/buttons {:ash [:two]}
+   [se/button {:ash [:red]}
     "one"]
-   [sa/button {:ash [:orange]}
+   [se/button {:ash [:orange]}
     "two"]])
 
 
@@ -791,10 +739,10 @@
                     first)]
     (fn []
       [:div [:br]
-       [sa/buttons {:ash [width']}
+       [se/buttons {:ash [width']}
         (for [[n color] widths']
           ^{:key n}
-          [sa/button {:ash [color]}
+          [se/button {:ash [color]}
            (name n)])]])))
 
 (defcard-doc
@@ -818,18 +766,18 @@
 
 (defn buttons-size-mini []
   [:div
-   [sa/buttons {:ash [:mini]}
-    [sa/button "Mini"]
-    [sa/button "Foo"]
-    [sa/button "Bar"]]])
+   [se/buttons {:ash [:mini]}
+    [se/button "Mini"]
+    [se/button "Foo"]
+    [se/button "Bar"]]])
 
 (defn buttons-size [size]
   [:div
    [:br]
-   [sa/buttons {:ash [size]}
-    [sa/button (name size)]
-    [sa/button "Foo"]
-    [sa/button "Bar"]]])
+   [se/buttons {:ash [size]}
+    [se/button (name size)]
+    [se/button "Foo"]
+    [se/button "Bar"]]])
 
 (defcard-doc
   (mkdn-pprint-source buttons-size-mini))
@@ -856,18 +804,18 @@
 
 (defn buttons-colored-red []
   [:div
-   [sa/buttons {:ash [:red]}
-    [sa/button "Red"]
-    [sa/button "Foo"]
-    [sa/button "Bar"]]])
+   [se/buttons {:ash [:red]}
+    [se/button "Red"]
+    [se/button "Foo"]
+    [se/button "Bar"]]])
 
 (defn buttons-colored [colored]
   [:div
    [:br]
-   [sa/buttons {:ash [colored]}
-    [sa/button (name colored)]
-    [sa/button "Foo"]
-    [sa/button "Bar"]]])
+   [se/buttons {:ash [colored]}
+    [se/button (name colored)]
+    [se/button "Foo"]
+    [se/button "Bar"]]])
 
 (defcard-doc
   (mkdn-pprint-source buttons-colored-red))
@@ -904,10 +852,10 @@
   (list-buttons-keys "basic"))
 
 (defn buttons-basic []
-  [sa/buttons {:ash [:basic]}
-   [sa/button "basic"]
-   [sa/button "foo"]
-   [sa/button "bar"]])
+  [se/buttons {:ash [:basic]}
+   [se/button "basic"]
+   [se/button "foo"]
+   [se/button "bar"]])
 
 (defcard-doc
   (mkdn-pprint-source buttons-basic))

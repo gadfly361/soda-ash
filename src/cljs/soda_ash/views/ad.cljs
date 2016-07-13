@@ -12,7 +12,8 @@
 
 
 (def types
-  [:mobile-leaderboard
+  [:default ;; TODO: check this
+   :mobile-leaderboard
    :mobile-banner
 
    :small-rectangle
@@ -43,9 +44,8 @@
    :half-page])
 
 
-(def groups
-  [;; Variations
-   (create-group
+(def variations
+  [(create-group
     {:group-name   "centered"
      :group-vector (vector
                     :centered)})
@@ -61,7 +61,8 @@
   {:tag     :div
    :ui?     true
    :ui-name "ad"
-   :groups  groups})
+   :types types
+   :variations  variations})
 
 
 (defcomp "default" opts)

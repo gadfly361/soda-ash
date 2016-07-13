@@ -6,26 +6,16 @@
   (:require
    [devcards.core]
    [reagent.core]
-   [soda-ash.core :as sa]
+   [soda-ash.element :as se]
    [soda-ash.helpers :as h]
    [soda-ash.elements.container :as container]))
 
 
 (def list-keys
-  (h/list-keys container/groups))
-
+  (h/list-keys container/variations))
 
 (defcard-doc
-  "# SUMMARY
-
-  ## Types"
-  (h/list-types container/types "container")
-
-  "## Variations (*ash*)"
-  "### Text Alignment"
-  (list-keys "text alignment")
-  "### Fluid"
-  (list-keys "fluid"))
+  (h/devcard-docs container/opts))
 
 
 
@@ -36,10 +26,10 @@
   "
 ---
 # Types"
-  (h/list-types container/types "container"))
+  (h/list-types container/opts))
 
 (defn type-default []
-  [sa/container
+  [se/container
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -56,7 +46,7 @@
 
 
 (defn type-text []
-  [sa/container-text
+  [se/container-text
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -90,7 +80,7 @@
   (list-keys "text alignment"))
 
 (defn left-aligned []
-  [sa/container {:ash [:left-aligned]}
+  [se/container {:ash [:left-aligned]}
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -107,7 +97,7 @@
 
 
 (defn center-aligned []
-  [sa/container {:ash [:center-aligned]}
+  [se/container {:ash [:center-aligned]}
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -124,7 +114,7 @@
 
 
 (defn right-aligned []
-  [sa/container {:ash [:right-aligned]}
+  [se/container {:ash [:right-aligned]}
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -141,7 +131,7 @@
 
 
 (defn justified []
-  [sa/container {:ash [:justified]}
+  [se/container {:ash [:justified]}
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -167,7 +157,7 @@
   )
 
 (defn fluid []
-  [sa/container {:ash [:fluid]}
+  [se/container {:ash [:fluid]}
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut

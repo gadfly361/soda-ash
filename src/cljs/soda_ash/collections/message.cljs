@@ -12,19 +12,20 @@
 
 
 (def types
-  [:icon])
+  [:default
+   :icon])
 
 
-(def groups
-  [;; States
-   (create-group
+(def states
+  [(create-group
     {:group-name   "states"
      :group-vector (vector
                     :hidden
-                    :visible)})
+                    :visible)})])
 
-   ;; Variations
-   (create-group
+
+(def variations
+  [(create-group
     {:group-name   "floating"
      :group-vector (vector
                     :floating)})
@@ -80,10 +81,12 @@
 
 
 (def opts
-  {:tag     :div
-   :ui?     true
-   :ui-name "message"
-   :groups  groups})
+  {:tag        :div
+   :ui?        true
+   :ui-name    "message"
+   :types      types
+   :states     states
+   :variations variations})
 
 
 (defcomp "default" opts)

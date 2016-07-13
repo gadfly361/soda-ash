@@ -1,10 +1,9 @@
-(ns soda-ash.core
+(ns soda-ash.element
   (:require-macros
    [soda-ash.macros :refer [defc]])
   (:require
    [soda-ash.helpers :as h]
 
-   ;; elements
    [soda-ash.elements.button :as button]
    [soda-ash.elements.buttons :as buttons]
    [soda-ash.elements.container :as container]
@@ -26,19 +25,9 @@
    [soda-ash.elements.s-list :as s-list]
    [soda-ash.elements.step :as step]
    [soda-ash.elements.steps :as steps]
-
-   ;; collections
-   [soda-ash.collections.breadcrumb :as breadcrumb]
-   [soda-ash.collections.breadcrumb-section :as breadcrumb-section]
-   [soda-ash.collections.message :as message]
-
-   ;; views
-   [soda-ash.views.ad :as ad]
    ))
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; ELEMENTS
 
 ;; button
 
@@ -993,53 +982,3 @@
 (defc "steps" nil)
 (defc "steps" "ordered")
 (defc "steps" "vertical")
-
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; COLLECTIONS
-
-;; breadcrumb
-
-(defc "breadcrumb" nil)
-
-
-;; breadcrumb-section
-
-(defc "breadcrumb-section" nil)
-(defc "breadcrumb-section" "link")
-
-
-;; message
-
-(defc "message" nil)
-(defc "message" "icon")
-
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; COLLECTIONS
-
-;; ad
-
-(defc "ad" "mobile-leaderboard")
-(defc "ad" "mobile-banner")
-(defc "ad" "small-rectangle")
-(defc "ad" "medium-rectangle")
-(defc "ad" "large-rectangle")
-(defc "ad" "vertical-rectangle")
-(defc "ad" "button")
-(defc "ad" "square-button")
-(defc "ad" "small-button")
-(defc "ad" "skyscraper")
-(defc "ad" "wide-skyscraper")
-(defc "ad" "banner")
-(defc "ad" "vertical-banner")
-(defc "ad" "top-banner")
-(defc "ad" "half-banner")
-(defc "ad" "leaderboard")
-(defc "ad" "large-leaderboard")
-(defc "ad" "billboard")
-(defc "ad" "panorama")
-(defc "ad" "netboard")
-(defc "ad" "half-page")

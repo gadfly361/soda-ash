@@ -12,7 +12,8 @@
 
 
 (def types
-  [:image
+  [:default
+   :image
    :pointing
    :pointing-below
    :left-pointing
@@ -32,9 +33,8 @@
    :floating])
 
 
-(def groups
-  [;; Variations
-   (create-group
+(def variations
+  [(create-group
     {:group-name   "circular"
      :group-vector (vector
                     :circular
@@ -77,10 +77,11 @@
 
 
 (def opts
-  {:tag     :div
-   :ui?     true
-   :ui-name "label"
-   :groups  groups})
+  {:tag        :div
+   :ui?        true
+   :ui-name    "label"
+   :types      types
+   :variations variations})
 
 
 (defcomp "default" opts)

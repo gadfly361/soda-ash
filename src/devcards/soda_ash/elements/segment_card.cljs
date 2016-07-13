@@ -6,54 +6,21 @@
   (:require
    [devcards.core]
    [reagent.core]
-   [soda-ash.core :as sa]
+   [soda-ash.element :as se]
    [soda-ash.helpers :as h]
    [soda-ash.elements.segment :as segment]
    [soda-ash.elements.segments :as segments]))
 
 
 (def list-keys
-  (h/list-keys segment/groups))
+  (h/list-keys segment/variations))
 
 
 (defcard-doc
-  "# SUMMARY FOR SEGMENT"
-  "## Types"
-  (h/list-types segment/types "segment")
-
-  "## States (*soda*)"
-  (list-keys "states")
-
-  "## Variations (*ash*)"
-  "### Attached"
-  (list-keys "attached")
-  "### Padded"
-  (list-keys "padded")
-  "### Compact"
-  (list-keys "compact")
-  "### Colored"
-  (list-keys "colored")
-  "### Inverted"
-  (list-keys "inverted")
-  "### Emphasis"
-  (list-keys "emphasis")
-  "### Circular"
-  (list-keys "circular")
-  "### Clearing"
-  (list-keys "clearing")
-  "### Floated"
-  (list-keys "floated")
-  "### Text Alignment"
-  (list-keys "text alignment")
-  "### Basic"
-  (list-keys "basic")
-  )
-
+  (h/devcard-docs segment/opts))
 
 (defcard-doc
-  "# SUMMARY FOR SEGMENTS"
-  "## Types"
-  (h/list-types segments/types "segments"))
+  (h/devcard-docs segments/opts))
 
 
 
@@ -68,11 +35,10 @@
   "
 ---
 # Types"
-  (h/list-types segment/types "segment" true)
-  )
+  (h/list-types segment/opts))
 
 (defn type-default []
-  [sa/segment
+  [se/segment
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -90,7 +56,7 @@
 
 
 (defn type-raised []
-  [sa/segment-raised
+  [se/segment-raised
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -108,7 +74,7 @@
 
 
 (defn type-stacked []
-  [sa/segment-stacked
+  [se/segment-stacked
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -126,7 +92,7 @@
 
 
 (defn type-tall-stacked []
-  [sa/segment-tall-stacked
+  [se/segment-tall-stacked
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -144,7 +110,7 @@
 
 
 (defn type-piled []
-  [sa/segment-piled
+  [se/segment-piled
    {:style {:z-index 1}} ;; Note the z-index
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -163,7 +129,7 @@
 
 (defn type-vertical []
   [:div
-   [sa/segment-vertical
+   [se/segment-vertical
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -171,7 +137,7 @@
    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
    culpa qui officia deserunt mollit anim id est laborum."]
-   [sa/segment-vertical
+   [se/segment-vertical
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -198,7 +164,7 @@
   (list-keys "states"))
 
 (defn state-disabled []
-  [sa/segment {:soda :disabled}
+  [se/segment {:soda :disabled}
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -215,7 +181,7 @@
 
 
 (defn state-loading []
-  [sa/segment {:soda :loading}
+  [se/segment {:soda :loading}
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -246,11 +212,11 @@
 
 (defn variation-attached []
   [:div
-   [sa/segment {:ash [:top-attached]}
+   [se/segment {:ash [:top-attached]}
     "This segment is on top"]
-   [sa/segment {:ash [:attached]}
+   [se/segment {:ash [:attached]}
     "This segment is attached on both sides"]
-   [sa/segment {:ash [:bottom-attached]}
+   [se/segment {:ash [:bottom-attached]}
     "This segment is on bottom"]])
 
 (defcard-doc
@@ -265,8 +231,8 @@
   (list-keys "padded"))
 
 (defn variation-padded []
-  [sa/segment {:ash [:padded]}
-   [sa/header-h3 "padded"]
+  [se/segment {:ash [:padded]}
+   [se/header-h3 "padded"]
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -283,8 +249,8 @@
 
 
 (defn variation-very-padded []
-  [sa/segment {:ash [:very-padded]}
-   [sa/header-h3 "very-padded"]
+  [se/segment {:ash [:very-padded]}
+   [se/header-h3 "very-padded"]
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -305,8 +271,8 @@
   (list-keys "compact"))
 
 (defn variation-compact []
-  [sa/segment {:ash [:compact]}
-   [sa/header-h3 "compact"]
+  [se/segment {:ash [:compact]}
+   [se/header-h3 "compact"]
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -327,8 +293,8 @@
   (list-keys "colored"))
 
 (defn variation-colored []
-  [sa/segment {:ash [:red]}
-   [sa/header-h3 "red"]])
+  [se/segment {:ash [:red]}
+   [se/header-h3 "red"]])
 
 (defcard-doc
   (mkdn-pprint-source variation-colored))
@@ -336,30 +302,30 @@
 (defcard-rg
   [:div
    [variation-colored]
-   [sa/segment {:ash [:orange]}
-    [sa/header-h3 "orange"]]
-   [sa/segment {:ash [:yellow]}
-    [sa/header-h3 "yellow"]]
-   [sa/segment {:ash [:olive]}
-    [sa/header-h3 "olive"]]
-   [sa/segment {:ash [:green]}
-    [sa/header-h3 "green"]]
-   [sa/segment {:ash [:teal]}
-    [sa/header-h3 "teal"]]
-   [sa/segment {:ash [:blue]}
-    [sa/header-h3 "blue"]]
-   [sa/segment {:ash [:violet]}
-    [sa/header-h3 "violet"]]
-   [sa/segment {:ash [:purple]}
-    [sa/header-h3 "purple"]]
-   [sa/segment {:ash [:pink]}
-    [sa/header-h3 "pink"]]
-   [sa/segment {:ash [:brown]}
-    [sa/header-h3 "brown"]]
-   [sa/segment {:ash [:grey]}
-    [sa/header-h3 "grey"]]
-   [sa/segment {:ash [:black]}
-    [sa/header-h3 "black"]]
+   [se/segment {:ash [:orange]}
+    [se/header-h3 "orange"]]
+   [se/segment {:ash [:yellow]}
+    [se/header-h3 "yellow"]]
+   [se/segment {:ash [:olive]}
+    [se/header-h3 "olive"]]
+   [se/segment {:ash [:green]}
+    [se/header-h3 "green"]]
+   [se/segment {:ash [:teal]}
+    [se/header-h3 "teal"]]
+   [se/segment {:ash [:blue]}
+    [se/header-h3 "blue"]]
+   [se/segment {:ash [:violet]}
+    [se/header-h3 "violet"]]
+   [se/segment {:ash [:purple]}
+    [se/header-h3 "purple"]]
+   [se/segment {:ash [:pink]}
+    [se/header-h3 "pink"]]
+   [se/segment {:ash [:brown]}
+    [se/header-h3 "brown"]]
+   [se/segment {:ash [:grey]}
+    [se/header-h3 "grey"]]
+   [se/segment {:ash [:black]}
+    [se/header-h3 "black"]]
    ])
 
 
@@ -368,9 +334,9 @@
   (list-keys "inverted"))
 
 (defn variation-inverted []
-  [sa/segment {:ash [:red
+  [se/segment {:ash [:red
                      :inverted]}
-   [sa/header-h3 "red"]])
+   [se/header-h3 "red"]])
 
 (defcard-doc
   (mkdn-pprint-source variation-inverted))
@@ -378,42 +344,42 @@
 (defcard-rg
   [:div
    [variation-inverted]
-   [sa/segment {:ash [:orange
+   [se/segment {:ash [:orange
                       :inverted]}
-    [sa/header-h3 "orange"]]
-   [sa/segment {:ash [:yellow
+    [se/header-h3 "orange"]]
+   [se/segment {:ash [:yellow
                       :inverted]}
-    [sa/header-h3 "yellow"]]
-   [sa/segment {:ash [:olive
+    [se/header-h3 "yellow"]]
+   [se/segment {:ash [:olive
                       :inverted]}
-    [sa/header-h3 "olive"]]
-   [sa/segment {:ash [:green
+    [se/header-h3 "olive"]]
+   [se/segment {:ash [:green
                       :inverted]}
-    [sa/header-h3 "green"]]
-   [sa/segment {:ash [:teal
+    [se/header-h3 "green"]]
+   [se/segment {:ash [:teal
                       :inverted]}
-    [sa/header-h3 "teal"]]
-   [sa/segment {:ash [:blue
+    [se/header-h3 "teal"]]
+   [se/segment {:ash [:blue
                       :inverted]}
-    [sa/header-h3 "blue"]]
-   [sa/segment {:ash [:violet
+    [se/header-h3 "blue"]]
+   [se/segment {:ash [:violet
                       :inverted]}
-    [sa/header-h3 "violet"]]
-   [sa/segment {:ash [:purple
+    [se/header-h3 "violet"]]
+   [se/segment {:ash [:purple
                       :inverted]}
-    [sa/header-h3 "purple"]]
-   [sa/segment {:ash [:pink
+    [se/header-h3 "purple"]]
+   [se/segment {:ash [:pink
                       :inverted]}
-    [sa/header-h3 "pink"]]
-   [sa/segment {:ash [:brown
+    [se/header-h3 "pink"]]
+   [se/segment {:ash [:brown
                       :inverted]}
-    [sa/header-h3 "brown"]]
-   [sa/segment {:ash [:grey
+    [se/header-h3 "brown"]]
+   [se/segment {:ash [:grey
                       :inverted]}
-    [sa/header-h3 "grey"]]
-   [sa/segment {:ash [:black
+    [se/header-h3 "grey"]]
+   [se/segment {:ash [:black
                       :inverted]}
-    [sa/header-h3 "black"]]
+    [se/header-h3 "black"]]
    ])
 
 
@@ -422,7 +388,7 @@
   (list-keys "emphasis"))
 
 (defn variation-secondary []
-  [sa/segment {:ash [:secondary]}
+  [se/segment {:ash [:secondary]}
    "secondary"])
 
 (defcard-doc
@@ -433,7 +399,7 @@
 
 
 (defn variation-tertiary []
-  [sa/segment {:ash [:tertiary]}
+  [se/segment {:ash [:tertiary]}
    "tertiary"])
 
 (defcard-doc
@@ -448,8 +414,8 @@
   (list-keys "circular"))
 
 (defn variation-circular []
-  [sa/segment {:ash [:circular]}
-   [sa/header-h3 "circular"]
+  [se/segment {:ash [:circular]}
+   [se/header-h3 "circular"]
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -470,9 +436,9 @@
   (list-keys "clearing"))
 
 (defn variation-clearing []
-  [sa/segment {:ash [:clearing]}
-   [sa/header-h3 "clearing"]
-   [sa/header-h3 {:ash [:right-floated]}
+  [se/segment {:ash [:clearing]}
+   [se/header-h3 "clearing"]
+   [se/header-h3 {:ash [:right-floated]}
     "this is right floated"]
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -495,9 +461,9 @@
 
 (defn variation-floated []
   [:div
-   [sa/segment {:ash [:left-floated]}
+   [se/segment {:ash [:left-floated]}
     "left-floated"]
-   [sa/segment {:ash [:right-floated]}
+   [se/segment {:ash [:right-floated]}
     "right-floated"]])
 
 (defcard-doc
@@ -515,13 +481,13 @@
 
 (defn variation-text-alignment []
   [:div
-   [sa/segment {:ash [:left-aligned]}
+   [se/segment {:ash [:left-aligned]}
     "left algined"]
 
-   [sa/segment {:ash [:center-aligned]}
+   [se/segment {:ash [:center-aligned]}
     "center algined"]
 
-   [sa/segment {:ash [:right-aligned]}
+   [se/segment {:ash [:right-aligned]}
     "right algined"]
    ])
 
@@ -538,8 +504,8 @@
 
 (defn variation-basic []
   [:div
-   [sa/segment {:ash [:basic]}
-    [sa/header-h3 "basic"]
+   [se/segment {:ash [:basic]}
+    [se/header-h3 "basic"]
     "A basic segment has no special formatting"]])
 
 (defcard-doc
@@ -561,13 +527,12 @@
   "
 ---
 # Types"
-  (h/list-types segments/types "segments" true)
-  )
+  (h/list-types segments/opts))
 
 
 (defn segments-default []
-  [sa/segments
-   [sa/segment
+  [se/segments
+   [se/segment
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -576,7 +541,7 @@
    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
    culpa qui officia deserunt mollit anim id est laborum."]
 
-   [sa/segment
+   [se/segment
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -594,8 +559,8 @@
 
 
 (defn segments-horizontal []
-  [sa/segments-horizontal
-   [sa/segment
+  [se/segments-horizontal
+   [se/segment
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -604,7 +569,7 @@
    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
    culpa qui officia deserunt mollit anim id est laborum."]
 
-   [sa/segment
+   [se/segment
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -623,8 +588,8 @@
 
 
 (defn segments-raised []
-  [sa/segments-raised
-   [sa/segment
+  [se/segments-raised
+   [se/segment
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -633,7 +598,7 @@
    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
    culpa qui officia deserunt mollit anim id est laborum."]
 
-   [sa/segment
+   [se/segment
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -651,8 +616,8 @@
 
 
 (defn segments-stacked []
-  [sa/segments-stacked
-   [sa/segment
+  [se/segments-stacked
+   [se/segment
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -661,7 +626,7 @@
    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
    culpa qui officia deserunt mollit anim id est laborum."]
 
-   [sa/segment
+   [se/segment
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -679,17 +644,17 @@
 
 
 (defn segments-piled []
-  [sa/segments-piled {:style {:z-index 1}}
-   [sa/segment
+  [se/segments-piled {:style {:z-index 1}}
+   [se/segment
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
    aliquip ex ea commodo consequat. Duis aute irure dolor in
    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-   pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+   pariatur. Excepteur sint occaecat cuipdatat non proident, sunt in
    culpa qui officia deserunt mollit anim id est laborum."]
 
-   [sa/segment
+   [se/segment
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut

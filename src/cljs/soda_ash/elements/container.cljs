@@ -12,12 +12,12 @@
 
 
 (def types
-  [:text])
+  [:default
+   :text])
 
 
-(def groups
-  [;; Variations
-   (create-group
+(def variations
+  [(create-group
     {:group-name   "text alignment"
      :group-vector (vector
                     :left-aligned
@@ -33,10 +33,11 @@
 
 
 (def opts
-  {:tag     :div
-   :ui?     true
-   :ui-name "container"
-   :groups  groups})
+  {:tag        :div
+   :ui?        true
+   :ui-name    "container"
+   :types      types
+   :variations variations})
 
 
 (defcomp "default" opts)

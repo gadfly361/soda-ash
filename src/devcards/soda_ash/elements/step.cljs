@@ -6,53 +6,25 @@
   (:require
    [devcards.core]
    [reagent.core]
-   [soda-ash.core :as sa]
+   [soda-ash.element :as se]
+   [soda-ash.content :as sco]
    [soda-ash.helpers :as h]
    [soda-ash.elements.step :as step]
    [soda-ash.elements.steps :as steps]))
 
 
 (def list-keys
-  (h/list-keys step/groups))
+  (h/list-keys step/states))
 
 (def list-steps-keys
-  (h/list-keys steps/groups))
+  (h/list-keys steps/variations))
 
 
 (defcard-doc
-  "# SUMMARY OF STEP"
-  "## Types"
-  (h/list-types step/types "step" true)
-
-  "## States (*soda*)"
-  (list-keys "states")
-
-  "## Content"
-  "### description"
-  "Use .title & .description classes"
-  "### icon"
-  "Use sa/icon"
-  "### link"
-  "Use sa/step-link"
-  )
+  (h/devcard-docs step/opts))
 
 (defcard-doc
-  "# SUMMARY OF STEPS"
-  "## Types"
-  (h/list-types steps/types "steps" true)
-
-  "## Variations (*ash*)"
-  "### Stackable"
-  (list-steps-keys "stackable")
-  "### Fluid"
-  (list-steps-keys "fluid")
-  "### Attached"
-  (list-steps-keys "attached")
-  "### Divided"
-  (list-steps-keys "divided")
-  "### Size"
-  (list-steps-keys "size")
-  )
+  (h/devcard-docs steps/opts))
 
 
 
@@ -67,12 +39,11 @@
   "
 ---
 # Step Types"
-  (h/list-types step/types "step" true)
-  )
+  (h/list-types step/opts))
 
 (defn type-default []
-  [sa/steps
-   [sa/step "Step"]])
+  [se/steps
+   [se/step "Step"]])
 
 (defcard-doc
   (mkdn-pprint-source type-default))
@@ -82,8 +53,8 @@
 
 
 (defn type-link []
-  [sa/steps
-   [sa/step-link
+  [se/steps
+   [se/step-link
     "Step"]])
 
 (defcard-doc
@@ -103,8 +74,8 @@
   (list-keys "states"))
 
 (defn state-active []
-  [sa/steps
-   [sa/step {:soda :active}
+  [se/steps
+   [se/step {:soda :active}
     "Step"]])
 
 (defcard-doc
@@ -115,8 +86,8 @@
 
 
 (defn state-completed []
-  [sa/steps-ordered
-   [sa/step {:soda :completed}
+  [se/steps-ordered
+   [se/step {:soda :completed}
     "Step"]])
 
 (defcard-doc
@@ -127,8 +98,8 @@
 
 
 (defn state-disabled []
-  [sa/steps
-   [sa/step {:soda :disabled}
+  [se/steps
+   [se/step {:soda :disabled}
     "Step"]])
 
 (defcard-doc
@@ -152,15 +123,14 @@
 ;; description
 
 (defcard-doc
-  "## description"
-  "Use .title & .description classes")
+  "## description")
 
 (defn content-description []
-  [sa/steps
-   [sa/step
-    [:div.title
+  [se/steps
+   [se/step
+    [sco/title
      "Shipping"]
-    [:div.description
+    [sco/description
      "Choose your shipping options"]]])
 
 (defcard-doc
@@ -174,13 +144,12 @@
 ;; icon
 
 (defcard-doc
-  "## icon"
-  "Use sa/icon")
+  "## icon")
 
 (defn content-icon []
-  [sa/steps
-   [sa/step
-    [sa/icon-mail]
+  [se/steps
+   [se/step
+    [se/icon-mail]
     "Step 2"]])
 
 (defcard-doc
@@ -194,16 +163,15 @@
 ;; link
 
 (defcard-doc
-  "## link"
-  "Use sa/step-link")
+  "## link")
 
 (defn content-link []
-  [sa/steps
-   [sa/step-link ;; <-- sa/step-link
-    [sa/icon-mail]
-    [:div.content ;; <-- need .content here
-     [:div.title "Shipping"]
-     [:div.description "Choose your mailing options"]]]])
+  [se/steps
+   [se/step-link
+    [se/icon-mail]
+    [sco/content
+     [sco/title "Shipping"]
+     [sco/description "Choose your mailing options"]]]])
 
 (defcard-doc
   (mkdn-pprint-source content-link))
@@ -224,13 +192,12 @@
   "
 ---
 # Steps Types"
-  (h/list-types steps/types "steps" true)
-  )
+  (h/list-types steps/opts))
 
 (defn steps-default []
-  [sa/steps
-   [sa/step "Step 1"]
-   [sa/step "Step 2"]])
+  [se/steps
+   [se/step "Step 1"]
+   [se/step "Step 2"]])
 
 (defcard-doc
   (mkdn-pprint-source steps-default))
@@ -240,9 +207,9 @@
 
 
 (defn steps-ordered []
-  [sa/steps-ordered
-   [sa/step "Step 1"]
-   [sa/step "Step 2"]])
+  [se/steps-ordered
+   [se/step "Step 1"]
+   [se/step "Step 2"]])
 
 (defcard-doc
   (mkdn-pprint-source steps-ordered))
@@ -252,9 +219,9 @@
 
 
 (defn steps-vertical []
-  [sa/steps-vertical
-   [sa/step "Step 1"]
-   [sa/step "Step 2"]])
+  [se/steps-vertical
+   [se/step "Step 1"]
+   [se/step "Step 2"]])
 
 (defcard-doc
   (mkdn-pprint-source steps-vertical))
@@ -280,10 +247,10 @@
   (list-steps-keys "stackable"))
 
 (defn steps-stackable []
-  [sa/steps {:ash [:tablet-stackable]}
-   [sa/step "Step 1"]
-   [sa/step "Step 2"]
-   [sa/step "Step 3"]])
+  [se/steps {:ash [:tablet-stackable]}
+   [se/step "Step 1"]
+   [se/step "Step 2"]
+   [se/step "Step 3"]])
 
 (defcard-doc
   (mkdn-pprint-source steps-stackable))
@@ -300,10 +267,10 @@
   (list-steps-keys "fluid"))
 
 (defn steps-fluid []
-  [sa/steps {:ash [:fluid]}
-   [sa/step "Step 1"]
-   [sa/step "Step 2"]
-   [sa/step "Step 3"]])
+  [se/steps {:ash [:fluid]}
+   [se/step "Step 1"]
+   [se/step "Step 2"]
+   [se/step "Step 3"]])
 
 (defcard-doc
   (mkdn-pprint-source steps-fluid))
@@ -321,12 +288,12 @@
 
 (defn steps-attached []
   [:div
-   [sa/steps {:ash [:attached]}
-    [sa/step "Step 1"]
-    [sa/step "Step 2"]
-    [sa/step "Step 3"]]
+   [se/steps {:ash [:attached]}
+    [se/step "Step 1"]
+    [se/step "Step 2"]
+    [se/step "Step 3"]]
 
-   [sa/segment {:ash [:attached]}
+   [se/segment {:ash [:attached]}
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -335,10 +302,10 @@
    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
    culpa qui officia deserunt mollit anim id est laborum."]
 
-   [sa/steps {:ash [:bottom-attached]}
-    [sa/step "Step 1"]
-    [sa/step "Step 2"]
-    [sa/step "Step 3"]]
+   [se/steps {:ash [:bottom-attached]}
+    [se/step "Step 1"]
+    [se/step "Step 2"]
+    [se/step "Step 3"]]
    ])
 
 (defcard-doc
@@ -357,9 +324,9 @@
 
 (defn steps-divided-two []
   [:div
-   [sa/steps {:ash [:two]}
-    [sa/step "Step 1"]
-    [sa/step "Step 2"]]])
+   [se/steps {:ash [:two]}
+    [se/step "Step 1"]
+    [se/step "Step 2"]]])
 
 (defn steps-divided [n]
   (let [divide ({2 :two
@@ -370,10 +337,10 @@
                  7 :seven
                  8 :eight} n)]
     [:div [:br]
-     [sa/steps {:ash [divide]}
+     [se/steps {:ash [divide]}
       (for [n' (range 1 (+ 1 n))]
         ^{:key n'}
-        [sa/step (str "Step " n')])]]))
+        [se/step (str "Step " n')])]]))
 
 (defcard-doc
   (mkdn-pprint-source steps-divided-two))
@@ -395,17 +362,17 @@
 
 (defn steps-size-mini []
   [:div
-   [sa/steps {:ash [:mini]}
-    [sa/step "mini"]
-    [sa/step "foo"]
-    [sa/step "bar"]]])
+   [se/steps {:ash [:mini]}
+    [se/step "mini"]
+    [se/step "foo"]
+    [se/step "bar"]]])
 
 (defn steps-size [size]
   [:div [:br]
-   [sa/steps {:ash [size]}
-    [sa/step (name size)]
-    [sa/step "foo"]
-    [sa/step "bar"]]])
+   [se/steps {:ash [size]}
+    [se/step (name size)]
+    [se/step "foo"]
+    [se/step "bar"]]])
 
 (defcard-doc
   (mkdn-pprint-source steps-size-mini))
@@ -416,10 +383,10 @@
    [steps-size :tiny]
    [steps-size :small]
    [:div [:br]
-    [sa/steps
-     [sa/step "default"]
-     [sa/step "foo"]
-     [sa/step "bar"]]]
+    [se/steps
+     [se/step "default"]
+     [se/step "foo"]
+     [se/step "bar"]]]
    [steps-size :large]
    [steps-size :big]
    [steps-size :huge]

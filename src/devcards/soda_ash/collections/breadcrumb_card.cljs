@@ -6,33 +6,19 @@
   (:require
    [devcards.core]
    [reagent.core]
-   [soda-ash.core :as sa]
+   [soda-ash.element :as se]
+   [soda-ash.collection :as sc]
+   [soda-ash.content :as sco]
    [soda-ash.helpers :as h]
-   [soda-ash.collections.breadcrumb :as breadcrumb]
-   [soda-ash.collections.breadcrumb-section :as breadcrumb-section]))
+   [soda-ash.collections.breadcrumb :as breadcrumb]))
 
 
 (def list-keys
-  (h/list-keys breadcrumb/groups))
+  (h/list-keys breadcrumb/variations))
 
 
 (defcard-doc
-  "# SUMMARY"
-  "## Types"
-  "breadcrumb"
-
-  "## Variations (*ash*)"
-  "### Size"
-  (list-keys "size")
-
-  "## Content"
-  "### divider"
-  "Use .divider class. Or use sa/icon with :divider in ash array"
-  "### section"
-  "Use sa/breadcrumb-section"
-  "### link"
-  "Use sa/breadcrumb-section-link"
-  )
+  (h/devcard-docs breadcrumb/opts))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -42,19 +28,19 @@
   "
 ---
 # Types"
-  "breadcrumb")
+  (h/list-types breadcrumb/opts))
 
 (defn type-default []
-  [sa/breadcrumb
-   [sa/breadcrumb-section
+  [sc/breadcrumb
+   [sco/section
     "Home"]
-   [:div.divider "/"]
+   [sco/divider "/"]
 
-   [sa/breadcrumb-section
+   [sco/section
     "Store"]
-   [:div.divider "/"]
+   [sco/divider "/"]
 
-   [sa/breadcrumb-section
+   [sco/section
     {:soda :active}
     "T-Shirt"]
    ])
@@ -83,31 +69,31 @@
   (list-keys "size"))
 
 (defn variation-size-mini []
-  [sa/breadcrumb {:ash [:mini]}
-   [sa/breadcrumb-section
+  [sc/breadcrumb {:ash [:mini]}
+   [sco/section
     "mini"]
-   [:div.divider "/"]
+   [sco/divider "/"]
 
-   [sa/breadcrumb-section
+   [sco/section
     "Store"]
-   [:div.divider "/"]
+   [sco/divider "/"]
 
-   [sa/breadcrumb-section
+   [sco/section
     {:soda :active}
     "T-Shirt"]])
 
 (defn variation-size [size]
   [:div
-   [sa/breadcrumb {:ash [size]}
-    [sa/breadcrumb-section
+   [sc/breadcrumb {:ash [size]}
+   [sco/section
      (name size)]
-    [:div.divider "/"]
+    [sco/divider "/"]
 
-    [sa/breadcrumb-section
+   [sco/section
      "Store"]
-    [:div.divider "/"]
+    [sco/divider "/"]
 
-    [sa/breadcrumb-section
+   [sco/section
      {:soda :active}
      "T-Shirt"]]])
 
@@ -121,16 +107,16 @@
    [variation-size :small]
 
    [:div
-    [sa/breadcrumb
-     [sa/breadcrumb-section
+    [sc/breadcrumb
+   [sco/section
       "default"]
-     [:div.divider "/"]
+     [sco/divider "/"]
 
-     [sa/breadcrumb-section
+   [sco/section
       "Store"]
-     [:div.divider "/"]
+     [sco/divider "/"]
 
-     [sa/breadcrumb-section
+   [sco/section
       {:soda :active}
       "T-Shirt"]]]
 
@@ -154,20 +140,19 @@
 ;; divider
 
 (defcard-doc
-  "## divider"
-  "Use .divider class")
+  "## divider")
 
 (defn content-divider []
-  [sa/breadcrumb
-   [sa/breadcrumb-section
+  [sc/breadcrumb
+   [sco/section
     "Home"]
-   [:div.divider "/"] ;; <-- .divider
+   [sco/divider "/"]
 
-   [sa/breadcrumb-section
+   [sco/section
     "Store"]
-   [:div.divider "/"]
+   [sco/divider "/"]
 
-   [sa/breadcrumb-section
+   [sco/section
     {:soda :active}
     "T-Shirt"]
    ])
@@ -180,18 +165,18 @@
 
 
 (defn content-divider-icon []
-  [sa/breadcrumb
-   [sa/breadcrumb-section
+  [sc/breadcrumb
+   [sco/section
     "Home"]
-   [sa/icon-angle-right
-    {:ash [:divider]}] ;; <-- :divider
-
-   [sa/breadcrumb-section
-    "Store"]
-   [sa/icon-angle-right
+   [se/icon-angle-right
     {:ash [:divider]}]
 
-   [sa/breadcrumb-section
+   [sco/section
+    "Store"]
+   [se/icon-angle-right
+    {:ash [:divider]}]
+
+   [sco/section
     {:soda :active}
     "T-Shirt"]
    ])
@@ -207,22 +192,21 @@
 ;; section
 
 (defcard-doc
-  "## section"
-  "Use sa/breadcrumb-section")
+  "## section")
 
 (defn content-section []
-  [sa/breadcrumb
-   [sa/breadcrumb-section ;; <-- breadcrumb-section
+  [sc/breadcrumb
+   [sco/section
     "Home"]
-   [sa/icon-angle-right
+   [se/icon-angle-right
     {:ash [:divider]}]
 
-   [sa/breadcrumb-section
+   [sco/section
     "Store"]
-   [sa/icon-angle-right
+   [se/icon-angle-right
     {:ash [:divider]}]
 
-   [sa/breadcrumb-section
+   [sco/section
     {:soda :active} ;; <-- note, can be :active
     "T-Shirt"]
    ])
@@ -238,22 +222,21 @@
 ;; section
 
 (defcard-doc
-  "## link"
-  "Use sa/breadcrumb-section-link")
+  "## link")
 
 (defn content-link []
-  [sa/breadcrumb
-    [sa/breadcrumb-section-link
+  [sc/breadcrumb
+   [sco/section-link
      "Home"]
-   [sa/icon-angle-right
+   [se/icon-angle-right
     {:ash [:divider]}]
 
-   [sa/breadcrumb-section-link
+   [sco/section-link
     "Store"]
-   [sa/icon-angle-right
+   [se/icon-angle-right
     {:ash [:divider]}]
 
-   [sa/breadcrumb-section-link
+   [sco/section-link
     {:soda :active} ;; <-- note, can be :active
     "T-Shirt"]
    ])

@@ -6,27 +6,18 @@
   (:require
    [devcards.core]
    [reagent.core]
-   [soda-ash.core :as sa]
+   [soda-ash.element :as se]
+   [soda-ash.content :as sco]
    [soda-ash.helpers :as h]
    [soda-ash.elements.reveal :as reveal]))
 
 
 (def list-keys
-  (h/list-keys reveal/groups))
+  (h/list-keys reveal/variations))
 
 
 (defcard-doc
-  "# SUMMARY"
-  "## Types"
-  (h/list-types reveal/types "reveal" false)
-
-  "## States (*soda*)"
-  (list-keys "states")
-
-  "## Variations (*ash*)"
-  "### Instant"
-  (list-keys "instant")
-  )
+  (h/devcard-docs reveal/opts))
 
 
 
@@ -37,16 +28,15 @@
   "
 ---
 # Types"
-  (h/list-types reveal/types "reveal" false)
-  )
+  (h/list-types reveal/opts))
 
 (defn type-fade []
-  [sa/reveal-fade
-   [:div.visible.content
-    [sa/image {:src "/images/square-image.png"
+  [se/reveal-fade
+   [sco/content-visible
+    [se/image {:src "/images/square-image.png"
                :ash [:small]}]]
-   [:div.hidden.content
-    [sa/image {:src "/images/gadfly.png"
+   [sco/content-hidden
+    [se/image {:src "/images/gadfly.png"
                :ash [:small]}]]
    ])
 
@@ -58,12 +48,12 @@
 
 
 (defn type-move []
-  [sa/reveal-move
-   [:div.visible.content
-    [sa/image {:src "/images/square-image.png"
+  [se/reveal-move
+   [sco/content-visible
+    [se/image {:src "/images/square-image.png"
                :ash [:small]}]]
-   [:div.hidden.content
-    [sa/image {:src "/images/gadfly.png"
+   [sco/content-hidden
+    [se/image {:src "/images/gadfly.png"
                :ash [:small]}]]
    ])
 
@@ -75,12 +65,12 @@
 
 
 (defn type-move-right []
-  [sa/reveal-move-right
-   [:div.visible.content
-    [sa/image {:src "/images/square-image.png"
+  [se/reveal-move-right
+   [sco/content-visible
+    [se/image {:src "/images/square-image.png"
                :ash [:small]}]]
-   [:div.hidden.content
-    [sa/image {:src "/images/gadfly.png"
+   [sco/content-hidden
+    [se/image {:src "/images/gadfly.png"
                :ash [:small]}]]
    ])
 
@@ -92,12 +82,12 @@
 
 
 (defn type-move-up []
-  [sa/reveal-move-up
-   [:div.visible.content
-    [sa/image {:src "/images/square-image.png"
+  [se/reveal-move-up
+   [sco/content-visible
+    [se/image {:src "/images/square-image.png"
                :ash [:small]}]]
-   [:div.hidden.content
-    [sa/image {:src "/images/gadfly.png"
+   [sco/content-hidden
+    [se/image {:src "/images/gadfly.png"
                :ash [:small]}]]
    ])
 
@@ -109,12 +99,12 @@
 
 
 (defn type-move-down []
-  [sa/reveal-move-down
-   [:div.visible.content
-    [sa/image {:src "/images/square-image.png"
+  [se/reveal-move-down
+   [sco/content-visible
+    [se/image {:src "/images/square-image.png"
                :ash [:small]}]]
-   [:div.hidden.content
-    [sa/image {:src "/images/gadfly.png"
+   [sco/content-hidden
+    [se/image {:src "/images/gadfly.png"
                :ash [:small]}]]
    ])
 
@@ -126,12 +116,12 @@
 
 
 (defn type-rotate []
-  [sa/reveal-rotate
-   [:div.visible.content
-    [sa/image {:src "/images/square-image.png"
+  [se/reveal-rotate
+   [sco/content-visible
+    [se/image {:src "/images/square-image.png"
                :ash [:small]}]]
-   [:div.hidden.content
-    [sa/image {:src "/images/gadfly.png"
+   [sco/content-hidden
+    [se/image {:src "/images/gadfly.png"
                :ash [:small]}]]
    ])
 
@@ -143,12 +133,12 @@
 
 
 (defn type-rotate-left []
-  [sa/reveal-rotate-left
-   [:div.visible.content
-    [sa/image {:src "/images/square-image.png"
+  [se/reveal-rotate-left
+   [sco/content-visible
+    [se/image {:src "/images/square-image.png"
                :ash [:small]}]]
-   [:div.hidden.content
-    [sa/image {:src "/images/gadfly.png"
+   [sco/content-hidden
+    [se/image {:src "/images/gadfly.png"
                :ash [:small]}]]
    ])
 
@@ -170,12 +160,12 @@
   (list-keys "states"))
 
 (defn state-active []
-  [sa/reveal-rotate-left {:soda :active}
-   [:div.visible.content
-    [sa/image {:src "/images/square-image.png"
+  [se/reveal-rotate-left {:soda :active}
+   [sco/content-visible
+    [se/image {:src "/images/square-image.png"
                :ash [:small]}]]
-   [:div.hidden.content
-    [sa/image {:src "/images/gadfly.png"
+   [sco/content-hidden
+    [se/image {:src "/images/gadfly.png"
                :ash [:small]}]]
    ])
 
@@ -187,12 +177,12 @@
 
 
 (defn state-disabled []
-  [sa/reveal-rotate-left {:soda :disabled}
-   [:div.visible.content
-    [sa/image {:src "/images/square-image.png"
+  [se/reveal-rotate-left {:soda :disabled}
+   [sco/content-visible
+    [se/image {:src "/images/square-image.png"
                :ash [:small]}]]
-   [:div.hidden.content
-    [sa/image {:src "/images/gadfly.png"
+   [sco/content-hidden
+    [se/image {:src "/images/gadfly.png"
                :ash [:small]}]]
    ])
 
@@ -218,12 +208,12 @@
   (list-keys "instant"))
 
 (defn variation-instant []
-  [sa/reveal-move {:ash [:instant]}
-   [:div.visible.content
-    [sa/image {:src "/images/square-image.png"
+  [se/reveal-move {:ash [:instant]}
+   [sco/content-visible
+    [se/image {:src "/images/square-image.png"
                :ash [:small]}]]
-   [:div.hidden.content
-    [sa/image {:src "/images/gadfly.png"
+   [sco/content-hidden
+    [se/image {:src "/images/gadfly.png"
                :ash [:small]}]]
    ])
 

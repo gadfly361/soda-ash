@@ -1,4 +1,4 @@
-(ns soda-ash.collections.breadcrumb-section
+(ns soda-ash.contents.section
   (:require-macros
    [soda-ash.macros :refer [defcomp]])
   (:require
@@ -11,9 +11,13 @@
          m))
 
 
-(def groups
-  [;; States
-   (create-group
+(def types
+  [:default
+   :link])
+
+
+(def states
+  [(create-group
     {:group-name   "states"
      :group-vector (vector
                     :active)})
@@ -24,7 +28,8 @@
   {:tag     :div
    :ui?     false
    :ui-name "section"
-   :groups  groups})
+   :types types
+   :states states})
 
 
 (defcomp "default" opts)

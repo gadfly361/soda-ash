@@ -12,13 +12,13 @@
 
 
 (def types
-  [:ordered
+  [:default
+   :ordered
    :vertical])
 
 
-(def groups
-  [;; Variations
-   (create-group
+(def variations
+  [(create-group
     {:group-name   "stackable"
      :group-vector (vector
                     :tablet-stackable)})
@@ -60,10 +60,11 @@
 
 
 (def opts
-  {:tag     :div
-   :ui?     true
-   :ui-name "steps"
-   :groups  groups})
+  {:tag        :div
+   :ui?        true
+   :ui-name    "steps"
+   :types      types
+   :variations variations})
 
 
 (defcomp "default" opts)
