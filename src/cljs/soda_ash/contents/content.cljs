@@ -8,6 +8,7 @@
 
 (def types
   [:default
+   :extra
    :hidden
    :visible])
 
@@ -20,5 +21,6 @@
 
 
 (defcomp "default" opts)
+(defcomp "extra" (assoc opts :type :extra))
 (defcomp "hidden" (assoc opts :type :hidden))
 (defcomp "visible" (assoc opts :type :visible))

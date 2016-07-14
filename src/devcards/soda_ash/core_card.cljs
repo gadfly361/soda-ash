@@ -25,6 +25,7 @@
 
    ;; views
    [soda-ash.views.ad-card]
+   [soda-ash.views.card-card]
    ))
 
 

@@ -4,6 +4,8 @@
   (:require
    [soda-ash.helpers :as h]
    [soda-ash.views.ad :as ad]
+   [soda-ash.views.card :as card]
+   [soda-ash.views.cards :as cards]
    ))
 
 
@@ -31,3 +33,13 @@
 (defc "ad" "panorama")
 (defc "ad" "netboard")
 (defc "ad" "half-page")
+
+
+;; card
+
+(defc "card" nil)
+
+
+;; cards
+
+(defc "cards" nil)

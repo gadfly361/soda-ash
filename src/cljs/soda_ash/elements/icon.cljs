@@ -546,6 +546,8 @@
 
    ;; for message
    :close
+   ;; for card
+   :like
    ])
 
 
@@ -1178,3 +1180,5 @@
 (defcomp "youtube-square" (assoc opts :type :youtube-square))
 ;; For message
 (defcomp "close" (assoc opts :type :close))
+;; For card
+(defcomp "like" (assoc opts :type :like))

@@ -863,6 +863,8 @@
 (defc "icon" "youtube-square")
 ;; for message
 (defc "icon" "close")
+;; for card
+(defc "icon" "like")
 
 
 ;; icons

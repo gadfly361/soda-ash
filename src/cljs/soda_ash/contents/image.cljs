@@ -1,8 +1,9 @@
-(ns soda-ash.contents.header
+(ns soda-ash.contents.image
   (:require-macros
    [soda-ash.macros :refer [defcomp]])
   (:require
    [soda-ash.template :as t]))
+
 
 
 (def types
@@ -11,10 +12,10 @@
 
 
 (def opts
-  {:tag     :div
-   :ui?     false
-   :ui-name "header"
-   :types types})
+  {:tag        :div
+   :ui?        false
+   :ui-name    "image"
+   :types      types})
 
 
 (defcomp "default" opts)
