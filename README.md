@@ -2,9 +2,7 @@
 
 [![Build Status](https://travis-ci.org/gadfly361/soda-ash.svg?branch=master)](https://travis-ci.org/gadfly361/soda-ash)
 
-**DISCLAIMER 1** Currently, soda-ash only covers Semantic UI's Elements.
-
-**DISCLAIMER 2** Development is currently on hold. While I am really excited about this project, I don't forsee being able to work on it again until ~May 2016. At which point, I fully anticipate implementing breaking changes, sorry in advance.
+**WARNING** I am currently working on a complete re-write of soda-ash. I strongly urge you to *not* depend on this library yet. Also, the current release only covers Semantic UI's Elements.
 
 Soda-ash is an interface between clojurescript's [reagent](https://github.com/reagent-project/reagent) and [Semantic UI](http://semantic-ui.com/).
 
@@ -31,7 +29,8 @@ is [@gadfly361](https://twitter.com/gadfly361)).
 Put the following in the `:dependencies` vector of your *project.clj*
 
 ```
-[soda-ash "0.1.0-beta"]
+[soda-ash "0.1.0-beta"
+  :exclusions [cljsjs/react-with-addons]]
 ```
 
 Then require soda-ash in your namespace.
