@@ -414,6 +414,11 @@
 ;; Variations
 
 (defcard-doc
+  "
+---
+# Variations")
+
+(defcard-doc
   "## fluid"
   (list-keys "fluid"))
 

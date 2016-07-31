@@ -30,17 +30,16 @@
    :sub])
 
 
-(def variations
-  [;; States
-   (create-group
+(def states
+  [(create-group
     {:group-name   "states"
      :group-vector (vector
-                    :disabled)})
+                    :disabled)})])
 
-   ;; Variations
 
-   ;; Note: this is a type, but makes more sense to implement as :ash
-   (create-group
+(def variations
+  ;; Note: this is a type, but makes more sense to implement as :ash
+  [(create-group
     {:group-name   "icon"
      :group-vector (vector
                     :icon)})
@@ -71,9 +70,9 @@
    (create-group
     {:group-name   "text alignment"
      :group-vector (vector
-                    :right-aligned
-                    :center-aligned
                     :left-aligned
+                    :center-aligned
+                    :right-aligned
                     :justified)})
 
    (create-group
@@ -104,6 +103,7 @@
    :ui?        true
    :ui-name    "header"
    :types      types
+   :states     states
    :variations variations})
 
 

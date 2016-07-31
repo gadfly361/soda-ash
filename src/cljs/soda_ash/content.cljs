@@ -12,11 +12,14 @@
    [soda-ash.contents.header :as header]
    [soda-ash.contents.image :as image]
    [soda-ash.contents.item :as item]
+   [soda-ash.contents.label :as label]
    [soda-ash.contents.s-meta :as s-meta]
    [soda-ash.contents.section :as section]
    [soda-ash.contents.s-or :as s-or]
+   [soda-ash.contents.statistic :as statistic]
    [soda-ash.contents.sub-header :as sub-header]
    [soda-ash.contents.title :as title]
+   [soda-ash.contents.value :as value]
    ))
 
 
@@ -67,6 +70,11 @@
 (defc "item" "link")
 
 
+;; label
+
+(defc "label" nil)
+
+
 ;; meta
 
 (defc "s-meta" nil)
@@ -88,6 +96,16 @@
 (defc "s-or" nil)
 
 
+;; statistic
+
+(defc "statistic" nil)
+
+
 ;; title
 
 (defc "title" nil)
+
+
+;; value
+
+(defc "value" nil)

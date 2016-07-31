@@ -624,7 +624,9 @@
   "buttons")
 
 (defn type-buttons []
-  [se/button "buttons"])
+  [se/buttons
+   [se/button "button 1"]
+   [se/button "button 2"]])
 
 (defcard-doc
   (mkdn-pprint-source type-buttons))
