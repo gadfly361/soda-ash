@@ -4,6 +4,9 @@
   (:require
    [soda-ash.helpers :as h]
 
+   [soda-ash.contents.actions :as actions]
+   [soda-ash.contents.author :as author]
+   [soda-ash.contents.avatar :as avatar]
    [soda-ash.contents.card :as card]
    [soda-ash.contents.content :as content]
    [soda-ash.contents.description :as description]
@@ -14,6 +17,7 @@
    [soda-ash.contents.image :as image]
    [soda-ash.contents.item :as item]
    [soda-ash.contents.label :as label]
+   [soda-ash.contents.s-comment :as s-comment]
    [soda-ash.contents.s-meta :as s-meta]
    [soda-ash.contents.section :as section]
    [soda-ash.contents.s-or :as s-or]
@@ -24,10 +28,28 @@
    ))
 
 
+;; actions
+
+(defc "actions" nil)
+
+
+;; author
+
+(defc "author" nil)
+(defc "author" "link")
+
+
+;; avatar
+
+(defc "avatar" nil)
+(defc "avatar" "link")
+
+
 ;; card
 
 (defc "card" nil)
 (defc "card" "link")
+
 
 ;; content
 
@@ -79,6 +101,11 @@
 ;; label
 
 (defc "label" nil)
+
+
+;; s-comment
+
+(defc "s-comment" nil)
 
 
 ;; meta

@@ -107,11 +107,11 @@
    :variations variations})
 
 
-(defcomp "h1" (assoc opts :type :h1 :tag :h1))
-(defcomp "h2" (assoc opts :type :h2 :tag :h2))
-(defcomp "h3" (assoc opts :type :h3 :tag :h3))
-(defcomp "h4" (assoc opts :type :h4 :tag :h4))
-(defcomp "h5" (assoc opts :type :h5 :tag :h5))
+(defcomp "h1" (assoc opts :tag :h1))
+(defcomp "h2" (assoc opts :tag :h2))
+(defcomp "h3" (assoc opts :tag :h3))
+(defcomp "h4" (assoc opts :tag :h4))
+(defcomp "h5" (assoc opts :tag :h5))
 
 (defcomp "huge" (assoc opts :type :huge))
 (defcomp "large" (assoc opts :type :large))
