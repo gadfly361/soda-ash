@@ -95,7 +95,7 @@
    [sco/label (name color)]])
 
 (defcard-doc
-  (mkdn-pprint-source variation-colored))
+  (mkdn-pprint-source variation-colored-red))
 
 (defcard-rg
   [:div
@@ -199,7 +199,7 @@
    [sco/label (name size)]])
 
 (defcard-doc
-  (mkdn-pprint-source variation-size))
+  (mkdn-pprint-source variation-size-mini))
 
 (defcard-rg
   [:div

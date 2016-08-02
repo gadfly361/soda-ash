@@ -5,6 +5,11 @@
    [soda-ash.template :as t]))
 
 
+(defn create-group [m]
+  (merge {:ui-name   "content"
+          :only-one? true}
+         m))
+
 
 (def types
   [:default
@@ -13,11 +18,22 @@
    :visible])
 
 
+(def variations
+  [;; for items
+   (create-group
+    {:group-name   "aligned"
+     :group-vector (vector
+                    ;;
+                    :middle-aligned
+                    :bottom-aligned)})])
+
+
 (def opts
   {:tag     :div
    :ui?     false
    :ui-name "content"
-   :types types})
+   :types types
+   :variations variations})
 
 
 (defcomp "default" opts)

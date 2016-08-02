@@ -6,6 +6,7 @@
    [soda-ash.views.ad :as ad]
    [soda-ash.views.card :as card]
    [soda-ash.views.cards :as cards]
+   [soda-ash.views.items :as items]
    [soda-ash.views.statistic :as statistic]
    [soda-ash.views.statistics :as statistics]
    ))
@@ -45,6 +46,11 @@
 ;; cards
 
 (defc "cards" nil)
+
+
+;; items
+
+(defc "items" nil)
 
 
 ;; statistic

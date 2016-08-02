@@ -9,6 +9,7 @@
    [soda-ash.contents.description :as description]
    [soda-ash.contents.detail :as detail]
    [soda-ash.contents.divider :as divider]
+   [soda-ash.contents.extra :as extra]
    [soda-ash.contents.header :as header]
    [soda-ash.contents.image :as image]
    [soda-ash.contents.item :as item]
@@ -50,6 +51,11 @@
 ;; divider
 
 (defc "divider" nil)
+
+
+;; extra
+
+(defc "extra" nil)
 
 
 ;; header
