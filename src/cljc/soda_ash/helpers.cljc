@@ -71,6 +71,7 @@
                   variations-docs)))))
 
 
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Class
 
@@ -107,6 +108,7 @@
     (keyword (name k))))
 
 
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Ash
 
@@ -118,7 +120,7 @@
           ash))
 
 
-(defn ash-intersection-error-msg [{:keys [ui-name
+(defn group-error-msg [{:keys [ui-name
                                           group-name
                                           group-vector
                                           only-one?]
@@ -149,29 +151,55 @@
            (> overlap-count 1))
       #? (:clj
           (throw (IllegalArgumentException.
-                  (ash-intersection-error-msg group overlap)))
+                  (group-error-msg group overlap)))
           :cljs
           (condp = (:issues-as @config/options)
             :warnings (js/console.warn
-                       (ash-intersection-error-msg group overlap))
+                       (group-error-msg group overlap))
             :errors   (js/Error.
-                       (ash-intersection-error-msg group overlap))
+                       (group-error-msg group overlap))
             nil))
 
       :else overlap)))
 
 
+(defn missing-error-msg [ui-name
+                         missing-keys]
+  (str "**[Soda ash] When using `"
+       ui-name
+       "`, the following keys are not recognized: "
+       (string/join ", " (sort missing-keys))
+       "**"))
+
+
 (defn ash->intersections [groups
                           ash]
-  (let [intersections (doall
-                       (for [group groups]
-                         (ash-set->intersection group (ash->set ash))))]
-    (remove empty? intersections)))
+  (let [intersections (->> (doall
+                            (for [group groups]
+                              (ash-set->intersection group (ash->set ash))))
+                           (remove empty?)
+                           (apply set/union))
+        ash-set       (into #{} ash)
+        ui-name       (-> groups first :ui-name)
+        missing-keys  (set/difference ash-set intersections)
+        ]
+    (if (= ash-set intersections)
+      intersections
+      ;; else
+      #? (:clj
+          (throw (IllegalArgumentException.
+                  (missing-error-msg ui-name missing-keys)))
+          :cljs
+          (condp = (:issues-as @config/options)
+            :warnings (js/console.warn
+                       (missing-error-msg ui-name missing-keys))
+            :errors   (js/Error.
+                       (missing-error-msg ui-name missing-keys))
+            nil)))))
 
 
 (defn intersections->class [intersections]
   (some->> intersections
-           (apply set/union)
            (reduce (fn [coll k]
                      (let [class (keyword->class k)]
                        (conj coll class)))

@@ -111,7 +111,7 @@
   (list-keys "horizontal"))
 
 (defn variation-horizontal []
-  [se/segment {:ash [:horizontal]}
+  [se/segment
    [sv/statistic {:ash [:horizontal]}
     [sco/value "5,550"]
     [sco/label "horizontal"]

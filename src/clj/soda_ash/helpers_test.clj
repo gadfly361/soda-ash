@@ -121,7 +121,7 @@
 
           nil)
 
-         []))
+         #{}))
 
 
   (is (= (target/ash->intersections
@@ -132,18 +132,19 @@
 
           [])
 
-         []))
+         #{}))
 
 
-  (is (= (target/ash->intersections
-          [{:ui-name      "button"
-            :group-name   "size"
-            :group-vector [:small :medium :large]
-            :only-one?    true}]
+  (is (thrown-with-msg?
+       IllegalArgumentException
+       #"\*\*\[Soda ash\] When using `button`, the following keys are not recognized: :foo\*\*"
+       (target/ash->intersections
+        [{:ui-name      "button"
+          :group-name   "size"
+          :group-vector [:small :medium :large]
+          :only-one?    true}]
 
-          [:foo])
-
-         []))
+        [:foo])))
 
 
   (is (= (target/ash->intersections
@@ -159,7 +160,7 @@
 
           [:small :red])
 
-         [#{:small} #{:red}]))
+         #{:small :red}))
 
 
   (is (thrown-with-msg?
@@ -175,7 +176,7 @@
 
 
 (deftest intersections->class
-  (is (= (target/intersections->class [#{:small} #{:red}])
+  (is (= (target/intersections->class #{:small :red})
          "red small")))
 
 
@@ -192,15 +193,16 @@
       "Should return nil if no class")
 
 
-  (is (nil? (target/ash->class
-             [{:ui-name      "button"
-               :group-name   "size"
-               :group-vector [:small :medium :large]
-               :only-one?    true}]
+  (is (thrown-with-msg?
+       IllegalArgumentException
+       #"\*\*\[Soda ash\] When using `button`, the following keys are not recognized: :bar, :foo\*\*"
+       (target/ash->class
+        [{:ui-name      "button"
+          :group-name   "size"
+          :group-vector [:small :medium :large]
+          :only-one?    true}]
 
-             [:foo]))
-      ;; TODO: Maybe should throw warning if this happens
-      "Should return nil if ash doesn't match with anything")
+        [:foo :bar])))
 
 
   (is (= (target/ash->class
