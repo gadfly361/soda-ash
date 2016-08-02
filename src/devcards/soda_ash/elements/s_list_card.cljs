@@ -122,7 +122,8 @@
          [type-link-item local-ratom :team]]))))
 
 (defcard-doc
-  (mkdn-pprint-source type-link-item)
+  (mkdn-pprint-source type-link-item))
+(defcard-doc
   (mkdn-pprint-source type-link))
 
 (defcard-rg
@@ -141,7 +142,8 @@
          [type-link-item local-ratom :team]]))))
 
 (defcard-doc
-  (mkdn-pprint-source type-link-item)
+  (mkdn-pprint-source type-link-item))
+(defcard-doc
   (mkdn-pprint-source type-bulleted-link))
 
 (defcard-rg

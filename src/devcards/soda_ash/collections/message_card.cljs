@@ -92,9 +92,12 @@
    [:p "Try it out!"]])
 
 (defcard-doc
-  (mkdn-pprint-source close-render)
-  (mkdn-pprint-source close-did-mount)
-  (mkdn-pprint-source close)
+  (mkdn-pprint-source close-render))
+(defcard-doc
+  (mkdn-pprint-source close-did-mount))
+(defcard-doc
+  (mkdn-pprint-source close))
+(defcard-doc
   (mkdn-pprint-source type-dismissable))
 
 (defcard-rg
