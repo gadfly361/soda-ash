@@ -1,4 +1,4 @@
-(ns soda-ash.contents.extra
+(ns soda-ash.contents.summary
   (:require-macros
    [soda-ash.macros :refer [defcomp]])
   (:require
@@ -7,18 +7,14 @@
 
 
 (def types
-  [:default
-   :images
-   :text])
+  [:default])
 
 
 (def opts
   {:tag     :div
    :ui?     false
-   :ui-name "extra"
+   :ui-name "summary"
    :types   types})
 
 
 (defcomp "default" opts)
-(defcomp "images" (assoc opts :type "images"))
-(defcomp "text" (assoc opts :type "text"))

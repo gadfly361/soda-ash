@@ -1,4 +1,4 @@
-(ns soda-ash.views.items
+(ns soda-ash.views.feed
   (:require-macros
    [soda-ash.macros :refer [defcomp]])
   (:require
@@ -6,7 +6,7 @@
 
 
 (defn create-group [m]
-  (merge {:ui-name   "items"
+  (merge {:ui-name   "feed"
           :only-one? true}
          m))
 
@@ -17,26 +17,17 @@
 
 (def variations
   [(create-group
-    {:group-name   "divided"
+    {:group-name   "size"
      :group-vector (vector
-                    :divided)})
-
-   (create-group
-    {:group-name   "relaxed"
-     :group-vector (vector
-                    :relaxed
-                    :very-relaxed)})
-
-   (create-group
-    {:group-name   "link"
-     :group-vector (vector
-                    :link)})])
+                    :small
+                    :medium ;; doesn't actually exist
+                    :large)})])
 
 
 (def opts
   {:tag        :div
    :ui?        true
-   :ui-name    "items"
+   :ui-name    "feed"
    :types      types
    :variations variations})
 

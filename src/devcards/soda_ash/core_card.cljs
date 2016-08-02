@@ -27,6 +27,7 @@
    [soda-ash.views.ad-card]
    [soda-ash.views.card-card]
    [soda-ash.views.comments-card]
+   [soda-ash.views.feed-card]
    [soda-ash.views.items-card]
    [soda-ash.views.statistic-card]
    ))

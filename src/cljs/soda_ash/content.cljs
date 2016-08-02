@@ -9,9 +9,11 @@
    [soda-ash.contents.avatar :as avatar]
    [soda-ash.contents.card :as card]
    [soda-ash.contents.content :as content]
+   [soda-ash.contents.date :as date]
    [soda-ash.contents.description :as description]
    [soda-ash.contents.detail :as detail]
    [soda-ash.contents.divider :as divider]
+   [soda-ash.contents.event :as event]
    [soda-ash.contents.extra :as extra]
    [soda-ash.contents.header :as header]
    [soda-ash.contents.image :as image]
@@ -23,6 +25,7 @@
    [soda-ash.contents.s-or :as s-or]
    [soda-ash.contents.statistic :as statistic]
    [soda-ash.contents.sub-header :as sub-header]
+   [soda-ash.contents.summary :as summary]
    [soda-ash.contents.title :as title]
    [soda-ash.contents.value :as value]
    ))
@@ -59,6 +62,12 @@
 (defc "content" "visible")
 
 
+;; date
+
+(defc "date" nil)
+(defc "date" "link")
+
+
 ;; description
 
 (defc "description" nil)
@@ -75,9 +84,16 @@
 (defc "divider" nil)
 
 
+;; event
+
+(defc "event" nil)
+
+
 ;; extra
 
 (defc "extra" nil)
+(defc "extra" "images")
+(defc "extra" "text")
 
 
 ;; header
@@ -122,6 +138,11 @@
 ;; sub-header
 
 (defc "sub-header" nil)
+
+
+;; summary
+
+(defc "summary" nil)
 
 
 ;; s-or

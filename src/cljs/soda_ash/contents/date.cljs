@@ -1,4 +1,4 @@
-(ns soda-ash.contents.extra
+(ns soda-ash.contents.date
   (:require-macros
    [soda-ash.macros :refer [defcomp]])
   (:require
@@ -8,17 +8,15 @@
 
 (def types
   [:default
-   :images
-   :text])
+   :link])
 
 
 (def opts
   {:tag     :div
    :ui?     false
-   :ui-name "extra"
+   :ui-name "date"
    :types   types})
 
 
 (defcomp "default" opts)
-(defcomp "images" (assoc opts :type "images"))
-(defcomp "text" (assoc opts :type "text"))
+(defcomp "link" (assoc opts :tag :a))
