@@ -8,6 +8,7 @@
    [soda-ash.contents.author :as author]
    [soda-ash.contents.avatar :as avatar]
    [soda-ash.contents.card :as card]
+   [soda-ash.contents.column :as column]
    [soda-ash.contents.content :as content]
    [soda-ash.contents.date :as date]
    [soda-ash.contents.description :as description]
