@@ -118,13 +118,13 @@
                     :circular)})
 
    (create-group
-    {:group-name   "vertically attached"
+    {:group-name   "vertically-attached"
      :group-vector (vector
                     :top-attached
                     :bottom-attached)})
 
    (create-group
-    {:group-name   "horizontally attached"
+    {:group-name   "horizontally-attached"
      :group-vector (vector
                     :left-attached
                     :right-attached)})

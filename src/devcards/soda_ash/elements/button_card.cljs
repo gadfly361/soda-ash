@@ -13,22 +13,27 @@
    [soda-ash.elements.buttons :as buttons]))
 
 
-(def list-keys
-  (h/list-keys button/variations))
 
-(def list-buttons-keys
-  (h/list-keys buttons/variations))
+(def list-state-keys
+  (h/list-keys button/states))
+
+(def list-variation-keys
+  (h/list-keys button/variations))
 
 
 (defcard-doc
   (h/devcard-docs button/opts))
 
-(defcard-doc
-  (h/devcard-docs buttons/opts))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; BUTTON
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defcard-doc
+  "Require soda-ash's elements:
+   ```
+  [soda-ash.element :as se]
+  [soda-ash.content :as sco]
+  ```")
+
+
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Types
@@ -39,6 +44,12 @@
 # Button Types"
   (h/list-types button/opts))
 
+
+
+(defcard-doc
+  "**Button**"
+  "A default button")
+
 (defn type-default []
   [se/button "default"])
 
@@ -48,6 +59,11 @@
 (defcard-rg
   [type-default])
 
+
+
+(defcard-doc
+  "**Emphasis**"
+  "A button can be formatted to show different levels of emphasis")
 
 (defn type-primary []
   [se/button-primary "primary"])
@@ -68,6 +84,11 @@
 (defcard-rg
   [type-secondary])
 
+
+
+(defcard-doc
+  "**Animated**"
+  "A button can animate to show hidden content")
 
 (defn type-animated []
   [se/button-animated
@@ -109,6 +130,11 @@
   [type-animated-fade])
 
 
+
+(defcard-doc
+  "**Labeled**"
+  "A button can appear alongside a label")
+
 (defn type-labeled []
   [se/button-labeled
    [se/button
@@ -125,7 +151,7 @@
 
 (defn type-left-labeled []
   [se/button-left-labeled
-   [se/label-right-pointing
+   [se/label
     "label"]
    [se/button
     [se/icon-heart]
@@ -138,6 +164,11 @@
   [type-left-labeled])
 
 
+
+(defcard-doc
+  "**Icon**"
+  "A button can have only an icon")
+
 (defn type-icon []
   [se/button-icon
    [se/icon-cloud]])
@@ -148,6 +179,11 @@
 (defcard-rg
   [type-icon])
 
+
+
+(defcard-doc
+  "**Labeled icon**"
+  "A button can use an icon as label")
 
 (defn type-labeled-icon []
   [se/button-labeled-icon
@@ -173,20 +209,13 @@
   [type-right-labeled-icon])
 
 
-(defn type-inverted []
-  [se/segment {:ash [:inverted]}
-   [se/button-inverted {:ash [:red]}
-    "inverted"]])
 
 (defcard-doc
-  (mkdn-pprint-source type-inverted))
-
-(defcard-rg
-  [type-inverted])
-
+  "**Basic**"
+  "A basic button is less pronounced")
 
 (defn type-basic []
-  [se/button-basic {:ash [:red]}
+  [se/button-basic
    "basic"])
 
 (defcard-doc
@@ -197,8 +226,8 @@
 
 
 (defn type-primary-basic []
-  [se/button-primary-basic {:ash [:red]}
-   "primary-basic"])
+  [se/button-primary-basic
+   "primary basic"])
 
 (defcard-doc
   (mkdn-pprint-source type-primary-basic))
@@ -208,14 +237,31 @@
 
 
 (defn type-secondary-basic []
-  [se/button-secondary-basic {:ash [:red]}
-   "secondary-basic"])
+  [se/button-secondary-basic
+   "secondary basic"])
 
 (defcard-doc
   (mkdn-pprint-source type-secondary-basic))
 
 (defcard-rg
   [type-secondary-basic])
+
+
+
+(defcard-doc
+  "**Inverted**"
+  "A button can be formatted to appear on dark background")
+
+(defn type-inverted []
+  [se/segment {:ash [:inverted]}
+   [se/button-inverted {:ash [:red]}
+    "inverted"]])
+
+(defcard-doc
+  (mkdn-pprint-source type-inverted))
+
+(defcard-rg
+  [type-inverted])
 
 
 (defn type-inverted-basic []
@@ -231,6 +277,35 @@
 
 
 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Content
+
+(defcard-doc
+  "
+---
+# Button Content")
+
+(defcard-doc
+  "**Conditionals**"
+  "Button groupds can contain conditionals")
+
+(defn content-or []
+  [se/buttons
+   [se/button "Cancel"]
+   [sco/s-or] ;; <-- s-or
+   [se/button {:ash [:positive]}
+    "Save"]])
+
+(defcard-doc
+  (mkdn-pprint-source content-or))
+
+(defcard-rg
+  [content-or])
+
+
+
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; States
 
@@ -238,7 +313,7 @@
   "
 ---
 # Button States"
-  (list-keys "states"))
+  (list-state-keys "states"))
 
 
 (defn state-active []
@@ -278,6 +353,7 @@
 
 
 
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Variations
 
@@ -287,13 +363,11 @@
 # Button Variations")
 
 
-;; ---------------------------
-;; Social
 
 (defcard-doc
-  "## Social"
-  (list-keys "social"))
-
+  "**Social**"
+  "A button can be formatted to link to a social website"
+  (list-variation-keys "social"))
 
 (defn social-facebook []
   [se/button {:ash [:facebook]}
@@ -327,12 +401,11 @@
    ])
 
 
-;; ---------------------------
-;; Size
 
 (defcard-doc
-  "## size"
-  (list-keys "size"))
+  "**Size**"
+  "A button can have different sizes"
+  (list-variation-keys "size"))
 
 (defn size-mini []
   [se/button {:ash [:mini]}
@@ -354,12 +427,11 @@
    ])
 
 
-;; ---------------------------
-;; Floated
 
 (defcard-doc
-  "## floated"
-  (list-keys "floated"))
+  "**Floated**"
+  "A button can be aligned to the left or right of its container"
+  (list-variation-keys "floated"))
 
 
 (defn right-floated []
@@ -384,12 +456,11 @@
   [left-floated])
 
 
-;; ---------------------------
-;; Colored
 
 (defcard-doc
-  "## colored"
-  (list-keys "colored"))
+  "**Colored**"
+  "A button can have different colors"
+  (list-variation-keys "colored"))
 
 (defn colored-red []
   [se/button {:ash [:red]}
@@ -416,12 +487,11 @@
    ])
 
 
-;; ---------------------------
-;; Compact
 
 (defcard-doc
-  "## compact"
-  (list-keys "compact"))
+  "**Compact**"
+  "A button can reduce its padding to fit into tighter spaces"
+  (list-variation-keys "compact"))
 
 (defn compact []
   [se/button {:ash [:compact]}
@@ -436,12 +506,11 @@
    [se/button "normal"]])
 
 
-;; ---------------------------
-;; Toggle
 
 (defcard-doc
-  "## toggle"
-  (list-keys "toggle"))
+  "**Toggle**"
+  "A button can be formatted to toggle on and off"
+  (list-variation-keys "toggle"))
 
 (defn toggle []
   (let [local-state      (reagent/atom {:soda nil})
@@ -465,33 +534,32 @@
   [toggle])
 
 
-;; ---------------------------
-;; Consequence
 
 (defcard-doc
-  "## consequence"
-  (list-keys "consequence"))
+  "**Consequence**"
+  "A button can hint towards a positive or negative consequence"
+  (list-variation-keys "consequence"))
 
-(defn consequence-negative []
-  [se/button {:ash [:negative]}
-   "negative"])
+(defn consequence []
+  [:div
+   [se/button {:ash [:positive]}
+    "positive"]
+
+   [se/button {:ash [:negative]}
+    "negative"]])
 
 (defcard-doc
-  (mkdn-pprint-source consequence-negative))
+  (mkdn-pprint-source consequence))
 
 (defcard-rg
-  [:div
-   [consequence-negative]
-   [se/button {:ash [:positive]} "positive"]])
+  [consequence])
 
 
-
-;; ---------------------------
-;; Fluid
 
 (defcard-doc
-  "## fluid"
-  (list-keys "fluid"))
+  "**Fluid**"
+  "A button can take the width of its container"
+  (list-variation-keys "fluid"))
 
 (defn fluid []
   [se/button {:ash [:fluid]}
@@ -504,12 +572,11 @@
   [fluid])
 
 
-;; ---------------------------
-;; Circular
 
 (defcard-doc
-  "## circular"
-  (list-keys "circular"))
+  "**Circular**"
+  "A button can be circular"
+  (list-variation-keys "circular"))
 
 (defn circular []
   [se/button {:ash [:circular]}
@@ -522,14 +589,12 @@
   [circular])
 
 
-;; ---------------------------
-;; Vertically Attached
 
 (defcard-doc
-  "## vertically attached"
-  (list-keys "vertically attached"))
+  "**Vertically attached**"
+  "A button can be attached to the top or bottom of other content"
+  (list-variation-keys "vertically-attached"))
 
-;; TODO: fix
 (defn vertically-attached-top []
   [se/button {:ash [:top-attached]}
    "top-attached"])
@@ -541,7 +606,6 @@
   [vertically-attached-top])
 
 
-;; TODO: fix
 (defn vertically-attached-bottom []
   [se/button {:ash [:bottom-attached]}
    "bottom-attached"])
@@ -553,14 +617,12 @@
   [vertically-attached-bottom])
 
 
-;; ---------------------------
-;; Horizontally Attached
 
 (defcard-doc
-  "## horizontally attached"
-  (list-keys "horizontally attached"))
+  "**horizontally attached**"
+  "A button can be attached to the left or right of other content"
+  (list-variation-keys "horizontally-attached"))
 
-;; TODO: fix
 (defn horizontally-attached-top []
   [se/button {:ash [:left-attached]}
    "left-attached"])
@@ -572,7 +634,6 @@
   [horizontally-attached-top])
 
 
-;; TODO: fix
 (defn horizontally-attached-bottom []
   [se/button {:ash [:right-attached]}
    "right-attached"])
@@ -582,285 +643,3 @@
 
 (defcard-rg
   [horizontally-attached-bottom])
-
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Content
-
-(defcard-doc
-  "
----
-# Button Content"
-  "## Conditionals")
-
-(defn content-or []
-  [se/buttons
-   [se/button "Cancel"]
-   [sco/s-or] ;; <-- s-or
-   [se/button {:ash [:positive]}
-    "Save"]])
-
-(defcard-doc
-  (mkdn-pprint-source content-or))
-
-(defcard-rg
-  [content-or])
-
-
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; BUTTONS
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Types
-
-(defcard-doc
-  "
----
-# Buttons Types"
-  "buttons")
-
-(defn type-buttons []
-  [se/buttons
-   [se/button "button 1"]
-   [se/button "button 2"]])
-
-(defcard-doc
-  (mkdn-pprint-source type-buttons))
-
-(defcard-rg
-  [type-buttons])
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Variations
-
-(defcard-doc
-  "
----
-# Buttons Variations")
-
-
-;; ---------------------------
-;; Vertical
-
-(defcard-doc
-  "## vertical"
-  (list-buttons-keys "vertical"))
-
-(defn buttons-vertical []
-  [:div
-   [se/buttons {:ash [:vertical]}
-    [se/button "Foo"]
-    [se/button "Bar"]
-    [se/button "Baz"]]])
-
-(defcard-doc
-  (mkdn-pprint-source buttons-vertical))
-
-(defcard-rg
-   [buttons-vertical])
-
-
-;; ---------------------------
-;; Icon
-
-(defcard-doc
-  "## icon"
-  (list-buttons-keys "icon"))
-
-(defn buttons-icon []
-  [se/buttons {:ash [:icon]}
-   [se/button
-    [se/icon-star]]
-   [se/button
-    [se/icon-alarm]]
-   [se/button
-    [se/icon-arrow-up]]])
-
-(defcard-doc
-  (mkdn-pprint-source buttons-icon))
-
-(defcard-rg
-  [buttons-icon])
-
-
-(defn buttons-labeled-icon []
-  [se/buttons {:ash [:labeled-icon]}
-   [se/button
-    [se/icon-star]
-    "Star"]
-   [se/button
-    [se/icon-alarm]
-    "Alarm"]
-   [se/button
-    [se/icon-arrow-up]
-    "Arrow up"]])
-
-(defcard-doc
-  (mkdn-pprint-source buttons-labeled-icon))
-
-(defcard-rg
-  [buttons-labeled-icon])
-
-
-;; ---------------------------
-;; Width
-
-(defcard-doc
-  "## width"
-  (list-buttons-keys "width"))
-
-(defn buttons-width-two []
-  [se/buttons {:ash [:two]}
-   [se/button {:ash [:red]}
-    "one"]
-   [se/button {:ash [:orange]}
-    "two"]])
-
-
-(defn buttons-width [width]
-  (let [widths  [[:one :red]
-                 [:two :orange]
-                 [:three :yellow]
-                 [:four :olive]
-                 [:five :green]
-                 [:six :teal]
-                 [:seven :blue]
-                 [:eight :violet]
-                 [:nine :purple]
-                 [:ten :pink]
-                 [:eleven :brown]
-                 [:twelve :grey]]
-        widths' (take width widths)
-        width'  (-> widths'
-                    last
-                    first)]
-    (fn []
-      [:div [:br]
-       [se/buttons {:ash [width']}
-        (for [[n color] widths']
-          ^{:key n}
-          [se/button {:ash [color]}
-           (name n)])]])))
-
-(defcard-doc
-  (mkdn-pprint-source buttons-width-two))
-
-(defcard-rg
-  [:div
-   [buttons-width-two]
-   (for [n (range 3 13)]
-     ^{:key n}
-     [buttons-width n])
-   ])
-
-
-;; ---------------------------
-;; Size
-
-(defcard-doc
-  "## size"
-  (list-buttons-keys "size"))
-
-(defn buttons-size-mini []
-  [:div
-   [se/buttons {:ash [:mini]}
-    [se/button "Mini"]
-    [se/button "Foo"]
-    [se/button "Bar"]]])
-
-(defn buttons-size [size]
-  [:div
-   [:br]
-   [se/buttons {:ash [size]}
-    [se/button (name size)]
-    [se/button "Foo"]
-    [se/button "Bar"]]])
-
-(defcard-doc
-  (mkdn-pprint-source buttons-size-mini))
-
-(defcard-rg
-  [:div
-   [buttons-size-mini]
-   [buttons-size :tiny]
-   [buttons-size :small]
-   [buttons-size :medium]
-   [buttons-size :large]
-   [buttons-size :big]
-   [buttons-size :huge]
-   [buttons-size :massive]
-   ])
-
-
-;; ---------------------------
-;; Colored
-
-(defcard-doc
-  "## colored"
-  (list-buttons-keys "colored"))
-
-(defn buttons-colored-red []
-  [:div
-   [se/buttons {:ash [:red]}
-    [se/button "Red"]
-    [se/button "Foo"]
-    [se/button "Bar"]]])
-
-(defn buttons-colored [colored]
-  [:div
-   [:br]
-   [se/buttons {:ash [colored]}
-    [se/button (name colored)]
-    [se/button "Foo"]
-    [se/button "Bar"]]])
-
-(defcard-doc
-  (mkdn-pprint-source buttons-colored-red))
-
-(def colors
-  [:red
-   :orange
-   :yellow
-   :olive
-   :green
-   :teal
-   :blue
-   :violet
-   :purple
-   :pink
-   :brown
-   :grey
-   :black])
-
-(defcard-rg
-  [:div
-   [buttons-colored-red]
-   (for [color (drop 1 colors)]
-     ^{:key color}
-     [buttons-colored color])
-   ])
-
-
-;; ---------------------------
-;; Basic
-
-(defcard-doc
-  "## basic"
-  (list-buttons-keys "basic"))
-
-(defn buttons-basic []
-  [se/buttons {:ash [:basic]}
-   [se/button "basic"]
-   [se/button "foo"]
-   [se/button "bar"]])
-
-(defcard-doc
-  (mkdn-pprint-source buttons-basic))
-
-(defcard-rg
-  [buttons-basic])

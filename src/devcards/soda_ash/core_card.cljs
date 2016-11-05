@@ -4,6 +4,7 @@
   (:require
    ;; elements
    [soda-ash.elements.button-card]
+   [soda-ash.elements.buttons-card]
    [soda-ash.elements.container-card]
    [soda-ash.elements.divider-card]
    [soda-ash.elements.flag-card]

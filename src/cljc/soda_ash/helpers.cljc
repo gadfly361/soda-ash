@@ -43,7 +43,7 @@
          (let [{:keys [group-name
                        group-vector]} group
                ks                     (string/join ", " group-vector)]
-           (str "## " group-name "\n" ks "\n")))
+           (str "\n**" group-name "**\n" ks "\n")))
        sort
        (apply str)))
 
