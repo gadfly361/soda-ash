@@ -5,6 +5,11 @@
    [soda-ash.template :as t]))
 
 
+(def tag :i)
+(def ui? false)
+(def ui-name "flag")
+
+
 (def types
   [:ae
    :af
@@ -249,10 +254,10 @@
 
 
 (def opts
-  {:tag     :i
-   :ui?     false
-   :ui-name "flag"
-   :types types})
+  {:tag     tag
+   :ui?     ui?
+   :ui-name ui-name
+   :types   types})
 
 
 (defcomp "ae" (assoc opts :type :ae))

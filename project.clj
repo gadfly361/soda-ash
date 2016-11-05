@@ -1,4 +1,4 @@
-(defproject soda-ash "0.1.0-SNAPSHOT"
+(defproject soda-ash "0.2.0-SNAPSHOT"
   :url "https://github.com/gadfly361/soda-ash"
   :license {:name "MIT"}
   :scm {:name "git"
@@ -32,29 +32,33 @@
 
   :profiles
   {:dev
-   {:dependencies [[figwheel-sidecar "0.5.4-3"]
+   {:dependencies [[figwheel-sidecar "0.5.8"]
                    [com.cemerick/piggieback "0.2.1"]]
 
-    :plugins [[lein-figwheel "0.5.4-3"]
-              [lein-auto "0.1.2"]
-              [cider/cider-nrepl "0.13.0-SNAPSHOT"]]}}
+    :plugins [[lein-figwheel "0.5.8"]
+              [lein-auto "0.1.3"]
+              [cider/cider-nrepl "0.13.0"]]}}
 
   :cljsbuild
   {:builds
    [{:id           "devcards"
-     :source-paths ["src/devcards" "src/cljs" "src/cljc"]
+     :source-paths ["src/devcards"
+                    "src/cljs"
+                    "src/cljc"]
      :figwheel     {:devcards true }
      :compiler     {:main                 "soda-ash.core-card"
-                    :asset-path           "js/compiled/devcards_out"
                     :output-to            "resources/public/js/compiled/devcards.js"
-                    :output-dir           "resources/public/js/compiled/devcards_out"
-                    :source-map-timestamp true }}
+                    :output-dir           "resources/public/js/compiled/devcards"
+                    :asset-path           "js/compiled/devcards"
+                    :source-map-timestamp true}}
 
     {:id           "hostedcards"
-     :source-paths ["src/devcards" "src/cljs" "src/cljc"]
+     :source-paths ["src/devcards"
+                    "src/cljs"
+                    "src/cljc"]
      :compiler     {:main            "soda-ash.core-card"
                     :devcards        true
-                    :asset-path      "js/compiled/devcards_out"
                     :output-to       "resources/public/js/compiled/devcards.js"
+                    :output-dir      "resources/public/js/compiled/hostedcards"
                     :optimizations   :advanced
                     :closure-defines {goog.DEBUG false}}}]})

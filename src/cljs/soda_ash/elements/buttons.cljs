@@ -5,10 +5,13 @@
    [soda-ash.template :as t]))
 
 
+(def tag :div)
+(def ui? true)
+(def ui-name "buttons")
+
 (defn create-group [m]
-  (merge {:ui-name   "buttons"
-          :only-one? true}
-         m))
+  (merge {:ui-name ui-name} m))
+
 
 (def types
   [:default])
@@ -79,9 +82,9 @@
 
 
 (def opts
-  {:tag        :div
-   :ui?        true
-   :ui-name    "buttons"
+  {:tag        tag
+   :ui?        ui?
+   :ui-name    ui-name
    :types      types
    :variations variations})
 

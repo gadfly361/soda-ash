@@ -5,10 +5,12 @@
    [soda-ash.template :as t]))
 
 
+(def tag :div)
+(def ui? true)
+(def ui-name "list")
+
 (defn create-group [m]
-  (merge {:ui-name   "s-list"
-          :only-one? true}
-         m))
+  (merge {:ui-name ui-name} m))
 
 
 (def types
@@ -72,11 +74,11 @@
 
 
 (def opts
-  {:tag     :div
-   :ui?     true
-   :ui-name "s-list"
-   :types types
-   :variations  variations})
+  {:tag        tag
+   :ui?        ui?
+   :ui-name    ui-name
+   :types      types
+   :variations variations})
 
 
 (defcomp "default" opts)

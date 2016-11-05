@@ -1,3 +1,11 @@
+## 0.2.0-SNAPSHOT
+
+* complete rewrite
+
+**Please don't use anything below this version**
+
+---
+
 ## 0.1.0-beta
 
 * adds the following elements

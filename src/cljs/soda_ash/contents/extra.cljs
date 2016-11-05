@@ -5,6 +5,10 @@
    [soda-ash.template :as t]))
 
 
+(def tag :div)
+(def ui? false)
+(def ui-name "extra")
+
 
 (def types
   [:default
@@ -13,9 +17,9 @@
 
 
 (def opts
-  {:tag     :div
-   :ui?     false
-   :ui-name "extra"
+  {:tag     tag
+   :ui?     ui?
+   :ui-name ui-name
    :types   types})
 
 

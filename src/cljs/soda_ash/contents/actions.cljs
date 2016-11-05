@@ -5,6 +5,10 @@
    [soda-ash.template :as t]))
 
 
+(def tag :div)
+(def ui? false)
+(def ui-name "actions")
+
 
 (def types
   [:default
@@ -12,9 +16,9 @@
 
 
 (def opts
-  {:tag     :div
-   :ui?     false
-   :ui-name "actions"
+  {:tag     tag
+   :ui?     ui?
+   :ui-name ui-name
    :types   types})
 
 

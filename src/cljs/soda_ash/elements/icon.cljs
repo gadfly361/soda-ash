@@ -5,10 +5,13 @@
    [soda-ash.template :as t]))
 
 
+(def tag :i)
+(def ui? false)
+(def ui-name "icon")
+
+
 (defn create-group [m]
-  (merge {:ui-name   "icon"
-          :only-one? true}
-         m))
+  (merge {:ui-name ui-name} m))
 
 
 (def types
@@ -639,9 +642,9 @@
 
 
 (def opts
-  {:tag        :i
-   :ui?        false
-   :ui-name    "icon"
+  {:tag        tag
+   :ui?        ui?
+   :ui-name    ui-name
    :types      types
    :states     states
    :variations variations})

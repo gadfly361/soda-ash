@@ -5,7 +5,6 @@
                           mkdn-pprint-source]])
   (:require
    [devcards.core]
-   [cljsjs.semantic-ui]
    [reagent.core :as reagent]
    [soda-ash.element :as se]
    [soda-ash.collection :as sc]
@@ -68,40 +67,6 @@
 
 (defcard-rg
   [type-list])
-
-
-(defn close-render []
-  [se/icon-close])
-
-(defn close-did-mount [this]
-  (-> (js/$ (reagent/dom-node this))
-      (.on "click" (fn [_]
-                     (-> (js/$ (reagent/dom-node this))
-                         (.closest ".message")
-                         (.transition "fade"))))))
-
-(defn close []
-  (reagent/create-class
-   {:reagent-render close-render
-    :component-did-mount close-did-mount}))
-
-(defn type-dismissable []
-  [sc/message
-   [close]
-   [sco/header "A message can be dismissable"]
-   [:p "Try it out!"]])
-
-(defcard-doc
-  (mkdn-pprint-source close-render))
-(defcard-doc
-  (mkdn-pprint-source close-did-mount))
-(defcard-doc
-  (mkdn-pprint-source close))
-(defcard-doc
-  (mkdn-pprint-source type-dismissable))
-
-(defcard-rg
-  [type-dismissable])
 
 
 

@@ -5,15 +5,20 @@
    [soda-ash.template :as t]))
 
 
+(def tag :div)
+(def ui? false)
+(def ui-name "divider")
+
+
 (def types
   [:default])
 
 
 (def opts
-  {:tag     :div
-   :ui?     false
-   :ui-name "divider"
-   :types types})
+  {:tag     tag
+   :ui?     ui?
+   :ui-name ui-name
+   :types   types})
 
 
 (defcomp "default" opts)

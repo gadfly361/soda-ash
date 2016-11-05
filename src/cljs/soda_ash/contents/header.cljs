@@ -5,16 +5,21 @@
    [soda-ash.template :as t]))
 
 
+(def tag :div)
+(def ui? false)
+(def ui-name "header")
+
+
 (def types
   [:default
    :link])
 
 
 (def opts
-  {:tag     :div
-   :ui?     false
-   :ui-name "header"
-   :types types})
+  {:tag     tag
+   :ui?     ui?
+   :ui-name ui-name
+   :types   types})
 
 
 (defcomp "default" opts)
