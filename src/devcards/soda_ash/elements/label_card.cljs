@@ -56,7 +56,7 @@
 
 (defn type-image []
   [se/label-image
-   [se/image {:src "/images/ubuntu.png"}]
+   [se/image {:src "images/ubuntu.png"}]
    "label-image"])
 
 (defcard-doc
@@ -127,7 +127,7 @@
    [se/label-left-corner
     [se/icon-star]]
    [se/image {:data-ash [:medium]
-              :src "/images/ubuntu.png"}]])
+              :src "images/ubuntu.png"}]])
 
 (defcard-doc
   (mkdn-pprint-source type-left-corner))
@@ -140,7 +140,7 @@
   [:div {:style {:position "relative"
                  :display  "inline-block"}}
    [se/image {:data-ash [:medium]
-              :src "/images/ubuntu.png"}]
+              :src "images/ubuntu.png"}]
    [se/label-right-corner
     [se/icon-star]]])
 
@@ -530,7 +530,7 @@
   [se/label
    [se/image {:data-ash [:avatar
                     :right-spaced]
-              :src "/images/gadfly.png"}]
+              :src "images/gadfly.png"}]
    "Gadfly361"])
 
 (defcard-doc

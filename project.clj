@@ -14,10 +14,6 @@
 
   :plugins [[lein-cljsbuild "1.1.3"]]
 
-  :test-refresh
-  {:growl true
-   :watch-dirs ["src/devcards" "src/cljs" "src/cljc"]}
-
   :source-paths ["src/clj" "src/cljc" "src/cljs"]
 
   :test-paths ["src/clj" "src/cljc"]

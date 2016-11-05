@@ -419,7 +419,7 @@
 
 (defn content-image []
   [se/header-h2
-   [se/image {:src "/images/gadfly.png"}]
+   [se/image {:src "images/gadfly.png"}]
    [sco/content
     "Gadfly361"]])
 

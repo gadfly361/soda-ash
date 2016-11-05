@@ -40,7 +40,7 @@
 (defn type-default []
   [sv/card
    [sco/image
-    [:img {:src "/images/ubuntu.png"}]]
+    [:img {:src "images/ubuntu.png"}]]
    [sco/content
     [sco/header "Ubuntu"]
     [sco/s-meta "Started 2004"]
@@ -65,11 +65,11 @@
    [sco/content
     [sco/s-meta {:data-ash [:right-floated]} "14h"]
     [se/image {:data-ash [:avatar]
-               :src      "/images/gadfly.png"}]
+               :src      "images/gadfly.png"}]
      "Gadlfy361"]
 
    [sco/image
-    [:img {:src "/images/square-image.png"}]]
+    [:img {:src "images/square-image.png"}]]
 
    [sco/content
     [:span.right.floated
@@ -112,7 +112,7 @@
     [sco/content
      [se/image {:data-ash [:mini
                            :right-floated]
-                :src      "/images/gadfly.png"}]
+                :src      "images/gadfly.png"}]
      [sco/header "Gadfly361"]
      [sco/s-meta "Friends of Escherize"]
      [sco/description
@@ -129,7 +129,7 @@
      [se/image {:data-ash [:mini
                            :right-floated
                            :rounded]
-                :src      "/images/escherize.jpg"}]
+                :src      "images/escherize.jpg"}]
      [sco/header "Escherize"]
      [sco/s-meta "New Member"]
      [sco/description
@@ -166,7 +166,7 @@
 (defn content-block []
   [sv/card
    [sco/image
-    [:img {:src "/images/ubuntu.png"}]]
+    [:img {:src "images/ubuntu.png"}]]
    [sco/content ;; <-- attention
     [sco/header "Ubuntu"]
     [sco/s-meta "Started 2004"]
@@ -192,7 +192,7 @@
 (defn content-image []
   [sv/card
    [sco/image ;; <-- attention
-    [:img {:src "/images/ubuntu.png"}]]
+    [:img {:src "images/ubuntu.png"}]]
    [sco/content
     [sco/header "Ubuntu"]
     [sco/s-meta "Started 2004"]
@@ -231,7 +231,7 @@
 (defn content-header []
   [sv/card
    [sco/image
-    [:img {:src "/images/ubuntu.png"}]]
+    [:img {:src "images/ubuntu.png"}]]
    [sco/content
     [sco/header "Ubuntu"] ;; <-- attention
     [sco/s-meta "Started 2004"]
@@ -257,7 +257,7 @@
 (defn content-metadata []
   [sv/card
    [sco/image
-    [:img {:src "/images/ubuntu.png"}]]
+    [:img {:src "images/ubuntu.png"}]]
    [sco/content
     [sco/header "Ubuntu"]
     [sco/s-meta "Started 2004"] ;; <-- attention
@@ -285,7 +285,7 @@
   [sv/card
    [sco/image-link {:href   "http://www.ubuntu.com/" ;; <-- attention 1 of 3
                     :target "_blank"}
-    [:img {:src "/images/ubuntu.png"}]]
+    [:img {:src "images/ubuntu.png"}]]
    [sco/content
     [sco/header-link {:href   "http://www.ubuntu.com/" ;; <-- attention 2 of 3
                       :target "_blank"}
@@ -335,7 +335,7 @@
 (defn content-approval []
   [sv/card
    [sco/image
-    [:img {:src "/images/ubuntu.png"}]]
+    [:img {:src "images/ubuntu.png"}]]
    [sco/content
     [sco/header "Ubuntu"]
     [sco/s-meta "Started 2004"]
@@ -363,7 +363,7 @@
 (defn content-description []
   [sv/card
    [sco/image
-    [:img {:src "/images/ubuntu.png"}]]
+    [:img {:src "images/ubuntu.png"}]]
    [sco/content
     [sco/header "Ubuntu"]
     [sco/s-meta "Started 2004"]
@@ -389,7 +389,7 @@
 (defn content-extra []
   [sv/card
    [sco/image
-    [:img {:src "/images/ubuntu.png"}]]
+    [:img {:src "images/ubuntu.png"}]]
    [sco/content
     [sco/header "Ubuntu"]
     [sco/s-meta "Started 2004"]
@@ -425,7 +425,7 @@
 (defn variation-fluid []
   [sv/card {:data-ash [:fluid]}
    [sco/image
-    [:img {:src "/images/ubuntu.png"}]]
+    [:img {:src "images/ubuntu.png"}]]
    [sco/content
     [sco/header "Ubuntu"]
     [sco/s-meta "Started 2004"]
@@ -452,7 +452,7 @@
 (defn variation-centered []
   [sv/card {:data-ash [:centered]}
    [sco/image
-    [:img {:src "/images/ubuntu.png"}]]
+    [:img {:src "images/ubuntu.png"}]]
    [sco/content
     [sco/header "Ubuntu"]
     [sco/s-meta "Started 2004"]
@@ -479,7 +479,7 @@
 (defn variation-raised []
   [sv/card {:data-ash [:raised]}
    [sco/image
-    [:img {:src "/images/ubuntu.png"}]]
+    [:img {:src "images/ubuntu.png"}]]
    [sco/content
     [sco/header "Ubuntu"]
     [sco/s-meta "Started 2004"]
@@ -506,7 +506,7 @@
 (defn variation-link []
   [sv/card {:data-ash [:link]}
    [sco/image
-    [:img {:src "/images/ubuntu.png"}]]
+    [:img {:src "images/ubuntu.png"}]]
    [sco/content
     [sco/header "Ubuntu"]
     [sco/s-meta "Started 2004"]
@@ -538,55 +538,55 @@
   [sv/cards {:data-ash [:four]}
    [sco/card-link {:data-ash [:red]}
     [sco/image
-     [:img {:src "/images/square-image.png"}]]]
+     [:img {:src "images/square-image.png"}]]]
 
    [sco/card-link {:data-ash [:orange]}
     [sco/image
-     [:img {:src "/images/square-image.png"}]]]
+     [:img {:src "images/square-image.png"}]]]
 
    [sco/card-link {:data-ash [:yellow]}
     [sco/image
-     [:img {:src "/images/square-image.png"}]]]
+     [:img {:src "images/square-image.png"}]]]
 
    [sco/card-link {:data-ash [:olive]}
     [sco/image
-     [:img {:src "/images/square-image.png"}]]]
+     [:img {:src "images/square-image.png"}]]]
 
    [sco/card-link {:data-ash [:green]}
     [sco/image
-     [:img {:src "/images/square-image.png"}]]]
+     [:img {:src "images/square-image.png"}]]]
 
    [sco/card-link {:data-ash [:teal]}
     [sco/image
-     [:img {:src "/images/square-image.png"}]]]
+     [:img {:src "images/square-image.png"}]]]
 
    [sco/card-link {:data-ash [:blue]}
     [sco/image
-     [:img {:src "/images/square-image.png"}]]]
+     [:img {:src "images/square-image.png"}]]]
 
    [sco/card-link {:data-ash [:violet]}
     [sco/image
-     [:img {:src "/images/square-image.png"}]]]
+     [:img {:src "images/square-image.png"}]]]
 
    [sco/card-link {:data-ash [:purple]}
     [sco/image
-     [:img {:src "/images/square-image.png"}]]]
+     [:img {:src "images/square-image.png"}]]]
 
    [sco/card-link {:data-ash [:pink]}
     [sco/image
-     [:img {:src "/images/square-image.png"}]]]
+     [:img {:src "images/square-image.png"}]]]
 
    [sco/card-link {:data-ash [:brown]}
     [sco/image
-     [:img {:src "/images/square-image.png"}]]]
+     [:img {:src "images/square-image.png"}]]]
 
    [sco/card-link {:data-ash [:grey]}
     [sco/image
-     [:img {:src "/images/square-image.png"}]]]
+     [:img {:src "images/square-image.png"}]]]
 
    [sco/card-link {:data-ash [:black]}
     [sco/image
-     [:img {:src "/images/square-image.png"}]]]
+     [:img {:src "images/square-image.png"}]]]
    ])
 
 (defcard-doc
@@ -605,27 +605,27 @@
   [sv/cards {:data-ash [:three]}
    [sco/card
     [sco/image
-     [:img {:src "/images/square-image.png"}]]]
+     [:img {:src "images/square-image.png"}]]]
 
    [sco/card
     [sco/image
-     [:img {:src "/images/square-image.png"}]]]
+     [:img {:src "images/square-image.png"}]]]
 
    [sco/card
     [sco/image
-     [:img {:src "/images/square-image.png"}]]]
+     [:img {:src "images/square-image.png"}]]]
 
    [sco/card
     [sco/image
-     [:img {:src "/images/square-image.png"}]]]
+     [:img {:src "images/square-image.png"}]]]
 
    [sco/card
     [sco/image
-     [:img {:src "/images/square-image.png"}]]]
+     [:img {:src "images/square-image.png"}]]]
 
    [sco/card
     [sco/image
-     [:img {:src "/images/square-image.png"}]]]
+     [:img {:src "images/square-image.png"}]]]
    ])
 
 (defcard-doc
@@ -644,27 +644,27 @@
                         :stackable]}
    [sco/card
     [sco/image
-     [:img {:src "/images/square-image.png"}]]]
+     [:img {:src "images/square-image.png"}]]]
 
    [sco/card
     [sco/image
-     [:img {:src "/images/square-image.png"}]]]
+     [:img {:src "images/square-image.png"}]]]
 
    [sco/card
     [sco/image
-     [:img {:src "/images/square-image.png"}]]]
+     [:img {:src "images/square-image.png"}]]]
 
    [sco/card
     [sco/image
-     [:img {:src "/images/square-image.png"}]]]
+     [:img {:src "images/square-image.png"}]]]
 
    [sco/card
     [sco/image
-     [:img {:src "/images/square-image.png"}]]]
+     [:img {:src "images/square-image.png"}]]]
 
    [sco/card
     [sco/image
-     [:img {:src "/images/square-image.png"}]]]
+     [:img {:src "images/square-image.png"}]]]
    ])
 
 (defcard-doc
@@ -683,27 +683,27 @@
                         :doubling]}
    [sco/card
     [sco/image
-     [:img {:src "/images/square-image.png"}]]]
+     [:img {:src "images/square-image.png"}]]]
 
    [sco/card
     [sco/image
-     [:img {:src "/images/square-image.png"}]]]
+     [:img {:src "images/square-image.png"}]]]
 
    [sco/card
     [sco/image
-     [:img {:src "/images/square-image.png"}]]]
+     [:img {:src "images/square-image.png"}]]]
 
    [sco/card
     [sco/image
-     [:img {:src "/images/square-image.png"}]]]
+     [:img {:src "images/square-image.png"}]]]
 
    [sco/card
     [sco/image
-     [:img {:src "/images/square-image.png"}]]]
+     [:img {:src "images/square-image.png"}]]]
 
    [sco/card
     [sco/image
-     [:img {:src "/images/square-image.png"}]]]
+     [:img {:src "images/square-image.png"}]]]
    ])
 
 (defcard-doc

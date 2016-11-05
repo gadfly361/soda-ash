@@ -39,18 +39,18 @@
   [sv/feed
    [sco/event
     [sco/label
-     [:img {:src "/images/gadfly.png"}]]
+     [:img {:src "images/gadfly.png"}]]
     [sco/content
      [sco/date "3 days ago"]
      [sco/summary
       [:span [:a "Gadfly361"] " added 2 photos"]]
      [sco/extra-images
-      [:a [:img {:src "/images/square-image.png"}]]
-      [:a [:img {:src "/images/square-image.png"}]]]]]
+      [:a [:img {:src "images/square-image.png"}]]
+      [:a [:img {:src "images/square-image.png"}]]]]]
 
    [sco/event
     [sco/label
-     [:img {:src "/images/escherize.jpg"}]]
+     [:img {:src "images/escherize.jpg"}]]
     [sco/content
      [sco/date "3 days ago"]
      [sco/summary
@@ -83,18 +83,18 @@
   [sv/feed {:data-ash [:small]}
    [sco/event
     [sco/label
-     [:img {:src "/images/gadfly.png"}]]
+     [:img {:src "images/gadfly.png"}]]
     [sco/content
      [sco/date "3 days ago"]
      [sco/summary
       [:span [:a "Gadfly361"] " added 2 photos"]]
      [sco/extra-images
-      [:a [:img {:src "/images/square-image.png"}]]
-      [:a [:img {:src "/images/square-image.png"}]]]]]
+      [:a [:img {:src "images/square-image.png"}]]
+      [:a [:img {:src "images/square-image.png"}]]]]]
 
    [sco/event
     [sco/label
-     [:img {:src "/images/escherize.jpg"}]]
+     [:img {:src "images/escherize.jpg"}]]
     [sco/content
      [sco/date "3 days ago"]
      [sco/summary
@@ -114,18 +114,18 @@
   [sv/feed {:data-ash [:large]}
    [sco/event
     [sco/label
-     [:img {:src "/images/gadfly.png"}]]
+     [:img {:src "images/gadfly.png"}]]
     [sco/content
      [sco/date "3 days ago"]
      [sco/summary
       [:span [:a "Gadfly361"] " added 2 photos"]]
      [sco/extra-images
-      [:a [:img {:src "/images/square-image.png"}]]
-      [:a [:img {:src "/images/square-image.png"}]]]]]
+      [:a [:img {:src "images/square-image.png"}]]
+      [:a [:img {:src "images/square-image.png"}]]]]]
 
    [sco/event
     [sco/label
-     [:img {:src "/images/escherize.jpg"}]]
+     [:img {:src "images/escherize.jpg"}]]
     [sco/content
      [sco/date "3 days ago"]
      [sco/summary

@@ -33,10 +33,10 @@
 (defn type-fade []
   [se/reveal-fade
    [sco/content-visible
-    [se/image {:src "/images/square-image.png"
+    [se/image {:src "images/square-image.png"
                :data-ash [:small]}]]
    [sco/content-hidden
-    [se/image {:src "/images/gadfly.png"
+    [se/image {:src "images/gadfly.png"
                :data-ash [:small]}]]
    ])
 
@@ -50,10 +50,10 @@
 (defn type-move []
   [se/reveal-move
    [sco/content-visible
-    [se/image {:src "/images/square-image.png"
+    [se/image {:src "images/square-image.png"
                :data-ash [:small]}]]
    [sco/content-hidden
-    [se/image {:src "/images/gadfly.png"
+    [se/image {:src "images/gadfly.png"
                :data-ash [:small]}]]
    ])
 
@@ -67,10 +67,10 @@
 (defn type-move-right []
   [se/reveal-move-right
    [sco/content-visible
-    [se/image {:src "/images/square-image.png"
+    [se/image {:src "images/square-image.png"
                :data-ash [:small]}]]
    [sco/content-hidden
-    [se/image {:src "/images/gadfly.png"
+    [se/image {:src "images/gadfly.png"
                :data-ash [:small]}]]
    ])
 
@@ -84,10 +84,10 @@
 (defn type-move-up []
   [se/reveal-move-up
    [sco/content-visible
-    [se/image {:src "/images/square-image.png"
+    [se/image {:src "images/square-image.png"
                :data-ash [:small]}]]
    [sco/content-hidden
-    [se/image {:src "/images/gadfly.png"
+    [se/image {:src "images/gadfly.png"
                :data-ash [:small]}]]
    ])
 
@@ -101,10 +101,10 @@
 (defn type-move-down []
   [se/reveal-move-down
    [sco/content-visible
-    [se/image {:src "/images/square-image.png"
+    [se/image {:src "images/square-image.png"
                :data-ash [:small]}]]
    [sco/content-hidden
-    [se/image {:src "/images/gadfly.png"
+    [se/image {:src "images/gadfly.png"
                :data-ash [:small]}]]
    ])
 
@@ -118,10 +118,10 @@
 (defn type-rotate []
   [se/reveal-rotate
    [sco/content-visible
-    [se/image {:src "/images/square-image.png"
+    [se/image {:src "images/square-image.png"
                :data-ash [:small]}]]
    [sco/content-hidden
-    [se/image {:src "/images/gadfly.png"
+    [se/image {:src "images/gadfly.png"
                :data-ash [:small]}]]
    ])
 
@@ -135,10 +135,10 @@
 (defn type-rotate-left []
   [se/reveal-rotate-left
    [sco/content-visible
-    [se/image {:src "/images/square-image.png"
+    [se/image {:src "images/square-image.png"
                :data-ash [:small]}]]
    [sco/content-hidden
-    [se/image {:src "/images/gadfly.png"
+    [se/image {:src "images/gadfly.png"
                :data-ash [:small]}]]
    ])
 
@@ -162,10 +162,10 @@
 (defn state-active []
   [se/reveal-rotate-left {:data-soda :active}
    [sco/content-visible
-    [se/image {:src "/images/square-image.png"
+    [se/image {:src "images/square-image.png"
                :data-ash [:small]}]]
    [sco/content-hidden
-    [se/image {:src "/images/gadfly.png"
+    [se/image {:src "images/gadfly.png"
                :data-ash [:small]}]]
    ])
 
@@ -179,10 +179,10 @@
 (defn state-disabled []
   [se/reveal-rotate-left {:data-soda :disabled}
    [sco/content-visible
-    [se/image {:src "/images/square-image.png"
+    [se/image {:src "images/square-image.png"
                :data-ash [:small]}]]
    [sco/content-hidden
-    [se/image {:src "/images/gadfly.png"
+    [se/image {:src "images/gadfly.png"
                :data-ash [:small]}]]
    ])
 
@@ -210,10 +210,10 @@
 (defn variation-instant []
   [se/reveal-move {:data-ash [:instant]}
    [sco/content-visible
-    [se/image {:src "/images/square-image.png"
+    [se/image {:src "images/square-image.png"
                :data-ash [:small]}]]
    [sco/content-hidden
-    [se/image {:src "/images/gadfly.png"
+    [se/image {:src "images/gadfly.png"
                :data-ash [:small]}]]
    ])
 

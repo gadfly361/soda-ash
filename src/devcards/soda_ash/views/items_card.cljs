@@ -38,7 +38,7 @@
   [sv/items
    [sco/item
     [sco/image
-     [:img {:src "/images/gadfly.png"}]]
+     [:img {:src "images/gadfly.png"}]]
     [sco/content
      [sco/header-link
       "Header"]
@@ -56,7 +56,7 @@
 
    [sco/item
     [sco/image
-     [:img {:src "/images/escherize.jpg"}]]
+     [:img {:src "images/escherize.jpg"}]]
     [sco/content
      [sco/header-link
       "Header"]
@@ -97,7 +97,7 @@
   [sv/items {:data-ash [:divided]}
    [sco/item
     [sco/image
-     [:img {:src "/images/gadfly.png"}]]
+     [:img {:src "images/gadfly.png"}]]
     [sco/content
      [sco/header-link
       "Header"]
@@ -115,7 +115,7 @@
 
    [sco/item
     [sco/image
-     [:img {:src "/images/escherize.jpg"}]]
+     [:img {:src "images/escherize.jpg"}]]
     [sco/content
      [sco/header-link
       "Header"]
@@ -147,7 +147,7 @@
   [sv/items {:data-ash [:link]}
    [sco/item
     [sco/image
-     [:img {:src "/images/gadfly.png"}]]
+     [:img {:src "images/gadfly.png"}]]
     [sco/content
      [sco/header-link
       "Header"]
@@ -165,7 +165,7 @@
 
    [sco/item
     [sco/image
-     [:img {:src "/images/escherize.jpg"}]]
+     [:img {:src "images/escherize.jpg"}]]
     [sco/content
      [sco/header-link
       "Header"]
@@ -197,7 +197,7 @@
   [sv/items {:data-ash [:relaxed]}
    [sco/item
     [sco/image
-     [:img {:src "/images/gadfly.png"}]]
+     [:img {:src "images/gadfly.png"}]]
     [sco/content
      [sco/header-link
       "Header"]
@@ -215,7 +215,7 @@
 
    [sco/item
     [sco/image
-     [:img {:src "/images/escherize.jpg"}]]
+     [:img {:src "images/escherize.jpg"}]]
     [sco/content
      [sco/header-link
       "Header"]
@@ -243,7 +243,7 @@
   [sv/items {:data-ash [:very-relaxed]}
    [sco/item
     [sco/image
-     [:img {:src "/images/gadfly.png"}]]
+     [:img {:src "images/gadfly.png"}]]
     [sco/content
      [sco/header-link
       "Header"]
@@ -261,7 +261,7 @@
 
    [sco/item
     [sco/image
-     [:img {:src "/images/escherize.jpg"}]]
+     [:img {:src "images/escherize.jpg"}]]
     [sco/content
      [sco/header-link
       "Header"]

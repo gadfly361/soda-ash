@@ -450,7 +450,7 @@
   [se/s-list
    [sco/item
     [se/image {:data-ash [:avatar]
-               :src "/images/gadfly.png"}]
+               :src "images/gadfly.png"}]
     [sco/content
      [sco/header
       "Gadfly361"]
@@ -460,7 +460,7 @@
 
    [sco/item
     [se/image {:data-ash [:avatar]
-               :src "/images/rachel.png"}]
+               :src "images/rachel.png"}]
     [sco/content
      [sco/header
       "Rachel"]
@@ -503,7 +503,7 @@
   [se/s-list
    [sco/item
     [se/image {:data-ash [:avatar]
-               :src "/images/gadfly.png"}]
+               :src "images/gadfly.png"}]
     [sco/content
      [sco/header
       "Gadfly361"]
@@ -513,7 +513,7 @@
 
    [sco/item
     [se/image {:data-ash [:avatar]
-               :src "/images/rachel.png"}]
+               :src "images/rachel.png"}]
     [sco/content
      [sco/header
       "Rachel"]

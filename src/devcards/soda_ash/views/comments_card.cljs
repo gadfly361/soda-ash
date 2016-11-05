@@ -41,7 +41,7 @@
 
    [sco/s-comment
     [sco/avatar-link
-     [:img {:src "/images/gadfly.png"}]]
+     [:img {:src "images/gadfly.png"}]]
     [sco/content
      [sco/author-link "Matt"]
      [:div.metadata
@@ -52,7 +52,7 @@
 
    [sco/s-comment
     [sco/avatar-link
-     [:img {:src "/images/escherize.jpg"}]]
+     [:img {:src "images/escherize.jpg"}]]
     [sco/content
      [sco/author-link "Bryan"]
      [:div.metadata
@@ -64,7 +64,7 @@
     [sv/comments
      [sco/s-comment
       [sco/avatar-link
-       [:img {:src "/images/rachel.png"}]]
+       [:img {:src "images/rachel.png"}]]
       [sco/content
        [sco/author-link "Rachel"]
        [:div.metadata
@@ -99,7 +99,7 @@
 
    [sco/s-comment
     [sco/avatar-link
-     [:img {:src "/images/gadfly.png"}]]
+     [:img {:src "images/gadfly.png"}]]
     [sco/content
      [sco/author-link "Matt"]
      [:div.metadata
@@ -110,7 +110,7 @@
 
    [sco/s-comment
     [sco/avatar-link
-     [:img {:src "/images/escherize.jpg"}]]
+     [:img {:src "images/escherize.jpg"}]]
     [sco/content
      [sco/author-link "Bryan"]
      [:div.metadata
@@ -122,7 +122,7 @@
     [sv/comments {:data-soda :collapsed} ;; <-- Attention
      [sco/s-comment
       [sco/avatar-link
-       [:img {:src "/images/rachel.png"}]]
+       [:img {:src "images/rachel.png"}]]
       [sco/content
        [sco/author-link "Rachel"]
        [:div.metadata
@@ -160,7 +160,7 @@
 
    [sco/s-comment
     [sco/avatar-link
-     [:img {:src "/images/gadfly.png"}]]
+     [:img {:src "images/gadfly.png"}]]
     [sco/content
      [sco/author-link "Matt"]
      [:div.metadata
@@ -171,7 +171,7 @@
 
    [sco/s-comment
     [sco/avatar-link
-     [:img {:src "/images/escherize.jpg"}]]
+     [:img {:src "images/escherize.jpg"}]]
     [sco/content
      [sco/author-link "Bryan"]
      [:div.metadata
@@ -183,7 +183,7 @@
     [sv/comments
      [sco/s-comment
       [sco/avatar-link
-       [:img {:src "/images/rachel.png"}]]
+       [:img {:src "images/rachel.png"}]]
       [sco/content
        [sco/author-link "Rachel"]
        [:div.metadata
@@ -195,7 +195,7 @@
 
    [sco/s-comment
     [sco/avatar-link
-     [:img {:src "/images/gadfly.png"}]]
+     [:img {:src "images/gadfly.png"}]]
     [sco/content
      [sco/author-link "Matt"]
      [:div.metadata
@@ -223,7 +223,7 @@
 
    [sco/s-comment
     [sco/avatar-link
-     [:img {:src "/images/gadfly.png"}]]
+     [:img {:src "images/gadfly.png"}]]
     [sco/content
      [sco/author-link "Matt"]
      [:div.metadata
@@ -234,7 +234,7 @@
 
    [sco/s-comment
     [sco/avatar-link
-     [:img {:src "/images/escherize.jpg"}]]
+     [:img {:src "images/escherize.jpg"}]]
     [sco/content
      [sco/author-link "Bryan"]
      [:div.metadata
@@ -246,7 +246,7 @@
     [sv/comments
      [sco/s-comment
       [sco/avatar-link
-       [:img {:src "/images/rachel.png"}]]
+       [:img {:src "images/rachel.png"}]]
       [sco/content
        [sco/author-link "Rachel"]
        [:div.metadata
@@ -258,7 +258,7 @@
 
    [sco/s-comment
     [sco/avatar-link
-     [:img {:src "/images/gadfly.png"}]]
+     [:img {:src "images/gadfly.png"}]]
     [sco/content
      [sco/author-link "Matt"]
      [:div.metadata
