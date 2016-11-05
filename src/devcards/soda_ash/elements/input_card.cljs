@@ -14,19 +14,57 @@
 (def list-keys
   (h/list-keys input/variations))
 
-
 (defcard-doc
   (h/devcard-docs input/opts))
 
+(defcard-doc
+  "Require the following:
+   ```
+  [soda-ash.element :as se]
+  ```")
+
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; states
+;; Types
+
+(defcard-doc
+  "
+---
+# Types"
+  (h/list-types input/opts))
+
+(defcard-doc
+  "**Input**"
+  "A default input")
+
+(defn type-default []
+  [se/input
+   [:input {:type "text"
+            :placeholder "Default"}]])
+
+(defcard-doc
+  (mkdn-pprint-source type-default))
+
+(defcard-rg default
+  [type-default])
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; States
 
 (defcard-doc
   "
 ---
 # States"
   (list-keys "states"))
+
+
+(defcard-doc
+  "**Focus**"
+  "An input field can show a user is currently interacting with it")
 
 (defn state-focus []
    [se/input {:data-soda :focus}
@@ -39,6 +77,10 @@
 (defcard-rg focus
   [state-focus])
 
+
+(defcard-doc
+  "**Loading**"
+  "An icon input field can show that it is currently loading data")
 
 (defn state-loading []
   [se/input {:data-soda :loading
@@ -54,6 +96,10 @@
   [state-loading])
 
 
+(defcard-doc
+  "**Disabled**"
+  "An input field can show that it is disabled")
+
 (defn state-disabled []
    [se/input {:data-soda :disabled}
     [:input {:type        "text"
@@ -65,6 +111,10 @@
 (defcard-rg disabled
   [state-disabled])
 
+
+(defcard-doc
+  "**Error**"
+  "An input field can show the data contains errors")
 
 (defn state-error []
   [se/input {:data-soda :error}
@@ -87,12 +137,9 @@
 ---
 # Variations")
 
-
-;; ---------------------------
-;; Icon
-
 (defcard-doc
-  "## Icon"
+  "**Icon**"
+  "An input can be formatted with an icon"
   (list-keys "icon"))
 
 (defn icon []
@@ -125,21 +172,43 @@
   [left-icon])
 
 
-;; ---------------------------
-;; Labeled
 
 (defcard-doc
-  "## Labeled"
+  "**Labeled**"
+  "An input can be formatted with a label"
   (list-keys "labeled"))
 
-;; TODO: add label examples when label is ready
-
-
-;; ---------------------------
-;; Action
+(defn labeled []
+  [se/input {:data-ash [:labeled]}
+   [se/label "http://"]
+    [:input {:type        "text"
+             :placeholder "mysite.com"}]])
 
 (defcard-doc
-  "## Action"
+  (mkdn-pprint-source labeled))
+
+(defcard-rg labeled
+  [labeled])
+
+
+(defn right-labeled []
+  [se/input {:data-ash [:right-labeled]}
+   [:input {:type        "text"
+            :placeholder "mydomain"}]
+   [se/label ".com"]])
+
+(defcard-doc
+  (mkdn-pprint-source right-labeled))
+
+(defcard-rg right-labeled
+  [right-labeled])
+
+
+
+(defcard-doc
+  "**Action**"
+  "An input can be formatted to alert the user to an action they may
+  perform"
   (list-keys "action"))
 
 (defn action []
@@ -170,11 +239,10 @@
   [left-action])
 
 
-;; ---------------------------
-;; Transparent
 
 (defcard-doc
-  "## Transparent"
+  "**Transparent**"
+  "A transparent input has no background"
   (list-keys "transparent"))
 
 (defn transparent []
@@ -189,11 +257,10 @@
   [transparent])
 
 
-;; ---------------------------
-;; Inverted
 
 (defcard-doc
-  "## Inverted"
+  "**Inverted**"
+  "An input can be formatted to appear on dark backgrounds"
   (list-keys "inverted"))
 
 (defn inverted []
@@ -210,11 +277,10 @@
   [inverted])
 
 
-;; ---------------------------
-;; Fluid
 
 (defcard-doc
-  "## Fluid"
+  "**Fluid**"
+  "An input can take the size of its container"
   (list-keys "fluid"))
 
 (defn fluid []
@@ -229,11 +295,10 @@
   [fluid])
 
 
-;; ---------------------------
-;; Size
 
 (defcard-doc
-  "## Size"
+  "**Size**"
+  "An input can vary in size"
   (list-keys "size"))
 
 (defn size []

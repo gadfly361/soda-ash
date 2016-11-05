@@ -8,7 +8,6 @@
    [reagent.core]
    [soda-ash.element :as se]
    [soda-ash.helpers :as h]
-   [soda-ash.elements.icon :as icon]
    [soda-ash.elements.icons :as icons]))
 
 
@@ -18,6 +17,11 @@
 (defcard-doc
   (h/devcard-docs icons/opts))
 
+(defcard-doc
+  "Require the following:
+   ```
+  [soda-ash.element :as se]
+  ```")
 
 
 

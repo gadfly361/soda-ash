@@ -18,6 +18,12 @@
 (defcard-doc
   (h/devcard-docs loader/opts))
 
+(defcard-doc
+  "Require the following:
+   ```
+  [soda-ash.element :as se]
+  ```")
+
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -28,6 +34,10 @@
 ---
 # Types"
   (h/list-types loader/opts))
+
+(defcard-doc
+  "**Loader**"
+  "A loader")
 
 ;; TODO: update when dimmer is available
 (defn type-default []
@@ -48,6 +58,12 @@
 
 (defcard-rg default
   [type-default])
+
+
+
+(defcard-doc
+  "**Text loader**"
+  "A loader can contain text")
 
 ;; TODO: update when dimmer is available
 (defn type-text []
@@ -71,6 +87,7 @@
 
 
 
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; States
 
@@ -79,6 +96,11 @@
 ---
 # States"
   (list-keys "states"))
+
+
+(defcard-doc
+  "**Indeterminate**"
+  "A loader can show it's unsure of how long a task will take")
 
 ;; TODO: update when dimmer is available
 (defn state-indeterminate []
@@ -101,6 +123,11 @@
   [state-indeterminate])
 
 
+
+(defcard-doc
+  "**Active**"
+  "A loader can be active or visible")
+
 (defn state-active []
   [se/loader {:data-soda :active}])
 
@@ -110,6 +137,11 @@
 (defcard-rg active
   [state-active])
 
+
+
+(defcard-doc
+  "**Disabled**"
+  "A loader can be disabled or hidden")
 
 (defn state-disabled []
   [se/loader {:data-soda :disabled}])
@@ -122,6 +154,7 @@
 
 
 
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Variations
 
@@ -131,8 +164,8 @@
 # Variations")
 
 (defcard-doc
-  "
-## Inline"
+  "**Inline**"
+  "Loaders can appear inline with content"
   (list-keys "inline"))
 
 ;; TODO: update when dimmer is available
@@ -156,9 +189,31 @@
   [variation-inline])
 
 
+;; TODO: update when dimmer is available
+(defn variation-centered-inline []
+  [se/segment
+   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+   eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+   ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+   aliquip ex ea commodo consequat. Duis aute irure dolor in
+   reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+   pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+   culpa qui officia deserunt mollit anim id est laborum."
+   [:div.ui.dimmer.active
+    [se/loader {:data-ash [:centered-inline]}]]
+   ])
+
 (defcard-doc
-  "
-## Size"
+  (mkdn-pprint-source variation-centered-inline))
+
+(defcard-rg centered-inline
+  [variation-centered-inline])
+
+
+
+(defcard-doc
+  "**Size**"
+  "Loaders can have different sizes"
   (list-keys "size"))
 
 ;; TODO: update when dimmer is available
@@ -215,9 +270,10 @@
    ])
 
 
+
 (defcard-doc
-  "
-## Inverted"
+  "**Inverted**"
+  "Loaders can have their colors inverted"
   (list-keys "inverted"))
 
 ;; TODO: update when dimmer is available
@@ -253,4 +309,4 @@
    ])
 
 
-;; TODO: make sure to explain loaders w/ dimmers
+;; TODO: explain loaders w/ dimmers

@@ -10,37 +10,37 @@
    [soda-ash.content :as sco]
    [soda-ash.helpers :as h]
    [soda-ash.elements.label :as label]
-   [soda-ash.elements.labels :as labels]
    ))
 
 
 (def list-keys
   (h/list-keys label/variations))
 
-(def list-labels-keys
-  (h/list-keys labels/variations))
-
-
 (defcard-doc
   (h/devcard-docs label/opts))
 
 (defcard-doc
-  (h/devcard-docs labels/opts))
+  "Require the following:
+   ```
+  [soda-ash.element :as se]
+  [soda-ash.content :as sco]
+  ```")
 
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Label
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Label Types
+;; Types
 
 (defcard-doc
   "
 ---
-# Label Types"
+# Types"
   (h/list-types label/opts))
+
+
+(defcard-doc
+  "**Label**"
+  "A label")
 
 (defn type-default []
   [se/label
@@ -54,6 +54,11 @@
   [type-default])
 
 
+
+(defcard-doc
+  "**Image**"
+  "A label can be formatted to emphasize an image")
+
 (defn type-image []
   [se/label-image
    [se/image {:src "images/ubuntu.png"}]
@@ -65,6 +70,11 @@
 (defcard-rg image
   [type-image])
 
+
+
+(defcard-doc
+  "**Pointing**"
+  "A label can point to content next to it")
 
 (defn type-pointing []
   [:div
@@ -122,8 +132,17 @@
   [type-right-pointing])
 
 
+
+(defcard-doc
+  "**Corner**"
+  "A label can position itself in the corner of an element."
+  "*Note: A corner label must be positioned inside a container with
+  `:position \"relative\"` to display properly. If a container is
+  rounded you will need to add `:overflow \"hidden\"` to the container
+  to produce a rounded label.*")
+
 (defn type-left-corner []
-  [:div {:style {:position "relative"}}
+  [:div {:style {:position "relative"}} ;; <-required
    [se/label-left-corner
     [se/icon-star]]
    [se/image {:data-ash [:medium]
@@ -151,6 +170,11 @@
   [type-right-corner])
 
 
+
+(defcard-doc
+  "**Tag**"
+  "A label can appear as a tag")
+
 (defn type-tag []
   [:div
    [se/input
@@ -165,6 +189,10 @@
   [type-tag])
 
 
+
+(defcard-doc
+  "**Ribbon**"
+  "A label can appear as a ribbon attaching itself to an element")
 
 (defn type-ribbon []
   [se/segment
@@ -205,6 +233,11 @@
 (defcard-rg right-ribbon
   [type-right-ribbon])
 
+
+
+(defcard-doc
+  "**Attached**"
+  "A label can attach to a content segment")
 
 (defn type-top-attached []
   [se/segment
@@ -326,6 +359,12 @@
   [type-bottom-left-attached])
 
 
+
+(defcard-doc
+  "**Horizontal**"
+  "A horizontal label is formatted to label content along-side it
+  horizontally")
+
 (defn type-horizontal []
   [:div
    [se/label-horizontal {:data-ash [:blue]}
@@ -339,6 +378,11 @@
 (defcard-rg horizontal
   [type-horizontal])
 
+
+
+(defcard-doc
+  "**Floating**"
+  "A label can float above another element")
 
 ;; TODO: update when menu is ready
 (defn type-floating []
@@ -360,19 +404,18 @@
 
 
 
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Label Variations
+;; Variations
 
 (defcard-doc
   "
 ---
-# Label Variations")
-
-;; --------------------------
-;; circular
+# Variations")
 
 (defcard-doc
-  "## circular"
+  "**Circular**"
+  "A label can be circular"
   (list-keys "circular"))
 
 (defn circular []
@@ -398,11 +441,10 @@
   [empty-circular])
 
 
-;; --------------------------
-;; basic
 
 (defcard-doc
-  "## basic"
+  "**Basic**"
+  "A label can reduce its complexity"
   (list-keys "basic"))
 
 (defn basic []
@@ -417,11 +459,10 @@
   [basic])
 
 
-;; --------------------------
-;; colored
 
 (defcard-doc
-  "## colored"
+  "**Colored**"
+  "A label can have different colors"
   (list-keys "colored"))
 
 (defn colored []
@@ -448,11 +489,10 @@
    [se/label {:data-ash [:black]} "black"]])
 
 
-;; --------------------------
-;; size
 
 (defcard-doc
-  "## size"
+  "**Size**"
+  "A label can vary in size"
   (list-keys "size"))
 
 (defn size []
@@ -474,20 +514,20 @@
    [se/label {:data-ash [:massive]} "massive"]])
 
 
+
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Label Contant
+;; Contant
 
 (defcard-doc
   "
 ---
-# Label Content")
+# Content")
 
-
-;; ---------------------------
-;; detail
 
 (defcard-doc
-  "## detail")
+  "**Detail**"
+  "A label can contain a detail")
 
 (defn content-detail []
   [se/label
@@ -502,11 +542,10 @@
   [content-detail])
 
 
-;; ---------------------------
-;; icon
 
 (defcard-doc
-  "## icon")
+  "**Icon**"
+  "A label can include an icon")
 
 (defn content-icon []
   [se/label
@@ -520,11 +559,10 @@
   [content-icon])
 
 
-;; ---------------------------
-;; image
 
 (defcard-doc
-  "## image")
+  "**Image**"
+  "A label can include an image")
 
 (defn content-image []
   [se/label
@@ -540,11 +578,10 @@
   [content-image])
 
 
-;; ---------------------------
-;; link
 
 (defcard-doc
-  "## link")
+  "**Link**"
+  "A label can be a link or contain an item that links")
 
 (defn content-link []
   [se/label
@@ -559,139 +596,3 @@
   [content-link])
 
 ;; Note: Currently not supporting label with an a tag
-
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Labels
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Labels Types
-
-(defcard-doc
-  "
----
-# Labels Types"
-  (h/list-types labels/opts))
-
-(defn labels-type-default []
-  [se/labels
-   [se/label "foo"]
-   [se/label "bar"]
-   [se/label "baz"]])
-
-(defcard-doc
-  (mkdn-pprint-source labels-type-default))
-
-(defcard-rg default
-  [labels-type-default])
-
-
-(defn labels-type-tag []
-  [se/labels-tag
-   [se/label "foo"]
-   [se/label "bar"]
-   [se/label "baz"]])
-
-(defcard-doc
-  (mkdn-pprint-source labels-type-tag))
-
-(defcard-rg tag
-  [labels-type-tag])
-
-
-(defn labels-type-circular []
-  [se/labels-circular
-   [se/label "foo"]
-   [se/label "bar"]
-   [se/label "baz"]])
-
-(defcard-doc
-  (mkdn-pprint-source labels-type-circular))
-
-(defcard-rg circular
-  [labels-type-circular])
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Labels Variations
-
-(defcard-doc
-  "
----
-# Labels Variations")
-
-;; --------------------------
-;; size
-
-(defcard-doc
-  "## size"
-  (list-labels-keys "size"))
-
-(defn labels-mini []
-  [se/labels-circular {:data-ash [:mini]}
-   [se/label "mini"]
-   [se/label "foo"]
-   [se/label "bar"]])
-
-(defn labels-size [size]
-  [se/labels-circular {:data-ash [size]}
-   [se/label (name size)]
-   [se/label "foo"]
-   [se/label "bar"]])
-
-(defcard-doc
-  (mkdn-pprint-source labels-mini))
-
-(defcard-rg size
-  [:div
-   [labels-mini]
-   [labels-size :tiny]
-   [labels-size :small]
-   [labels-size :medium]
-   [labels-size :large]
-   [labels-size :big]
-   [labels-size :huge]
-   [labels-size :massive]])
-
-
-
-;; --------------------------
-;; colored
-
-(defcard-doc
-  "## colored"
-  (list-labels-keys "colored"))
-
-(defn labels-red []
-  [se/labels-circular {:data-ash [:red]}
-   [se/label "red"]
-   [se/label "foo"]
-   [se/label "bar"]])
-
-(defn labels-colored [colored]
-  [se/labels-circular {:data-ash [colored]}
-   [se/label (name colored)]
-   [se/label "foo"]
-   [se/label "bar"]])
-
-(defcard-doc
-  (mkdn-pprint-source labels-red))
-
-(defcard-rg colored
-  [:div
-   [labels-red]
-   [labels-colored :orange]
-   [labels-colored :yellow]
-   [labels-colored :olive]
-   [labels-colored :green]
-   [labels-colored :teal]
-   [labels-colored :blue]
-   [labels-colored :violet]
-   [labels-colored :purple]
-   [labels-colored :pink]
-   [labels-colored :brown]
-   [labels-colored :grey]
-   [labels-colored :black]
-   ])

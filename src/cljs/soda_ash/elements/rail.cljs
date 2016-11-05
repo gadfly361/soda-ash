@@ -33,6 +33,18 @@
      :group-vector (vector
                     :close
                     :very-close)})
+
+   (create-group
+    {:group-name   "size"
+     :group-vector (vector
+                    :mini
+                    :tiny
+                    :small
+                    ;;
+                    :large
+                    :big
+                    :huge
+                    :massive)})
    ])
 
 

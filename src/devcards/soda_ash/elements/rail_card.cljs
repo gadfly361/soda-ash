@@ -14,9 +14,14 @@
 (def list-keys
   (h/list-keys rail/variations))
 
-
 (defcard-doc
   (h/devcard-docs rail/opts))
+
+(defcard-doc
+  "Require the following:
+   ```
+  [soda-ash.element :as se]
+  ```")
 
 
 
@@ -28,6 +33,10 @@
 ---
 # Types"
   (h/list-types rail/opts))
+
+(defcard-doc
+  "**Rail**"
+  "A rail can be presented on the left or right side of a container")
 
 (defn type-left []
   [se/segment
@@ -73,6 +82,11 @@
   [type-right])
 
 
+
+(defcard-doc
+  "**Internal**"
+  "A rail can attach itself to the inside of a container")
+
 (defn type-left-internal []
   [se/segment
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -116,6 +130,11 @@
 (defcard-rg right-internal
   [type-right-internal])
 
+
+
+(defcard-doc
+  "**Dividing**"
+  "A rail can create a division between itself and a container")
 
 (defn type-left-dividing []
   [:div
@@ -172,8 +191,8 @@
 
 
 (defcard-doc
-  "
-## Attached"
+  "**Attached**"
+  "A rail can appear attached to the main viewport"
   (list-keys "attached"))
 
 (defn variation-attached []
@@ -198,9 +217,10 @@
   [variation-attached])
 
 
+
 (defcard-doc
-  "
-## Close"
+  "**Close**"
+  "A rail can appear closer to the main viewport"
   (list-keys "close"))
 
 (defn variation-close []
@@ -245,3 +265,157 @@
 
 (defcard-rg very-close
   [variation-very-close])
+
+
+
+(defcard-doc
+  "**Size**"
+  "A rail can have different sizes"
+  "**NOTE**: The sizes don't appear to work..."
+  (list-keys "size"))
+
+(defn variation-mini []
+  [se/segment
+   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+   eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+   ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+   aliquip ex ea commodo consequat. Duis aute irure dolor in
+   reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+   pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+   culpa qui officia deserunt mollit anim id est laborum."
+
+   [se/rail-left {:data-ash [:mini]}
+    [se/segment
+     "mini"]]])
+
+(defcard-doc
+  (mkdn-pprint-source variation-mini))
+
+(defcard-rg mini
+  [variation-mini])
+
+
+(defn variation-tiny []
+  [se/segment
+   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+   eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+   ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+   aliquip ex ea commodo consequat. Duis aute irure dolor in
+   reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+   pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+   culpa qui officia deserunt mollit anim id est laborum."
+
+   [se/rail-left {:data-ash [:tiny]}
+    [se/segment
+     "tiny"]]])
+
+(defcard-doc
+  (mkdn-pprint-source variation-tiny))
+
+(defcard-rg tiny
+  [variation-tiny])
+
+
+(defn variation-small []
+  [se/segment
+   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+   eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+   ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+   aliquip ex ea commodo consequat. Duis aute irure dolor in
+   reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+   pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+   culpa qui officia deserunt mollit anim id est laborum."
+
+   [se/rail-left {:data-ash [:small]}
+    [se/segment
+     "small"]]])
+
+(defcard-doc
+  (mkdn-pprint-source variation-small))
+
+(defcard-rg small
+  [variation-small])
+
+
+(defn variation-large []
+  [se/segment
+   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+   eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+   ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+   aliquip ex ea commodo consequat. Duis aute irure dolor in
+   reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+   pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+   culpa qui officia deserunt mollit anim id est laborum."
+
+   [se/rail-left {:data-ash [:large]}
+    [se/segment
+     "large"]]])
+
+(defcard-doc
+  (mkdn-pprint-source variation-large))
+
+(defcard-rg large
+  [variation-large])
+
+
+(defn variation-big []
+  [se/segment
+   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+   eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+   ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+   aliquip ex ea commodo consequat. Duis aute irure dolor in
+   reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+   pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+   culpa qui officia deserunt mollit anim id est laborum."
+
+   [se/rail-left {:data-ash [:big]}
+    [se/segment
+     "big"]]])
+
+(defcard-doc
+  (mkdn-pprint-source variation-big))
+
+(defcard-rg big
+  [variation-big])
+
+
+(defn variation-huge []
+  [se/segment
+   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+   eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+   ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+   aliquip ex ea commodo consequat. Duis aute irure dolor in
+   reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+   pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+   culpa qui officia deserunt mollit anim id est laborum."
+
+   [se/rail-left {:data-ash [:huge]}
+    [se/segment
+     "huge"]]])
+
+(defcard-doc
+  (mkdn-pprint-source variation-huge))
+
+(defcard-rg huge
+  [variation-huge])
+
+
+(defn variation-massive []
+  [se/segment
+   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+   eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+   ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+   aliquip ex ea commodo consequat. Duis aute irure dolor in
+   reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+   pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+   culpa qui officia deserunt mollit anim id est laborum."
+
+   [se/rail-left {:data-ash [:massive]}
+    [se/segment
+     "massive"]]])
+
+(defcard-doc
+  (mkdn-pprint-source variation-massive))
+
+(defcard-rg massive
+  [variation-massive])

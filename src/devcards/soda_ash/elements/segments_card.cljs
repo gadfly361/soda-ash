@@ -1,4 +1,4 @@
-(ns soda-ash.elements.segment-card
+(ns soda-ash.elements.segments-card
   (:require-macros
    [devcards.core :refer [defcard-doc
                           defcard-rg
@@ -8,22 +8,19 @@
    [reagent.core]
    [soda-ash.element :as se]
    [soda-ash.helpers :as h]
-   [soda-ash.elements.segment :as segment]))
+   [soda-ash.elements.segment :as segment]
+   [soda-ash.elements.segments :as segments]))
 
 
 (def list-keys
   (h/list-keys segment/variations))
 
+
 (defcard-doc
   (h/devcard-docs segment/opts))
 
-
 (defcard-doc
-  "Require the following:
-   ```
-  [soda-ash.element :as se]
-  ```")
-
+  (h/devcard-docs segments/opts))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -34,11 +31,6 @@
 ---
 # Types"
   (h/list-types segment/opts))
-
-
-(defcard-doc
-  "**Segment**"
-  "A segment of content")
 
 (defn type-default []
   [se/segment
@@ -58,11 +50,6 @@
   [type-default])
 
 
-
-(defcard-doc
-  "**Raised**"
-  "A segment may be formatted to raise above the page")
-
 (defn type-raised []
   [se/segment-raised
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -80,11 +67,6 @@
 (defcard-rg raised
   [type-raised])
 
-
-
-(defcard-doc
-  "**Stacked**"
-  "A segment can be formatted to show it contains multiple pages")
 
 (defn type-stacked []
   [se/segment-stacked
@@ -122,17 +104,9 @@
   [type-tall-stacked])
 
 
-
-(defcard-doc
-  "**Piled**"
-  "A segment can be formatted to look like a pile of pages."
-  "*Piled segments use negative z-index to format the additional pages
-  below the segment. In order for them to appear correctly, your
-  segment's offset container must have a z-index declared.*")
-
 (defn type-piled []
   [se/segment-piled
-   {:style {:z-index 1}} ;; Need a z-index
+   {:style {:z-index 1}} ;; Note the z-index
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -147,12 +121,6 @@
 (defcard-rg piled
   [type-piled])
 
-
-
-(defcard-doc
-  "**Vertical Segment**"
-  "A vertical segment formats content to be aligned as part of a
-  vertical group")
 
 (defn type-vertical []
   [:div
@@ -190,11 +158,6 @@
 # States"
   (list-keys "states"))
 
-
-(defcard-doc
-  "**Disabled**"
-  "A segment may show its content is disabled")
-
 (defn state-disabled []
   [se/segment {:data-soda :disabled}
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -211,11 +174,6 @@
 (defcard-rg disabled
   [state-disabled])
 
-
-
-(defcard-doc
-  "**Loading**"
-  "A segment may show its content is being loaded")
 
 (defn state-loading []
   [se/segment {:data-soda :loading}
@@ -235,7 +193,6 @@
 
 
 
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Variations
 
@@ -245,10 +202,7 @@
 # Variations")
 
 (defcard-doc
-  "**Attached**"
-  "A segment can be attached to other content on a page. Attached
-  segments are designed to be used with other attached variations like
-  attached header or attached messages."
+  "## Attached"
   (list-keys "attached"))
 
 (defn variation-attached []
@@ -267,10 +221,8 @@
   [variation-attached])
 
 
-
 (defcard-doc
-  "**Padded**"
-  "A segment can increase its padding"
+  "## Padded"
   (list-keys "padded"))
 
 (defn variation-padded []
@@ -309,10 +261,8 @@
   [variation-very-padded])
 
 
-
 (defcard-doc
-  "**Compact**"
-  "A segment may take up only as much space as is necessary"
+  "## Compact"
   (list-keys "compact"))
 
 (defn variation-compact []
@@ -333,10 +283,8 @@
   [variation-compact])
 
 
-
 (defcard-doc
-  "**Colored**"
-  "A segment can be colored"
+  "## Colored"
   (list-keys "colored"))
 
 (defn variation-colored []
@@ -376,10 +324,8 @@
    ])
 
 
-
 (defcard-doc
-  "**Inverted**"
-  "These colors can be inverted"
+  "## Inverted"
   (list-keys "inverted"))
 
 (defn variation-inverted []
@@ -432,10 +378,8 @@
    ])
 
 
-
 (defcard-doc
-  "**Emphasis**"
-  "A segment can be formatted to appear more or less noticeable"
+  "## Emphasis"
   (list-keys "emphasis"))
 
 (defn variation-secondary []
@@ -460,38 +404,8 @@
   [variation-tertiary])
 
 
-
 (defcard-doc
-  "**Emphasis Inverted**"
-  "Inverted colors may also be more or less noticeable"
-  (list-keys "emphasis"))
-
-(defn variation-inverted-secondary []
-  [se/segment {:data-ash [:inverted :secondary]}
-   "inverted secondary"])
-
-(defcard-doc
-  (mkdn-pprint-source variation-inverted-secondary))
-
-(defcard-rg inverted-secondary
-  [variation-inverted-secondary])
-
-
-(defn variation-inverted-tertiary []
-  [se/segment {:data-ash [:inverted :tertiary]}
-   "inverted tertiary"])
-
-(defcard-doc
-  (mkdn-pprint-source variation-inverted-tertiary))
-
-(defcard-rg inverted-tertiary
-  [variation-inverted-tertiary])
-
-
-
-(defcard-doc
-  "**Circular**"
-  "A segment can be circular"
+  "## Circular"
   (list-keys "circular"))
 
 (defn variation-circular []
@@ -512,10 +426,8 @@
   [variation-circular])
 
 
-
 (defcard-doc
-  "**Clearing**"
-  "A segment can clear floated content"
+  "## Clearing"
   (list-keys "clearing"))
 
 (defn variation-clearing []
@@ -538,10 +450,8 @@
   [variation-clearing])
 
 
-
 (defcard-doc
-  "**Floated**"
-  "A segment can appear to the left or right of other content"
+  "## Floated"
   (list-keys "floated"))
 
 (defn variation-floated []
@@ -558,12 +468,10 @@
   [variation-floated])
 
 
-
 (defcard-doc
   "
 <br>
-**Text Alignment**"
-  "A segment can have its text aligned to a side"
+## Text Alignment"
   (list-keys "text alignment"))
 
 (defn variation-text-alignment []
@@ -585,18 +493,174 @@
   [variation-text-alignment])
 
 
-
 (defcard-doc
-  "**Basic**"
-  "A basic segment has no special formatting"
+  "## Basic"
   (list-keys "basic"))
 
 (defn variation-basic []
-  [se/segment {:data-ash [:basic]}
-   "A basic segment has no special formatting"])
+  [:div
+   [se/segment {:data-ash [:basic]}
+    [se/header-h3 "basic"]
+    "A basic segment has no special formatting"]])
 
 (defcard-doc
   (mkdn-pprint-source variation-basic))
 
 (defcard-rg basic
   [variation-basic])
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Segments
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Types
+
+(defcard-doc
+  "
+---
+# Types"
+  (h/list-types segments/opts))
+
+
+(defn segments-default []
+  [se/segments
+   [se/segment
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+   eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+   ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+   aliquip ex ea commodo consequat. Duis aute irure dolor in
+   reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+   pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+   culpa qui officia deserunt mollit anim id est laborum."]
+
+   [se/segment
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+   eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+   ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+   aliquip ex ea commodo consequat. Duis aute irure dolor in
+   reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+   pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+   culpa qui officia deserunt mollit anim id est laborum."]
+   ])
+
+(defcard-doc
+  (mkdn-pprint-source segments-default))
+
+(defcard-rg default
+  [segments-default])
+
+
+(defn segments-horizontal []
+  [se/segments-horizontal
+   [se/segment
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+   eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+   ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+   aliquip ex ea commodo consequat. Duis aute irure dolor in
+   reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+   pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+   culpa qui officia deserunt mollit anim id est laborum."]
+
+   [se/segment
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+   eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+   ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+   aliquip ex ea commodo consequat. Duis aute irure dolor in
+   reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+   pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+   culpa qui officia deserunt mollit anim id est laborum."]
+   ])
+
+(defcard-doc
+  (mkdn-pprint-source segments-horizontal))
+
+(defcard-rg horizontal
+  [segments-horizontal])
+
+
+
+(defn segments-raised []
+  [se/segments-raised
+   [se/segment
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+   eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+   ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+   aliquip ex ea commodo consequat. Duis aute irure dolor in
+   reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+   pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+   culpa qui officia deserunt mollit anim id est laborum."]
+
+   [se/segment
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+   eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+   ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+   aliquip ex ea commodo consequat. Duis aute irure dolor in
+   reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+   pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+   culpa qui officia deserunt mollit anim id est laborum."]
+   ])
+
+(defcard-doc
+  (mkdn-pprint-source segments-raised))
+
+(defcard-rg raised
+  [segments-raised])
+
+
+(defn segments-stacked []
+  [se/segments-stacked
+   [se/segment
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+   eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+   ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+   aliquip ex ea commodo consequat. Duis aute irure dolor in
+   reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+   pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+   culpa qui officia deserunt mollit anim id est laborum."]
+
+   [se/segment
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+   eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+   ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+   aliquip ex ea commodo consequat. Duis aute irure dolor in
+   reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+   pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+   culpa qui officia deserunt mollit anim id est laborum."]
+   ])
+
+(defcard-doc
+  (mkdn-pprint-source segments-stacked))
+
+(defcard-rg stacked
+  [segments-stacked])
+
+
+(defn segments-piled []
+  [se/segments-piled {:style {:z-index 1}}
+   [se/segment
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+   eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+   ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+   aliquip ex ea commodo consequat. Duis aute irure dolor in
+   reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+   pariatur. Excepteur sint occaecat cuipdatat non proident, sunt in
+   culpa qui officia deserunt mollit anim id est laborum."]
+
+   [se/segment
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+   eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+   ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+   aliquip ex ea commodo consequat. Duis aute irure dolor in
+   reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+   pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+   culpa qui officia deserunt mollit anim id est laborum."]
+   ])
+
+(defcard-doc
+  (mkdn-pprint-source segments-piled))
+
+(defcard-rg piled
+  [segments-piled])

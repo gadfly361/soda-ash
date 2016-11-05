@@ -29,7 +29,8 @@
   [(create-group
     {:group-name   "inline"
      :group-vector (vector
-                    :inline)})
+                    :inline
+                    :centered-inline)})
 
    (create-group
     {:group-name   "size"

@@ -15,9 +15,15 @@
 (def list-keys
   (h/list-keys reveal/variations))
 
-
 (defcard-doc
   (h/devcard-docs reveal/opts))
+
+(defcard-doc
+  "Require the following:
+   ```
+  [soda-ash.element :as se]
+  [soda-ash.content :as sco]
+  ```")
 
 
 
@@ -29,6 +35,11 @@
 ---
 # Types"
   (h/list-types reveal/opts))
+
+
+(defcard-doc
+  "**Fade**"
+  "An element can disappear to reveal content below")
 
 (defn type-fade []
   [se/reveal-fade
@@ -46,6 +57,11 @@
 (defcard-rg fade
   [type-fade])
 
+
+
+(defcard-doc
+  "**Move**"
+  "An element can move in a direction to reveal content")
 
 (defn type-move []
   [se/reveal-move
@@ -115,6 +131,11 @@
   [type-move-down])
 
 
+
+(defcard-doc
+  "**Rotate**"
+  "An element can rotate to reveal content below")
+
 (defn type-rotate []
   [se/reveal-rotate
    [sco/content-visible
@@ -159,6 +180,10 @@
 # States"
   (list-keys "states"))
 
+(defcard-doc
+  "**Active**"
+  "An active reveal displays its hidden content")
+
 (defn state-active []
   [se/reveal-rotate-left {:data-soda :active}
    [sco/content-visible
@@ -175,6 +200,11 @@
 (defcard-rg active
   [state-active])
 
+
+
+(defcard-doc
+  "**Disabled**"
+  "A disabled reveal will not animate when hovered")
 
 (defn state-disabled []
   [se/reveal-rotate-left {:data-soda :disabled}
@@ -204,7 +234,8 @@
 
 
 (defcard-doc
-  "## Variations"
+  "**Instant**"
+  "An element can show its content without delay"
   (list-keys "instant"))
 
 (defn variation-instant []

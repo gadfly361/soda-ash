@@ -8,8 +8,7 @@
    [reagent.core]
    [soda-ash.element :as se]
    [soda-ash.helpers :as h]
-   [soda-ash.elements.icon :as icon]
-   [soda-ash.elements.icons :as icons]))
+   [soda-ash.elements.icon :as icon]))
 
 
 (def list-keys
@@ -19,6 +18,11 @@
 (defcard-doc
   (h/devcard-docs icon/opts))
 
+(defcard-doc
+  "Require the following:
+   ```
+  [soda-ash.element :as se]
+  ```")
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

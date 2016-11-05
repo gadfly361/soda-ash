@@ -8,28 +8,22 @@
    [reagent.core]
    [soda-ash.element :as se]
    [soda-ash.helpers :as h]
-   [soda-ash.elements.image :as image]
-   [soda-ash.elements.images :as images]))
+   [soda-ash.elements.image :as image]))
 
 
 (def list-keys
   (h/list-keys image/variations))
 
-(def list-images-keys
-  (h/list-keys images/variations))
-
-
 (defcard-doc
   (h/devcard-docs image/opts))
 
 (defcard-doc
-  (h/devcard-docs images/opts))
+  "Require the following:
+   ```
+  [soda-ash.element :as se]
+  ```")
 
 
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Image
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Types
@@ -39,6 +33,10 @@
 ---
 # Image Types"
   (h/list-types image/opts))
+
+(defcard-doc
+  "**Image**"
+  "An image")
 
 (defn type-default []
   [se/image {:data-ash [:small]
@@ -50,6 +48,11 @@
 (defcard-rg default
   [type-default])
 
+
+
+(defcard-doc
+  "**Image Link**"
+  "An image can be formatted to link to other content")
 
 (defn type-link []
   [:a {:href   "https://twitter.com/gadfly361"
@@ -65,6 +68,7 @@
 
 
 
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; States
 
@@ -73,6 +77,10 @@
 ---
 # Image States"
   (list-keys "states"))
+
+(defcard-doc
+  "**Hidden**"
+  "An image can be hidden")
 
 (defn state-hidden []
   [se/image {:data-soda :hidden
@@ -85,6 +93,11 @@
 (defcard-rg hidden
   [state-hidden])
 
+
+
+(defcard-doc
+  "**Disabled**"
+  "An image can show that it is disabled and cannot be selected")
 
 (defn state-disabled []
   [se/image {:data-soda :disabled
@@ -99,6 +112,7 @@
 
 
 
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Variations
 
@@ -107,16 +121,16 @@
 ---
 # Image Variations")
 
-;; --------------------------
-;; avatar
-
 (defcard-doc
-  "## avatar"
+  "**Avatar**"
+  "An image may be formatted to appear inline with text as an avatar"
   (list-keys "avatar"))
 
 (defn avatar []
-  [se/image {:data-ash [:avatar]
-             :src "images/gadfly.png"}])
+  [:div
+   [se/image {:data-ash [:avatar]
+              :src      "images/gadfly.png"}]
+   [:span "Gadfly361"]])
 
 (defcard-doc
   (mkdn-pprint-source avatar))
@@ -125,11 +139,11 @@
   [avatar])
 
 
-;; --------------------------
-;; bordered
 
 (defcard-doc
-  "## bordered"
+  "**Bordered**"
+  "An image may include a border to emphasize the edges of white or
+  transparent content"
   (list-keys "bordered"))
 
 (defn bordered []
@@ -144,11 +158,10 @@
   [bordered])
 
 
-;; --------------------------
-;; fluid
 
 (defcard-doc
-  "## fluid"
+  "**Fluid**"
+  "An image can take up the width of its container"
   (list-keys "fluid"))
 
 (defn fluid []
@@ -170,11 +183,10 @@
   [fluid])
 
 
-;; --------------------------
-;; rounded
 
 (defcard-doc
-  "## rounded"
+  "**Rounded**"
+  "An image may appear rounded"
   (list-keys "rounded"))
 
 (defn rounded []
@@ -189,11 +201,10 @@
   [rounded])
 
 
-;; --------------------------
-;; circular
 
 (defcard-doc
-  "## circular"
+  "**Circular**"
+  "An image may appear circular"
   (list-keys "circular"))
 
 (defn circular []
@@ -208,11 +219,10 @@
   [circular])
 
 
-;; --------------------------
-;; aligned
 
 (defcard-doc
-  "## aligned"
+  "**Aligned**"
+  "An image can specify its alignment"
   (list-keys "aligned"))
 
 (defn aligned []
@@ -244,11 +254,10 @@
   [aligned])
 
 
-;; --------------------------
-;; centered
 
 (defcard-doc
-  "## centered"
+  "**Centered**"
+  "An image can appear centered in a content block"
   (list-keys "centered"))
 
 (defn centered []
@@ -264,11 +273,11 @@
   [centered])
 
 
-;; --------------------------
-;; spaced
 
 (defcard-doc
-  "## spaced"
+  "**Spaced**"
+  "An image can specify that it needs an additional spacing to
+  separate it from nearby content"
   (list-keys "spaced"))
 
 (defn spaced []
@@ -310,11 +319,10 @@
   [spaced])
 
 
-;; --------------------------
-;; floated
 
 (defcard-doc
-  "## floated"
+  "**Floated**"
+  "An image can sit to the left or right of other content"
   (list-keys "floated"))
 
 (defn floated []
@@ -351,11 +359,10 @@
   [floated])
 
 
-;; --------------------------
-;; size
 
 (defcard-doc
-  "## size"
+  "**Size**"
+  "An image may appear at different sizes"
   (list-keys "size"))
 
 (defn size []
@@ -391,73 +398,4 @@
    "massive"
    [se/image {:data-ash [:massive]
               :src "images/ubuntu.png"}]
-   ])
-
-
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Images
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(defcard-doc
-  "
----
-# Images Types"
-  (h/list-types images/opts))
-
-(defn type-images []
-  [se/images
-   [se/image {:data-ash [:small]
-              :src "images/ubuntu.png"}]
-   [se/image {:data-ash [:small]
-              :src "images/ubuntu.png"}]])
-
-(defcard-doc
-  (mkdn-pprint-source type-images))
-
-(defcard-rg images
-  [type-images])
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Variations
-
-(defcard-doc
-  "
----
-# Images Variations")
-
-;; --------------------------
-;; size
-
-(defcard-doc
-  "## size"
-  (list-keys "size"))
-
-(defn images-mini []
-  [:div "mini"
-   [se/images {:data-ash [:mini]}
-    [se/image {:src "images/ubuntu.png"}]
-    [se/image {:src "images/ubuntu.png"}]]])
-
-(defn images-size [size]
-  [:div (name size)
-   [se/images {:data-ash [size]}
-    [se/image {:src "images/ubuntu.png"}]
-    [se/image {:src "images/ubuntu.png"}]]])
-
-(defcard-doc
-  (mkdn-pprint-source images-mini))
-
-(defcard-rg size
-  [:div
-   [images-mini]
-   [images-size :tiny]
-   [images-size :small]
-   [images-size :medium]
-   [images-size :large]
-   [images-size :big]
-   [images-size :huge]
-   [images-size :massive]
    ])
