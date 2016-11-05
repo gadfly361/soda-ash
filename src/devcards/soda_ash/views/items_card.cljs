@@ -76,7 +76,7 @@
 (defcard-doc
   (mkdn-pprint-source type-default))
 
-(defcard-rg
+(defcard-rg default
   [type-default])
 
 
@@ -94,7 +94,7 @@
   (list-keys "divided"))
 
 (defn variation-divided []
-  [sv/items {:ash [:divided]}
+  [sv/items {:data-ash [:divided]}
    [sco/item
     [sco/image
      [:img {:src "/images/gadfly.png"}]]
@@ -135,7 +135,7 @@
 (defcard-doc
   (mkdn-pprint-source variation-divided))
 
-(defcard-rg
+(defcard-rg divided
   [variation-divided])
 
 
@@ -144,7 +144,7 @@
   (list-keys "link"))
 
 (defn variation-link []
-  [sv/items {:ash [:link]}
+  [sv/items {:data-ash [:link]}
    [sco/item
     [sco/image
      [:img {:src "/images/gadfly.png"}]]
@@ -185,7 +185,7 @@
 (defcard-doc
   (mkdn-pprint-source variation-link))
 
-(defcard-rg
+(defcard-rg link
   [variation-link])
 
 
@@ -194,7 +194,7 @@
   (list-keys "relaxed"))
 
 (defn variation-relaxed []
-  [sv/items {:ash [:relaxed]}
+  [sv/items {:data-ash [:relaxed]}
    [sco/item
     [sco/image
      [:img {:src "/images/gadfly.png"}]]
@@ -235,12 +235,12 @@
 (defcard-doc
   (mkdn-pprint-source variation-relaxed))
 
-(defcard-rg
+(defcard-rg relaxed
   [variation-relaxed])
 
 
 (defn variation-very-relaxed []
-  [sv/items {:ash [:very-relaxed]}
+  [sv/items {:data-ash [:very-relaxed]}
    [sco/item
     [sco/image
      [:img {:src "/images/gadfly.png"}]]
@@ -281,5 +281,5 @@
 (defcard-doc
   (mkdn-pprint-source variation-very-relaxed))
 
-(defcard-rg
+(defcard-rg very-relaxed
   [variation-very-relaxed])

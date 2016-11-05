@@ -41,14 +41,14 @@
    [sco/divider "/"]
 
    [sco/section
-    {:soda :active}
+    {:data-soda :active}
     "T-Shirt"]
    ])
 
 (defcard-doc
   (mkdn-pprint-source type-default))
 
-(defcard-rg
+(defcard-rg default
   [type-default])
 
 
@@ -69,7 +69,7 @@
   (list-keys "size"))
 
 (defn variation-size-mini []
-  [sc/breadcrumb {:ash [:mini]}
+  [sc/breadcrumb {:data-ash [:mini]}
    [sco/section
     "mini"]
    [sco/divider "/"]
@@ -79,12 +79,12 @@
    [sco/divider "/"]
 
    [sco/section
-    {:soda :active}
+    {:data-soda :active}
     "T-Shirt"]])
 
 (defn variation-size [size]
   [:div
-   [sc/breadcrumb {:ash [size]}
+   [sc/breadcrumb {:data-ash [size]}
    [sco/section
      (name size)]
     [sco/divider "/"]
@@ -94,13 +94,13 @@
     [sco/divider "/"]
 
    [sco/section
-     {:soda :active}
+     {:data-soda :active}
      "T-Shirt"]]])
 
 (defcard-doc
   (mkdn-pprint-source variation-size))
 
-(defcard-rg
+(defcard-rg size
   [:div
    [variation-size-mini]
    [variation-size :tiny]
@@ -117,7 +117,7 @@
      [sco/divider "/"]
 
    [sco/section
-      {:soda :active}
+      {:data-soda :active}
       "T-Shirt"]]]
 
    [variation-size :large]
@@ -153,14 +153,14 @@
    [sco/divider "/"]
 
    [sco/section
-    {:soda :active}
+    {:data-soda :active}
     "T-Shirt"]
    ])
 
 (defcard-doc
   (mkdn-pprint-source content-divider))
 
-(defcard-rg
+(defcard-rg divider
   [content-divider])
 
 
@@ -169,22 +169,22 @@
    [sco/section
     "Home"]
    [se/icon-angle-right
-    {:ash [:divider]}]
+    {:data-ash [:divider]}]
 
    [sco/section
     "Store"]
    [se/icon-angle-right
-    {:ash [:divider]}]
+    {:data-ash [:divider]}]
 
    [sco/section
-    {:soda :active}
+    {:data-soda :active}
     "T-Shirt"]
    ])
 
 (defcard-doc
   (mkdn-pprint-source content-divider-icon))
 
-(defcard-rg
+(defcard-rg divider-icon
   [content-divider-icon])
 
 
@@ -199,22 +199,22 @@
    [sco/section
     "Home"]
    [se/icon-angle-right
-    {:ash [:divider]}]
+    {:data-ash [:divider]}]
 
    [sco/section
     "Store"]
    [se/icon-angle-right
-    {:ash [:divider]}]
+    {:data-ash [:divider]}]
 
    [sco/section
-    {:soda :active} ;; <-- note, can be :active
+    {:data-soda :active} ;; <-- note, can be :active
     "T-Shirt"]
    ])
 
 (defcard-doc
   (mkdn-pprint-source content-section))
 
-(defcard-rg
+(defcard-rg section
   [content-section])
 
 
@@ -229,20 +229,20 @@
    [sco/section-link
      "Home"]
    [se/icon-angle-right
-    {:ash [:divider]}]
+    {:data-ash [:divider]}]
 
    [sco/section-link
     "Store"]
    [se/icon-angle-right
-    {:ash [:divider]}]
+    {:data-ash [:divider]}]
 
    [sco/section-link
-    {:soda :active} ;; <-- note, can be :active
+    {:data-soda :active} ;; <-- note, can be :active
     "T-Shirt"]
    ])
 
 (defcard-doc
   (mkdn-pprint-source content-link))
 
-(defcard-rg
+(defcard-rg link
   [content-link])

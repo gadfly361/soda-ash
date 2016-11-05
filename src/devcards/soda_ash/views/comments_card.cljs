@@ -36,7 +36,7 @@
 
 (defn type-default []
   [sv/comments
-   [se/header-h3 {:ash [:dividing]}
+   [se/header-h3 {:data-ash [:dividing]}
     "Comments"]
 
    [sco/s-comment
@@ -78,7 +78,7 @@
 (defcard-doc
   (mkdn-pprint-source type-default))
 
-(defcard-rg
+(defcard-rg default
   [type-default])
 
 
@@ -94,7 +94,7 @@
 
 (defn states-collapsed []
   [sv/comments
-   [se/header-h3 {:ash [:dividing]}
+   [se/header-h3 {:data-ash [:dividing]}
     "Comments"]
 
    [sco/s-comment
@@ -119,7 +119,7 @@
      [sco/actions
       [:a "Reply"]]]
 
-    [sv/comments {:soda :collapsed} ;; <-- Attention
+    [sv/comments {:data-soda :collapsed} ;; <-- Attention
      [sco/s-comment
       [sco/avatar-link
        [:img {:src "/images/rachel.png"}]]
@@ -136,7 +136,7 @@
 (defcard-doc
   (mkdn-pprint-source states-collapsed))
 
-(defcard-rg
+(defcard-rg collapsed
   [states-collapsed])
 
 
@@ -154,8 +154,8 @@
   (list-keys "threaded"))
 
 (defn variation-threaded []
-  [sv/comments {:ash [:threaded]} ;; <-- attention
-   [se/header-h3 {:ash [:dividing]}
+  [sv/comments {:data-ash [:threaded]} ;; <-- attention
+   [se/header-h3 {:data-ash [:dividing]}
     "Comments"]
 
    [sco/s-comment
@@ -208,7 +208,7 @@
 (defcard-doc
   (mkdn-pprint-source variation-threaded))
 
-(defcard-rg
+(defcard-rg threaded
   [variation-threaded])
 
 
@@ -217,8 +217,8 @@
   (list-keys "minimal"))
 
 (defn variation-minimal []
-  [sv/comments {:ash [:minimal]} ;; <-- attention
-   [se/header-h3 {:ash [:dividing]}
+  [sv/comments {:data-ash [:minimal]} ;; <-- attention
+   [se/header-h3 {:data-ash [:dividing]}
     "Comments"]
 
    [sco/s-comment
@@ -271,5 +271,5 @@
 (defcard-doc
   (mkdn-pprint-source variation-minimal))
 
-(defcard-rg
+(defcard-rg minimal
   [variation-minimal])

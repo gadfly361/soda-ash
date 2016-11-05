@@ -34,16 +34,16 @@
   [se/reveal-fade
    [sco/content-visible
     [se/image {:src "/images/square-image.png"
-               :ash [:small]}]]
+               :data-ash [:small]}]]
    [sco/content-hidden
     [se/image {:src "/images/gadfly.png"
-               :ash [:small]}]]
+               :data-ash [:small]}]]
    ])
 
 (defcard-doc
   (mkdn-pprint-source type-fade))
 
-(defcard-rg
+(defcard-rg fade
   [type-fade])
 
 
@@ -51,16 +51,16 @@
   [se/reveal-move
    [sco/content-visible
     [se/image {:src "/images/square-image.png"
-               :ash [:small]}]]
+               :data-ash [:small]}]]
    [sco/content-hidden
     [se/image {:src "/images/gadfly.png"
-               :ash [:small]}]]
+               :data-ash [:small]}]]
    ])
 
 (defcard-doc
   (mkdn-pprint-source type-move))
 
-(defcard-rg
+(defcard-rg move
   [type-move])
 
 
@@ -68,16 +68,16 @@
   [se/reveal-move-right
    [sco/content-visible
     [se/image {:src "/images/square-image.png"
-               :ash [:small]}]]
+               :data-ash [:small]}]]
    [sco/content-hidden
     [se/image {:src "/images/gadfly.png"
-               :ash [:small]}]]
+               :data-ash [:small]}]]
    ])
 
 (defcard-doc
   (mkdn-pprint-source type-move-right))
 
-(defcard-rg
+(defcard-rg move-right
   [type-move-right])
 
 
@@ -85,16 +85,16 @@
   [se/reveal-move-up
    [sco/content-visible
     [se/image {:src "/images/square-image.png"
-               :ash [:small]}]]
+               :data-ash [:small]}]]
    [sco/content-hidden
     [se/image {:src "/images/gadfly.png"
-               :ash [:small]}]]
+               :data-ash [:small]}]]
    ])
 
 (defcard-doc
   (mkdn-pprint-source type-move-up))
 
-(defcard-rg
+(defcard-rg move-up
   [type-move-up])
 
 
@@ -102,16 +102,16 @@
   [se/reveal-move-down
    [sco/content-visible
     [se/image {:src "/images/square-image.png"
-               :ash [:small]}]]
+               :data-ash [:small]}]]
    [sco/content-hidden
     [se/image {:src "/images/gadfly.png"
-               :ash [:small]}]]
+               :data-ash [:small]}]]
    ])
 
 (defcard-doc
   (mkdn-pprint-source type-move-down))
 
-(defcard-rg
+(defcard-rg move-down
   [type-move-down])
 
 
@@ -119,16 +119,16 @@
   [se/reveal-rotate
    [sco/content-visible
     [se/image {:src "/images/square-image.png"
-               :ash [:small]}]]
+               :data-ash [:small]}]]
    [sco/content-hidden
     [se/image {:src "/images/gadfly.png"
-               :ash [:small]}]]
+               :data-ash [:small]}]]
    ])
 
 (defcard-doc
   (mkdn-pprint-source type-rotate))
 
-(defcard-rg
+(defcard-rg rotate
   [type-rotate])
 
 
@@ -136,16 +136,16 @@
   [se/reveal-rotate-left
    [sco/content-visible
     [se/image {:src "/images/square-image.png"
-               :ash [:small]}]]
+               :data-ash [:small]}]]
    [sco/content-hidden
     [se/image {:src "/images/gadfly.png"
-               :ash [:small]}]]
+               :data-ash [:small]}]]
    ])
 
 (defcard-doc
   (mkdn-pprint-source type-rotate-left))
 
-(defcard-rg
+(defcard-rg rotate-left
   [type-rotate-left])
 
 
@@ -160,36 +160,36 @@
   (list-keys "states"))
 
 (defn state-active []
-  [se/reveal-rotate-left {:soda :active}
+  [se/reveal-rotate-left {:data-soda :active}
    [sco/content-visible
     [se/image {:src "/images/square-image.png"
-               :ash [:small]}]]
+               :data-ash [:small]}]]
    [sco/content-hidden
     [se/image {:src "/images/gadfly.png"
-               :ash [:small]}]]
+               :data-ash [:small]}]]
    ])
 
 (defcard-doc
   (mkdn-pprint-source state-active))
 
-(defcard-rg
+(defcard-rg active
   [state-active])
 
 
 (defn state-disabled []
-  [se/reveal-rotate-left {:soda :disabled}
+  [se/reveal-rotate-left {:data-soda :disabled}
    [sco/content-visible
     [se/image {:src "/images/square-image.png"
-               :ash [:small]}]]
+               :data-ash [:small]}]]
    [sco/content-hidden
     [se/image {:src "/images/gadfly.png"
-               :ash [:small]}]]
+               :data-ash [:small]}]]
    ])
 
 (defcard-doc
   (mkdn-pprint-source state-disabled))
 
-(defcard-rg
+(defcard-rg disabled
   [state-disabled])
 
 
@@ -208,17 +208,17 @@
   (list-keys "instant"))
 
 (defn variation-instant []
-  [se/reveal-move {:ash [:instant]}
+  [se/reveal-move {:data-ash [:instant]}
    [sco/content-visible
     [se/image {:src "/images/square-image.png"
-               :ash [:small]}]]
+               :data-ash [:small]}]]
    [sco/content-hidden
     [se/image {:src "/images/gadfly.png"
-               :ash [:small]}]]
+               :data-ash [:small]}]]
    ])
 
 (defcard-doc
   (mkdn-pprint-source variation-instant))
 
-(defcard-rg
+(defcard-rg instant
   [variation-instant])

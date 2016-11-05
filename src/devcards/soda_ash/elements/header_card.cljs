@@ -37,7 +37,7 @@
 (defcard-doc
   (mkdn-pprint-source type-h1))
 
-(defcard-rg
+(defcard-rg h1
   [:div
    [type-h1]
    [se/header-h2 "h2 header"]
@@ -53,7 +53,7 @@
 (defcard-doc
   (mkdn-pprint-source type-huge))
 
-(defcard-rg
+(defcard-rg huge
   [:div
    [type-huge]
    [se/header-large "large header"]
@@ -69,7 +69,7 @@
 (defcard-doc
   (mkdn-pprint-source type-sub))
 
-(defcard-rg
+(defcard-rg sub
    [type-sub])
 
 
@@ -85,13 +85,13 @@
 
 
 (defn state-disabled []
-  [se/header-large {:soda :disabled}
+  [se/header-large {:data-soda :disabled}
    "disabled header"])
 
 (defcard-doc
   (mkdn-pprint-source state-disabled))
 
-(defcard-rg
+(defcard-rg disabled
    [state-disabled])
 
 
@@ -108,7 +108,7 @@
 ;; icon
 
 (defn variation-icon []
-   [se/header-h2 {:ash [:icon]}
+   [se/header-h2 {:data-ash [:icon]}
    [se/icon-settings]
    [sco/content
     "Account Settings"]])
@@ -116,7 +116,7 @@
 (defcard-doc
   (mkdn-pprint-source variation-icon))
 
-(defcard-rg
+(defcard-rg icon
    [variation-icon])
 
 
@@ -129,7 +129,7 @@
 
 (defn dividing []
   [:div
-   [se/header-large {:ash [:dividing]}
+   [se/header-large {:data-ash [:dividing]}
     "dividing header"]
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -143,7 +143,7 @@
 (defcard-doc
   (mkdn-pprint-source dividing))
 
-(defcard-rg
+(defcard-rg dividing
    [dividing])
 
 
@@ -156,7 +156,7 @@
 
 (defn block []
   [:div
-   [se/header-large {:ash [:block]}
+   [se/header-large {:data-ash [:block]}
     "block header"]
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -170,7 +170,7 @@
 (defcard-doc
   (mkdn-pprint-source block))
 
-(defcard-rg
+(defcard-rg block
    [block])
 
 
@@ -183,10 +183,10 @@
 
 (defn attached []
   [:div
-   [se/header-large {:ash [:top-attached]}
+   [se/header-large {:data-ash [:top-attached]}
     "top attached header"]
 
-   [se/segment {:ash [:attached]}
+   [se/segment {:data-ash [:attached]}
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -195,10 +195,10 @@
    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
    culpa qui officia deserunt mollit anim id est laborum."]
 
-   [se/header-large {:ash [:attached]}
+   [se/header-large {:data-ash [:attached]}
     "attached header"]
 
-   [se/segment {:ash [:attached]}
+   [se/segment {:data-ash [:attached]}
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -207,14 +207,14 @@
    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
    culpa qui officia deserunt mollit anim id est laborum."]
 
-   [se/header-large {:ash [:bottom-attached]}
+   [se/header-large {:data-ash [:bottom-attached]}
     "bottom attached header"]
    ])
 
 (defcard-doc
   (mkdn-pprint-source attached))
 
-(defcard-rg
+(defcard-rg attached
    [attached])
 
 
@@ -227,7 +227,7 @@
 
 (defn left-floated []
   [:div
-   [se/header-large {:ash [:left-floated]}
+   [se/header-large {:data-ash [:left-floated]}
     "left floating header"]
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -241,13 +241,13 @@
 (defcard-doc
   (mkdn-pprint-source left-floated))
 
-(defcard-rg
+(defcard-rg left-floated
    [left-floated])
 
 
 (defn right-floated []
   [:div
-   [se/header-large {:ash [:right-floated]}
+   [se/header-large {:data-ash [:right-floated]}
     "right floating header"]
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -261,7 +261,7 @@
 (defcard-doc
   (mkdn-pprint-source right-floated))
 
-(defcard-rg
+(defcard-rg right-floated
    [right-floated])
 
 
@@ -274,7 +274,7 @@
 
 (defn left-aligned []
   [:div
-   [se/header-large {:ash [:left-aligned]}
+   [se/header-large {:data-ash [:left-aligned]}
     "left aligned"]
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -288,13 +288,13 @@
 (defcard-doc
   (mkdn-pprint-source left-aligned))
 
-(defcard-rg
+(defcard-rg left-aligned
    [left-aligned])
 
 
 (defn center-aligned []
   [:div
-   [se/header-large {:ash [:center-aligned]}
+   [se/header-large {:data-ash [:center-aligned]}
     "center aligned"]
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -308,13 +308,13 @@
 (defcard-doc
   (mkdn-pprint-source center-aligned))
 
-(defcard-rg
+(defcard-rg center-aligned
   [center-aligned])
 
 
 (defn right-aligned []
   [:div
-   [se/header-large {:ash [:right-aligned]}
+   [se/header-large {:data-ash [:right-aligned]}
     "right aligned"]
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -328,13 +328,13 @@
 (defcard-doc
   (mkdn-pprint-source right-aligned))
 
-(defcard-rg
+(defcard-rg right-aligned
    [right-aligned])
 
 
 (defn justified []
   [:div
-   [se/header-large {:ash [:justified]}
+   [se/header-large {:data-ash [:justified]}
     "justified header"]
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -348,7 +348,7 @@
 (defcard-doc
   (mkdn-pprint-source justified))
 
-(defcard-rg
+(defcard-rg justified
    [justified])
 
 
@@ -360,26 +360,26 @@
   (list-keys "colored"))
 
 (defn colored-red []
-  [se/header-medium {:ash [:red]}
+  [se/header-medium {:data-ash [:red]}
    "red"])
 
 (defcard-doc
   (mkdn-pprint-source colored-red))
 
-(defcard-rg
+(defcard-rg colored
   [:div
    [colored-red]
-   [se/header-medium {:ash [:orange]} "orange"]
-   [se/header-medium {:ash [:yellow]} "yellow"]
-   [se/header-medium {:ash [:olive]} "olive"]
-   [se/header-medium {:ash [:green]} "green"]
-   [se/header-medium {:ash [:teal]} "teal"]
-   [se/header-medium {:ash [:blue]} "blue"]
-   [se/header-medium {:ash [:violet]} "violet"]
-   [se/header-medium {:ash [:purple]} "purple"]
-   [se/header-medium {:ash [:pink]} "pink"]
-   [se/header-medium {:ash [:brown]} "brown"]
-   [se/header-medium {:ash [:grey]} "grey"]
+   [se/header-medium {:data-ash [:orange]} "orange"]
+   [se/header-medium {:data-ash [:yellow]} "yellow"]
+   [se/header-medium {:data-ash [:olive]} "olive"]
+   [se/header-medium {:data-ash [:green]} "green"]
+   [se/header-medium {:data-ash [:teal]} "teal"]
+   [se/header-medium {:data-ash [:blue]} "blue"]
+   [se/header-medium {:data-ash [:violet]} "violet"]
+   [se/header-medium {:data-ash [:purple]} "purple"]
+   [se/header-medium {:data-ash [:pink]} "pink"]
+   [se/header-medium {:data-ash [:brown]} "brown"]
+   [se/header-medium {:data-ash [:grey]} "grey"]
    ])
 
 
@@ -391,14 +391,14 @@
   (list-keys "inverted"))
 
 (defn inverted []
-  [se/segment {:ash [:inverted]}
-   [se/header-medium {:ash [:inverted]}
+  [se/segment {:data-ash [:inverted]}
+   [se/header-medium {:data-ash [:inverted]}
     "inverted header"]])
 
 (defcard-doc
   (mkdn-pprint-source inverted))
 
-(defcard-rg
+(defcard-rg inverted
   [inverted])
 
 
@@ -426,7 +426,7 @@
 (defcard-doc
   (mkdn-pprint-source content-image))
 
-(defcard-rg
+(defcard-rg image
    [content-image])
 
 
@@ -445,7 +445,7 @@
 (defcard-doc
   (mkdn-pprint-source content-icon))
 
-(defcard-rg
+(defcard-rg icon
    [content-icon])
 
 
@@ -465,5 +465,5 @@
 (defcard-doc
   (mkdn-pprint-source content-subheader))
 
-(defcard-rg
+(defcard-rg subheader
    [content-subheader])

@@ -19,13 +19,13 @@
             states
             variations]
      :or   {ui? true}}
-    soda
-    ash]
+    data-soda
+    data-ash]
 
    (string/join " "
                 (->> [(when ui? "ui")
-                      (when soda (h/ash->class states [soda]))
-                      (when ash (h/ash->class variations ash))
+                      (when data-soda (h/ash->class states [data-soda]))
+                      (when data-ash (h/ash->class variations data-ash))
                       (when type (h/keyword->class type))
                       (when ui-name (h/keyword->class ui-name))]
                      flatten
@@ -34,10 +34,10 @@
 
 
 (defn sanitize-attrs [opts attrs]
-  (let [{:keys [soda
-                ash
+  (let [{:keys [data-soda
+                data-ash
                 class]} attrs
-        soda-ash        (create-class opts soda ash)
+        soda-ash        (create-class opts data-soda data-ash)
         full-class      (if class
                           (str soda-ash " " class)
                           soda-ash)
@@ -53,8 +53,8 @@
     (fn [attrs & children]
       (if (map? attrs)
         ;; w/ attrs
-        (let [{:keys [soda
-                      ash]}   attrs
+        (let [{:keys [data-soda
+                      data-ash]}   attrs
               sanitized-attrs (sanitize-attrs opts attrs)]
           (into [tag
                  sanitized-attrs]

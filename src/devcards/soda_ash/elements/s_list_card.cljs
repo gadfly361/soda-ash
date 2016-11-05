@@ -41,7 +41,7 @@
 (defcard-doc
   (mkdn-pprint-source type-default))
 
-(defcard-rg
+(defcard-rg default
   [type-default])
 
 
@@ -60,7 +60,7 @@
 (defcard-doc
   (mkdn-pprint-source type-bulleted))
 
-(defcard-rg
+(defcard-rg bulleted
   [type-bulleted])
 
 
@@ -79,7 +79,7 @@
 (defcard-doc
   (mkdn-pprint-source type-ordered))
 
-(defcard-rg
+(defcard-rg ordered
   [type-ordered])
 
 
@@ -97,7 +97,7 @@
 (defcard-doc
   (mkdn-pprint-source type-custom))
 
-(defcard-rg
+(defcard-rg custom
   [type-custom])
 
 
@@ -107,8 +107,8 @@
         soda    (when active? :active)
         text    (-> k name string/capitalize)]
 
-    [sco/item-link {:soda     soda
-                   :on-click #(swap! local-ratom assoc :active k)}
+    [sco/item-link {:data-soda soda
+                    :on-click  #(swap! local-ratom assoc :active k)}
      text]))
 
 (defn type-link []
@@ -126,7 +126,7 @@
 (defcard-doc
   (mkdn-pprint-source type-link))
 
-(defcard-rg
+(defcard-rg link
   [type-link])
 
 
@@ -146,7 +146,7 @@
 (defcard-doc
   (mkdn-pprint-source type-bulleted-link))
 
-(defcard-rg
+(defcard-rg bulleted-link
   [type-bulleted-link])
 
 
@@ -167,7 +167,7 @@
   (list-keys "horizontal"))
 
 (defn horizontal []
-  [se/s-list {:ash [:horizontal]}
+  [se/s-list {:data-ash [:horizontal]}
    [sco/item "foo"]
    [sco/item "bar"]
    [sco/item "baz"]
@@ -176,7 +176,7 @@
 (defcard-doc
   (mkdn-pprint-source horizontal))
 
-(defcard-rg
+(defcard-rg horizontal
   [horizontal])
 
 
@@ -188,8 +188,8 @@
   (list-keys "inverted"))
 
 (defn inverted []
-  [se/segment {:ash [:inverted]}
-   [se/s-list {:ash [:inverted]}
+  [se/segment {:data-ash [:inverted]}
+   [se/s-list {:data-ash [:inverted]}
     [sco/item "foo"]
     [sco/item "bar"]
     [sco/item "baz"]
@@ -198,7 +198,7 @@
 (defcard-doc
   (mkdn-pprint-source inverted))
 
-(defcard-rg
+(defcard-rg inverted
   [inverted])
 
 
@@ -210,7 +210,7 @@
   (list-keys "selection"))
 
 (defn selection []
-  [se/s-list {:ash [:selection]}
+  [se/s-list {:data-ash [:selection]}
    [sco/item "foo"]
    [sco/item "bar"]
    [sco/item "baz"]
@@ -219,7 +219,7 @@
 (defcard-doc
   (mkdn-pprint-source selection))
 
-(defcard-rg
+(defcard-rg selection
   [selection])
 
 
@@ -231,7 +231,7 @@
   (list-keys "animated"))
 
 (defn animated []
-  [se/s-list {:ash [:animated]}
+  [se/s-list {:data-ash [:animated]}
    [sco/item "foo"]
    [sco/item "bar"]
    [sco/item "baz"]
@@ -240,7 +240,7 @@
 (defcard-doc
   (mkdn-pprint-source animated))
 
-(defcard-rg
+(defcard-rg animated
   [animated])
 
 
@@ -252,7 +252,7 @@
   (list-keys "relaxed"))
 
 (defn relaxed []
-  [se/s-list {:ash [:relaxed]}
+  [se/s-list {:data-ash [:relaxed]}
    [sco/item "foo"]
    [sco/item "bar"]
    [sco/item "baz"]
@@ -261,12 +261,12 @@
 (defcard-doc
   (mkdn-pprint-source relaxed))
 
-(defcard-rg
+(defcard-rg relaxed
   [relaxed])
 
 
 (defn very-relaxed []
-  [se/s-list {:ash [:very-relaxed]}
+  [se/s-list {:data-ash [:very-relaxed]}
    [sco/item "foo"]
    [sco/item "bar"]
    [sco/item "baz"]
@@ -275,7 +275,7 @@
 (defcard-doc
   (mkdn-pprint-source very-relaxed))
 
-(defcard-rg
+(defcard-rg very-relaxed
   [very-relaxed])
 
 
@@ -287,7 +287,7 @@
   (list-keys "divided"))
 
 (defn divided []
-  [se/s-list {:ash [:divided]}
+  [se/s-list {:data-ash [:divided]}
    [sco/item "foo"]
    [sco/item "bar"]
    [sco/item "baz"]
@@ -296,7 +296,7 @@
 (defcard-doc
   (mkdn-pprint-source divided))
 
-(defcard-rg
+(defcard-rg divided
   [divided])
 
 
@@ -308,7 +308,7 @@
   (list-keys "celled"))
 
 (defn celled []
-  [se/s-list {:ash [:celled]}
+  [se/s-list {:data-ash [:celled]}
    [sco/item "foo"]
    [sco/item "bar"]
    [sco/item "baz"]
@@ -317,7 +317,7 @@
 (defcard-doc
   (mkdn-pprint-source celled))
 
-(defcard-rg
+(defcard-rg celled
   [celled])
 
 
@@ -329,7 +329,7 @@
   (list-keys "size"))
 
 (defn size []
-  [se/s-list {:ash [:mini]}
+  [se/s-list {:data-ash [:mini]}
    [sco/item "foo"]
    [sco/item "bar"]
    [sco/item "baz"]
@@ -338,19 +338,19 @@
 (defcard-doc
   (mkdn-pprint-source size))
 
-(defcard-rg
+(defcard-rg size
   [:div
    [se/header-small "Mini"]
    [size]
 
    [se/header-small "Tiny"]
-   [se/s-list {:ash [:tiny]}
+   [se/s-list {:data-ash [:tiny]}
     [sco/item "foo"]
     [sco/item "bar"]
     [sco/item "baz"]]
 
    [se/header-small "Small"]
-   [se/s-list {:ash [:small]}
+   [se/s-list {:data-ash [:small]}
     [sco/item "foo"]
     [sco/item "bar"]
     [sco/item "baz"]]
@@ -362,25 +362,25 @@
     [sco/item "baz"]]
 
    [se/header-small "Large"]
-   [se/s-list {:ash [:large]}
+   [se/s-list {:data-ash [:large]}
     [sco/item "foo"]
     [sco/item "bar"]
     [sco/item "baz"]]
 
    [se/header-small "Big"]
-   [se/s-list {:ash [:big]}
+   [se/s-list {:data-ash [:big]}
     [sco/item "foo"]
     [sco/item "bar"]
     [sco/item "baz"]]
 
    [se/header-small "Huge"]
-   [se/s-list {:ash [:huge]}
+   [se/s-list {:data-ash [:huge]}
     [sco/item "foo"]
     [sco/item "bar"]
     [sco/item "baz"]]
 
    [se/header-small "Massive"]
-   [se/s-list {:ash [:massive]}
+   [se/s-list {:data-ash [:massive]}
     [sco/item "foo"]
     [sco/item "bar"]
     [sco/item "baz"]]
@@ -413,7 +413,7 @@
 (defcard-doc
   (mkdn-pprint-source content-item))
 
-(defcard-rg
+(defcard-rg item
   [content-item])
 
 
@@ -436,7 +436,7 @@
 (defcard-doc
   (mkdn-pprint-source content-icon))
 
-(defcard-rg
+(defcard-rg icon
   [content-icon])
 
 
@@ -449,7 +449,7 @@
 (defn content-image []
   [se/s-list
    [sco/item
-    [se/image {:ash [:avatar]
+    [se/image {:data-ash [:avatar]
                :src "/images/gadfly.png"}]
     [sco/content
      [sco/header
@@ -459,7 +459,7 @@
 
 
    [sco/item
-    [se/image {:ash [:avatar]
+    [se/image {:data-ash [:avatar]
                :src "/images/rachel.png"}]
     [sco/content
      [sco/header
@@ -470,7 +470,7 @@
 (defcard-doc
   (mkdn-pprint-source content-image))
 
-(defcard-rg
+(defcard-rg image
   [content-image])
 
 
@@ -489,7 +489,7 @@
 (defcard-doc
   (mkdn-pprint-source content-link))
 
-(defcard-rg
+(defcard-rg link
   [content-link])
 
 
@@ -502,7 +502,7 @@
 (defn content-description []
   [se/s-list
    [sco/item
-    [se/image {:ash [:avatar]
+    [se/image {:data-ash [:avatar]
                :src "/images/gadfly.png"}]
     [sco/content
      [sco/header
@@ -512,7 +512,7 @@
 
 
    [sco/item
-    [se/image {:ash [:avatar]
+    [se/image {:data-ash [:avatar]
                :src "/images/rachel.png"}]
     [sco/content
      [sco/header
@@ -523,5 +523,5 @@
 (defcard-doc
   (mkdn-pprint-source content-description))
 
-(defcard-rg
+(defcard-rg description
   [content-description])

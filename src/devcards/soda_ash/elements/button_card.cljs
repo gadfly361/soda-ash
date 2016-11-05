@@ -56,7 +56,7 @@
 (defcard-doc
   (mkdn-pprint-source type-default))
 
-(defcard-rg
+(defcard-rg default
   [type-default])
 
 
@@ -66,12 +66,13 @@
   "A button can be formatted to show different levels of emphasis")
 
 (defn type-primary []
-  [se/button-primary "primary"])
+  [se/button-primary
+   "primary"])
 
 (defcard-doc
   (mkdn-pprint-source type-primary))
 
-(defcard-rg
+(defcard-rg primary
   [type-primary])
 
 
@@ -81,7 +82,7 @@
 (defcard-doc
   (mkdn-pprint-source type-secondary))
 
-(defcard-rg
+(defcard-rg secondary
   [type-secondary])
 
 
@@ -99,7 +100,7 @@
 (defcard-doc
   (mkdn-pprint-source type-animated))
 
-(defcard-rg
+(defcard-rg animated
   [type-animated])
 
 
@@ -112,7 +113,7 @@
 (defcard-doc
   (mkdn-pprint-source type-vertical-animated))
 
-(defcard-rg
+(defcard-rg vertical-animated
   [type-vertical-animated])
 
 
@@ -126,7 +127,7 @@
 (defcard-doc
   (mkdn-pprint-source type-animated-fade))
 
-(defcard-rg
+(defcard-rg animated-fade
   [type-animated-fade])
 
 
@@ -145,7 +146,7 @@
 (defcard-doc
   (mkdn-pprint-source type-labeled))
 
-(defcard-rg
+(defcard-rg labeled
   [type-labeled])
 
 
@@ -160,7 +161,7 @@
 (defcard-doc
   (mkdn-pprint-source type-left-labeled))
 
-(defcard-rg
+(defcard-rg left-labeled
   [type-left-labeled])
 
 
@@ -176,7 +177,7 @@
 (defcard-doc
   (mkdn-pprint-source type-icon))
 
-(defcard-rg
+(defcard-rg icon
   [type-icon])
 
 
@@ -193,7 +194,7 @@
 (defcard-doc
   (mkdn-pprint-source type-labeled-icon))
 
-(defcard-rg
+(defcard-rg labeled-icon
   [type-labeled-icon])
 
 
@@ -205,7 +206,7 @@
 (defcard-doc
   (mkdn-pprint-source type-right-labeled-icon))
 
-(defcard-rg
+(defcard-rg right-labeled-icon
   [type-right-labeled-icon])
 
 
@@ -221,7 +222,7 @@
 (defcard-doc
   (mkdn-pprint-source type-basic))
 
-(defcard-rg
+(defcard-rg basic
   [type-basic])
 
 
@@ -232,7 +233,7 @@
 (defcard-doc
   (mkdn-pprint-source type-primary-basic))
 
-(defcard-rg
+(defcard-rg primary-basic
   [type-primary-basic])
 
 
@@ -243,7 +244,7 @@
 (defcard-doc
   (mkdn-pprint-source type-secondary-basic))
 
-(defcard-rg
+(defcard-rg secondary-basic
   [type-secondary-basic])
 
 
@@ -253,55 +254,27 @@
   "A button can be formatted to appear on dark background")
 
 (defn type-inverted []
-  [se/segment {:ash [:inverted]}
-   [se/button-inverted {:ash [:red]}
+  [se/segment {:data-ash [:inverted]}
+   [se/button-inverted {:data-ash [:red]}
     "inverted"]])
 
 (defcard-doc
   (mkdn-pprint-source type-inverted))
 
-(defcard-rg
+(defcard-rg inverted
   [type-inverted])
 
 
 (defn type-inverted-basic []
-  [se/segment {:ash [:inverted]}
-   [se/button-inverted-basic {:ash [:red]}
+  [se/segment {:data-ash [:inverted]}
+   [se/button-inverted-basic {:data-ash [:red]}
     "inverted-basic"]])
 
 (defcard-doc
   (mkdn-pprint-source type-inverted-basic))
 
-(defcard-rg
+(defcard-rg inverted-basic
   [type-inverted-basic])
-
-
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Content
-
-(defcard-doc
-  "
----
-# Button Content")
-
-(defcard-doc
-  "**Conditionals**"
-  "Button groupds can contain conditionals")
-
-(defn content-or []
-  [se/buttons
-   [se/button "Cancel"]
-   [sco/s-or] ;; <-- s-or
-   [se/button {:ash [:positive]}
-    "Save"]])
-
-(defcard-doc
-  (mkdn-pprint-source content-or))
-
-(defcard-rg
-  [content-or])
 
 
 
@@ -317,38 +290,38 @@
 
 
 (defn state-active []
-  [se/button {:soda :active
-              :ash  [:blue]}
+  [se/button {:data-soda :active
+              :data-ash  [:blue]}
    "active"])
 
 (defcard-doc
   (mkdn-pprint-source state-active))
 
-(defcard-rg
+(defcard-rg active
   [state-active])
 
 
 (defn state-disabled []
-  [se/button {:soda :disabled
-              :ash  [:blue]}
+  [se/button {:data-soda :disabled
+              :data-ash  [:blue]}
    "disabled"])
 
 (defcard-doc
   (mkdn-pprint-source state-disabled))
 
-(defcard-rg
+(defcard-rg disabled
   [state-disabled])
 
 
 (defn state-loading []
-  [se/button {:soda :loading
-              :ash  [:blue]}
+  [se/button {:data-soda :loading
+              :data-ash  [:blue]}
    "loading"])
 
 (defcard-doc
   (mkdn-pprint-source state-loading))
 
-(defcard-rg
+(defcard-rg loading
   [state-loading])
 
 
@@ -370,32 +343,32 @@
   (list-variation-keys "social"))
 
 (defn social-facebook []
-  [se/button {:ash [:facebook]}
+  [se/button {:data-ash [:facebook]}
    [se/icon-facebook]
    "Facebook"])
 
 (defcard-doc
   (mkdn-pprint-source social-facebook))
 
-(defcard-rg
+(defcard-rg social
   [:div
    [social-facebook]
-   [se/button {:ash [:twitter]}
+   [se/button {:data-ash [:twitter]}
     [se/icon-twitter]
     "Twitter"]
-   [se/button {:ash [:google-plus]}
+   [se/button {:data-ash [:google-plus]}
     [se/icon-google-plus]
     "Google Plus"]
-   [se/button {:ash [:vk]}
+   [se/button {:data-ash [:vk]}
     [se/icon-vk]
     "VK"]
-   [se/button {:ash [:linkedin]}
+   [se/button {:data-ash [:linkedin]}
     [se/icon-linkedin]
     "LinkedIn"]
-   [se/button {:ash [:instagram]}
+   [se/button {:data-ash [:instagram]}
     [se/icon-instagram]
     "Instagram"]
-   [se/button {:ash [:youtube]}
+   [se/button {:data-ash [:youtube]}
     [se/icon-youtube]
     "YouTube"]
    ])
@@ -408,22 +381,22 @@
   (list-variation-keys "size"))
 
 (defn size-mini []
-  [se/button {:ash [:mini]}
+  [se/button {:data-ash [:mini]}
    "mini"])
 
 (defcard-doc
   (mkdn-pprint-source size-mini))
 
-(defcard-rg
+(defcard-rg size
   [:div
    [size-mini]
-   [se/button {:ash [:tiny]} "tiny"]
-   [se/button {:ash [:small]} "small"]
-   [se/button {:ash [:medium]} "medium"]
-   [se/button {:ash [:large]} "large"]
-   [se/button {:ash [:big]} "big"]
-   [se/button {:ash [:huge]} "huge"]
-   [se/button {:ash [:massive]} "massive"]
+   [se/button {:data-ash [:tiny]} "tiny"]
+   [se/button {:data-ash [:small]} "small"]
+   [se/button {:data-ash [:medium]} "medium"]
+   [se/button {:data-ash [:large]} "large"]
+   [se/button {:data-ash [:big]} "big"]
+   [se/button {:data-ash [:huge]} "huge"]
+   [se/button {:data-ash [:massive]} "massive"]
    ])
 
 
@@ -435,24 +408,24 @@
 
 
 (defn right-floated []
-  [se/button {:ash [:right-floated]}
+  [se/button {:data-ash [:right-floated]}
    "right-floated"])
 
 (defcard-doc
   (mkdn-pprint-source right-floated))
 
-(defcard-rg
+(defcard-rg right-floated
   [right-floated])
 
 
 (defn left-floated []
-  [se/button {:ash [:left-floated]}
+  [se/button {:data-ash [:left-floated]}
    "left-floated"])
 
 (defcard-doc
   (mkdn-pprint-source left-floated))
 
-(defcard-rg
+(defcard-rg left-floated
   [left-floated])
 
 
@@ -463,27 +436,27 @@
   (list-variation-keys "colored"))
 
 (defn colored-red []
-  [se/button {:ash [:red]}
+  [se/button {:data-ash [:red]}
    "red"])
 
 (defcard-doc
   (mkdn-pprint-source colored-red))
 
-(defcard-rg
+(defcard-rg colored
   [:div
    [colored-red]
-   [se/button {:ash [:orange]} "orange"]
-   [se/button {:ash [:yellow]} "yellow"]
-   [se/button {:ash [:olive]} "olive"]
-   [se/button {:ash [:green]} "green"]
-   [se/button {:ash [:teal]} "teal"]
-   [se/button {:ash [:blue]} "blue"]
-   [se/button {:ash [:violet]} "violet"]
-   [se/button {:ash [:purple]} "purple"]
-   [se/button {:ash [:pink]} "pink"]
-   [se/button {:ash [:brown]} "brown"]
-   [se/button {:ash [:grey]} "grey"]
-   [se/button {:ash [:black]} "black"]
+   [se/button {:data-ash [:orange]} "orange"]
+   [se/button {:data-ash [:yellow]} "yellow"]
+   [se/button {:data-ash [:olive]} "olive"]
+   [se/button {:data-ash [:green]} "green"]
+   [se/button {:data-ash [:teal]} "teal"]
+   [se/button {:data-ash [:blue]} "blue"]
+   [se/button {:data-ash [:violet]} "violet"]
+   [se/button {:data-ash [:purple]} "purple"]
+   [se/button {:data-ash [:pink]} "pink"]
+   [se/button {:data-ash [:brown]} "brown"]
+   [se/button {:data-ash [:grey]} "grey"]
+   [se/button {:data-ash [:black]} "black"]
    ])
 
 
@@ -494,13 +467,13 @@
   (list-variation-keys "compact"))
 
 (defn compact []
-  [se/button {:ash [:compact]}
+  [se/button {:data-ash [:compact]}
    "compact"])
 
 (defcard-doc
   (mkdn-pprint-source compact))
 
-(defcard-rg
+(defcard-rg compact
   [:div
    [compact]
    [se/button "normal"]])
@@ -513,24 +486,24 @@
   (list-variation-keys "toggle"))
 
 (defn toggle []
-  (let [local-state      (reagent/atom {:soda nil})
+  (let [local-state      (reagent/atom {:data-soda nil})
         on-click-handler (fn []
-                           (swap! local-state update :soda
+                           (swap! local-state update :data-soda
                                   #(if (= :active %) nil :active)))
         text             (fn [soda]
                            (if (= :active soda)
                              "toggled on" "toggled off"))]
     (fn []
-      (let [soda (:soda @local-state)]
-        [se/button {:soda     soda
-                    :ash      [:toggle]
-                    :on-click on-click-handler}
+      (let [soda (:data-soda @local-state)]
+        [se/button {:data-soda soda
+                    :data-ash  [:toggle]
+                    :on-click  on-click-handler}
          (text soda)]))))
 
 (defcard-doc
   (mkdn-pprint-source toggle))
 
-(defcard-rg
+(defcard-rg toggle
   [toggle])
 
 
@@ -542,16 +515,16 @@
 
 (defn consequence []
   [:div
-   [se/button {:ash [:positive]}
+   [se/button {:data-ash [:positive]}
     "positive"]
 
-   [se/button {:ash [:negative]}
+   [se/button {:data-ash [:negative]}
     "negative"]])
 
 (defcard-doc
   (mkdn-pprint-source consequence))
 
-(defcard-rg
+(defcard-rg consequence
   [consequence])
 
 
@@ -562,13 +535,13 @@
   (list-variation-keys "fluid"))
 
 (defn fluid []
-  [se/button {:ash [:fluid]}
+  [se/button {:data-ash [:fluid]}
    "fluid"])
 
 (defcard-doc
   (mkdn-pprint-source fluid))
 
-(defcard-rg
+(defcard-rg fluid
   [fluid])
 
 
@@ -579,13 +552,13 @@
   (list-variation-keys "circular"))
 
 (defn circular []
-  [se/button {:ash [:circular]}
+  [se/button {:data-ash [:circular]}
    "circular"])
 
 (defcard-doc
   (mkdn-pprint-source circular))
 
-(defcard-rg
+(defcard-rg circular
   [circular])
 
 
@@ -596,24 +569,24 @@
   (list-variation-keys "vertically-attached"))
 
 (defn vertically-attached-top []
-  [se/button {:ash [:top-attached]}
+  [se/button {:data-ash [:top-attached]}
    "top-attached"])
 
 (defcard-doc
   (mkdn-pprint-source vertically-attached-top))
 
-(defcard-rg
+(defcard-rg vertically-attached-top
   [vertically-attached-top])
 
 
 (defn vertically-attached-bottom []
-  [se/button {:ash [:bottom-attached]}
+  [se/button {:data-ash [:bottom-attached]}
    "bottom-attached"])
 
 (defcard-doc
   (mkdn-pprint-source vertically-attached-bottom))
 
-(defcard-rg
+(defcard-rg vertically-attached-bottom
   [vertically-attached-bottom])
 
 
@@ -624,22 +597,22 @@
   (list-variation-keys "horizontally-attached"))
 
 (defn horizontally-attached-top []
-  [se/button {:ash [:left-attached]}
+  [se/button {:data-ash [:left-attached]}
    "left-attached"])
 
 (defcard-doc
   (mkdn-pprint-source horizontally-attached-top))
 
-(defcard-rg
+(defcard-rg horizontally-attached-top
   [horizontally-attached-top])
 
 
 (defn horizontally-attached-bottom []
-  [se/button {:ash [:right-attached]}
+  [se/button {:data-ash [:right-attached]}
    "right-attached"])
 
 (defcard-doc
   (mkdn-pprint-source horizontally-attached-bottom))
 
-(defcard-rg
+(defcard-rg horizontally-attached-bottom
   [horizontally-attached-bottom])

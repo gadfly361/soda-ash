@@ -324,7 +324,7 @@
 (defc "header" "medium")
 (defc "header" "small")
 (defc "header" "tiny")
-;; header-icon is implemented using :ash
+;; header-icon is implemented using :data-ash
 (defc "header" "sub")
 
 

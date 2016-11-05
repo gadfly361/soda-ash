@@ -25,7 +25,7 @@
 (defcard-doc
   (mkdn-pprint-source type-ae))
 
-(defcard-rg
+(defcard-rg flags
   [:div
    [type-ae]
    [se/flag-af]

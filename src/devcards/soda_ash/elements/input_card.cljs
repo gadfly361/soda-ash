@@ -29,20 +29,20 @@
   (list-keys "states"))
 
 (defn state-focus []
-   [se/input {:soda :focus}
+   [se/input {:data-soda :focus}
     [:input {:type        "text"
              :placeholder "Focus..."}]])
 
 (defcard-doc
   (mkdn-pprint-source state-focus))
 
-(defcard-rg
+(defcard-rg focus
   [state-focus])
 
 
 (defn state-loading []
-  [se/input {:soda :loading
-             :ash [:left-icon]}
+  [se/input {:data-soda :loading
+             :data-ash [:left-icon]}
    [se/icon-search]
     [:input {:type        "text"
              :placeholder "Loading..."}]])
@@ -50,31 +50,31 @@
 (defcard-doc
   (mkdn-pprint-source state-loading))
 
-(defcard-rg
+(defcard-rg loading
   [state-loading])
 
 
 (defn state-disabled []
-   [se/input {:soda :disabled}
+   [se/input {:data-soda :disabled}
     [:input {:type        "text"
              :placeholder "Disabled..."}]])
 
 (defcard-doc
   (mkdn-pprint-source state-disabled))
 
-(defcard-rg
+(defcard-rg disabled
   [state-disabled])
 
 
 (defn state-error []
-  [se/input {:soda :error}
+  [se/input {:data-soda :error}
     [:input {:type        "text"
              :placeholder "Error..."}]])
 
 (defcard-doc
   (mkdn-pprint-source state-error))
 
-(defcard-rg
+(defcard-rg error
   [state-error])
 
 
@@ -97,7 +97,7 @@
 
 (defn icon []
   [:div
-   [se/input {:ash [:icon]}
+   [se/input {:data-ash [:icon]}
     [:input {:type        "text"
              :placeholder "Icon..."}]
     [se/icon-search]]
@@ -106,13 +106,13 @@
 (defcard-doc
   (mkdn-pprint-source icon))
 
-(defcard-rg
+(defcard-rg icon
   [icon])
 
 
 (defn left-icon []
   [:div
-   [se/input {:ash [:left-icon]}
+   [se/input {:data-ash [:left-icon]}
     [:input {:type        "text"
              :placeholder "Left Icon..."}]
     [se/icon-search]]
@@ -121,7 +121,7 @@
 (defcard-doc
   (mkdn-pprint-source left-icon))
 
-(defcard-rg
+(defcard-rg left-icon
   [left-icon])
 
 
@@ -143,7 +143,7 @@
   (list-keys "action"))
 
 (defn action []
-  [se/input {:ash [:action]}
+  [se/input {:data-ash [:action]}
    [:input {:type        "text"
             :placeholder "Action..."}]
    [se/button {:on-click #(js/alert "clicked!")}
@@ -152,12 +152,12 @@
 (defcard-doc
   (mkdn-pprint-source action))
 
-(defcard-rg
+(defcard-rg action
   [action])
 
 
 (defn left-action []
-  [se/input {:ash [:left-action]}
+  [se/input {:data-ash [:left-action]}
    [se/button {:on-click #(js/alert "clicked!")}
     "Search"]
    [:input {:type        "text"
@@ -166,7 +166,7 @@
 (defcard-doc
   (mkdn-pprint-source left-action))
 
-(defcard-rg
+(defcard-rg left-action
   [left-action])
 
 
@@ -178,14 +178,14 @@
   (list-keys "transparent"))
 
 (defn transparent []
-  [se/input {:ash [:transparent]}
+  [se/input {:data-ash [:transparent]}
    [:input {:type        "text"
             :placeholder "Transparent..."}]])
 
 (defcard-doc
   (mkdn-pprint-source transparent))
 
-(defcard-rg
+(defcard-rg transparent
   [transparent])
 
 
@@ -197,8 +197,8 @@
   (list-keys "inverted"))
 
 (defn inverted []
-  [se/segment {:ash [:inverted]}
-   [se/input {:ash [:inverted]}
+  [se/segment {:data-ash [:inverted]}
+   [se/input {:data-ash [:inverted]}
     [:input {:type        "text"
              :placeholder "Inverted..."}]]
    ])
@@ -206,7 +206,7 @@
 (defcard-doc
   (mkdn-pprint-source inverted))
 
-(defcard-rg
+(defcard-rg inverted
   [inverted])
 
 
@@ -218,14 +218,14 @@
   (list-keys "fluid"))
 
 (defn fluid []
-  [se/input {:ash [:fluid]}
+  [se/input {:data-ash [:fluid]}
    [:input {:type        "text"
             :placeholder "Fluid..."}]])
 
 (defcard-doc
   (mkdn-pprint-source fluid))
 
-(defcard-rg
+(defcard-rg fluid
   [fluid])
 
 
@@ -237,7 +237,7 @@
   (list-keys "size"))
 
 (defn size []
-  [se/input {:ash [:mini
+  [se/input {:data-ash [:mini
                    :fluid]}
    [:input {:type        "text"
             :placeholder "Mini..."}]])
@@ -245,34 +245,34 @@
 (defcard-doc
   (mkdn-pprint-source size))
 
-(defcard-rg
+(defcard-rg size
   [:div
    [size]
-   [se/input {:ash [:small
+   [se/input {:data-ash [:small
                     :fluid]}
     [:input {:type        "text"
              :placeholder "Small..."}]]
 
-   [se/input {:ash [:fluid]}
+   [se/input {:data-ash [:fluid]}
     [:input {:type        "text"
              :placeholder "Default size..."}]]
 
-   [se/input {:ash [:large
+   [se/input {:data-ash [:large
                     :fluid]}
     [:input {:type        "text"
              :placeholder "Large..."}]]
 
-   [se/input {:ash [:big
+   [se/input {:data-ash [:big
                     :fluid]}
     [:input {:type        "text"
              :placeholder "Big..."}]]
 
-   [se/input {:ash [:huge
+   [se/input {:data-ash [:huge
                     :fluid]}
     [:input {:type        "text"
              :placeholder "Huge..."}]]
 
-   [se/input {:ash [:massive
+   [se/input {:data-ash [:massive
                     :fluid]}
     [:input {:type        "text"
              :placeholder "Massive..."}]]

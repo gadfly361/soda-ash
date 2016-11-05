@@ -46,7 +46,7 @@
 (defcard-doc
   (mkdn-pprint-source type-default))
 
-(defcard-rg
+(defcard-rg default
   [type-default])
 
 ;; TODO: update when dimmer is available
@@ -66,7 +66,7 @@
 (defcard-doc
   (mkdn-pprint-source type-text))
 
-(defcard-rg
+(defcard-rg text
   [type-text])
 
 
@@ -91,33 +91,33 @@
    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
    culpa qui officia deserunt mollit anim id est laborum."
    [:div.ui.dimmer.active
-    [se/loader {:soda :indeterminate}]]
+    [se/loader {:data-soda :indeterminate}]]
    ])
 
 (defcard-doc
   (mkdn-pprint-source state-indeterminate))
 
-(defcard-rg
+(defcard-rg indeterminate
   [state-indeterminate])
 
 
 (defn state-active []
-  [se/loader {:soda :active}])
+  [se/loader {:data-soda :active}])
 
 (defcard-doc
   (mkdn-pprint-source state-active))
 
-(defcard-rg
+(defcard-rg active
   [state-active])
 
 
 (defn state-disabled []
-  [se/loader {:soda :disabled}])
+  [se/loader {:data-soda :disabled}])
 
 (defcard-doc
   (mkdn-pprint-source state-disabled))
 
-(defcard-rg
+(defcard-rg disabled
   [state-disabled])
 
 
@@ -146,13 +146,13 @@
    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
    culpa qui officia deserunt mollit anim id est laborum."
    [:div.ui.dimmer.active
-    [se/loader {:ash [:inline]}]]
+    [se/loader {:data-ash [:inline]}]]
    ])
 
 (defcard-doc
   (mkdn-pprint-source variation-inline))
 
-(defcard-rg
+(defcard-rg inline
   [variation-inline])
 
 
@@ -172,7 +172,7 @@
    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
    culpa qui officia deserunt mollit anim id est laborum."
    [:div.ui.dimmer.active
-    [se/loader-text {:ash [:mini]}
+    [se/loader-text {:data-ash [:mini]}
      "mini"]]
    ])
 
@@ -186,13 +186,13 @@
    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
    culpa qui officia deserunt mollit anim id est laborum."
    [:div.ui.dimmer.active
-    [se/loader-text {:ash [size]}
+    [se/loader-text {:data-ash [size]}
      (name size)]]])
 
 (defcard-doc
   (mkdn-pprint-source variation-size-mini))
 
-(defcard-rg
+(defcard-rg size
   [:div
    [variation-size-mini]
    [variation-size :tiny]
@@ -222,7 +222,7 @@
 
 ;; TODO: update when dimmer is available
 (defn variation-inverted []
-  [se/segment {:ash [:inverted]}
+  [se/segment {:data-ash [:inverted]}
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad largem veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -230,14 +230,14 @@
    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
    culpa qui officia deserunt mollit anim id est laborum."
-   [se/loader-text {:soda :active
-                    :ash  [:inverted]}
+   [se/loader-text {:data-soda :active
+                    :data-ash [:inverted]}
     "inverted"]])
 
 (defcard-doc
   (mkdn-pprint-source variation-inverted))
 
-(defcard-rg
+(defcard-rg inverted
   [:div
    [variation-inverted]
    [se/segment
@@ -248,7 +248,7 @@
    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
    culpa qui officia deserunt mollit anim id est laborum."
-    [se/loader-text {:soda :active}
+    [se/loader-text {:data-soda :active}
      "normal"]]
    ])
 

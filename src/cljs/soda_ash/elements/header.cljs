@@ -40,7 +40,7 @@
 
 
 (def variations
-  ;; Note: this is a type, but makes more sense to implement as :ash
+  ;; Note: this is a type, but makes more sense to implement as :data-ash
   [(create-group
     {:group-name   "icon"
      :group-vector (vector

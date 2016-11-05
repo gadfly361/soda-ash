@@ -47,7 +47,7 @@
 (defcard-doc
   (mkdn-pprint-source type-alarm))
 
-(defcard-rg
+(defcard-rg icons
   [:div
    [type-alarm]
    [se/icon-alarm-slash]
@@ -595,22 +595,22 @@
 
 
 (defn state-disabled []
-  [se/icon-alarm {:soda :disabled}])
+  [se/icon-alarm {:data-soda :disabled}])
 
 (defcard-doc
   (mkdn-pprint-source state-disabled))
 
-(defcard-rg
+(defcard-rg disabled
   [state-disabled])
 
 
 (defn state-loading []
-  [se/icon-alarm {:soda :loading}])
+  [se/icon-alarm {:data-soda :loading}])
 
 (defcard-doc
   (mkdn-pprint-source state-loading))
 
-(defcard-rg
+(defcard-rg loading
   [state-loading])
 
 
@@ -635,14 +635,14 @@
 (defn fitted []
   [:div
    "Tigh spacing "
-   [se/icon-alarm {:ash [:fitted]}]
+   [se/icon-alarm {:data-ash [:fitted]}]
    " tight spacing"
    ])
 
 (defcard-doc
   (mkdn-pprint-source fitted))
 
-(defcard-rg
+(defcard-rg fitted
   [fitted])
 
 
@@ -654,21 +654,21 @@
   (list-keys "size"))
 
 (defn size-mini []
-  [se/icon-alarm {:ash [:mini]}])
+  [se/icon-alarm {:data-ash [:mini]}])
 
 (defcard-doc
   (mkdn-pprint-source size-mini))
 
-(defcard-rg
+(defcard-rg size
   [:div
    [size-mini]
-   [se/icon-alarm {:ash [:tiny]}]
-   [se/icon-alarm {:ash [:small]}]
+   [se/icon-alarm {:data-ash [:tiny]}]
+   [se/icon-alarm {:data-ash [:small]}]
    [se/icon-alarm]
-   [se/icon-alarm {:ash [:large]}]
-   [se/icon-alarm {:ash [:big]}]
-   [se/icon-alarm {:ash [:huge]}]
-   [se/icon-alarm {:ash [:massive]}]])
+   [se/icon-alarm {:data-ash [:large]}]
+   [se/icon-alarm {:data-ash [:big]}]
+   [se/icon-alarm {:data-ash [:huge]}]
+   [se/icon-alarm {:data-ash [:massive]}]])
 
 
 ;; ---------------------------
@@ -679,12 +679,12 @@
   (list-keys "link"))
 
 (defn link []
-  [se/icon-alarm {:ash [:link]}])
+  [se/icon-alarm {:data-ash [:link]}])
 
 (defcard-doc
   (mkdn-pprint-source link))
 
-(defcard-rg
+(defcard-rg link
   [link])
 
 
@@ -698,13 +698,13 @@
 (defn flipped []
   [:div
    [se/icon-in-cart]
-   [se/icon-in-cart {:ash [:horizontally-flipped]}]
-   [se/icon-in-cart {:ash [:vertically-flipped]}]])
+   [se/icon-in-cart {:data-ash [:horizontally-flipped]}]
+   [se/icon-in-cart {:data-ash [:vertically-flipped]}]])
 
 (defcard-doc
   (mkdn-pprint-source flipped))
 
-(defcard-rg
+(defcard-rg flipped
   [flipped])
 
 
@@ -718,13 +718,13 @@
 (defn rotated []
   [:div
    [se/icon-in-cart]
-   [se/icon-in-cart {:ash [:clockwise-rotated]}]
-   [se/icon-in-cart {:ash [:counterclockwise-rotated]}]])
+   [se/icon-in-cart {:data-ash [:clockwise-rotated]}]
+   [se/icon-in-cart {:data-ash [:counterclockwise-rotated]}]])
 
 (defcard-doc
   (mkdn-pprint-source rotated))
 
-(defcard-rg
+(defcard-rg rotated
   [rotated])
 
 
@@ -736,12 +736,12 @@
   (list-keys "circular"))
 
 (defn circular []
-  [se/icon-in-cart {:ash [:circular]}])
+  [se/icon-in-cart {:data-ash [:circular]}])
 
 (defcard-doc
   (mkdn-pprint-source circular))
 
-(defcard-rg
+(defcard-rg circular
   [circular])
 
 
@@ -753,12 +753,12 @@
   (list-keys "bordered"))
 
 (defn bordered []
-  [se/icon-in-cart {:ash [:bordered]}])
+  [se/icon-in-cart {:data-ash [:bordered]}])
 
 (defcard-doc
   (mkdn-pprint-source bordered))
 
-(defcard-rg
+(defcard-rg borderd
   [bordered])
 
 
@@ -770,26 +770,26 @@
   (list-keys "colored"))
 
 (defn colored-red []
-  [se/icon-in-cart {:ash [:red]}])
+  [se/icon-in-cart {:data-ash [:red]}])
 
 (defcard-doc
   (mkdn-pprint-source colored-red))
 
-(defcard-rg
+(defcard-rg colored
   [:div
    [colored-red]
-   [se/icon-in-cart {:ash [:orange]}]
-   [se/icon-in-cart {:ash [:yellow]}]
-   [se/icon-in-cart {:ash [:olive]}]
-   [se/icon-in-cart {:ash [:green]}]
-   [se/icon-in-cart {:ash [:teal]}]
-   [se/icon-in-cart {:ash [:blue]}]
-   [se/icon-in-cart {:ash [:violet]}]
-   [se/icon-in-cart {:ash [:purple]}]
-   [se/icon-in-cart {:ash [:pink]}]
-   [se/icon-in-cart {:ash [:brown]}]
-   [se/icon-in-cart {:ash [:grey]}]
-   [se/icon-in-cart {:ash [:black]}]
+   [se/icon-in-cart {:data-ash [:orange]}]
+   [se/icon-in-cart {:data-ash [:yellow]}]
+   [se/icon-in-cart {:data-ash [:olive]}]
+   [se/icon-in-cart {:data-ash [:green]}]
+   [se/icon-in-cart {:data-ash [:teal]}]
+   [se/icon-in-cart {:data-ash [:blue]}]
+   [se/icon-in-cart {:data-ash [:violet]}]
+   [se/icon-in-cart {:data-ash [:purple]}]
+   [se/icon-in-cart {:data-ash [:pink]}]
+   [se/icon-in-cart {:data-ash [:brown]}]
+   [se/icon-in-cart {:data-ash [:grey]}]
+   [se/icon-in-cart {:data-ash [:black]}]
    ])
 
 
@@ -801,13 +801,13 @@
   (list-keys "inverted"))
 
 (defn inverted []
-  [se/segment {:ash [:inverted]}
-   [se/icon-in-cart {:ash [:inverted]}]])
+  [se/segment {:data-ash [:inverted]}
+   [se/icon-in-cart {:data-ash [:inverted]}]])
 
 (defcard-doc
   (mkdn-pprint-source inverted))
 
-(defcard-rg
+(defcard-rg inverted
   [inverted])
 
 
@@ -820,16 +820,16 @@
 
 (defn corner []
   [se/header-h2
-   [se/icons {:ash [:large]}
+   [se/icons {:data-ash [:large]}
     [se/icon-twitter]
-    [se/icon-plus {:ash [:inverted
+    [se/icon-plus {:data-ash [:inverted
                          :corner]}]]
    "Add on Twitter"])
 
 (defcard-doc
   (mkdn-pprint-source corner))
 
-(defcard-rg
+(defcard-rg corner
   [corner])
 
 
@@ -851,15 +851,15 @@
 
 
 (defn type-icons []
-  [se/icons {:ash [:huge]}
-   [se/icon-sun {:soda :loading
-                 :ash [:big]}]
+  [se/icons {:data-ash [:huge]}
+   [se/icon-sun {:data-soda :loading
+                 :data-ash [:big]}]
    [se/icon-user]])
 
 (defcard-doc
   (mkdn-pprint-source type-icons))
 
-(defcard-rg
+(defcard-rg icons
   [:div
    [type-icons]])
 
@@ -876,21 +876,21 @@
   (list-icons-keys "size"))
 
 (defn icons-size-mini []
-  [se/icons {:ash [:mini]}
+  [se/icons {:data-ash [:mini]}
    [se/icon-twitter]
-   [se/icon-plus {:ash [:inverted
+   [se/icon-plus {:data-ash [:inverted
                         :corner]}]])
 
 (defn icons-size [size]
-  [se/icons {:ash [size]}
+  [se/icons {:data-ash [size]}
    [se/icon-twitter]
-   [se/icon-plus {:ash [:inverted
+   [se/icon-plus {:data-ash [:inverted
                         :corner]}]])
 
 (defcard-doc
   (mkdn-pprint-source icons-size-mini))
 
-(defcard-rg
+(defcard-rg size
   [:div
    [icons-size-mini]
    [icons-size :tiny]
@@ -898,7 +898,7 @@
 
    [se/icons
     [se/icon-twitter]
-    [se/icon-plus {:ash [:inverted
+    [se/icon-plus {:data-ash [:inverted
                          :corner]}]]
 
    [icons-size :large]

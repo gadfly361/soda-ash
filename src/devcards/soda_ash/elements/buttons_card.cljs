@@ -48,7 +48,7 @@
 (defcard-doc
   (mkdn-pprint-source type-buttons))
 
-(defcard-rg
+(defcard-rg buttons
   [type-buttons])
 
 
@@ -70,13 +70,13 @@
   [se/buttons
    [se/button "Cancel"]
    [sco/s-or] ;; <-- s-or
-   [se/button {:ash [:positive]}
+   [se/button {:data-ash [:positive]}
     "Save"]])
 
 (defcard-doc
   (mkdn-pprint-source content-or))
 
-(defcard-rg
+(defcard-rg or
   [content-or])
 
 
@@ -97,7 +97,7 @@
 
 (defn buttons-vertical []
   [:div
-   [se/buttons {:ash [:vertical]}
+   [se/buttons {:data-ash [:vertical]}
     [se/button "Foo"]
     [se/button "Bar"]
     [se/button "Baz"]]])
@@ -105,7 +105,7 @@
 (defcard-doc
   (mkdn-pprint-source buttons-vertical))
 
-(defcard-rg
+(defcard-rg vertical
    [buttons-vertical])
 
 
@@ -115,7 +115,7 @@
   (list-variation-keys "icon"))
 
 (defn buttons-icon []
-  [se/buttons {:ash [:icon]}
+  [se/buttons {:data-ash [:icon]}
    [se/button
     [se/icon-star]]
    [se/button
@@ -126,7 +126,7 @@
 (defcard-doc
   (mkdn-pprint-source buttons-icon))
 
-(defcard-rg
+(defcard-rg icon
   [buttons-icon])
 
 
@@ -136,7 +136,7 @@
   (list-variation-keys "icon"))
 
 (defn buttons-labeled-icon []
-  [se/buttons {:ash [:labeled-icon]}
+  [se/buttons {:data-ash [:labeled-icon]}
    [se/button
     [se/icon-star]
     "Star"]
@@ -150,7 +150,7 @@
 (defcard-doc
   (mkdn-pprint-source buttons-labeled-icon))
 
-(defcard-rg
+(defcard-rg labeled-icon
   [buttons-labeled-icon])
 
 
@@ -176,7 +176,7 @@
 (defcard-doc
   (mkdn-pprint-source buttons-mixed))
 
-(defcard-rg
+(defcard-rg mixed
   [buttons-mixed])
 
 
@@ -187,10 +187,10 @@
   (list-variation-keys "width"))
 
 (defn buttons-width-two []
-  [se/buttons {:ash [:two]}
-   [se/button {:ash [:red]}
+  [se/buttons {:data-ash [:two]}
+   [se/button {:data-ash [:red]}
     "one"]
-   [se/button {:ash [:orange]}
+   [se/button {:data-ash [:orange]}
     "two"]])
 
 
@@ -213,16 +213,16 @@
                     first)]
     (fn []
       [:div [:br]
-       [se/buttons {:ash [width']}
+       [se/buttons {:data-ash [width']}
         (for [[n color] widths']
           ^{:key n}
-          [se/button {:ash [color]}
+          [se/button {:data-ash [color]}
            (name n)])]])))
 
 (defcard-doc
   (mkdn-pprint-source buttons-width-two))
 
-(defcard-rg
+(defcard-rg equal-width
   [:div
    [buttons-width-two]
    (for [n (range 3 13)]
@@ -239,7 +239,7 @@
 
 (defn buttons-colored-red []
   [:div
-   [se/buttons {:ash [:red]}
+   [se/buttons {:data-ash [:red]}
     [se/button "Red"]
     [se/button "Foo"]
     [se/button "Bar"]]])
@@ -247,7 +247,7 @@
 (defn buttons-colored [colored]
   [:div
    [:br]
-   [se/buttons {:ash [colored]}
+   [se/buttons {:data-ash [colored]}
     [se/button (name colored)]
     [se/button "Foo"]
     [se/button "Bar"]]])
@@ -270,7 +270,7 @@
    :grey
    :black])
 
-(defcard-rg
+(defcard-rg colored
   [:div
    [buttons-colored-red]
    (for [color (drop 1 colors)]
@@ -286,7 +286,7 @@
   (list-variation-keys "basic"))
 
 (defn buttons-basic []
-  [se/buttons {:ash [:basic]}
+  [se/buttons {:data-ash [:basic]}
    [se/button "basic"]
    [se/button "foo"]
    [se/button "bar"]])
@@ -294,7 +294,7 @@
 (defcard-doc
   (mkdn-pprint-source buttons-basic))
 
-(defcard-rg
+(defcard-rg basic
   [buttons-basic])
 
 
@@ -306,7 +306,7 @@
 
 (defn buttons-size-mini []
   [:div
-   [se/buttons {:ash [:mini]}
+   [se/buttons {:data-ash [:mini]}
     [se/button "Mini"]
     [se/button "Foo"]
     [se/button "Bar"]]])
@@ -314,7 +314,7 @@
 (defn buttons-size [size]
   [:div
    [:br]
-   [se/buttons {:ash [size]}
+   [se/buttons {:data-ash [size]}
     [se/button (name size)]
     [se/button "Foo"]
     [se/button "Bar"]]])
@@ -322,7 +322,7 @@
 (defcard-doc
   (mkdn-pprint-source buttons-size-mini))
 
-(defcard-rg
+(defcard-rg size
   [:div
    [buttons-size-mini]
    [buttons-size :tiny]

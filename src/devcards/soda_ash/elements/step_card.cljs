@@ -48,7 +48,7 @@
 (defcard-doc
   (mkdn-pprint-source type-default))
 
-(defcard-rg
+(defcard-rg default
   [type-default])
 
 
@@ -60,7 +60,7 @@
 (defcard-doc
   (mkdn-pprint-source type-link))
 
-(defcard-rg
+(defcard-rg link
   [type-link])
 
 
@@ -75,37 +75,37 @@
 
 (defn state-active []
   [se/steps
-   [se/step {:soda :active}
+   [se/step {:data-soda :active}
     "Step"]])
 
 (defcard-doc
   (mkdn-pprint-source state-active))
 
-(defcard-rg
+(defcard-rg active
   [state-active])
 
 
 (defn state-completed []
   [se/steps-ordered
-   [se/step {:soda :completed}
+   [se/step {:data-soda :completed}
     "Step"]])
 
 (defcard-doc
   (mkdn-pprint-source state-completed))
 
-(defcard-rg
+(defcard-rg completed
   [state-completed])
 
 
 (defn state-disabled []
   [se/steps
-   [se/step {:soda :disabled}
+   [se/step {:data-soda :disabled}
     "Step"]])
 
 (defcard-doc
   (mkdn-pprint-source state-disabled))
 
-(defcard-rg
+(defcard-rg disabled
   [state-disabled])
 
 
@@ -136,7 +136,7 @@
 (defcard-doc
   (mkdn-pprint-source content-description))
 
-(defcard-rg
+(defcard-rg description
   [content-description])
 
 
@@ -155,7 +155,7 @@
 (defcard-doc
   (mkdn-pprint-source content-icon))
 
-(defcard-rg
+(defcard-rg icon
   [content-icon])
 
 
@@ -176,7 +176,7 @@
 (defcard-doc
   (mkdn-pprint-source content-link))
 
-(defcard-rg
+(defcard-rg link
   [content-link])
 
 
@@ -202,7 +202,7 @@
 (defcard-doc
   (mkdn-pprint-source steps-default))
 
-(defcard-rg
+(defcard-rg default
   [steps-default])
 
 
@@ -214,7 +214,7 @@
 (defcard-doc
   (mkdn-pprint-source steps-ordered))
 
-(defcard-rg
+(defcard-rg ordered
   [steps-ordered])
 
 
@@ -226,7 +226,7 @@
 (defcard-doc
   (mkdn-pprint-source steps-vertical))
 
-(defcard-rg
+(defcard-rg vertical
   [steps-vertical])
 
 
@@ -247,7 +247,7 @@
   (list-steps-keys "stackable"))
 
 (defn steps-stackable []
-  [se/steps {:ash [:tablet-stackable]}
+  [se/steps {:data-ash [:tablet-stackable]}
    [se/step "Step 1"]
    [se/step "Step 2"]
    [se/step "Step 3"]])
@@ -255,7 +255,7 @@
 (defcard-doc
   (mkdn-pprint-source steps-stackable))
 
-(defcard-rg
+(defcard-rg stackable
   [steps-stackable])
 
 
@@ -267,7 +267,7 @@
   (list-steps-keys "fluid"))
 
 (defn steps-fluid []
-  [se/steps {:ash [:fluid]}
+  [se/steps {:data-ash [:fluid]}
    [se/step "Step 1"]
    [se/step "Step 2"]
    [se/step "Step 3"]])
@@ -275,7 +275,7 @@
 (defcard-doc
   (mkdn-pprint-source steps-fluid))
 
-(defcard-rg
+(defcard-rg fluid
   [steps-fluid])
 
 
@@ -288,12 +288,12 @@
 
 (defn steps-attached []
   [:div
-   [se/steps {:ash [:attached]}
+   [se/steps {:data-ash [:attached]}
     [se/step "Step 1"]
     [se/step "Step 2"]
     [se/step "Step 3"]]
 
-   [se/segment {:ash [:attached]}
+   [se/segment {:data-ash [:attached]}
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -302,7 +302,7 @@
    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
    culpa qui officia deserunt mollit anim id est laborum."]
 
-   [se/steps {:ash [:bottom-attached]}
+   [se/steps {:data-ash [:bottom-attached]}
     [se/step "Step 1"]
     [se/step "Step 2"]
     [se/step "Step 3"]]
@@ -311,7 +311,7 @@
 (defcard-doc
   (mkdn-pprint-source steps-attached))
 
-(defcard-rg
+(defcard-rg attached
   [steps-attached])
 
 
@@ -324,7 +324,7 @@
 
 (defn steps-divided-two []
   [:div
-   [se/steps {:ash [:two]}
+   [se/steps {:data-ash [:two]}
     [se/step "Step 1"]
     [se/step "Step 2"]]])
 
@@ -337,7 +337,7 @@
                  7 :seven
                  8 :eight} n)]
     [:div [:br]
-     [se/steps {:ash [divide]}
+     [se/steps {:data-ash [divide]}
       (for [n' (range 1 (+ 1 n))]
         ^{:key n'}
         [se/step (str "Step " n')])]]))
@@ -345,7 +345,7 @@
 (defcard-doc
   (mkdn-pprint-source steps-divided-two))
 
-(defcard-rg
+(defcard-rg divided
   [:div
    [steps-divided-two]
    (for [n (range 3 9)]
@@ -362,14 +362,14 @@
 
 (defn steps-size-mini []
   [:div
-   [se/steps {:ash [:mini]}
+   [se/steps {:data-ash [:mini]}
     [se/step "mini"]
     [se/step "foo"]
     [se/step "bar"]]])
 
 (defn steps-size [size]
   [:div [:br]
-   [se/steps {:ash [size]}
+   [se/steps {:data-ash [size]}
     [se/step (name size)]
     [se/step "foo"]
     [se/step "bar"]]])
@@ -377,7 +377,7 @@
 (defcard-doc
   (mkdn-pprint-source steps-size-mini))
 
-(defcard-rg
+(defcard-rg size
   [:div
    [steps-size-mini]
    [steps-size :tiny]

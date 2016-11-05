@@ -51,7 +51,7 @@
 (defcard-doc
   (mkdn-pprint-source type-default))
 
-(defcard-rg
+(defcard-rg default
   [type-default])
 
 
@@ -69,7 +69,7 @@
 (defcard-doc
   (mkdn-pprint-source type-raised))
 
-(defcard-rg
+(defcard-rg raised
   [type-raised])
 
 
@@ -87,7 +87,7 @@
 (defcard-doc
   (mkdn-pprint-source type-stacked))
 
-(defcard-rg
+(defcard-rg stacked
   [type-stacked])
 
 
@@ -105,7 +105,7 @@
 (defcard-doc
   (mkdn-pprint-source type-tall-stacked))
 
-(defcard-rg
+(defcard-rg tall-stacked
   [type-tall-stacked])
 
 
@@ -123,7 +123,7 @@
 (defcard-doc
   (mkdn-pprint-source type-piled))
 
-(defcard-rg
+(defcard-rg piled
   [type-piled])
 
 
@@ -149,7 +149,7 @@
 (defcard-doc
   (mkdn-pprint-source type-vertical))
 
-(defcard-rg
+(defcard-rg vertical
   [type-vertical])
 
 
@@ -164,7 +164,7 @@
   (list-keys "states"))
 
 (defn state-disabled []
-  [se/segment {:soda :disabled}
+  [se/segment {:data-soda :disabled}
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -176,12 +176,12 @@
 (defcard-doc
   (mkdn-pprint-source state-disabled))
 
-(defcard-rg
+(defcard-rg disabled
   [state-disabled])
 
 
 (defn state-loading []
-  [se/segment {:soda :loading}
+  [se/segment {:data-soda :loading}
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -193,7 +193,7 @@
 (defcard-doc
   (mkdn-pprint-source state-loading))
 
-(defcard-rg
+(defcard-rg loading
   [state-loading])
 
 
@@ -212,17 +212,17 @@
 
 (defn variation-attached []
   [:div
-   [se/segment {:ash [:top-attached]}
+   [se/segment {:data-ash [:top-attached]}
     "This segment is on top"]
-   [se/segment {:ash [:attached]}
+   [se/segment {:data-ash [:attached]}
     "This segment is attached on both sides"]
-   [se/segment {:ash [:bottom-attached]}
+   [se/segment {:data-ash [:bottom-attached]}
     "This segment is on bottom"]])
 
 (defcard-doc
   (mkdn-pprint-source variation-attached))
 
-(defcard-rg
+(defcard-rg attached
   [variation-attached])
 
 
@@ -231,7 +231,7 @@
   (list-keys "padded"))
 
 (defn variation-padded []
-  [se/segment {:ash [:padded]}
+  [se/segment {:data-ash [:padded]}
    [se/header-h3 "padded"]
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -244,12 +244,12 @@
 (defcard-doc
   (mkdn-pprint-source variation-padded))
 
-(defcard-rg
+(defcard-rg padded
   [variation-padded])
 
 
 (defn variation-very-padded []
-  [se/segment {:ash [:very-padded]}
+  [se/segment {:data-ash [:very-padded]}
    [se/header-h3 "very-padded"]
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -262,7 +262,7 @@
 (defcard-doc
   (mkdn-pprint-source variation-very-padded))
 
-(defcard-rg
+(defcard-rg very-padded
   [variation-very-padded])
 
 
@@ -271,7 +271,7 @@
   (list-keys "compact"))
 
 (defn variation-compact []
-  [se/segment {:ash [:compact]}
+  [se/segment {:data-ash [:compact]}
    [se/header-h3 "compact"]
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -284,7 +284,7 @@
 (defcard-doc
   (mkdn-pprint-source variation-compact))
 
-(defcard-rg
+(defcard-rg compact
   [variation-compact])
 
 
@@ -293,38 +293,38 @@
   (list-keys "colored"))
 
 (defn variation-colored []
-  [se/segment {:ash [:red]}
+  [se/segment {:data-ash [:red]}
    [se/header-h3 "red"]])
 
 (defcard-doc
   (mkdn-pprint-source variation-colored))
 
-(defcard-rg
+(defcard-rg colored
   [:div
    [variation-colored]
-   [se/segment {:ash [:orange]}
+   [se/segment {:data-ash [:orange]}
     [se/header-h3 "orange"]]
-   [se/segment {:ash [:yellow]}
+   [se/segment {:data-ash [:yellow]}
     [se/header-h3 "yellow"]]
-   [se/segment {:ash [:olive]}
+   [se/segment {:data-ash [:olive]}
     [se/header-h3 "olive"]]
-   [se/segment {:ash [:green]}
+   [se/segment {:data-ash [:green]}
     [se/header-h3 "green"]]
-   [se/segment {:ash [:teal]}
+   [se/segment {:data-ash [:teal]}
     [se/header-h3 "teal"]]
-   [se/segment {:ash [:blue]}
+   [se/segment {:data-ash [:blue]}
     [se/header-h3 "blue"]]
-   [se/segment {:ash [:violet]}
+   [se/segment {:data-ash [:violet]}
     [se/header-h3 "violet"]]
-   [se/segment {:ash [:purple]}
+   [se/segment {:data-ash [:purple]}
     [se/header-h3 "purple"]]
-   [se/segment {:ash [:pink]}
+   [se/segment {:data-ash [:pink]}
     [se/header-h3 "pink"]]
-   [se/segment {:ash [:brown]}
+   [se/segment {:data-ash [:brown]}
     [se/header-h3 "brown"]]
-   [se/segment {:ash [:grey]}
+   [se/segment {:data-ash [:grey]}
     [se/header-h3 "grey"]]
-   [se/segment {:ash [:black]}
+   [se/segment {:data-ash [:black]}
     [se/header-h3 "black"]]
    ])
 
@@ -334,51 +334,51 @@
   (list-keys "inverted"))
 
 (defn variation-inverted []
-  [se/segment {:ash [:red
-                     :inverted]}
+  [se/segment {:data-ash [:red
+                          :inverted]}
    [se/header-h3 "red"]])
 
 (defcard-doc
   (mkdn-pprint-source variation-inverted))
 
-(defcard-rg
+(defcard-rg inverted
   [:div
    [variation-inverted]
-   [se/segment {:ash [:orange
-                      :inverted]}
+   [se/segment {:data-ash [:orange
+                           :inverted]}
     [se/header-h3 "orange"]]
-   [se/segment {:ash [:yellow
-                      :inverted]}
+   [se/segment {:data-ash [:yellow
+                           :inverted]}
     [se/header-h3 "yellow"]]
-   [se/segment {:ash [:olive
-                      :inverted]}
+   [se/segment {:data-ash [:olive
+                           :inverted]}
     [se/header-h3 "olive"]]
-   [se/segment {:ash [:green
-                      :inverted]}
+   [se/segment {:data-ash [:green
+                           :inverted]}
     [se/header-h3 "green"]]
-   [se/segment {:ash [:teal
-                      :inverted]}
+   [se/segment {:data-ash [:teal
+                           :inverted]}
     [se/header-h3 "teal"]]
-   [se/segment {:ash [:blue
-                      :inverted]}
+   [se/segment {:data-ash [:blue
+                           :inverted]}
     [se/header-h3 "blue"]]
-   [se/segment {:ash [:violet
-                      :inverted]}
+   [se/segment {:data-ash [:violet
+                           :inverted]}
     [se/header-h3 "violet"]]
-   [se/segment {:ash [:purple
-                      :inverted]}
+   [se/segment {:data-ash [:purple
+                           :inverted]}
     [se/header-h3 "purple"]]
-   [se/segment {:ash [:pink
-                      :inverted]}
+   [se/segment {:data-ash [:pink
+                           :inverted]}
     [se/header-h3 "pink"]]
-   [se/segment {:ash [:brown
-                      :inverted]}
+   [se/segment {:data-ash [:brown
+                           :inverted]}
     [se/header-h3 "brown"]]
-   [se/segment {:ash [:grey
-                      :inverted]}
+   [se/segment {:data-ash [:grey
+                           :inverted]}
     [se/header-h3 "grey"]]
-   [se/segment {:ash [:black
-                      :inverted]}
+   [se/segment {:data-ash [:black
+                           :inverted]}
     [se/header-h3 "black"]]
    ])
 
@@ -388,24 +388,24 @@
   (list-keys "emphasis"))
 
 (defn variation-secondary []
-  [se/segment {:ash [:secondary]}
+  [se/segment {:data-ash [:secondary]}
    "secondary"])
 
 (defcard-doc
   (mkdn-pprint-source variation-secondary))
 
-(defcard-rg
+(defcard-rg secondary
   [variation-secondary])
 
 
 (defn variation-tertiary []
-  [se/segment {:ash [:tertiary]}
+  [se/segment {:data-ash [:tertiary]}
    "tertiary"])
 
 (defcard-doc
   (mkdn-pprint-source variation-tertiary))
 
-(defcard-rg
+(defcard-rg tertiary
   [variation-tertiary])
 
 
@@ -414,7 +414,7 @@
   (list-keys "circular"))
 
 (defn variation-circular []
-  [se/segment {:ash [:circular]}
+  [se/segment {:data-ash [:circular]}
    [se/header-h3 "circular"]
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -427,7 +427,7 @@
 (defcard-doc
   (mkdn-pprint-source variation-circular))
 
-(defcard-rg
+(defcard-rg circular
   [variation-circular])
 
 
@@ -436,9 +436,9 @@
   (list-keys "clearing"))
 
 (defn variation-clearing []
-  [se/segment {:ash [:clearing]}
+  [se/segment {:data-ash [:clearing]}
    [se/header-h3 "clearing"]
-   [se/header-h3 {:ash [:right-floated]}
+   [se/header-h3 {:data-ash [:right-floated]}
     "this is right floated"]
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -451,7 +451,7 @@
 (defcard-doc
   (mkdn-pprint-source variation-clearing))
 
-(defcard-rg
+(defcard-rg clearing
   [variation-clearing])
 
 
@@ -461,15 +461,15 @@
 
 (defn variation-floated []
   [:div
-   [se/segment {:ash [:left-floated]}
+   [se/segment {:data-ash [:left-floated]}
     "left-floated"]
-   [se/segment {:ash [:right-floated]}
+   [se/segment {:data-ash [:right-floated]}
     "right-floated"]])
 
 (defcard-doc
   (mkdn-pprint-source variation-floated))
 
-(defcard-rg
+(defcard-rg floated
   [variation-floated])
 
 
@@ -481,20 +481,20 @@
 
 (defn variation-text-alignment []
   [:div
-   [se/segment {:ash [:left-aligned]}
+   [se/segment {:data-ash [:left-aligned]}
     "left algined"]
 
-   [se/segment {:ash [:center-aligned]}
+   [se/segment {:data-ash [:center-aligned]}
     "center algined"]
 
-   [se/segment {:ash [:right-aligned]}
+   [se/segment {:data-ash [:right-aligned]}
     "right algined"]
    ])
 
 (defcard-doc
   (mkdn-pprint-source variation-text-alignment))
 
-(defcard-rg
+(defcard-rg text-alignment
   [variation-text-alignment])
 
 
@@ -504,14 +504,14 @@
 
 (defn variation-basic []
   [:div
-   [se/segment {:ash [:basic]}
+   [se/segment {:data-ash [:basic]}
     [se/header-h3 "basic"]
     "A basic segment has no special formatting"]])
 
 (defcard-doc
   (mkdn-pprint-source variation-basic))
 
-(defcard-rg
+(defcard-rg basic
   [variation-basic])
 
 
@@ -554,7 +554,7 @@
 (defcard-doc
   (mkdn-pprint-source segments-default))
 
-(defcard-rg
+(defcard-rg default
   [segments-default])
 
 
@@ -582,7 +582,7 @@
 (defcard-doc
   (mkdn-pprint-source segments-horizontal))
 
-(defcard-rg
+(defcard-rg horizontal
   [segments-horizontal])
 
 
@@ -611,7 +611,7 @@
 (defcard-doc
   (mkdn-pprint-source segments-raised))
 
-(defcard-rg
+(defcard-rg raised
   [segments-raised])
 
 
@@ -639,7 +639,7 @@
 (defcard-doc
   (mkdn-pprint-source segments-stacked))
 
-(defcard-rg
+(defcard-rg stacked
   [segments-stacked])
 
 
@@ -667,5 +667,5 @@
 (defcard-doc
   (mkdn-pprint-source segments-piled))
 
-(defcard-rg
+(defcard-rg piled
   [segments-piled])

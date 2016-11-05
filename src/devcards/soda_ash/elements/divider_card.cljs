@@ -52,7 +52,7 @@
 (defcard-doc
   (mkdn-pprint-source type-default))
 
-(defcard-rg
+(defcard-rg default
   [type-default])
 
 
@@ -86,7 +86,7 @@
 (defcard-doc
   (mkdn-pprint-source type-vertical))
 
-(defcard-rg
+(defcard-rg vertical
   [type-vertical])
 
 
@@ -115,7 +115,7 @@
 (defcard-doc
   (mkdn-pprint-source type-horizontal))
 
-(defcard-rg
+(defcard-rg horizontal
   [type-horizontal])
 
 
@@ -140,7 +140,7 @@
   (list-keys "inverted"))
 
 (defn inverted []
-  [se/segment {:ash [:inverted]}
+  [se/segment {:data-ash [:inverted]}
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -148,7 +148,7 @@
    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
    culpa qui officia deserunt mollit anim id est laborum."
-   [se/divider {:ash [:inverted]}]
+   [se/divider {:data-ash [:inverted]}]
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -160,7 +160,7 @@
 (defcard-doc
   (mkdn-pprint-source inverted))
 
-(defcard-rg
+(defcard-rg inverted
   [inverted])
 
 
@@ -180,7 +180,7 @@
    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
    culpa qui officia deserunt mollit anim id est laborum."
-   [se/divider {:ash [:fitted]}]
+   [se/divider {:data-ash [:fitted]}]
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -192,7 +192,7 @@
 (defcard-doc
   (mkdn-pprint-source fitted))
 
-(defcard-rg
+(defcard-rg fitted
   [fitted])
 
 
@@ -212,7 +212,7 @@
    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
    culpa qui officia deserunt mollit anim id est laborum."
-   [se/divider {:ash [:hidden]}]
+   [se/divider {:data-ash [:hidden]}]
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -224,7 +224,7 @@
 (defcard-doc
   (mkdn-pprint-source hidden))
 
-(defcard-rg
+(defcard-rg hidden
   [hidden])
 
 
@@ -244,7 +244,7 @@
    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
    culpa qui officia deserunt mollit anim id est laborum."
-   [se/divider {:ash [:section]}]
+   [se/divider {:data-ash [:section]}]
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -256,7 +256,7 @@
 (defcard-doc
   (mkdn-pprint-source section))
 
-(defcard-rg
+(defcard-rg section
   [section])
 
 
@@ -269,9 +269,9 @@
 
 (defn clearing []
   [:div
-   [se/header-h3 {:ash [:right-floated]}
+   [se/header-h3 {:data-ash [:right-floated]}
     "Floated Content"]
-   [se/divider {:ash [:clearing]}]
+   [se/divider {:data-ash [:clearing]}]
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -283,5 +283,5 @@
 (defcard-doc
   (mkdn-pprint-source clearing))
 
-(defcard-rg
+(defcard-rg clearing
   [clearing])

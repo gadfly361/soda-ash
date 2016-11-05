@@ -41,7 +41,7 @@
 (defcard-doc
   (mkdn-pprint-source type-default))
 
-(defcard-rg
+(defcard-rg default
   [type-default])
 
 
@@ -58,7 +58,7 @@
 (defcard-doc
   (mkdn-pprint-source type-text))
 
-(defcard-rg
+(defcard-rg text
   [type-text])
 
 
@@ -80,7 +80,7 @@
   (list-keys "text alignment"))
 
 (defn left-aligned []
-  [se/container {:ash [:left-aligned]}
+  [se/container {:data-ash [:left-aligned]}
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -92,12 +92,12 @@
 (defcard-doc
   (mkdn-pprint-source left-aligned))
 
-(defcard-rg
+(defcard-rg left-aligned
   [left-aligned])
 
 
 (defn center-aligned []
-  [se/container {:ash [:center-aligned]}
+  [se/container {:data-ash [:center-aligned]}
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -109,12 +109,12 @@
 (defcard-doc
   (mkdn-pprint-source center-aligned))
 
-(defcard-rg
+(defcard-rg center-aligned
   [center-aligned])
 
 
 (defn right-aligned []
-  [se/container {:ash [:right-aligned]}
+  [se/container {:data-ash [:right-aligned]}
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -126,12 +126,12 @@
 (defcard-doc
   (mkdn-pprint-source right-aligned))
 
-(defcard-rg
+(defcard-rg right-aligned
   [right-aligned])
 
 
 (defn justified []
-  [se/container {:ash [:justified]}
+  [se/container {:data-ash [:justified]}
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -143,7 +143,7 @@
 (defcard-doc
   (mkdn-pprint-source justified))
 
-(defcard-rg
+(defcard-rg justified
   [justified])
 
 
@@ -157,7 +157,7 @@
   )
 
 (defn fluid []
-  [se/container {:ash [:fluid]}
+  [se/container {:data-ash [:fluid]}
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -169,5 +169,5 @@
 (defcard-doc
   (mkdn-pprint-source fluid))
 
-(defcard-rg
+(defcard-rg fluid
   [fluid])

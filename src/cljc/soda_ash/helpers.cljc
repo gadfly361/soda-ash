@@ -63,11 +63,11 @@
                 types-docs "\n")
 
            (when-not (empty? states-docs)
-             (str "# **:soda**\n"
+             (str "# **:data-soda**\n"
                   states-docs))
 
            (when-not (empty? variations-docs)
-             (str "# **:ash**\n"
+             (str "# **:data-ash**\n"
                   variations-docs)))))
 
 

@@ -62,7 +62,7 @@
 (defcard-doc
   (mkdn-pprint-source type-default))
 
-(defcard-rg
+(defcard-rg default
   [type-default])
 
 
@@ -80,7 +80,7 @@
   (list-keys "size"))
 
 (defn variation-size-small []
-  [sv/feed {:ash [:small]}
+  [sv/feed {:data-ash [:small]}
    [sco/event
     [sco/label
      [:img {:src "/images/gadfly.png"}]]
@@ -106,12 +106,12 @@
 (defcard-doc
   (mkdn-pprint-source variation-size-small))
 
-(defcard-rg
+(defcard-rg size-small
   [variation-size-small])
 
 
 (defn variation-size-large []
-  [sv/feed {:ash [:large]}
+  [sv/feed {:data-ash [:large]}
    [sco/event
     [sco/label
      [:img {:src "/images/gadfly.png"}]]
@@ -137,5 +137,5 @@
 (defcard-doc
   (mkdn-pprint-source variation-size-large))
 
-(defcard-rg
+(defcard-rg size-large
   [variation-size-large])

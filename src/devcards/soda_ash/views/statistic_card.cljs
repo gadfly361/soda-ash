@@ -66,7 +66,7 @@
 (defcard-doc
   (mkdn-pprint-source type-default))
 
-(defcard-rg
+(defcard-rg default
   [type-default])
 
 
@@ -84,20 +84,20 @@
   (list-keys "colored"))
 
 (defn variation-colored-red []
-  [sv/statistic {:ash [:red]}
+  [sv/statistic {:data-ash [:red]}
    [sco/value "5,550"]
    [sco/label "red"]
    ])
 
 (defn variation-colored [color]
-  [sv/statistic {:ash [color]}
+  [sv/statistic {:data-ash [color]}
    [sco/value "5,550"]
    [sco/label (name color)]])
 
 (defcard-doc
   (mkdn-pprint-source variation-colored-red))
 
-(defcard-rg
+(defcard-rg colored
   [:div
    [variation-colored-red]
    (for [color (drop 1 colors)]
@@ -112,7 +112,7 @@
 
 (defn variation-horizontal []
   [se/segment
-   [sv/statistic {:ash [:horizontal]}
+   [sv/statistic {:data-ash [:horizontal]}
     [sco/value "5,550"]
     [sco/label "horizontal"]
     ]])
@@ -120,7 +120,7 @@
 (defcard-doc
   (mkdn-pprint-source variation-horizontal))
 
-(defcard-rg
+(defcard-rg horizontal
   [variation-horizontal])
 
 
@@ -129,9 +129,9 @@
   (list-keys "inverted"))
 
 (defn variation-inverted []
-  [se/segment {:ash [:inverted]}
-   [sv/statistic {:ash [:inverted
-                        :blue]}
+  [se/segment {:data-ash [:inverted]}
+   [sv/statistic {:data-ash [:inverted
+                             :blue]}
     [sco/value "5,550"]
     [sco/label "inverted"]
     ]])
@@ -139,7 +139,7 @@
 (defcard-doc
   (mkdn-pprint-source variation-inverted))
 
-(defcard-rg
+(defcard-rg inverted
   [variation-inverted])
 
 
@@ -149,8 +149,8 @@
 
 (defn variation-floated []
   [:div
-   [sv/statistic {:ash [:left-floated
-                        :small]}
+   [sv/statistic {:data-ash [:left-floated
+                             :small]}
     [sco/value "5,550"]
     [sco/label "left-floated"]]
 
@@ -162,8 +162,8 @@
    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
    culpa qui officia deserunt mollit anim id est laborum."
 
-   [sv/statistic {:ash [:right-floated
-                        :small]}
+   [sv/statistic {:data-ash [:right-floated
+                             :small]}
     [sco/value "5,550"]
     [sco/label "rigt-floated"]]
 
@@ -179,7 +179,7 @@
 (defcard-doc
   (mkdn-pprint-source variation-floated))
 
-(defcard-rg
+(defcard-rg floated
   [variation-floated])
 
 
@@ -188,20 +188,20 @@
   (list-keys "size"))
 
 (defn variation-size-mini []
-  [sv/statistic {:ash [:mini]}
+  [sv/statistic {:data-ash [:mini]}
    [sco/value "5,550"]
    [sco/label "mini"]
    ])
 
 (defn variation-size [size]
-  [sv/statistic {:ash [size]}
+  [sv/statistic {:data-ash [size]}
    [sco/value "5,550"]
    [sco/label (name size)]])
 
 (defcard-doc
   (mkdn-pprint-source variation-size-mini))
 
-(defcard-rg
+(defcard-rg size
   [:div
    [variation-size-mini]
    (for [color (drop 1 sizes)]
@@ -228,7 +228,7 @@
    [sco/statistic
     [sco/value "5,550"]
     [sco/label "Downloads"]]
-   [sco/statistic {:ash [:blue]}
+   [sco/statistic {:data-ash [:blue]}
     [sco/value "5,550"]
     [sco/label "Downloads"]]
    ])
@@ -236,7 +236,7 @@
 (defcard-doc
   (mkdn-pprint-source type-statistics-default))
 
-(defcard-rg
+(defcard-rg statistics-default
   [type-statistics-default])
 
 
@@ -254,7 +254,7 @@
   (list-keys "colored"))
 
 (defn statistics-variation-colored-red []
-  [sv/statistics {:ash [:red]}
+  [sv/statistics {:data-ash [:red]}
    [sco/statistic
     [sco/value "5,550"]
     [sco/label "Downloads"]]
@@ -266,7 +266,7 @@
 (defcard-doc
   (mkdn-pprint-source statistics-variation-colored-red))
 
-(defcard-rg
+(defcard-rg statistics-colored
   [statistics-variation-colored-red])
 
 
@@ -275,7 +275,7 @@
   (list-keys "horizontal"))
 
 (defn statistics-variation-horizontal []
-  [sv/statistics {:ash [:horizontal]}
+  [sv/statistics {:data-ash [:horizontal]}
    [sco/statistic
     [sco/value "5,550"]
     [sco/label "Downloads"]]
@@ -287,7 +287,7 @@
 (defcard-doc
   (mkdn-pprint-source statistics-variation-horizontal))
 
-(defcard-rg
+(defcard-rg horizontal
   [statistics-variation-horizontal])
 
 
@@ -296,9 +296,9 @@
   (list-keys "inverted"))
 
 (defn statistics-variation-inverted []
-  [se/segment {:ash [:inverted]}
-   [sv/statistics {:ash [:inverted
-                         :blue]}
+  [se/segment {:data-ash [:inverted]}
+   [sv/statistics {:data-ash [:inverted
+                              :blue]}
     [sco/statistic
      [sco/value "5,550"]
      [sco/label "Downloads"]]
@@ -310,7 +310,7 @@
 (defcard-doc
   (mkdn-pprint-source statistics-variation-inverted))
 
-(defcard-rg
+(defcard-rg inverted
   [statistics-variation-inverted])
 
 
@@ -319,7 +319,7 @@
   (list-keys "size"))
 
 (defn statistics-variation-size []
-  [sv/statistics {:ash [:mini]}
+  [sv/statistics {:data-ash [:mini]}
    [sco/statistic
     [sco/value "5,550"]
     [sco/label "Downloads"]]
@@ -331,5 +331,5 @@
 (defcard-doc
   (mkdn-pprint-source statistics-variation-size))
 
-(defcard-rg
+(defcard-rg size
   [statistics-variation-size])

@@ -47,7 +47,7 @@
     [sco/description
      "Debian-based Linux operating system"]]
    [sco/content-extra
-    [:a {:href "https://wiki.ubuntu.com/Releases"
+    [:a {:href   "https://wiki.ubuntu.com/Releases"
          :target "_blank"}
      [se/icon-linux]
      "Releases"]]
@@ -56,17 +56,17 @@
 (defcard-doc
   (mkdn-pprint-source type-default))
 
-(defcard-rg
+(defcard-rg default
   [type-default])
 
 
 (defn type-default2 []
   [sv/card
    [sco/content
-    [sco/s-meta {:ash [:right-floated]} "14h"]
-    [se/image {:ash [:avatar]
-               :src "/images/gadfly.png"}
-     "Gadlfy361"]]
+    [sco/s-meta {:data-ash [:right-floated]} "14h"]
+    [se/image {:data-ash [:avatar]
+               :src      "/images/gadfly.png"}]
+     "Gadlfy361"]
 
    [sco/image
     [:img {:src "/images/square-image.png"}]]
@@ -81,10 +81,10 @@
      "3 comments"]]
 
    [sco/content-extra
-    [se/input {:ash [:left-icon
-                     :large
-                     :transparent
-                     :fluid]}
+    [se/input {:data-ash [:left-icon
+                          :large
+                          :transparent
+                          :fluid]}
      [se/icon-empty-heart]
      [:input {:type        "text"
               :placeholder "Add Comment..."}]]]
@@ -93,7 +93,7 @@
 (defcard-doc
   (mkdn-pprint-source type-default2))
 
-(defcard-rg
+(defcard-rg default2
   [type-default2])
 
 
@@ -110,36 +110,36 @@
 
    [sco/card
     [sco/content
-     [se/image {:ash [:mini
-                      :right-floated]
-                :src "/images/gadfly.png"}]
+     [se/image {:data-ash [:mini
+                           :right-floated]
+                :src      "/images/gadfly.png"}]
      [sco/header "Gadfly361"]
      [sco/s-meta "Friends of Escherize"]
      [sco/description
       "Gadfly361 requested permission to view your contact details"]]
-     [sco/content-extra
-      [se/buttons {:ash [:two]}
-       [se/button-basic {:ash [:green]}
-        "Approve"]
-       [se/button-basic {:ash [:red]}
-        "Decline"]]]]
+    [sco/content-extra
+     [se/buttons {:data-ash [:two]}
+      [se/button-basic {:data-ash [:green]}
+       "Approve"]
+      [se/button-basic {:data-ash [:red]}
+       "Decline"]]]]
 
    [sco/card
     [sco/content
-     [se/image {:ash [:mini
-                      :right-floated
-                      :rounded]
-                :src "/images/escherize.jpg"}]
+     [se/image {:data-ash [:mini
+                           :right-floated
+                           :rounded]
+                :src      "/images/escherize.jpg"}]
      [sco/header "Escherize"]
      [sco/s-meta "New Member"]
      [sco/description
       "Escherize wants to add you the the group "
       [:b "best friends"]]]
     [sco/content-extra
-     [se/buttons {:ash [:two]}
-      [se/button-basic {:ash [:green]}
+     [se/buttons {:data-ash [:two]}
+      [se/button-basic {:data-ash [:green]}
        "Approve"]
-      [se/button-basic {:ash [:red]}
+      [se/button-basic {:data-ash [:red]}
        "Decline"]]]]
 
    ])
@@ -147,7 +147,7 @@
 (defcard-doc
   (mkdn-pprint-source cards-type-default))
 
-(defcard-rg
+(defcard-rg cards-default
   [cards-type-default])
 
 
@@ -173,7 +173,7 @@
     [sco/description
      "Debian-based Linux operating system"]]
    [sco/content-extra
-    [:a {:href "https://wiki.ubuntu.com/Releases"
+    [:a {:href   "https://wiki.ubuntu.com/Releases"
          :target "_blank"}
      [se/icon-linux]
      "Releases"]]
@@ -182,7 +182,7 @@
 (defcard-doc
   (mkdn-pprint-source content-block))
 
-(defcard-rg
+(defcard-rg block
   [content-block])
 
 
@@ -199,7 +199,7 @@
     [sco/description
      "Debian-based Linux operating system"]]
    [sco/content-extra
-    [:a {:href "https://wiki.ubuntu.com/Releases"
+    [:a {:href   "https://wiki.ubuntu.com/Releases"
          :target "_blank"}
      [se/icon-linux]
      "Releases"]]
@@ -208,7 +208,7 @@
 (defcard-doc
   (mkdn-pprint-source content-image))
 
-(defcard-rg
+(defcard-rg image
   [content-image])
 
 
@@ -221,7 +221,7 @@
 (defcard-doc
   (mkdn-pprint-source content-image-hover))
 
-(defcard-rg
+(defcard-rg image-hover
   [content-image-hover])
 
 
@@ -238,7 +238,7 @@
     [sco/description
      "Debian-based Linux operating system"]]
    [sco/content-extra
-    [:a {:href "https://wiki.ubuntu.com/Releases"
+    [:a {:href   "https://wiki.ubuntu.com/Releases"
          :target "_blank"}
      [se/icon-linux]
      "Releases"]]
@@ -247,7 +247,7 @@
 (defcard-doc
   (mkdn-pprint-source content-header))
 
-(defcard-rg
+(defcard-rg header
   [content-header])
 
 
@@ -264,7 +264,7 @@
     [sco/description
      "Debian-based Linux operating system"]]
    [sco/content-extra
-    [:a {:href "https://wiki.ubuntu.com/Releases"
+    [:a {:href   "https://wiki.ubuntu.com/Releases"
          :target "_blank"}
      [se/icon-linux]
      "Releases"]]
@@ -273,7 +273,7 @@
 (defcard-doc
   (mkdn-pprint-source content-metadata))
 
-(defcard-rg
+(defcard-rg metadata
   [content-metadata])
 
 
@@ -283,18 +283,18 @@
 
 (defn content-links []
   [sv/card
-   [sco/image-link {:href "http://www.ubuntu.com/" ;; <-- attention 1 of 3
+   [sco/image-link {:href   "http://www.ubuntu.com/" ;; <-- attention 1 of 3
                     :target "_blank"}
     [:img {:src "/images/ubuntu.png"}]]
    [sco/content
-    [sco/header-link {:href "http://www.ubuntu.com/"  ;; <-- attention 2 of 3
+    [sco/header-link {:href   "http://www.ubuntu.com/" ;; <-- attention 2 of 3
                       :target "_blank"}
      "Ubuntu"]
     [sco/s-meta "Started 2004"]
     [sco/description
      "Debian-based Linux operating system"]]
    [sco/content-extra
-    [:a {:href "https://wiki.ubuntu.com/Releases" ;; <--attention 3 of 3
+    [:a {:href   "https://wiki.ubuntu.com/Releases" ;; <--attention 3 of 3
          :target "_blank"}
      [se/icon-linux]
      "Releases"]]
@@ -303,7 +303,7 @@
 (defcard-doc
   (mkdn-pprint-source content-links))
 
-(defcard-rg
+(defcard-rg links
   [content-links])
 
 
@@ -315,8 +315,8 @@
    [sco/content
     [sco/header "Gadfly361"]
     [sco/description "Gadfly361 is a clojurescript developer."]]
-   [se/button {:ash [:bottom-attached
-                     :green]}
+   [se/button {:data-ash [:bottom-attached
+                          :green]}
     [se/icon-plus]
     "Add Friend"]
    ])
@@ -324,7 +324,7 @@
 (defcard-doc
   (mkdn-pprint-source content-button))
 
-(defcard-rg
+(defcard-rg button
   [content-button])
 
 
@@ -353,7 +353,7 @@
 (defcard-doc
   (mkdn-pprint-source content-approval))
 
-(defcard-rg
+(defcard-rg approval
   [content-approval])
 
 
@@ -370,7 +370,7 @@
     [sco/description ;; <-- attention
      "Debian-based Linux operating system"]]
    [sco/content-extra
-    [:a {:href "https://wiki.ubuntu.com/Releases"
+    [:a {:href   "https://wiki.ubuntu.com/Releases"
          :target "_blank"}
      [se/icon-linux]
      "Releases"]]
@@ -379,7 +379,7 @@
 (defcard-doc
   (mkdn-pprint-source content-description))
 
-(defcard-rg
+(defcard-rg description
   [content-description])
 
 
@@ -396,7 +396,7 @@
     [sco/description
      "Debian-based Linux operating system"]]
    [sco/content-extra  ;; <-- attention
-    [:a {:href "https://wiki.ubuntu.com/Releases"
+    [:a {:href   "https://wiki.ubuntu.com/Releases"
          :target "_blank"}
      [se/icon-linux]
      "Releases"]]
@@ -405,7 +405,7 @@
 (defcard-doc
   (mkdn-pprint-source content-extra))
 
-(defcard-rg
+(defcard-rg extra
   [content-extra])
 
 
@@ -423,7 +423,7 @@
   (list-keys "fluid"))
 
 (defn variation-fluid []
-  [sv/card {:ash [:fluid]}
+  [sv/card {:data-ash [:fluid]}
    [sco/image
     [:img {:src "/images/ubuntu.png"}]]
    [sco/content
@@ -441,7 +441,7 @@
 (defcard-doc
   (mkdn-pprint-source variation-fluid))
 
-(defcard-rg
+(defcard-rg fluid
   [variation-fluid])
 
 
@@ -450,7 +450,7 @@
   (list-keys "centered"))
 
 (defn variation-centered []
-  [sv/card {:ash [:centered]}
+  [sv/card {:data-ash [:centered]}
    [sco/image
     [:img {:src "/images/ubuntu.png"}]]
    [sco/content
@@ -468,7 +468,7 @@
 (defcard-doc
   (mkdn-pprint-source variation-centered))
 
-(defcard-rg
+(defcard-rg centered
   [variation-centered])
 
 
@@ -477,7 +477,7 @@
   (list-keys "raised"))
 
 (defn variation-raised []
-  [sv/card {:ash [:raised]}
+  [sv/card {:data-ash [:raised]}
    [sco/image
     [:img {:src "/images/ubuntu.png"}]]
    [sco/content
@@ -495,7 +495,7 @@
 (defcard-doc
   (mkdn-pprint-source variation-raised))
 
-(defcard-rg
+(defcard-rg raised
   [variation-raised])
 
 
@@ -504,7 +504,7 @@
   (list-keys "link"))
 
 (defn variation-link []
-  [sv/card {:ash [:link]}
+  [sv/card {:data-ash [:link]}
    [sco/image
     [:img {:src "/images/ubuntu.png"}]]
    [sco/content
@@ -522,7 +522,7 @@
 (defcard-doc
   (mkdn-pprint-source variation-link))
 
-(defcard-rg
+(defcard-rg link
   [variation-link])
 
 
@@ -535,56 +535,56 @@
   (list-keys "colored"))
 
 (defn variation-colored []
-  [sv/cards {:ash [:four]}
-   [sco/card-link {:ash [:red]}
+  [sv/cards {:data-ash [:four]}
+   [sco/card-link {:data-ash [:red]}
     [sco/image
      [:img {:src "/images/square-image.png"}]]]
 
-   [sco/card-link {:ash [:orange]}
+   [sco/card-link {:data-ash [:orange]}
     [sco/image
      [:img {:src "/images/square-image.png"}]]]
 
-   [sco/card-link {:ash [:yellow]}
+   [sco/card-link {:data-ash [:yellow]}
     [sco/image
      [:img {:src "/images/square-image.png"}]]]
 
-   [sco/card-link {:ash [:olive]}
+   [sco/card-link {:data-ash [:olive]}
     [sco/image
      [:img {:src "/images/square-image.png"}]]]
 
-   [sco/card-link {:ash [:green]}
+   [sco/card-link {:data-ash [:green]}
     [sco/image
      [:img {:src "/images/square-image.png"}]]]
 
-   [sco/card-link {:ash [:teal]}
+   [sco/card-link {:data-ash [:teal]}
     [sco/image
      [:img {:src "/images/square-image.png"}]]]
 
-   [sco/card-link {:ash [:blue]}
+   [sco/card-link {:data-ash [:blue]}
     [sco/image
      [:img {:src "/images/square-image.png"}]]]
 
-   [sco/card-link {:ash [:violet]}
+   [sco/card-link {:data-ash [:violet]}
     [sco/image
      [:img {:src "/images/square-image.png"}]]]
 
-   [sco/card-link {:ash [:purple]}
+   [sco/card-link {:data-ash [:purple]}
     [sco/image
      [:img {:src "/images/square-image.png"}]]]
 
-   [sco/card-link {:ash [:pink]}
+   [sco/card-link {:data-ash [:pink]}
     [sco/image
      [:img {:src "/images/square-image.png"}]]]
 
-   [sco/card-link {:ash [:brown]}
+   [sco/card-link {:data-ash [:brown]}
     [sco/image
      [:img {:src "/images/square-image.png"}]]]
 
-   [sco/card-link {:ash [:grey]}
+   [sco/card-link {:data-ash [:grey]}
     [sco/image
      [:img {:src "/images/square-image.png"}]]]
 
-   [sco/card-link {:ash [:black]}
+   [sco/card-link {:data-ash [:black]}
     [sco/image
      [:img {:src "/images/square-image.png"}]]]
    ])
@@ -592,7 +592,7 @@
 (defcard-doc
   (mkdn-pprint-source variation-colored))
 
-(defcard-rg
+(defcard-rg colored
   [variation-colored])
 
 
@@ -602,7 +602,7 @@
   (list-cards-keys "count"))
 
 (defn variation-count []
-  [sv/cards {:ash [:three]}
+  [sv/cards {:data-ash [:three]}
    [sco/card
     [sco/image
      [:img {:src "/images/square-image.png"}]]]
@@ -631,7 +631,7 @@
 (defcard-doc
   (mkdn-pprint-source variation-count))
 
-(defcard-rg
+(defcard-rg count
   [variation-count])
 
 
@@ -640,8 +640,8 @@
   (list-cards-keys "stackable"))
 
 (defn variation-stackable []
-  [sv/cards {:ash [:three
-                   :stackable]}
+  [sv/cards {:data-ash [:three
+                        :stackable]}
    [sco/card
     [sco/image
      [:img {:src "/images/square-image.png"}]]]
@@ -670,7 +670,7 @@
 (defcard-doc
   (mkdn-pprint-source variation-stackable))
 
-(defcard-rg
+(defcard-rg stackable
   [variation-stackable])
 
 
@@ -679,8 +679,8 @@
   (list-cards-keys "doubling"))
 
 (defn variation-doubling []
-  [sv/cards {:ash [:three
-                   :doubling]}
+  [sv/cards {:data-ash [:three
+                        :doubling]}
    [sco/card
     [sco/image
      [:img {:src "/images/square-image.png"}]]]
@@ -709,5 +709,5 @@
 (defcard-doc
   (mkdn-pprint-source variation-doubling))
 
-(defcard-rg
+(defcard-rg doubling
   [variation-doubling])

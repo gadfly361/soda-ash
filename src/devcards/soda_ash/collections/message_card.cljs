@@ -37,7 +37,7 @@
 (defcard-doc
   (mkdn-pprint-source type-default))
 
-(defcard-rg
+(defcard-rg default
   [type-default])
 
 
@@ -51,7 +51,7 @@
 (defcard-doc
   (mkdn-pprint-source type-icon))
 
-(defcard-rg
+(defcard-rg icon
   [type-icon])
 
 
@@ -65,7 +65,7 @@
 (defcard-doc
   (mkdn-pprint-source type-list))
 
-(defcard-rg
+(defcard-rg list
   [type-list])
 
 
@@ -81,24 +81,24 @@
 
 
 (defn state-hidden []
-  [sc/message {:soda :hidden}
+  [sc/message {:data-soda :hidden}
    [:p "You can't see me"]])
 
 (defcard-doc
   (mkdn-pprint-source state-hidden))
 
-(defcard-rg
+(defcard-rg hidden
   [state-hidden])
 
 
 (defn state-visible []
-  [sc/message {:soda :visible}
+  [sc/message {:data-soda :visible}
    [:p "You can always see me"]])
 
 (defcard-doc
   (mkdn-pprint-source state-visible))
 
-(defcard-rg
+(defcard-rg visible
   [state-visible])
 
 
@@ -118,13 +118,13 @@
   (list-keys "floating"))
 
 (defn variation-floating []
-  [sc/message {:ash [:floating]}
+  [sc/message {:data-ash [:floating]}
    [:p "A message can float above the content that it is related to"]])
 
 (defcard-doc
   (mkdn-pprint-source variation-floating))
 
-(defcard-rg
+(defcard-rg floating
   [variation-floating])
 
 
@@ -136,13 +136,13 @@
   (list-keys "compact"))
 
 (defn variation-compact []
-  [sc/message {:ash [:compact]}
+  [sc/message {:data-ash [:compact]}
    [:p "A message can only take up the width of its content."]])
 
 (defcard-doc
   (mkdn-pprint-source variation-compact))
 
-(defcard-rg
+(defcard-rg compact
   [variation-compact])
 
 
@@ -155,10 +155,10 @@
 
 (defn variation-attached []
   [:div
-  [sc/message {:ash [:attached]}
+  [sc/message {:data-ash [:attached]}
    [:p "A message can be attached on the top"]]
 
-   [se/segment {:ash [:attached]}
+   [se/segment {:data-ash [:attached]}
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -167,14 +167,14 @@
    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
    culpa qui officia deserunt mollit anim id est laborum."]
 
-   [sc/message {:ash [:bottom-attached]}
+   [sc/message {:data-ash [:bottom-attached]}
     [:p "A message can be attached on the bottom"]]
    ])
 
 (defcard-doc
   (mkdn-pprint-source variation-attached))
 
-(defcard-rg
+(defcard-rg attached
   [variation-attached])
 
 
@@ -186,68 +186,68 @@
   (list-keys "context"))
 
 (defn variation-warning []
-  [sc/message {:ash [:warning]}
+  [sc/message {:data-ash [:warning]}
    "This is the warning context"])
 
 (defcard-doc
   (mkdn-pprint-source variation-warning))
 
-(defcard-rg
+(defcard-rg warning
   [variation-warning])
 
 
 (defn variation-info []
-  [sc/message {:ash [:info]}
+  [sc/message {:data-ash [:info]}
    "This is the info context"])
 
 (defcard-doc
   (mkdn-pprint-source variation-info))
 
-(defcard-rg
+(defcard-rg info
   [variation-info])
 
 
 (defn variation-positive []
-  [sc/message {:ash [:positive]}
+  [sc/message {:data-ash [:positive]}
    "This is the positive context"])
 
 (defcard-doc
   (mkdn-pprint-source variation-positive))
 
-(defcard-rg
+(defcard-rg positive
   [variation-positive])
 
 
 (defn variation-success []
-  [sc/message {:ash [:success]}
+  [sc/message {:data-ash [:success]}
    "This is the success context"])
 
 (defcard-doc
   (mkdn-pprint-source variation-success))
 
-(defcard-rg
+(defcard-rg success
   [variation-success])
 
 
 (defn variation-negative []
-  [sc/message {:ash [:negative]}
+  [sc/message {:data-ash [:negative]}
    "This is the negative context"])
 
 (defcard-doc
   (mkdn-pprint-source variation-negative))
 
-(defcard-rg
+(defcard-rg negative
   [variation-negative])
 
 
 (defn variation-error []
-  [sc/message {:ash [:error]}
+  [sc/message {:data-ash [:error]}
    "This is the error context"])
 
 (defcard-doc
   (mkdn-pprint-source variation-error))
 
-(defcard-rg
+(defcard-rg error
   [variation-error])
 
 
@@ -259,17 +259,17 @@
   (list-keys "colored"))
 
 (defn variation-colored-red []
-  [sc/message {:ash [:red]}
+  [sc/message {:data-ash [:red]}
    "red"])
 
 (defn variation-colored [color]
-  [sc/message {:ash [color]}
+  [sc/message {:data-ash [color]}
    (name color)])
 
 (defcard-doc
   (mkdn-pprint-source variation-colored-red))
 
-(defcard-rg
+(defcard-rg colored
   [:div
    [variation-colored-red]
    [variation-colored :orange]
@@ -294,17 +294,17 @@
   (list-keys "size"))
 
 (defn variation-size-mini []
-  [sc/message {:ash [:mini]}
+  [sc/message {:data-ash [:mini]}
    "mini"])
 
 (defn variation-size [size]
-  [sc/message {:ash [size]}
+  [sc/message {:data-ash [size]}
    (name size)])
 
 (defcard-doc
   (mkdn-pprint-source variation-size-mini))
 
-(defcard-rg
+(defcard-rg size
   [:div
    [variation-size-mini]
    [variation-size :tiny]

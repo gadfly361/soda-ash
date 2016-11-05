@@ -8,10 +8,9 @@
 
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [org.clojure/clojurescript "1.8.51"]
-                 [reagent "0.5.1"]
+                 [reagent "0.6.0"]
                  [binaryage/devtools "0.6.1"]
-                 [devcards "0.2.0-8" :exclusions [cljsjs/react]]
-                 [cljsjs/semantic-ui "2.1.8-0"]]
+                 [devcards "0.2.2" :exclusions [cljsjs/react]]]
 
   :plugins [[lein-cljsbuild "1.1.3"]]
 

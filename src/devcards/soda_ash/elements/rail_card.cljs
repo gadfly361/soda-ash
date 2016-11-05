@@ -47,7 +47,7 @@
 (defcard-doc
   (mkdn-pprint-source type-left))
 
-(defcard-rg
+(defcard-rg left
   [type-left])
 
 
@@ -69,7 +69,7 @@
 (defcard-doc
   (mkdn-pprint-source type-right))
 
-(defcard-rg
+(defcard-rg right
   [type-right])
 
 
@@ -91,7 +91,7 @@
 (defcard-doc
   (mkdn-pprint-source type-left-internal))
 
-(defcard-rg
+(defcard-rg left-internal
   [type-left-internal])
 
 
@@ -113,7 +113,7 @@
 (defcard-doc
   (mkdn-pprint-source type-right-internal))
 
-(defcard-rg
+(defcard-rg right-internal
   [type-right-internal])
 
 
@@ -135,7 +135,7 @@
 (defcard-doc
   (mkdn-pprint-source type-left-dividing))
 
-(defcard-rg
+(defcard-rg left-dividing
   [type-left-dividing])
 
 
@@ -157,7 +157,7 @@
 (defcard-doc
   (mkdn-pprint-source type-right-dividing))
 
-(defcard-rg
+(defcard-rg right-dividing
   [type-right-dividing])
 
 
@@ -186,7 +186,7 @@
    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
    culpa qui officia deserunt mollit anim id est laborum."
 
-   [se/rail-left {:ash [:attached]}
+   [se/rail-left {:data-ash [:attached]}
     [se/segment
      "attached"]]
    ])
@@ -194,7 +194,7 @@
 (defcard-doc
   (mkdn-pprint-source variation-attached))
 
-(defcard-rg
+(defcard-rg attached
   [variation-attached])
 
 
@@ -213,7 +213,7 @@
    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
    culpa qui officia deserunt mollit anim id est laborum."
 
-   [se/rail-left {:ash [:close]}
+   [se/rail-left {:data-ash [:close]}
     [se/segment
      "close"]]
    ])
@@ -221,7 +221,7 @@
 (defcard-doc
   (mkdn-pprint-source variation-close))
 
-(defcard-rg
+(defcard-rg close
   [variation-close])
 
 
@@ -235,7 +235,7 @@
    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
    culpa qui officia deserunt mollit anim id est laborum."
 
-   [se/rail-left {:ash [:very-close]}
+   [se/rail-left {:data-ash [:very-close]}
     [se/segment
      "very-close"]]
    ])
@@ -243,5 +243,5 @@
 (defcard-doc
   (mkdn-pprint-source variation-very-close))
 
-(defcard-rg
+(defcard-rg very-close
   [variation-very-close])
