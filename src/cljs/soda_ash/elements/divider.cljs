@@ -17,7 +17,7 @@
   [:default
    :vertical
    :horizontal
-   :horizontal-header ;; TODO: check this
+   :horizontal-header
    ])
 
 

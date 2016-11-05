@@ -18,6 +18,14 @@
   (h/devcard-docs container/opts))
 
 
+(defcard-doc
+  "Require the following:
+   ```
+  [soda-ash.element :as se]
+  ```")
+
+
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Types
@@ -27,6 +35,10 @@
 ---
 # Types"
   (h/list-types container/opts))
+
+(defcard-doc
+  "**Container**"
+  "A default container")
 
 (defn type-default []
   [se/container
@@ -44,6 +56,12 @@
 (defcard-rg default
   [type-default])
 
+
+
+(defcard-doc
+  "**Text Container**"
+  "A container can reduce its maximum width to more naturally
+  accomodate a single column of text")
 
 (defn type-text []
   [se/container-text
@@ -63,6 +81,7 @@
 
 
 
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Variations
 
@@ -71,12 +90,9 @@
 ---
 # Variations")
 
-
-;; ---------------------------
-;; Text Alignment
-
 (defcard-doc
-  "## Text Alignment"
+  "**Text Alignment**"
+  "A container can specify its text alignment"
   (list-keys "text alignment"))
 
 (defn left-aligned []
@@ -147,13 +163,11 @@
   [justified])
 
 
-;; ---------------------------
-;; Fluid
 
 (defcard-doc
-  "## fluid"
+  "**Fluid**"
+  "A fluid container has no maximum width"
   (list-keys "fluid")
-  "Notes: A fluid container has no maximum width"
   )
 
 (defn fluid []

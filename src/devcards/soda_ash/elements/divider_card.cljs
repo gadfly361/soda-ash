@@ -18,6 +18,14 @@
   (h/devcard-docs divider/opts))
 
 
+(defcard-doc
+  "Require the following:
+   ```
+  [soda-ash.element :as se]
+  ```")
+
+
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Types
@@ -27,6 +35,10 @@
 ---
 # Types"
   (h/list-types divider/opts))
+
+(defcard-doc
+  "**Divider**"
+  "A default divider")
 
 (defn type-default []
   [:div
@@ -56,10 +68,20 @@
   [type-default])
 
 
+
+(defcard-doc
+  "**Vertical Divider**"
+  "A divider can segment content vertically. Vertical dividers
+  requires `:position \"relative\"` on the element that you would like
+  to contain the divider."
+  "**CAUTION**: There is a known
+  [issue](https://github.com/Semantic-Org/Semantic-UI/issues/4342)
+  with vertical dividers.")
+
 (defn type-vertical []
   ;; TODO: replace with grid when it is ready
   [:div.ui.two.column.very.relaxed.stackable.grid
-   {:style {:position "relative"}}
+   {:style {:position "relative"}} ;; <- required
 
    [:div.column
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -91,6 +113,12 @@
 
 
 
+(defcard-doc
+  "**Horizontal Divider**"
+  "A divider can segment content horizontally. Horizontal dividers can
+  also be used in combination with headers and icons to create
+  different styles of dividers.")
+
 (defn type-horizontal []
   [:div
    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -119,7 +147,35 @@
   [type-horizontal])
 
 
-;; TODO: have note about horizontal-header ...
+(defn type-horizontal-header []
+  [:div
+   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+   eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+   ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+   aliquip ex ea commodo consequat. Duis aute irure dolor in
+   reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+   pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+   culpa qui officia deserunt mollit anim id est laborum."
+
+   [se/divider-horizontal-header
+    [se/icon-tag]
+    "Description"]
+
+   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+   eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+   ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+   aliquip ex ea commodo consequat. Duis aute irure dolor in
+   reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+   pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+   culpa qui officia deserunt mollit anim id est laborum."
+   ])
+
+(defcard-doc
+  (mkdn-pprint-source type-horizontal-header))
+
+(defcard-rg horizontal-header
+  [type-horizontal-header])
+
 
 
 
@@ -132,11 +188,10 @@
 # Variations")
 
 
-;; ---------------------------
-;; Inverted
 
 (defcard-doc
-  "## Inverted"
+  "**Inverted**"
+  "A divider can have its colors inverted"
   (list-keys "inverted"))
 
 (defn inverted []
@@ -164,11 +219,10 @@
   [inverted])
 
 
-;; ---------------------------
-;; Fitted
 
 (defcard-doc
-  "## Fitted"
+  "**Fitted**"
+  "A divider can be fitted, without any space above or below it"
   (list-keys "fitted"))
 
 (defn fitted []
@@ -196,11 +250,10 @@
   [fitted])
 
 
-;; ---------------------------
-;; Hidden
 
 (defcard-doc
-  "## Hidden"
+  "**Hidden**"
+  "A hidden divider divides content without creating a dividing line"
   (list-keys "hidden"))
 
 (defn hidden []
@@ -228,11 +281,11 @@
   [hidden])
 
 
-;; ---------------------------
-;; Section
 
 (defcard-doc
-  "## Section"
+  "**Section**"
+  "A divider can provide greater margins to divide sections of
+  content"
   (list-keys "section"))
 
 (defn section []
@@ -260,11 +313,10 @@
   [section])
 
 
-;; ---------------------------
-;; Clearing
 
 (defcard-doc
-  "## Clearing"
+  "**Clearing**"
+  "A divider can clear the contents above it"
   (list-keys "clearing"))
 
 (defn clearing []

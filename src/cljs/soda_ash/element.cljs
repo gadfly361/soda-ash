@@ -319,12 +319,21 @@
 (defc "header" "h3")
 (defc "header" "h4")
 (defc "header" "h5")
+(defc "header" "h1-icon")
+(defc "header" "h2-icon")
+(defc "header" "h3-icon")
+(defc "header" "h4-icon")
+(defc "header" "h5-icon")
 (defc "header" "huge")
 (defc "header" "large")
 (defc "header" "medium")
 (defc "header" "small")
 (defc "header" "tiny")
-;; header-icon is implemented using :data-ash
+(defc "header" "huge-icon")
+(defc "header" "large-icon")
+(defc "header" "medium-icon")
+(defc "header" "small-icon")
+(defc "header" "tiny-icon")
 (defc "header" "sub")
 
 

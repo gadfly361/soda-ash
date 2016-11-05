@@ -19,6 +19,13 @@
 (defcard-doc
   (h/devcard-docs header/opts))
 
+(defcard-doc
+  "Require the following:
+   ```
+  [soda-ash.element :as se]
+  [soda-ash.content :as sco]
+  ```")
+
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -30,6 +37,11 @@
 # Types"
   (h/list-types header/opts))
 
+
+(defcard-doc
+  "**Page Headers** (rem)"
+  "Headers may be oriented to give the hierarchyu of a section in the
+  context of the page")
 
 (defn type-h1 []
   [se/header-h1 "h1 header"])
@@ -47,6 +59,11 @@
    ])
 
 
+(defcard-doc
+  "**Content Headers** (em)"
+  "Headers may be oriented to give the importance of a section in the
+  context of the content that surrounds it")
+
 (defn type-huge []
   [se/header-huge "huge header"])
 
@@ -63,6 +80,29 @@
    ])
 
 
+
+(defcard-doc
+  "**Icon Headers**"
+  "A header can be formatted to emphasize an icon")
+
+(defn type-icon []
+  [se/header-huge-icon
+   [se/icon-settings]
+   [sco/content
+    "Icon Header"]])
+
+(defcard-doc
+  (mkdn-pprint-source type-icon))
+
+(defcard-rg icon
+   [type-icon])
+
+
+
+(defcard-doc
+  "**Sub Headers**"
+  "Headers may be formatted to label smaller or de-emphasized content")
+
 (defn type-sub []
   [se/header-sub "sub header"])
 
@@ -71,6 +111,7 @@
 
 (defcard-rg sub
    [type-sub])
+
 
 
 
@@ -83,6 +124,10 @@
 # States"
   (list-keys "states"))
 
+
+(defcard-doc
+  "**Disabled**"
+  "A header can show that it is inactive")
 
 (defn state-disabled []
   [se/header-large {:data-soda :disabled}
@@ -104,27 +149,23 @@
 ---
 # Variations")
 
-;; ---------------------------
-;; icon
+;; (defn variation-icon []
+;;    [se/header-h2 {:data-ash [:icon]}
+;;    [se/icon-settings]
+;;    [sco/content
+;;     "Account Settings"]])
 
-(defn variation-icon []
-   [se/header-h2 {:data-ash [:icon]}
-   [se/icon-settings]
-   [sco/content
-    "Account Settings"]])
+;; (defcard-doc
+;;   (mkdn-pprint-source variation-icon))
+
+;; (defcard-rg icon
+;;    [variation-icon])
+
 
 (defcard-doc
-  (mkdn-pprint-source variation-icon))
-
-(defcard-rg icon
-   [variation-icon])
-
-
-;; ---------------------------
-;; dividing
-
-(defcard-doc
-  "## dividing"
+  "**Dividing**"
+  "A header can be formatted to divide itself from the content below
+  it"
   (list-keys "dividing"))
 
 (defn dividing []
@@ -147,11 +188,10 @@
    [dividing])
 
 
-;; ---------------------------
-;; block
 
 (defcard-doc
-  "## block"
+  "**Block**"
+  "A header can be formatted to appear inside a content block"
   (list-keys "block"))
 
 (defn block []
@@ -174,11 +214,10 @@
    [block])
 
 
-;; ---------------------------
-;; attached
 
 (defcard-doc
-  "## attached"
+  "**Attached**"
+  "A header can be attached to other content, like a segment"
   (list-keys "attached"))
 
 (defn attached []
@@ -218,11 +257,10 @@
    [attached])
 
 
-;; ---------------------------
-;; floating
 
 (defcard-doc
-  "## floating"
+  "**Floating**"
+  "A header can sit to the left or right of other content"
   (list-keys "floating"))
 
 (defn left-floated []
@@ -265,11 +303,10 @@
    [right-floated])
 
 
-;; ---------------------------
-;; text alignment
 
 (defcard-doc
-  "## text alignment"
+  "**Text Alignment**"
+  "A header can have its text aligned to a side"
   (list-keys "text alignment"))
 
 (defn left-aligned []
@@ -352,11 +389,10 @@
    [justified])
 
 
-;; ---------------------------
-;; Colored
 
 (defcard-doc
-  "## colored"
+  "**Colored**"
+  "A header can be formatted with different colors"
   (list-keys "colored"))
 
 (defn colored-red []
@@ -383,11 +419,10 @@
    ])
 
 
-;; ---------------------------
-;; Inverted
 
 (defcard-doc
-  "## inverted"
+  "**Inverted**"
+  "A header can have its colors inverted for contrast"
   (list-keys "inverted"))
 
 (defn inverted []
@@ -411,11 +446,9 @@
 ---
 # Contents")
 
-;; ---------------------------
-;; image
-
 (defcard-doc
-  "## image")
+  "**Image**"
+  "A header may contain an image")
 
 (defn content-image []
   [se/header-h2
@@ -430,11 +463,10 @@
    [content-image])
 
 
-;; ---------------------------
-;; icon
 
 (defcard-doc
-  "## icon")
+  "**Icon**"
+  "A header may contain an icon")
 
 (defn content-icon []
   [se/header-h2
@@ -449,12 +481,11 @@
    [content-icon])
 
 
-;; ---------------------------
-;; subheader
 
 (defcard-doc
-  "## subheader"
-  "Use sco/sub-header ... **not** se/header-sub")
+  "**Subheader**"
+  "Headers may contain subheaders"
+  "*Note: Use `sco/sub-header` ... **not** `se/header-sub`*")
 
 (defn content-subheader []
   [se/header-h2

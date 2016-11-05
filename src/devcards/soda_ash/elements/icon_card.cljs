@@ -15,21 +15,11 @@
 (def list-keys
   (h/list-keys icon/variations))
 
-(def list-icons-keys
-  (h/list-keys icons/variations))
-
 
 (defcard-doc
   (h/devcard-docs icon/opts))
 
-(defcard-doc
-  (h/devcard-docs icons/opts))
 
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; ICON
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Types
@@ -40,6 +30,9 @@
 # Icon Types"
   (h/list-types icon/opts))
 
+
+(defcard-doc
+  "**Icons**")
 
 (defn type-alarm []
   [se/icon-alarm])
@@ -594,6 +587,10 @@
   (list-keys "states"))
 
 
+(defcard-doc
+  "**Disabled**"
+  "An icon can show that it is disabled")
+
 (defn state-disabled []
   [se/icon-alarm {:data-soda :disabled}])
 
@@ -603,6 +600,11 @@
 (defcard-rg disabled
   [state-disabled])
 
+
+
+(defcard-doc
+  "**Loading**"
+  "An icon be used as a simple loader")
 
 (defn state-loading []
   [se/icon-alarm {:data-soda :loading}])
@@ -624,13 +626,12 @@
 # Icon Variations")
 
 
-;; ---------------------------
-;; Fitted
 
 (defcard-doc
-  "## Fitted"
+  "**Fitted**"
+  "An icon can be fitted, without any space to the left or right of
+  it"
   (list-keys "fitted"))
-
 
 (defn fitted []
   [:div
@@ -646,11 +647,10 @@
   [fitted])
 
 
-;; ---------------------------
-;; Size
 
 (defcard-doc
-  "## Size"
+  "**Size**"
+  "An icon can vary in size"
   (list-keys "size"))
 
 (defn size-mini []
@@ -671,11 +671,10 @@
    [se/icon-alarm {:data-ash [:massive]}]])
 
 
-;; ---------------------------
-;; Link
 
 (defcard-doc
-  "## Link"
+  "**Link**"
+  "An icon can be formatted as a link"
   (list-keys "link"))
 
 (defn link []
@@ -688,11 +687,10 @@
   [link])
 
 
-;; ---------------------------
-;; Flipped
 
 (defcard-doc
-  "## Flipped"
+  "**Flipped**"
+  "An icon can be flipped"
   (list-keys "flipped"))
 
 (defn flipped []
@@ -708,11 +706,10 @@
   [flipped])
 
 
-;; ---------------------------
-;; Rotated
 
 (defcard-doc
-  "## Rotated"
+  "**Rotated**"
+  "An icon can be rotated"
   (list-keys "rotated"))
 
 (defn rotated []
@@ -728,11 +725,10 @@
   [rotated])
 
 
-;; ---------------------------
-;; Circular
 
 (defcard-doc
-  "## Circular"
+  "**Circular**"
+  "An icon can be formatted to appear circular"
   (list-keys "circular"))
 
 (defn circular []
@@ -745,11 +741,10 @@
   [circular])
 
 
-;; ---------------------------
-;; Bordered
 
 (defcard-doc
-  "## Bordered"
+  "**Bordered**"
+  "An icon can be formatted to appear bordered"
   (list-keys "bordered"))
 
 (defn bordered []
@@ -762,11 +757,10 @@
   [bordered])
 
 
-;; ---------------------------
-;; Colored
 
 (defcard-doc
-  "## colored"
+  "**Colored**"
+  "An icon can be formatted with different colors"
   (list-keys "colored"))
 
 (defn colored-red []
@@ -793,16 +787,28 @@
    ])
 
 
-;; ---------------------------
-;; Inverted
 
 (defcard-doc
-  "## Inverted"
+  "**Inverted**"
+  "An icon can have its colors inverted for contrast"
   (list-keys "inverted"))
 
 (defn inverted []
   [se/segment {:data-ash [:inverted]}
-   [se/icon-in-cart {:data-ash [:inverted]}]])
+   [se/icon-in-cart {:data-ash [:inverted :inverted]}]
+   [se/icon-in-cart {:data-ash [:inverted :orange]}]
+   [se/icon-in-cart {:data-ash [:inverted :yellow]}]
+   [se/icon-in-cart {:data-ash [:inverted :olive]}]
+   [se/icon-in-cart {:data-ash [:inverted :green]}]
+   [se/icon-in-cart {:data-ash [:inverted :teal]}]
+   [se/icon-in-cart {:data-ash [:inverted :blue]}]
+   [se/icon-in-cart {:data-ash [:inverted :violet]}]
+   [se/icon-in-cart {:data-ash [:inverted :purple]}]
+   [se/icon-in-cart {:data-ash [:inverted :pink]}]
+   [se/icon-in-cart {:data-ash [:inverted :brown]}]
+   [se/icon-in-cart {:data-ash [:inverted :grey]}]
+   [se/icon-in-cart {:data-ash [:inverted :black]}]
+   ])
 
 (defcard-doc
   (mkdn-pprint-source inverted))
@@ -811,11 +817,10 @@
   [inverted])
 
 
-;; ---------------------------
-;; Corner
 
 (defcard-doc
-  "## Corner"
+  "**Corner**"
+  "A group of icons can display a smaller icon"
   (list-keys "corner"))
 
 (defn corner []
@@ -831,78 +836,3 @@
 
 (defcard-rg corner
   [corner])
-
-
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; ICONS
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Types
-
-
-(defcard-doc
-  "
----
-# Icon Types"
-  (h/list-types icons/opts))
-
-
-(defn type-icons []
-  [se/icons {:data-ash [:huge]}
-   [se/icon-sun {:data-soda :loading
-                 :data-ash [:big]}]
-   [se/icon-user]])
-
-(defcard-doc
-  (mkdn-pprint-source type-icons))
-
-(defcard-rg icons
-  [:div
-   [type-icons]])
-
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Variations
-
-(defcard-doc
-  "
----
-# Icon Variations"
-  "## Size"
-  (list-icons-keys "size"))
-
-(defn icons-size-mini []
-  [se/icons {:data-ash [:mini]}
-   [se/icon-twitter]
-   [se/icon-plus {:data-ash [:inverted
-                        :corner]}]])
-
-(defn icons-size [size]
-  [se/icons {:data-ash [size]}
-   [se/icon-twitter]
-   [se/icon-plus {:data-ash [:inverted
-                        :corner]}]])
-
-(defcard-doc
-  (mkdn-pprint-source icons-size-mini))
-
-(defcard-rg size
-  [:div
-   [icons-size-mini]
-   [icons-size :tiny]
-   [icons-size :small]
-
-   [se/icons
-    [se/icon-twitter]
-    [se/icon-plus {:data-ash [:inverted
-                         :corner]}]]
-
-   [icons-size :large]
-   [icons-size :big]
-   [icons-size :huge]
-   [icons-size :massive]
-   ])

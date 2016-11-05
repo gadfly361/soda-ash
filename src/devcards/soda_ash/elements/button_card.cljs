@@ -26,7 +26,7 @@
 
 
 (defcard-doc
-  "Require soda-ash's elements:
+  "Require the following:
    ```
   [soda-ash.element :as se]
   [soda-ash.content :as sco]
