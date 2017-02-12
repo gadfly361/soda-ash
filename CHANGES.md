@@ -1,4 +1,4 @@
-## 0.2.0-SNAPSHOT
+## 0.2.0
 
 * targets semantic-ui-react version "0.64.0-0"
 

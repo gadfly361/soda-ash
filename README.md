@@ -9,7 +9,7 @@ and [semantic-ui-react](http://react.semantic-ui.com/introduction).
 Put the following in the `:dependencies` vector of your *project.clj*
 
 ```clojure
-[soda-ash "0.2.0-SNAPSHOT"]
+[soda-ash "0.2.0"]
 ```
 
 Then require soda-ash in your namespace.
@@ -65,6 +65,12 @@ However, in clojurescript with soda-ash, you'd write something like this:
      [:p "Is it okay to use this photo?"]
      ]]]))
 ```
+
+
+## Gotchas
+
+* Renamed List to ListSA to avoid confusion with clojure.core/list
+* Renamed Comment to CommentSA to avoid confusion with clojure.core/comment
 
 
 ## Questions
