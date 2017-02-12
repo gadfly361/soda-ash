@@ -6,6 +6,13 @@ and [semantic-ui-react](http://react.semantic-ui.com/introduction).
 
 ## Usage
 
+Add the following stylesheet to your *index.html*:
+
+```html
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css">
+```
+
+
 Put the following in the `:dependencies` vector of your *project.clj*
 
 ```clojure
