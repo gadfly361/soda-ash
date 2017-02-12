@@ -1,87 +1,77 @@
 # soda-ash
 
-[![Build Status](https://travis-ci.org/gadfly361/soda-ash.svg?branch=master)](https://travis-ci.org/gadfly361/soda-ash)
-
-**WARNING** I am currently working on a complete re-write of soda-ash. I strongly urge you to *not* depend on this library yet. Also, the current release only covers Semantic UI's Elements.
-
-Soda-ash is an interface between clojurescript's [reagent](https://github.com/reagent-project/reagent) and [Semantic UI](http://semantic-ui.com/).
-
-Semantic UI is awesome ... however, at its core, you are concatenating
-ordered classes into a string.  Soda-ash bubbles Semantic UI's classes
-out of this regex-hell and softens them into clojurescript's familiar,
-powerful, and unordered hash-map.  Furthermore, soda-ash allows you to
-place this hash-map inside a reagent atom at your desired path.  This
-means you can swap! Semantic UI classes and have your component
-reactively update.
-
-## Docs
-
-The
-**[documentation](http://soda-ash.s3-website-us-east-1.amazonaws.com/#!/soda_ash.an_overview_card)**
-has *lots* of devcard examples.
-
-If you have questions, I can usually be found hanging out in the
-[clojurians](http://clojurians.net/) #reagent slack channel (my handle
-is [@gadfly361](https://twitter.com/gadfly361)).
+Soda-ash is an interface between
+clojurescript's [reagent](https://github.com/reagent-project/reagent)
+and [semantic-ui-react](http://react.semantic-ui.com/introduction).
 
 ## Usage
 
 Put the following in the `:dependencies` vector of your *project.clj*
 
-```
-[soda-ash "0.1.0-beta"
-  :exclusions [cljsjs/react-with-addons]]
+```clojure
+[soda-ash "0.2.0-SNAPSHOT"]
 ```
 
 Then require soda-ash in your namespace.
 
-```
+```clojure
 (ns foo.bar
-  (:require [soda-ash.element :as s]))
+  (:require [soda-ash.core :as sa]))
 ```
 
-Finally, add Semantic UI to your index.html file:
+### Example
 
-```
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.css">
-```
+Let's take a look at a modal. In javascript, you'd write something like this:
 
-## Roadmap
+```jsx
+import React from 'react'
+import { Button, Header, Image, Modal } from 'semantic-ui-react'
 
-Next up, Collections.
+const ModalModalExample = () => (
+  <Modal trigger={<Button>Show Modal</Button>}>
+    <Modal.Header>Select a Photo</Modal.Header>
+    <Modal.Content image>
+      <Image wrapped size='medium' src='http://semantic-ui.com/images/avatar2/large/rachel.png' />
+      <Modal.Description>
+        <Header>Default Profile Image</Header>
+        <p>We've found the following gravatar image associated with your e-mail address.</p>
+        <p>Is it okay to use this photo?</p>
+      </Modal.Description>
+    </Modal.Content>
+  </Modal>
+)
 
-## Development
-
-### Devcards
-
-```
-lein clean
-lein figwheel devcards
-```
-
-Figwheel will automatically push cljs changes to the browser.
-
-Wait a bit, then browse to [http://localhost:3449](http://localhost:3449).
-
----
-
-To build a minified version:
-
-```
-lein clean
-lein cljsbuild once hostedcards
+export default ModalModalExample
 ```
 
-Then open *resources/public/index.html*
+However, in clojurescript with soda-ash, you'd write something like this:
 
-### Tests
-
+```clojure
+(ns foo.bar
+  (:require
+   [reagent.core :as reagent]
+   [soda-ash.core :as sa]))
+   
+(defn modal-example []
+  [sa/Modal {:trigger (reagent/as-element [sa/Button "Show Modal"])}
+   [sa/ModalHeader "Select a Photo"]
+   [sa/ModalContent {:image true}
+    [sa/Image {:wrapped true
+               :size    "medium"
+               :src     "http://semantic-ui.com/images/avatar2/large/rachel.png"}]
+    [sa/ModalDescription
+     [sa/Header "Default Profile Image"]
+     [:p "We've found the following gravatar image associated with your e-mail address."]
+     [:p "Is it okay to use this photo?"]
+     ]]]))
 ```
-lein clean
-lein with-profile test doo phantom unit once
-```
 
-The above command assumes that you have [phantomjs](https://www.npmjs.com/package/phantomjs) installed.
+
+## Questions
+
+If you have questions, I can usually be found hanging out in the
+[clojurians](http://clojurians.net/) #reagent slack channel (my handle
+is [@gadfly361](https://twitter.com/gadfly361)).
 
 # License
 
