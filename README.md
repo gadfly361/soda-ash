@@ -9,7 +9,7 @@ and [semantic-ui-react](http://react.semantic-ui.com/introduction).
 Add the following stylesheet to your *index.html*:
 
 ```html
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css">
 ```
 
 
@@ -70,7 +70,7 @@ However, in clojurescript with soda-ash, you'd write something like this:
      [sa/Header "Default Profile Image"]
      [:p "We've found the following gravatar image associated with your e-mail address."]
      [:p "Is it okay to use this photo?"]
-     ]]]))
+     ]]])
 ```
 
 
