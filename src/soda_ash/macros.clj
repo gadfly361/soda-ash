@@ -5,6 +5,7 @@
   '[Accordion
     AccordionContent
     AccordionTitle
+    Advertisement
     Breadcrumb
     BreadcrumbDivider
     BreadcrumbSection
@@ -141,7 +142,8 @@
     TableHeader
     TableHeaderCell
     TableRow
-    TextArea])
+    TextArea
+    Visibility])
 
 
 (def reserved-tags #{"Comment"

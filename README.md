@@ -16,7 +16,7 @@ Add the following stylesheet to your *index.html*:
 Put the following in the `:dependencies` vector of your *project.clj*
 
 ```clojure
-[soda-ash "0.2.0"]
+[soda-ash "0.3.0"]
 ```
 
 Then require soda-ash in your namespace.
@@ -58,7 +58,7 @@ However, in clojurescript with soda-ash, you'd write something like this:
   (:require
    [reagent.core :as reagent]
    [soda-ash.core :as sa]))
-   
+
 (defn modal-example []
   [sa/Modal {:trigger (reagent/as-element [sa/Button "Show Modal"])}
    [sa/ModalHeader "Select a Photo"]
