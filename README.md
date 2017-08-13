@@ -79,6 +79,12 @@ However, in clojurescript with soda-ash, you'd write something like this:
 * Renamed List to ListSA to avoid confusion with clojure.core/list
 * Renamed Comment to CommentSA to avoid confusion with clojure.core/comment
 
+## Related Projects
+
+[Sodium](https://github.com/deg/sodium) is a wrapper around soda-ash. Sodium adds two sets of features into the mix, both aimed at making it easier to include Semantic UI in re-frame projects:
+
+1. Utility functions to get values in and out of components.
+2. Validity-checking aids to help avoid typos.
 
 ## Questions
 
