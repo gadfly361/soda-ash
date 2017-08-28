@@ -1,15 +1,17 @@
 ## 0.4.0
 
 * targets semantic-ui-react version "0.72.0-0"
+* recommended css `<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css">`
 
 ## 0.3.0
 
 * targets semantic-ui-react version "0.68.4-0"
+* recommended css `<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css">`
 
 ## 0.2.0
 
 * targets semantic-ui-react version "0.64.0-0"
-* recommended css - <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css">
+* recommended css `<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css">`
 
 ---
 
