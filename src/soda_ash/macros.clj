@@ -138,6 +138,7 @@
     StepTitle
     Sticky
     Tab
+    TabPane
     Table
     TableBody
     TableCell
