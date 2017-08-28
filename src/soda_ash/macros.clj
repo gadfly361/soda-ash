@@ -39,6 +39,7 @@
     DropdownHeader
     DropdownItem
     DropdownMenu
+    DropdownSearchInput
     Embed
     Feed
     FeedContent
@@ -135,6 +136,8 @@
     StepDescription
     StepGroup
     StepTitle
+    Sticky
+    Tab
     Table
     TableBody
     TableCell
@@ -143,6 +146,7 @@
     TableHeaderCell
     TableRow
     TextArea
+    Transition
     Visibility])
 
 

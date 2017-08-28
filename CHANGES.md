@@ -1,3 +1,7 @@
+## 0.4.0
+
+* targets semantic-ui-react version "0.72.0-0"
+
 ## 0.3.0
 
 * targets semantic-ui-react version "0.68.4-0"

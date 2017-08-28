@@ -9,14 +9,14 @@ and [semantic-ui-react](http://react.semantic-ui.com/introduction).
 Add the following stylesheet to your *index.html*:
 
 ```html
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css">
 ```
 
 
 Put the following in the `:dependencies` vector of your *project.clj*
 
 ```clojure
-[soda-ash "0.3.0"]
+[soda-ash "0.4.0"]
 ```
 
 Then require soda-ash in your namespace.
