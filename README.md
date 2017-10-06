@@ -79,7 +79,9 @@ However, in clojurescript with soda-ash, you'd write something like this:
 * Renamed List to ListSA to avoid confusion with clojure.core/list
 * Renamed Comment to CommentSA to avoid confusion with clojure.core/comment
 
-## Related Projects
+## Related
+
+[using semantic ui with re-frame](https://opensourcery.co.za/2017/02/12/using-semantic-ui-react-with-re-frame/) blog post by @kennethkalmer
 
 [Sodium](https://github.com/deg/sodium) is a wrapper around soda-ash. Sodium adds two sets of features into the mix, both aimed at making it easier to include Semantic UI in re-frame projects:
 
