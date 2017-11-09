@@ -1,3 +1,13 @@
+## 0.76.0
+
+* targets semantic-ui-react version "0.76.0-0"
+* update version number to mimic semantic version number
+* adds support for:
+    - AccordionAccordion
+	- Responsive
+	- TransitionGroup
+	- TransitionablePortal
+
 ## 0.4.0
 
 * targets semantic-ui-react version "0.72.0-0"

@@ -3,6 +3,7 @@
 
 (def semantic-ui-react-tags
   '[Accordion
+    AccordionAccordion
     AccordionContent
     AccordionTitle
     Advertisement
@@ -115,6 +116,7 @@
     Rail
     Rating
     RatingIcon
+    Responsive
     Reveal
     RevealContent
     Search
@@ -148,6 +150,8 @@
     TableRow
     TextArea
     Transition
+    TransitionGroup
+    TransitionablePortal
     Visibility])
 
 
