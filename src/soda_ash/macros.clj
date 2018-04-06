@@ -107,6 +107,8 @@
     ModalContent
     ModalDescription
     ModalHeader
+    Pagination
+    PaginationItem
     Popup
     PopupContent
     PopupHeader

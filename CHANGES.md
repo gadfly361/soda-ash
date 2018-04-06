@@ -1,3 +1,10 @@
+## 0.78.2 (2018-04-06)
+
+* targets semantic-ui-react version "0.78.2-0"
+* adds support for
+	- Pagination
+	- PaginationItem
+
 ## 0.76.0
 
 * targets semantic-ui-react version "0.76.0-0"
