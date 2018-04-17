@@ -1,4 +1,4 @@
-(defproject soda-ash "0.78.2"
+(defproject soda-ash "0.79.1"
   :description "Soda-ash is an interface between clojurescript's reagent
                 and Semantic UI React"
   :url "https://github.com/gadfly361/soda-ash"
@@ -12,5 +12,5 @@
   [[org.clojure/clojure "1.8.0"]
    [org.clojure/clojurescript "1.9.229"]
    [reagent "0.6.0"]
-   [cljsjs/semantic-ui-react "0.78.2-0"]
+   [cljsjs/semantic-ui-react "0.79.1-0"]
    ])

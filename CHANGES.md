@@ -1,3 +1,7 @@
+## 0.79.1 (2018-04-16)
+
+* targets semantic-ui-react version "0.79.1-0"
+
 ## 0.78.2 (2018-04-06)
 
 * targets semantic-ui-react version "0.78.2-0"
