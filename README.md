@@ -16,7 +16,7 @@ Add the following stylesheet to your *index.html*:
 Put the following in the `:dependencies` vector of your *project.clj*
 
 ```clojure
-[soda-ash "0.79.1"]
+[soda-ash "0.81.1"]
 ```
 
 Then require soda-ash in your namespace.
