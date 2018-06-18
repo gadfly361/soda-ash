@@ -34,6 +34,7 @@
     Container
     Dimmer
     DimmerDimmable
+    DimmerInner
     Divider
     Dropdown
     DropdownDivider

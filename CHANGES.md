@@ -1,6 +1,9 @@
 ## 0.81.1 (2018-06-18)
 
 * targets semantic-ui-react version "0.81.1-0"
+* recommended css `<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css"></link>`
+* adds support for:
+    - DimmerInner
 
 ## 0.79.1 (2018-04-16)
 
