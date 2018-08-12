@@ -5,6 +5,7 @@
   '[Accordion
     AccordionAccordion
     AccordionContent
+    AccordionPanel
     AccordionTitle
     Advertisement
     Breadcrumb
@@ -108,17 +109,20 @@
     ModalContent
     ModalDescription
     ModalHeader
+    ;; MountNode (don't include)
     Pagination
     PaginationItem
     Popup
     PopupContent
     PopupHeader
     Portal
+    PortalInner
     Progress
     Radio
     Rail
     Rating
     RatingIcon
+    ;; ref (don't include)
     Responsive
     Reveal
     RevealContent
