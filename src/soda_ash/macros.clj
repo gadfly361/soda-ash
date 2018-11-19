@@ -137,6 +137,7 @@
     SearchResults
     Segment
     SegmentGroup
+    SegmentInline
     Select
     Sidebar
     SidebarPushable

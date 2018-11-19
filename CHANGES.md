@@ -4,6 +4,11 @@
 * recommended css `<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.0/semantic.min.css"></link>`
 * adds support for:
     - Placeholder
+    - PlaceholderHeader
+    - PlaceholderImage
+    - PlaceholderLine
+    - PlaceholderParagraph
+    - SegmentInline
 
 ## 0.82.2 (2018-08-12)
 

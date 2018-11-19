@@ -1,4 +1,4 @@
-(defproject soda-ash "0.83.0-SNAPSHOT"
+(defproject soda-ash "0.83.0"
   :description "Soda-ash is an interface between clojurescript's reagent
                 and Semantic UI React"
   :url "https://github.com/gadfly361/soda-ash"
