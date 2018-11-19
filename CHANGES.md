@@ -1,10 +1,17 @@
+## 0.83.0-SNAPSHOT
+
+* targets semantic-ui-react version "0.83.0-0"
+* recommended css `<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.0/semantic.min.css"></link>`
+* adds support for:
+    - Placeholder
+
 ## 0.82.2 (2018-08-12)
 
 * targets semantic-ui-react version "0.82.2-0"
 * recommended css `<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css"></link>`
 * adds support for:
     - AccordionPanel
-	- PortalInner
+    - PortalInner
 
 ## 0.81.1 (2018-06-18)
 
@@ -21,8 +28,8 @@
 
 * targets semantic-ui-react version "0.78.2-0"
 * adds support for
-	- Pagination
-	- PaginationItem
+    - Pagination
+    - PaginationItem
 
 ## 0.76.0
 
@@ -30,9 +37,9 @@
 * update version number to mimic semantic version number
 * adds support for:
     - AccordionAccordion
-	- Responsive
-	- TransitionGroup
-	- TransitionablePortal
+    - Responsive
+    - TransitionGroup
+    - TransitionablePortal
 
 ## 0.4.0
 

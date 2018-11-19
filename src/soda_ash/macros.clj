@@ -112,6 +112,11 @@
     ;; MountNode (don't include)
     Pagination
     PaginationItem
+    Placeholder
+    PlaceholderHeader
+    PlaceholderImage
+    PlaceholderLine
+    PlaceholderParagraph
     Popup
     PopupContent
     PopupHeader
